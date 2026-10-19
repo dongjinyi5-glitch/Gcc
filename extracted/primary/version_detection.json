@@ -1,0 +1,332 @@
+[
+  {
+    "file": "resources.assets",
+    "size": 1346676228,
+    "magic_ascii": "\u0000\u0005�6PD�",
+    "format": "Raw .assets",
+    "metadata_size": 374838,
+    "file_size_field": 1346676228,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets0.assets",
+    "size": 124405,
+    "magic_ascii": "\u0000\u000056\u0000\u0001�",
+    "format": "Raw .assets",
+    "metadata_size": 13622,
+    "file_size_field": 124405,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets1.assets",
+    "size": 16187068,
+    "magic_ascii": "\u0000\u0000\u0001�\u0000��",
+    "format": "Raw .assets",
+    "metadata_size": 424,
+    "file_size_field": 16187068,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets10.assets",
+    "size": 88361028,
+    "magic_ascii": "\u0000\u0000\u0007,\u0005DH",
+    "format": "Raw .assets",
+    "metadata_size": 1836,
+    "file_size_field": 88361028,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets11.assets",
+    "size": 208396564,
+    "magic_ascii": "\u0000\u0000\u0010\u0019\fk�",
+    "format": "Raw .assets",
+    "metadata_size": 4121,
+    "file_size_field": 208396564,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets12.assets",
+    "size": 299503316,
+    "magic_ascii": "\u0000\u0000\u0017�\u0011�\u000e",
+    "format": "Raw .assets",
+    "metadata_size": 6064,
+    "file_size_field": 299503316,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets13.assets",
+    "size": 26994344,
+    "magic_ascii": "\u0000\u0000\n�\u0001��",
+    "format": "Raw .assets",
+    "metadata_size": 2724,
+    "file_size_field": 26994344,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets14.assets",
+    "size": 194204740,
+    "magic_ascii": "\u0000\u0000\u0018+\u000b�T",
+    "format": "Raw .assets",
+    "metadata_size": 6187,
+    "file_size_field": 194204740,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets15.assets",
+    "size": 76328240,
+    "magic_ascii": "\u0000\u0000\u0019\u001b\u0004��",
+    "format": "Raw .assets",
+    "metadata_size": 6427,
+    "file_size_field": 76328240,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets2.assets",
+    "size": 15301772,
+    "magic_ascii": "\u0000\u0000\u0007\f\u0000�|",
+    "format": "Raw .assets",
+    "metadata_size": 1804,
+    "file_size_field": 15301772,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets3.assets",
+    "size": 4104,
+    "magic_ascii": "\u0000\u0000\u00001\u0000\u0000\u0010",
+    "format": "Raw .assets",
+    "metadata_size": 49,
+    "file_size_field": 4104,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets4.assets",
+    "size": 244336532,
+    "magic_ascii": "\u0000\u0000#�\u000e�G",
+    "format": "Raw .assets",
+    "metadata_size": 9206,
+    "file_size_field": 244336532,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets5.assets",
+    "size": 366419952,
+    "magic_ascii": "\u0000\u0000 �\u0015�\u001f",
+    "format": "Raw .assets",
+    "metadata_size": 8388,
+    "file_size_field": 366419952,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets6.assets",
+    "size": 226110256,
+    "magic_ascii": "\u0000\u0000\u0014�\rz+",
+    "format": "Raw .assets",
+    "metadata_size": 5270,
+    "file_size_field": 226110256,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets7.assets",
+    "size": 240800668,
+    "magic_ascii": "\u0000\u0000\u0019H\u000eZS",
+    "format": "Raw .assets",
+    "metadata_size": 6472,
+    "file_size_field": 240800668,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets8.assets",
+    "size": 142096388,
+    "magic_ascii": "\u0000\u0000\u0011\u0002\bx8",
+    "format": "Raw .assets",
+    "metadata_size": 4354,
+    "file_size_field": 142096388,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "sharedassets9.assets",
+    "size": 219702420,
+    "magic_ascii": "\u0000\u0000\u001f�\r\u0018d",
+    "format": "Raw .assets",
+    "metadata_size": 8076,
+    "file_size_field": 219702420,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "mainData",
+    "size": 639044,
+    "magic_ascii": "\u0000\u0000\u0005�\u0000\t�",
+    "format": "Raw .assets",
+    "metadata_size": 1527,
+    "file_size_field": 639044,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level0",
+    "size": 28920,
+    "magic_ascii": "\u0000\u0000\t�\u0000\u0000p",
+    "format": "Raw .assets",
+    "metadata_size": 2446,
+    "file_size_field": 28920,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level1",
+    "size": 250080,
+    "magic_ascii": "\u0000\u0000�\n\u0000\u0003�",
+    "format": "Raw .assets",
+    "metadata_size": 39946,
+    "file_size_field": 250080,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level10",
+    "size": 462608,
+    "magic_ascii": "\u0000\u0001\u0001\f\u0000\u0007\u000f",
+    "format": "Raw .assets",
+    "metadata_size": 65804,
+    "file_size_field": 462608,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level11",
+    "size": 705848,
+    "magic_ascii": "\u0000\u0001�=\u0000\n�",
+    "format": "Raw .assets",
+    "metadata_size": 123965,
+    "file_size_field": 705848,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level12",
+    "size": 1019360,
+    "magic_ascii": "\u0000\u0002S\u0005\u0000\u000f�",
+    "format": "Raw .assets",
+    "metadata_size": 152325,
+    "file_size_field": 1019360,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level13",
+    "size": 1272592,
+    "magic_ascii": "\u0000\u0003�^\u0000\u0013k",
+    "format": "Raw .assets",
+    "metadata_size": 239710,
+    "file_size_field": 1272592,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level14",
+    "size": 1265064,
+    "magic_ascii": "\u0000\u0003�N\u0000\u0013M",
+    "format": "Raw .assets",
+    "metadata_size": 233550,
+    "file_size_field": 1265064,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level2",
+    "size": 4232,
+    "magic_ascii": "\u0000\u0000\u0000�\u0000\u0000\u0010",
+    "format": "Raw .assets",
+    "metadata_size": 129,
+    "file_size_field": 4232,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level3",
+    "size": 314912,
+    "magic_ascii": "\u0000\u0000�V\u0000\u0004�",
+    "format": "Raw .assets",
+    "metadata_size": 55126,
+    "file_size_field": 314912,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level4",
+    "size": 571368,
+    "magic_ascii": "\u0000\u0001~�\u0000\b�",
+    "format": "Raw .assets",
+    "metadata_size": 97968,
+    "file_size_field": 571368,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level5",
+    "size": 509008,
+    "magic_ascii": "\u0000\u0001F6\u0000\u0007�",
+    "format": "Raw .assets",
+    "metadata_size": 83510,
+    "file_size_field": 509008,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level6",
+    "size": 1331560,
+    "magic_ascii": "\u0000\u0003\"�\u0000\u0014Q",
+    "format": "Raw .assets",
+    "metadata_size": 205474,
+    "file_size_field": 1331560,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level7",
+    "size": 485328,
+    "magic_ascii": "\u0000\u0001)�\u0000\u0007g",
+    "format": "Raw .assets",
+    "metadata_size": 76214,
+    "file_size_field": 485328,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level8",
+    "size": 1289488,
+    "magic_ascii": "\u0000\u0003��\u0000\u0013�",
+    "format": "Raw .assets",
+    "metadata_size": 250256,
+    "file_size_field": 1289488,
+    "version_field": 9,
+    "version_field_le": 150994944
+  },
+  {
+    "file": "level9",
+    "size": 463080,
+    "magic_ascii": "\u0000\u0001aY\u0000\u0007\u0010",
+    "format": "Raw .assets",
+    "metadata_size": 90457,
+    "file_size_field": 463080,
+    "version_field": 9,
+    "version_field_le": 150994944
+  }
+]

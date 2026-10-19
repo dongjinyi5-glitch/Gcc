@@ -1,8 +1,7 @@
 # AGENTS.md — Guns, Gore and Cannoli 美术资产逆向替换项目
 
 > **授权范围**：本目录 `D:\AI\DAIGuns, Gore and Cannoli from WB` 下的所有操作授权**永久有效**；
-> 规则目录 `D:\AI\Guns, Gore and Cannoli on China` 下的操作同样**永久有效**；
-> 上述两目录之外的任何操作，需每次单独确认授权。
+> 本目录之外的任何操作，需每次单独确认授权。
 >
 > **强制规则**：后续所有 AI 操作前**必须先阅读本文件**，并严格遵照角色职责与流程执行。
 
@@ -75,7 +74,7 @@
 ## 工作目录结构
 
 ```
-D:\AI\DAIGuns, Gore and Cannoli from WB\    ← 主工作目录（全部资料）
+D:\AI\DAIGuns, Gore and Cannoli from WB\    ← 唯一主工作目录（全部资料+规则+记录）
 ├── AGENTS.md              ← 本文件（AI 操作前必读）
 ├── DECISION_LOG.md        ← 决策日志
 ├── .gitignore
@@ -91,9 +90,6 @@ D:\AI\DAIGuns, Gore and Cannoli from WB\    ← 主工作目录（全部资料�
 │   ├── style-reference/   ← 国画风格参考图
 │   └── original-capture/  ← 原版游戏截图/捕获
 └── validation/            ← 验证报告
-
-D:\AI\Guns, Gore and Cannoli on China\      ← 规则目录
-└── AGENTS.md              ← 角色规则定义（已存在 v1.0）
 ```
 
 ---

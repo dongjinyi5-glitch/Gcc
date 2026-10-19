@@ -1,0 +1,164 @@
+[
+  {
+    "file": "mainData",
+    "size": 639044,
+    "metadata_size": 1527,
+    "version": 9,
+    "data_offset": 4096,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "resources.assets",
+    "size": 1346676228,
+    "metadata_size": 374838,
+    "version": 9,
+    "data_offset": 374864,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets0.assets",
+    "size": 124405,
+    "metadata_size": 13622,
+    "version": 9,
+    "data_offset": 13648,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets1.assets",
+    "size": 16187068,
+    "metadata_size": 424,
+    "version": 9,
+    "data_offset": 4096,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets10.assets",
+    "size": 88361028,
+    "metadata_size": 1836,
+    "version": 9,
+    "data_offset": 4096,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets11.assets",
+    "size": 208396564,
+    "metadata_size": 4121,
+    "version": 9,
+    "data_offset": 4144,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets12.assets",
+    "size": 299503316,
+    "metadata_size": 6064,
+    "version": 9,
+    "data_offset": 6096,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets13.assets",
+    "size": 26994344,
+    "metadata_size": 2724,
+    "version": 9,
+    "data_offset": 4096,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets14.assets",
+    "size": 194204740,
+    "metadata_size": 6187,
+    "version": 9,
+    "data_offset": 6208,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets15.assets",
+    "size": 76328240,
+    "metadata_size": 6427,
+    "version": 9,
+    "data_offset": 6448,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets2.assets",
+    "size": 15301772,
+    "metadata_size": 1804,
+    "version": 9,
+    "data_offset": 4096,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets3.assets",
+    "size": 4104,
+    "metadata_size": 49,
+    "version": 9,
+    "data_offset": 4096,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets4.assets",
+    "size": 244336532,
+    "metadata_size": 9206,
+    "version": 9,
+    "data_offset": 9232,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets5.assets",
+    "size": 366419952,
+    "metadata_size": 8388,
+    "version": 9,
+    "data_offset": 8416,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets6.assets",
+    "size": 226110256,
+    "metadata_size": 5270,
+    "version": 9,
+    "data_offset": 5296,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets7.assets",
+    "size": 240800668,
+    "metadata_size": 6472,
+    "version": 9,
+    "data_offset": 6496,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets8.assets",
+    "size": 142096388,
+    "metadata_size": 4354,
+    "version": 9,
+    "data_offset": 4384,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  },
+  {
+    "file": "sharedassets9.assets",
+    "size": 219702420,
+    "metadata_size": 8076,
+    "version": 9,
+    "data_offset": 8096,
+    "endianness": 0,
+    "parse_status": "type_tree_skipped"
+  }
+]
