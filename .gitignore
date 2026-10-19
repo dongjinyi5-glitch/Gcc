@@ -1,0 +1,31 @@
+# Binary / large assets
+extracted/primary/**/*.png
+extracted/primary/**/*.tga
+extracted/primary/**/*.dds
+extracted/primary/**/*.wav
+extracted/primary/**/*.ogg
+extracted/primary/**/*.avi
+*.pak
+*.bundle
+
+# Tools binaries
+tools/bin/*.exe
+tools/bin/*.dll
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+*.egg-info/
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Logs (keep structure, ignore content)
+tools/logs/*.log
