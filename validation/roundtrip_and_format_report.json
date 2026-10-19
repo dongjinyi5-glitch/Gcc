@@ -1,0 +1,645 @@
+{
+  "roundtrip_tests": [
+    {
+      "file": "sharedassets1.assets",
+      "size": 16187068,
+      "original_sha256": "e8af9eb133c4a45ac8ff8b13d546b1df7c37d1ebb6061c885c7155bed3ea3680",
+      "original_object_count": 15,
+      "original_types": {
+        "PreloadData": 1,
+        "Material": 4,
+        "Texture2D": 5,
+        "Shader": 3,
+        "Sprite": 2
+      },
+      "output_sha256": "e8af9eb133c4a45ac8ff8b13d546b1df7c37d1ebb6061c885c7155bed3ea3680",
+      "byte_identical": true,
+      "output_size": 16187068,
+      "output_object_count": 15,
+      "object_count_match": true,
+      "types_match": true,
+      "output_types": {
+        "PreloadData": 1,
+        "Material": 4,
+        "Texture2D": 5,
+        "Shader": 3,
+        "Sprite": 2
+      }
+    },
+    {
+      "file": "sharedassets3.assets",
+      "size": 4104,
+      "original_sha256": "9688fd6d22b0b59a91870077be82921ad7224a3d71d32c82429fe52a3fd00da7",
+      "original_object_count": 1,
+      "original_types": {
+        "PreloadData": 1
+      },
+      "output_sha256": "9688fd6d22b0b59a91870077be82921ad7224a3d71d32c82429fe52a3fd00da7",
+      "byte_identical": true,
+      "output_size": 4104,
+      "output_object_count": 1,
+      "object_count_match": true,
+      "types_match": true,
+      "output_types": {
+        "PreloadData": 1
+      }
+    },
+    {
+      "file": "sharedassets10.assets",
+      "size": 88361028,
+      "original_sha256": "8e74b885af07e6cdf5edfecdffaeaff3ddfb93016053f4971726c6ad0c2cb35d",
+      "original_object_count": 73,
+      "original_types": {
+        "PreloadData": 1,
+        "Texture2D": 36,
+        "Sprite": 36
+      },
+      "output_sha256": "8e74b885af07e6cdf5edfecdffaeaff3ddfb93016053f4971726c6ad0c2cb35d",
+      "byte_identical": true,
+      "output_size": 88361028,
+      "output_object_count": 73,
+      "object_count_match": true,
+      "types_match": true,
+      "output_types": {
+        "PreloadData": 1,
+        "Texture2D": 36,
+        "Sprite": 36
+      }
+    },
+    {
+      "file": "resources.assets",
+      "size": 1346676228,
+      "original_sha256": "7fb6327256e58bbe00c013f350b7aab3a3eb52fa7df3083e612f83da6edc44d6",
+      "original_object_count": 18706,
+      "output_sha256": "7fb6327256e58bbe00c013f350b7aab3a3eb52fa7df3083e612f83da6edc44d6",
+      "byte_identical": true,
+      "output_size": 1346676228,
+      "output_object_count": 18706,
+      "object_count_match": true,
+      "note": "Background test — 1.29GB file, largest in project"
+    }
+  ],
+  "texture_roundtrip": [
+    {
+      "name": "Default-Particle",
+      "original_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_orig_0.png",
+      "reimport_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_reimport_0.png",
+      "sha256_match": true,
+      "original_size": "64x64",
+      "format": "RGBA32"
+    },
+    {
+      "name": "HeadScreamPain",
+      "original_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_orig_1.png",
+      "reimport_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_reimport_1.png",
+      "sha256_match": true,
+      "original_size": "109x134",
+      "format": "RGBA32"
+    },
+    {
+      "name": "BackLegDown",
+      "original_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_orig_2.png",
+      "reimport_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_reimport_2.png",
+      "sha256_match": true,
+      "original_size": "59x101",
+      "format": "RGBA32"
+    }
+  ],
+  "texture_analysis": {
+    "total_analyzed": 489,
+    "format_distribution": {
+      "ARGB32": 452,
+      "RGB24": 31,
+      "DXT5": 2,
+      "DXT1": 2,
+      "Unknown(2)": 1,
+      "Unknown(7)": 1
+    },
+    "size_distribution": {
+      "1024x1024": 65,
+      "512x512": 45,
+      "109x134": 13,
+      "256x256": 13,
+      "1024x512": 11,
+      "123x90": 10,
+      "480x90": 10,
+      "128x128": 9,
+      "110x90": 9,
+      "161x174": 8,
+      "500x253": 8,
+      "53x126": 5,
+      "107x51": 5,
+      "1024x693": 4,
+      "151x131": 3,
+      "89x47": 3,
+      "49x108": 3,
+      "1024x400": 3,
+      "1024x213": 3,
+      "104x114": 3
+    },
+    "samples": [
+      {
+        "source": "resources.assets",
+        "name": "Default-Particle",
+        "width": 64,
+        "height": 64,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "HeadScreamPain",
+        "width": 109,
+        "height": 134,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "BackLegDown",
+        "width": 59,
+        "height": 101,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "zombie-burns (effects)_00013",
+        "width": 512,
+        "height": 512,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "FrontLegLow",
+        "width": 101,
+        "height": 75,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "Head",
+        "width": 114,
+        "height": 105,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "water_splash_00017",
+        "width": 1024,
+        "height": 512,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "HandBackPush",
+        "width": 67,
+        "height": 71,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "TorsoChestDead",
+        "width": 84,
+        "height": 82,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "TorsoChest",
+        "width": 151,
+        "height": 131,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "HeadDead",
+        "width": 109,
+        "height": 134,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "ShoeHeel",
+        "width": 89,
+        "height": 47,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "CoatMid1",
+        "width": 66,
+        "height": 70,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "LegUpFront",
+        "width": 58,
+        "height": 94,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "ZombieFloaterBurn_14",
+        "width": 512,
+        "height": 512,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "ArmLowBack",
+        "width": 108,
+        "height": 54,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "rattekop4",
+        "width": 378,
+        "height": 288,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "zombie_crawler_electrocutes_00014",
+        "width": 256,
+        "height": 256,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "HeadTeethSmall",
+        "width": 109,
+        "height": 134,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "BackLegUp",
+        "width": 54,
+        "height": 103,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "Bite01",
+        "width": 161,
+        "height": 174,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "gas-grenade_00031",
+        "width": 1024,
+        "height": 1024,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "explosie_11",
+        "width": 512,
+        "height": 512,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "vinnie_tommygun_richten_schietcyclus_aanzet_loopcyclus_stoppen_stopschieten_00020",
+        "width": 128,
+        "height": 128,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "CoatBack2",
+        "width": 111,
+        "height": 109,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "ArmBack",
+        "width": 53,
+        "height": 126,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "ArmBack",
+        "width": 53,
+        "height": 126,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "FrontArmUp",
+        "width": 53,
+        "height": 119,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "WindowShard31",
+        "width": 16,
+        "height": 17,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "WindowShard25",
+        "width": 37,
+        "height": 33,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "FootHeel",
+        "width": 84,
+        "height": 242,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "Tail10",
+        "width": 26,
+        "height": 35,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "WindowPiece4",
+        "width": 18,
+        "height": 45,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "ArmFront",
+        "width": 54,
+        "height": 126,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "Comp 3_00057",
+        "width": 512,
+        "height": 512,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "TorsoBelly",
+        "width": 151,
+        "height": 197,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "HeadScreamPain",
+        "width": 109,
+        "height": 134,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "Bite03",
+        "width": 161,
+        "height": 174,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "WindowShard13",
+        "width": 26,
+        "height": 94,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "explosie_30",
+        "width": 512,
+        "height": 512,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "ArmLowFront",
+        "width": 107,
+        "height": 51,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "gas-grenade_00016",
+        "width": 1024,
+        "height": 1024,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "ArmLowFront",
+        "width": 107,
+        "height": 51,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "Tie3",
+        "width": 22,
+        "height": 43,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "ShoeHeel",
+        "width": 89,
+        "height": 47,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "Steam_00010",
+        "width": 1024,
+        "height": 512,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "HeadTeeth",
+        "width": 109,
+        "height": 134,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "Crotch",
+        "width": 94,
+        "height": 100,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "zombie_crawler_electrocutes_00020",
+        "width": 256,
+        "height": 256,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      },
+      {
+        "source": "resources.assets",
+        "name": "BackArmLow",
+        "width": 84,
+        "height": 47,
+        "format_id": 5,
+        "format_name": "ARGB32",
+        "mip_count": null
+      }
+    ]
+  },
+  "extracted_samples": [
+    {
+      "name": "Default-Particle",
+      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\Default-Particle.png",
+      "size": "64x64"
+    },
+    {
+      "name": "HeadScreamPain",
+      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\HeadScreamPain.png",
+      "size": "109x134"
+    },
+    {
+      "name": "BackLegDown",
+      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\BackLegDown.png",
+      "size": "59x101"
+    },
+    {
+      "name": "zombie-burns (effects)_00013",
+      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\zombie-burns__effects__00013.png",
+      "size": "512x512"
+    },
+    {
+      "name": "FrontLegLow",
+      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\FrontLegLow.png",
+      "size": "101x75"
+    },
+    {
+      "name": "Head",
+      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\Head.png",
+      "size": "114x105"
+    },
+    {
+      "name": "water_splash_00017",
+      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\water_splash_00017.png",
+      "size": "1024x512"
+    },
+    {
+      "name": "HandBackPush",
+      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\HandBackPush.png",
+      "size": "67x71"
+    },
+    {
+      "name": "TorsoChestDead",
+      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\TorsoChestDead.png",
+      "size": "84x82"
+    },
+    {
+      "name": "TorsoChest",
+      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\TorsoChest.png",
+      "size": "151x131"
+    }
+  ]
+}

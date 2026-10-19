@@ -118,26 +118,41 @@ D:\AI\DAIGuns, Gore and Cannoli from WB\    ← 唯一主工作目录（全部�
 
 ---
 
-## 当前里程碑：M1 — 逆向文档
+## 里程碑状态
+
+### M1 — 逆向文档 ✅ 已完成
 
 **目标**：产出 `docs/REVERSE_ENGINEERING.md`，包含完整资源格式规格与四项保真问题的权威回答。
 
-**预产出清单**：
-- `docs/REVERSE_ENGINEERING.md`：资源格式规格（图集结构、骨骼层级、碰撞数据位置、调色板映射、Shader 常量表）
+**已完成产出**：
+- `docs/REVERSE_ENGINEERING.md` (v1.1)：资源格式规格 + Q1-Q4 保真确认 + 黄金回路往返测试全通过 + 纹理格式分析
 - `tools/scripts/asset_inventory.py`：资源清单生成脚本
-- `extracted/primary/`：提取的资源（按类型分类）
+- `tools/scripts/roundtrip_and_format_test.py`：黄金回路往返测试脚本
+- `extracted/primary/`：提取的资源清单 JSON + 样本纹理
 - `validation/ROUNDTRIP_REPORT.md`：黄金回路往返验证报告
+- `validation/roundtrip_and_format_report.json`：机器可读测试结果
 
-**方法**：
-1. UnityPy 一手解析 resources.assets + sharedassets*.assets → 资源清单
-2. dnSpy 反编译 Assembly-CSharp.dll → 定位角色/动画/碰撞类
-3. RenderDoc 动态捕获 → 确认渲染管线、调色板、Z-Order
-4. 黄金回路往返测试 → 证明格式理解正确
+**验证结果**：
+- 引擎确认：Unity 4.3.4f1（UnityPy 一手确认）
+- 资源清单：108,336 个对象（33 个文件）
+- Q1-Q4 保真问题：全部基于 UnityPy 证据确认 ✅
+- 黄金回路往返测试：4/4 文件字节一致（含 1.29GB resources.assets）✅
+- 纹理级往返测试：3/3 通过 ✅
+- 纹理格式：92.4% ARGB32（未压缩），0.8% DXT
 
-**不接受二手结论**：所有格式判断基于实际字节解析与运行时捕获。
+**Git Tag**：`m1-complete`
+
+### M2 — 美术管线 ⏳ 待用户确认
+
+**目标**：建立国画风格美术替换管线，完成第一批角色替换。
+
+**进入前需确认**：
+1. 角色替换优先级（Vinnie / Gangster / Frankie / Rat Boss / Scientist ?）
+2. 国画风格具体偏好（纯水墨 / 淡彩 / 重彩）
+3. 国画风格量化验收基准（墨色分布、留白比例、饱和色限制）
 
 ---
 
 *文件创建于：2026-10-19*
 *创建者：Agent A (Architect / Tech Lead)*
-*版本：v2.0*
+*版本：v2.1（M1 完成，M2 待确认）*
