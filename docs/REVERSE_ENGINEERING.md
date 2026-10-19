@@ -1,7 +1,7 @@
 # REVERSE_ENGINEERING.md — Guns, Gore and Cannoli 逆向文档
 
 > **里程碑**：M1 — 逆向文档  
-> **状态**：v1.1（四项保真问题已确认 + 黄金回路往返测试全通过 + 纹理格式分析完成）  
+> **状态**：v1.2（四项保真问题 + 黄金回路全通过 + 纹理格式 + 角色体系与形象还原）  
 > **编写者**：Agent A (Architect / Tech Lead)  
 > **日期**：2026-10-19  
 > **原则**：所有判断基于实际字节解析与运行时证据，不接受二手结论
@@ -567,6 +567,84 @@ UnityPy 解析 489 个 Texture2D（resources + sharedassets4 + sharedassets11 �
 
 ---
 
+## 12. 角色体系与形象还原（M2 前置）
+
+### 12.1 角色构成方式
+
+游戏角色**不是整张精灵**，而是**分部件骨架式拼装**：每个角色预制体是一棵 Transform 树，
+每个节点挂一个 SpriteRenderer，节点位置即关节位置。
+
+Vinnie 的实测层级（节选）：
+
+```
+Vinnie → Offset → VinnieFull
+  ├─ Lower: Crotch / LegUpBack→LegLowBack→FootHeel→FootTip
+  │                       └─ LegUpFront→LegLowFront→FootHeel→FootTip
+  └─ Upper: TorsoBelly
+        ├─ CoatBack1→CoatBack2→CoatBack3
+        ├─ CoatTop→CoatMid1→CoatMid2→CoatMid3→CoatBottom
+        ├─ TorsoChest
+        │    ├─ Arms→Tommygun→ArmBack→ArmLowBack→HandBackRest
+        │    │                          └─ ArmFront→ArmLowFront→HandFront→Gun/Magnum357/Pistol…
+        │    ├─ Head→Hat
+        │    ├─ NeckPiece
+        │    └─ Tie1→Tie2→Tie3→Tie4
+```
+
+- **无骨骼网格**：动画由 Mecanim 驱动 Transform 旋转 + `UnitSwapSprite` 换精灵实现
+- **武器/姿势变体全部预置**在同一预制体内，用 `m_IsActive=False` 关闭
+- 因此替换美术时**必须保持每个部件的画布尺寸、Pivot 与剪影**，否则关节会错位
+
+### 12.2 角色总数与分类（一手解析）
+
+| 分类 | 数量 | 角色 |
+|------|------|------|
+| 玩家 | 1 | Vinnie |
+| 人类敌人 | 8 | Gangster1–6、Scientist |
+| 僵尸 | 20 | ZombieRegular、ZombieBurping、ZombieCharger、ZombieCrawler、ZombieFloater、ZombieGun、ZombieJumper、ZombieCop、ZombieOfficer、ZombiePaulie、ZombieSailor、ZombieSandwichBoard、ZombieSoldier、ZombieStripper、ZombieRunner1–3 |
+| 鼠怪 | 3 | ZombieRat、ZombieRatJumper、ZombieRatSpitter |
+| Boss | 4 | Frankie、EvilFrankie（过场代理）、EvilFrankieOnFloor、BonninoBoss、ZombieRatBoss |
+
+**合计 33 个可替换角色单元**（Boss 与鼠怪存在归类重叠，按预制体计为 33）。
+
+### 12.3 形象图还原方法（非截图）
+
+```
+GameObject → m_Component[4]=Transform → m_Children 递归
+           → m_Component[212]=SpriteRenderer → m_Sprite
+           → Sprite.m_RD.texture → Texture2D.image
+           → 按 m_RD.textureRect 裁切 → 按 m_Rect 还原尺寸
+           → 用 m_LocalPosition/m_LocalScale 变换 → 按 m_SortingOrder 叠放
+```
+
+**四个必须踩过的坑（已解决，写入工具脚本）**：
+
+| 坑 | 现象 | 正确做法 |
+|----|------|----------|
+| 跨文件 PPtr | 取到同 path_id 的错误对象（形象图出现皮肤色乱块） | `m_FileID` 必须用**引用方所在文件**的 `externals` 解析 |
+| UnityPy Sprite 解码 | `AssertionError: vertex_data is not None` | 自行按 `textureRect` 裁切图集，不调用 `Sprite.image` |
+| 预制体变体堆叠 | 角色身上出现多余武器/重复头部 | 跳过 `m_IsActive=False` 的整棵子树 |
+| MonoBehaviour 脚本名 | 读不出类名 | `m_Script` 在原始字节 **offset 12**，指向 `sharedassets0.assets` 的 MonoScript |
+
+### 12.4 数值（HP/伤害）可得性
+
+- 已对角色层级内全部 MonoBehaviour 做原始浮点扫描（1–3000 范围）：**无命中**
+- 结论：HP / 伤害为**代码常量**，不在序列化字段中；需反编译 `Assembly-CSharp.dll` 才能取得
+- 现阶段清单以**出场关卡**作为等级依据（`level*` 场景关键字扫描）
+
+### 12.5 产出位置
+
+| 文件 | 内容 |
+|------|------|
+| `extracted/characters/<角色名>.png` | 单角色形象图（33 张） |
+| `extracted/characters/contact_sheet.png` | 全角色对照总图 |
+| `extracted/characters/roster.json` | 结构化清单 |
+| `docs/CHARACTER_ROSTER.html` | 可填写替换描述的交互对照表 |
+| `docs/CHARACTER_ROSTER.md` | Markdown 清单 |
+| `art/roster_reply_template.csv` | 回复模板 |
+
+---
+
 ## 附录 A: 版本检测数据
 
 所有 33 个 .assets/level 文件的二进制头检测结果：
@@ -579,6 +657,6 @@ UnityPy 解析 489 个 Texture2D（resources + sharedassets4 + sharedassets11 �
 
 ---
 
-*文档版本：v1.1（黄金回路往返测试全通过，含 1.29GB resources.assets；纹理格式分析完成；M1 里程碑完成）*  
+*文档版本：v1.2（新增第 12 节：角色体系与形象还原方法，33 个角色一手解析；M1 全通过）*  
 *编写者：Agent A (Architect / Tech Lead)*  
 *更新日期：2026-10-19*

@@ -1,0 +1,171 @@
+{
+  "files": {
+    "resources.assets": {
+      "objects": 18706,
+      "textures": 1884,
+      "gameobjects": 4041
+    },
+    "sharedassets0.assets": {
+      "objects": 677,
+      "textures": 0,
+      "gameobjects": 0
+    },
+    "sharedassets1.assets": {
+      "objects": 15,
+      "textures": 5,
+      "gameobjects": 0
+    },
+    "sharedassets10.assets": {
+      "objects": 73,
+      "textures": 36,
+      "gameobjects": 0
+    },
+    "sharedassets11.assets": {
+      "objects": 183,
+      "textures": 89,
+      "gameobjects": 0
+    },
+    "sharedassets12.assets": {
+      "objects": 278,
+      "textures": 135,
+      "gameobjects": 0
+    },
+    "sharedassets13.assets": {
+      "objects": 111,
+      "textures": 54,
+      "gameobjects": 0
+    },
+    "sharedassets14.assets": {
+      "objects": 282,
+      "textures": 140,
+      "gameobjects": 0
+    },
+    "sharedassets15.assets": {
+      "objects": 294,
+      "textures": 134,
+      "gameobjects": 0
+    },
+    "sharedassets2.assets": {
+      "objects": 84,
+      "textures": 26,
+      "gameobjects": 8
+    },
+    "sharedassets3.assets": {
+      "objects": 1,
+      "textures": 0,
+      "gameobjects": 0
+    },
+    "sharedassets4.assets": {
+      "objects": 452,
+      "textures": 210,
+      "gameobjects": 0
+    },
+    "sharedassets5.assets": {
+      "objects": 409,
+      "textures": 195,
+      "gameobjects": 0
+    },
+    "sharedassets6.assets": {
+      "objects": 251,
+      "textures": 125,
+      "gameobjects": 0
+    },
+    "sharedassets7.assets": {
+      "objects": 309,
+      "textures": 154,
+      "gameobjects": 0
+    },
+    "sharedassets8.assets": {
+      "objects": 201,
+      "textures": 99,
+      "gameobjects": 0
+    },
+    "sharedassets9.assets": {
+      "objects": 385,
+      "textures": 189,
+      "gameobjects": 0
+    },
+    "level0": {
+      "objects": 114,
+      "textures": 0,
+      "gameobjects": 30
+    },
+    "level1": {
+      "objects": 1989,
+      "textures": 0,
+      "gameobjects": 392
+    },
+    "level10": {
+      "objects": 3265,
+      "textures": 0,
+      "gameobjects": 810
+    },
+    "level11": {
+      "objects": 6173,
+      "textures": 0,
+      "gameobjects": 1669
+    },
+    "level12": {
+      "objects": 7591,
+      "textures": 0,
+      "gameobjects": 2157
+    },
+    "level13": {
+      "objects": 11956,
+      "textures": 0,
+      "gameobjects": 3572
+    },
+    "level14": {
+      "objects": 11648,
+      "textures": 0,
+      "gameobjects": 3455
+    },
+    "level2": {
+      "objects": 5,
+      "textures": 0,
+      "gameobjects": 0
+    },
+    "level3": {
+      "objects": 2748,
+      "textures": 0,
+      "gameobjects": 765
+    },
+    "level4": {
+      "objects": 4888,
+      "textures": 0,
+      "gameobjects": 1208
+    },
+    "level5": {
+      "objects": 4163,
+      "textures": 0,
+      "gameobjects": 1038
+    },
+    "level6": {
+      "objects": 10257,
+      "textures": 0,
+      "gameobjects": 2484
+    },
+    "level7": {
+      "objects": 3794,
+      "textures": 0,
+      "gameobjects": 991
+    },
+    "level8": {
+      "objects": 12494,
+      "textures": 0,
+      "gameobjects": 3551
+    },
+    "level9": {
+      "objects": 4504,
+      "textures": 0,
+      "gameobjects": 1182
+    },
+    "mainData": {
+      "objects": 36,
+      "textures": 0,
+      "gameobjects": 2
+    }
+  },
+  "unique_textures": 2721,
+  "unique_gameobjects": 5471
+}

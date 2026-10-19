@@ -1,0 +1,36 @@
+PlayerSettings	1	
+InputManager	2	
+TagManager	3	
+AudioManager	4	
+ScriptMapper	5	
+MonoManager	6	
+GraphicsSettings	7	
+TimeManager	8	
+DelayedCallManager	9	
+PhysicsManager	10	
+BuildSettings	11	
+QualitySettings	12	
+ResourceManager	13	
+NetworkManager	14	
+MasterServerInterface	15	
+NavMeshProjectSettings	16	
+Physics2DSettings	17	
+GameObject	18	Master
+GameObject	19	Main Camera
+Transform	20	
+Transform	21	
+Camera	22	
+OcclusionCullingSettings	23	
+Rigidbody2D	24	
+BoxCollider2D	25	
+AudioListener	26	
+GUILayer	27	
+RenderSettings	28	
+FlareLayer	29	
+HaloManager	30	
+LightmapSettings	31	
+NavMeshSettings	32	
+MonoBehaviour	33	
+MonoBehaviour	34	
+MonoBehaviour	35	
+MonoBehaviour	36	

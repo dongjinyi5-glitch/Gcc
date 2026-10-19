@@ -1,0 +1,84 @@
+PreloadData	1	
+Material	2	HintAtlas
+Material	3	MenuAtlasSD
+Material	4	ArialNarrowPC
+Material	5	MIROSLNPC
+Material	6	OldTypographyPC
+Material	7	Font Material
+Material	8	Font Material
+Material	9	Font Material
+Material	10	Font Material
+Texture2D	11	Frame
+Texture2D	12	XButtonWiiU
+Texture2D	13	BButtonWiiU
+Texture2D	14	XboxOneController
+Texture2D	15	AButtonWiiU
+Texture2D	16	CirclePS4Button
+Texture2D	17	WiiUController
+Texture2D	18	Tutorial
+Texture2D	19	XPS4Button
+Texture2D	20	BButtonXboxOne
+Texture2D	21	Font Texture
+Texture2D	22	Font Texture
+Texture2D	23	XButtonXboxOne
+Texture2D	24	YButtonXboxOne
+Texture2D	25	Font Texture
+Texture2D	26	TrianglePS4Button
+Texture2D	27	MainWindow1
+Texture2D	28	AButtonXboxOne
+Texture2D	29	PS4Controller
+Texture2D	30	YButtonWiiU
+Texture2D	31	AnalogStickLeft
+Texture2D	32	HintAtlas
+Texture2D	33	SquarePS4Button
+Texture2D	34	Boat
+Texture2D	35	MenuAtlasSD
+Texture2D	36	Font Texture
+Shader	37	Unlit - Transparent Colored
+AudioClip	38	9mm_shot
+Font	39	Arial Narrow
+Font	40	MIROSLN
+Font	41	OldTypography
+Font	42	DCC - Ash
+Sprite	43	Frame
+Sprite	44	XButtonWiiU
+Sprite	45	BButtonWiiU
+Sprite	46	XboxOneController
+Sprite	47	AButtonWiiU
+Sprite	48	CirclePS4Button
+Sprite	49	WiiUController
+Sprite	50	XPS4Button
+Sprite	51	BButtonXboxOne
+Sprite	52	XButtonXboxOne
+Sprite	53	YButtonXboxOne
+Sprite	54	TrianglePS4Button
+Sprite	55	AButtonXboxOne
+Sprite	56	PS4Controller
+Sprite	57	YButtonWiiU
+Sprite	58	AnalogStickLeft
+Sprite	59	SquarePS4Button
+Sprite	60	Boat
+GameObject	61	HintAtlas
+GameObject	62	MenuAtlas
+GameObject	63	MenuAtlasSD
+GameObject	64	ArialNarrow
+GameObject	65	InterfaceFont
+GameObject	66	MIROSLN
+GameObject	67	OldTypography
+GameObject	68	SubtitleFont
+Transform	69	
+Transform	70	
+Transform	71	
+Transform	72	
+Transform	73	
+Transform	74	
+Transform	75	
+Transform	76	
+MonoBehaviour	77	
+MonoBehaviour	78	
+MonoBehaviour	79	
+MonoBehaviour	80	
+MonoBehaviour	81	
+MonoBehaviour	82	
+MonoBehaviour	83	
+MonoBehaviour	84	

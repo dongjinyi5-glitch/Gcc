@@ -142,14 +142,30 @@ D:\AI\DAIGuns, Gore and Cannoli from WB\    ← 唯一主工作目录（全部�
 
 **Git Tag**：`m1-complete`
 
-### M2 — 美术管线 ⏳ 待用户确认
+### M2 — 美术管线 ⏳ 进行中
 
-**目标**：建立国画风格美术替换管线，完成第一批角色替换。
+**已确认的产品输入**：
+- 替换范围：**全部角色**（33 个，逐一替换）
+- 风格：**重彩**
+- 笔触：**中等粗细**
+- 黄金回路往返测试：**已完成**（4/4 文件字节一致，含 1.29GB resources.assets）
 
-**进入前需确认**：
-1. 角色替换优先级（Vinnie / Gangster / Frankie / Rat Boss / Scientist ?）
-2. 国画风格具体偏好（纯水墨 / 淡彩 / 重彩）
-3. 国画风格量化验收基准（墨色分布、留白比例、饱和色限制）
+**已完成产出**：
+- `extracted/characters/*.png` — 33 个角色形象图（预制体层级拼合渲染）
+- `extracted/characters/contact_sheet.png` — 全角色对照总图
+- `extracted/characters/roster.json` — 结构化清单（阵营/部件数/脚本/关卡）
+- `docs/CHARACTER_ROSTER.html` — 可填写替换描述的对照表（导出 CSV/JSON）
+- `docs/CHARACTER_ROSTER.md` — Markdown 版清单
+- `art/roster_reply_template.csv` — 回复模板
+- `tools/scripts/render_characters.py` — 角色渲染器
+- `tools/scripts/build_roster.py` — 清单构建器
+
+**等待产品输入**：逐角色替代形象描述（用户回复 CSV 或文字）
+
+**之后步骤**：
+1. 建立重彩国画量化验收基准（墨线宽度区间、朱红/石青/石绿比例、留白率）
+2. 按角色逐部件重绘（保持剪影与 Alpha，确保碰撞盒对齐）
+3. 逐角色回填 .assets → 游戏内验证 → 截图比对
 
 ---
 

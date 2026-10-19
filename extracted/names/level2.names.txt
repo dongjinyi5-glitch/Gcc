@@ -1,0 +1,5 @@
+OcclusionCullingSettings	1	
+RenderSettings	2	
+HaloManager	3	
+LightmapSettings	4	
+NavMeshSettings	5	

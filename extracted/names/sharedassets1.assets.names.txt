@@ -1,0 +1,15 @@
+PreloadData	1	
+Material	2	CFX2_Sparks
+Material	3	CFX2_RainRipple
+Material	4	CFX3_IceSmoke ADD
+Material	5	Sprites_Diffuse_VertexLit
+Texture2D	6	CFX2_T_RainRipple
+Texture2D	7	CFX3_T_IceSmoke
+Texture2D	8	StartScreenFront
+Texture2D	9	StartScreenBack
+Texture2D	10	CFX2_T_Sparks
+Shader	11	Alpha-VertexLit
+Shader	12	Particle Add
+Shader	13	Sprites-Diffuse
+Sprite	14	StartScreenFront
+Sprite	15	StartScreenBack
