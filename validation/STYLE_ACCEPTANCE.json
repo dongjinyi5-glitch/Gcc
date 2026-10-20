@@ -50,22 +50,22 @@
   "ink_w_mean": 1.63,
   "ink_w_p50": 1.0,
   "ink_w_p90": 3.0,
-  "ink_cv": 0.627,
-  "ink_ratio": 0.406,
+  "ink_cv": 0.625,
+  "ink_ratio": 0.408,
   "pigment": {
    "朱红": 0.025,
-   "石青": 0.319,
-   "石绿": 0.109,
-   "赭石": 0.246,
+   "石青": 0.32,
+   "石绿": 0.108,
+   "赭石": 0.243,
    "藤黄": 0.002,
-   "花青": 0.299,
-   "未归类": 0.001
+   "花青": 0.301,
+   "未归类": 0.0
   },
-  "paper_ratio": 0.005,
+  "paper_ratio": 0.004,
   "neg_space": 0.599,
-  "ink_levels": 10,
+  "ink_levels": 7,
   "texture_std": 8.88,
-  "saturation": 0.554,
+  "saturation": 0.56,
   "opaque_px": 34803,
   "centroid": [
    159.26,
@@ -95,28 +95,28 @@
   },
   {
    "name": "ink_cv",
-   "value": 0.627,
+   "value": 0.625,
    "min": 0.3,
    "max": 1.2,
    "pass": true
   },
   {
    "name": "ink_ratio",
-   "value": 0.406,
+   "value": 0.408,
    "min": 0.2,
    "max": 0.45,
    "pass": true
   },
   {
    "name": "paper_ratio",
-   "value": 0.005,
+   "value": 0.004,
    "min": 0.003,
    "max": 0.15,
    "pass": true
   },
   {
    "name": "ink_levels",
-   "value": 10,
+   "value": 7,
    "min": 4,
    "max": 10,
    "pass": true
@@ -130,21 +130,21 @@
   },
   {
    "name": "saturation",
-   "value": 0.554,
+   "value": 0.56,
    "min": 0.35,
    "max": 0.85,
    "pass": true
   },
   {
    "name": "pig_石青",
-   "value": 0.319,
+   "value": 0.32,
    "min": 0.26,
    "max": 0.45,
    "pass": true
   },
   {
    "name": "pig_石绿",
-   "value": 0.109,
+   "value": 0.108,
    "min": 0.07,
    "max": 0.24,
    "pass": true
@@ -158,14 +158,14 @@
   },
   {
    "name": "pig_赭石",
-   "value": 0.246,
+   "value": 0.243,
    "min": 0.14,
    "max": 0.32,
    "pass": true
   },
   {
    "name": "pig_花青",
-   "value": 0.299,
+   "value": 0.301,
    "min": 0.0,
    "max": 0.35,
    "pass": true
@@ -200,8 +200,8 @@
   }
  ],
  "triad_measured": {
-  "石青": 0.704,
-  "石绿": 0.241,
+  "石青": 0.706,
+  "石绿": 0.238,
   "朱红": 0.055
  },
  "triad_design": {

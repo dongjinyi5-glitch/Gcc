@@ -67,9 +67,19 @@ class Part:
 
 
 class AssetDB:
-    def __init__(self, data_dir=DATA, root_file="resources.assets"):
+    def __init__(self, data_dir=DATA, root_file="resources.assets", file_map=None):
+        """``file_map`` redirects individual data files to another path.
+
+        Needed because once a texture has been patched in place, the live
+        game file no longer holds the original pixels. Composing a "before"
+        image from it silently returns the restyled art — the baseline
+        comparison then reads ~0 difference and proves nothing. Point the
+        baseline DB at ``backup/`` via ``file_map`` instead.
+        """
         self.data_dir = data_dir
-        self.root_path = os.path.join(data_dir, root_file)
+        self.file_map = dict(file_map or {})
+        self.root_path = self.file_map.get(
+            root_file, os.path.join(data_dir, root_file))
         print(f"[AssetDB] loading {root_file} ...", flush=True)
         self.env = UnityPy.load(self.root_path)
         self.root_name = self.env.file.name
@@ -82,7 +92,7 @@ class AssetDB:
         """Objects of a data file by basename, loaded once and cached."""
         if name in self._files:
             return self._files[name]
-        path = os.path.join(self.data_dir, name)
+        path = self.file_map.get(name, os.path.join(self.data_dir, name))
         if not os.path.isfile(path):
             self._files[name] = {}
             return {}

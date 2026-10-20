@@ -55,6 +55,12 @@ with open(path, "r+b") as fh:
 
 `resources.assets` 那 3 组 `is corrupted` / `Position out of bounds` / `Mismatched serialization in TextAsset` 在**原始未修改**文件上同样出现（两次日志各 93 行，剥离数字后 `diff` 为空）。不要误判为补丁破坏了文件。
 
+### ⑥ 基线图必须从 `backup/` 取，不能从游戏文件取
+
+纹理一旦被定点覆盖，再从游戏文件读"原图"拿到的就是**重彩版**。"原始"列会悄悄变成"重彩"列的副本，差值趋近 0 —— 看起来像"完美保持"，实则什么都没验证。
+
+`render_compare.py` 已用 `AssetDB(file_map=backup)` 取基线，`backup/` 缺失时直接报错退出。**任何"前后对比"类脚本都必须遵守这一条。**
+
 ---
 
 ## 不可变约束（逆向确认后锁定，不预设）

@@ -21,6 +21,16 @@ MANIFEST = os.path.join(BASE, "manifest.json")
 PPU_OUT = 150.0
 PAD = 30
 
+# The "before" side MUST come from the pristine backups. Once a texture is
+# patched in place, reading the live game file returns the restyled pixels, and
+# the baseline column silently becomes a copy of the result column -- the
+# comparison then reads ~zero difference while proving nothing.
+BACKUP = os.path.join(PROJECT, "backup")
+PRISTINE = {}
+if os.path.isdir(BACKUP):
+    PRISTINE = {f: os.path.join(BACKUP, f)
+                for f in os.listdir(BACKUP) if f.endswith(".assets")}
+
 
 def load_overrides():
     with open(MANIFEST, encoding="utf-8") as fh:
@@ -79,7 +89,10 @@ def compose(db, parts, overrides):
 
 
 def main():
-    db = AssetDB()
+    if not PRISTINE:
+        raise SystemExit("backup/ is missing -- cannot render a trustworthy "
+                         "'before' side from patched game files")
+    db = AssetDB(file_map=PRISTINE)
     go = db.find_go(CHAR)
     if go is None:
         raise SystemExit(f"{CHAR} not found")

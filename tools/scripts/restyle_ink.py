@@ -64,7 +64,10 @@ ACHROMA = {"garment": "花青", "skin": "赭石", "hat": "墨", "tie": "墨",
 # a black hat turning tan and a steel revolver turning brown
 ALLOWED = {
     "garment":   ["石青", "石绿", "花青", "纸"],
-    "skin":      ["赭石", "纸", "朱红"],
+    # flesh must never be left as blank paper: 留白 belongs in fabric folds and
+    # background, not in a face. Letting 纸 in here punched pale cream patches
+    # into Vinnie's cheek wherever the original highlight was bright enough.
+    "skin":      ["赭石", "朱红"],
     "hat":       ["墨", "花青", "朱红"],
     "tie":       ["朱红", "墨"],
     "shoe":      ["墨", "朱红"],
@@ -205,17 +208,25 @@ def kmeans(pixels, k, rng, iters=16):
     return labels, C
 
 
-def shade_color(ramp, t):
+def shade_color(ramp, t, lo=0.55, hi=0.66, light_w=0.30):
     """Lay pigment with continuous density: t in [0,1] is the normalised
     luminance of the original pixel. Keeps every fold and highlight the artist
-    drew, which a per-region flat fill cannot do."""
+    drew, which a per-region flat fill cannot do.
+
+    ``lo`` / ``hi`` / ``light_w`` control the tonal spread. The default
+    (0.55 / 0.66 / 0.30) lets a mineral pigment run from 55% to 121% of its
+    base value — that wide range is what makes 石青 read as a loaded glaze.
+    Skin must NOT use it: flesh is an earth tone (赭石) with a naturally narrow
+    range, and a wide one turns a face into a pale mask over a dark jaw. Skin
+    uses a raised floor and a capped ceiling instead.
+    """
     base, deep, light = (np.array(v, dtype=np.float32) for v in ramp)
     t = np.asarray(t, dtype=np.float32).ravel()
-    factor = (0.55 + 0.66 * t)[:, None]
+    factor = (lo + hi * t)[:, None]
     col = base[None, :] * factor
     # hue character also shifts: deeper pigment in shadow, warmer in light
     w_deep = (0.38 * (1.0 - t))[:, None]
-    w_light = (0.30 * t)[:, None]
+    w_light = (light_w * t)[:, None]
     col = col * (1 - w_deep) + deep[None, :] * factor * w_deep
     col = col * (1 - w_light) + light[None, :] * factor * w_light
     return np.clip(col, 0, 255)
@@ -276,6 +287,7 @@ def restyle(img, slot="", seed=0, cfg=None):
 
     # ---- 3. classify every region -------------------------------------------
     out_rgb = np.zeros_like(rgb)
+    flesh = np.zeros_like(opaque)   # face/hand pixels, excluded from 皴擦 later
     regions = []
     for i in range(len(centers)):
         m = labels == i
@@ -371,8 +383,12 @@ def restyle(img, slot="", seed=0, cfg=None):
             col = np.repeat(np.array(PIGMENTS["纸"][0], dtype=np.float32)[None, :],
                             len(t), axis=0)
         else:
-            ramp = SKIN_TONE if (pig == "赭石" and r["skinlike"]) else PIGMENTS[pig]
-            col = shade_color(ramp, t)
+            is_skin = (pig == "赭石" and r["skinlike"])
+            ramp = SKIN_TONE if is_skin else PIGMENTS[pig]
+            # flesh is an earth tone, not a mineral glaze: raise the floor and
+            # cap the ceiling, or the face reads as a pale mask over a dark jaw
+            col = (shade_color(ramp, t, lo=0.74, hi=0.26, light_w=0.14) if is_skin
+                   else shade_color(ramp, t))
 
         # 青绿 layering: the shadow side of the main garment is laid in 石绿
         # underneath the 石青 glaze. Doing it inside one region (rather than by
@@ -395,6 +411,8 @@ def restyle(img, slot="", seed=0, cfg=None):
         col = col * float(cfg.get("pigment_gain", 0.95)) + \
             PAPER_RGB[None, :] * float(cfg.get("paper_mix", 0.06))
         out_rgb[m] = col
+        if pig == "赭石" and r["skinlike"]:
+            flesh[m] = True
 
     # pixels the k-means dropped (tiny islands) inherit the primary tone
     left = fill & (labels < 0)
@@ -403,15 +421,33 @@ def restyle(img, slot="", seed=0, cfg=None):
             PAPER_RGB * 0.1
 
     # ---- 4. paper grain + 皴擦 ----------------------------------------------
+    # 皴擦 belongs on cloth, rock and bark. A painter renders flesh smooth
+    # (渲染), so putting the same texture on a face turned the cheek into a
+    # mottled patch -- that was the "flat pale mask" the first pass had.
     grain_amp = float(cfg.get("grain", 7.0))
     grain = (high_freq(h, w, rng, 0.85) - 0.5) * 2 * grain_amp
     fiber = (smooth_noise(h, w, 26.0, rng) - 0.5) * 2 * grain_amp * 0.7
-    out_rgb += (grain + fiber)[..., None] * (fill & ~darkfill)[..., None]
+    body = fill & ~darkfill & ~flesh
+    out_rgb += (grain + fiber)[..., None] * body[..., None]
+    # flesh keeps a trace of paper tooth so it does not read as CG airbrush
+    out_rgb += (grain * 0.20)[..., None] * (fill & ~darkfill & flesh)[..., None]
 
     if cfg.get("cun", True):
         rough = smooth_noise(h, w, 9.0, rng)
-        cun = (rough > 0.86) & fill & ~darkfill
+        cun = (rough > 0.86) & body
         out_rgb[cun] *= 0.90
+
+    # 渲染: with the texture removed, flesh needs its volume back. A painter
+    # models a face with a smooth directional wash (light from upper left), not
+    # with grain -- this is the step that replaces 皴擦 on skin.
+    if flesh.any():
+        ys, xs = np.nonzero(flesh)
+        y0, y1, x0, x1 = ys.min(), ys.max(), xs.min(), xs.max()
+        yy = (np.arange(h, dtype=np.float32)[:, None] - y0) / max(1.0, y1 - y0)
+        xx = (np.arange(w, dtype=np.float32)[None, :] - x0) / max(1.0, x1 - x0)
+        model = 1.0 - float(cfg.get("flesh_model", 0.20)) * np.clip(
+            0.62 * yy + 0.38 * xx, 0.0, 1.3)
+        out_rgb *= np.where(flesh[..., None], model[..., None], 1.0)
 
     # ---- 5. ink layer --------------------------------------------------------
     # original strokes keep their geometry; tone follows original darkness
