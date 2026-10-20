@@ -1,0 +1,3985 @@
+{
+ "per_file": [
+  {
+   "file": "00_FuelTankFlamethrower_FuelTankFlamethrower.png",
+   "size": [
+    143,
+    232
+   ],
+   "bbox": [
+    142,
+    230
+   ],
+   "alpha_cov": 0.7719534598897734,
+   "ink_w_mean": 1.94,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.616,
+   "ink_ratio": 0.353,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.042,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.958,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.228,
+   "ink_levels": 5,
+   "texture_std": 4.39,
+   "saturation": 0.399,
+   "opaque_px": 25212,
+   "centroid": [
+    71.94,
+    117.34
+   ]
+  },
+  {
+   "file": "01_ArmBack_ArmBack.png",
+   "size": [
+    53,
+    126
+   ],
+   "bbox": [
+    51,
+    124
+   ],
+   "alpha_cov": 0.8214737507906389,
+   "ink_w_mean": 2.06,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.617,
+   "ink_ratio": 0.24,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.051,
+    "石绿": 0.359,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.59,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.179,
+   "ink_levels": 4,
+   "texture_std": 1.59,
+   "saturation": 0.562,
+   "opaque_px": 5195,
+   "centroid": [
+    26.14,
+    63.83
+   ]
+  },
+  {
+   "file": "02_HoseFlamethrower_HoseFlamethrower.png",
+   "size": [
+    162,
+    112
+   ],
+   "bbox": [
+    161,
+    110
+   ],
+   "alpha_cov": 0.33811405985319026,
+   "ink_w_mean": 2.01,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.61,
+   "ink_ratio": 0.716,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 1.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.662,
+   "ink_levels": 4,
+   "texture_std": 7.36,
+   "saturation": 0.392,
+   "opaque_px": 5988,
+   "centroid": [
+    65.69,
+    60.52
+   ]
+  },
+  {
+   "file": "03_ArmLowBack_ArmLowBack.png",
+   "size": [
+    108,
+    54
+   ],
+   "bbox": [
+    103,
+    51
+   ],
+   "alpha_cov": 0.6533409480296973,
+   "ink_w_mean": 1.87,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.597,
+   "ink_ratio": 0.327,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.854,
+    "石绿": 0.0,
+    "赭石": 0.14,
+    "藤黄": 0.0,
+    "花青": 0.006,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.004,
+   "neg_space": 0.349,
+   "ink_levels": 5,
+   "texture_std": 12.99,
+   "saturation": 0.596,
+   "opaque_px": 3432,
+   "centroid": [
+    56.43,
+    26.66
+   ]
+  },
+  {
+   "file": "04_BazookaBack_BazookaBack.png",
+   "size": [
+    22,
+    63
+   ],
+   "bbox": [
+    20,
+    57
+   ],
+   "alpha_cov": 0.7964912280701755,
+   "ink_w_mean": 2.09,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.598,
+   "ink_ratio": 0.719,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.204,
+   "ink_levels": 7,
+   "texture_std": 20.7,
+   "saturation": 0.486,
+   "opaque_px": 908,
+   "centroid": [
+    9.92,
+    34.42
+   ]
+  },
+  {
+   "file": "05_CoatBack3_CoatBack3.png",
+   "size": [
+    100,
+    80
+   ],
+   "bbox": [
+    97,
+    79
+   ],
+   "alpha_cov": 0.8317891165339946,
+   "ink_w_mean": 2.22,
+   "ink_w_p50": 3.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.594,
+   "ink_ratio": 0.24,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.398,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.602,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.168,
+   "ink_levels": 4,
+   "texture_std": 1.33,
+   "saturation": 0.527,
+   "opaque_px": 6374,
+   "centroid": [
+    51.64,
+    41.21
+   ]
+  },
+  {
+   "file": "06_GasGrenade_GasGrenade.png",
+   "size": [
+    35,
+    80
+   ],
+   "bbox": [
+    34,
+    78
+   ],
+   "alpha_cov": 0.8978129713423831,
+   "ink_w_mean": 1.77,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.604,
+   "ink_ratio": 0.404,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 1.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.102,
+   "ink_levels": 7,
+   "texture_std": 19.27,
+   "saturation": 0.446,
+   "opaque_px": 2381,
+   "centroid": [
+    17.23,
+    40.68
+   ]
+  },
+  {
+   "file": "07_Grenade_Grenade.png",
+   "size": [
+    52,
+    80
+   ],
+   "bbox": [
+    49,
+    78
+   ],
+   "alpha_cov": 0.7229199372056515,
+   "ink_w_mean": 1.72,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.603,
+   "ink_ratio": 0.565,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 1.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.277,
+   "ink_levels": 6,
+   "texture_std": 18.9,
+   "saturation": 0.414,
+   "opaque_px": 2763,
+   "centroid": [
+    24.79,
+    40.8
+   ]
+  },
+  {
+   "file": "08_Molotov_molotov-cocktail.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    110,
+    112
+   ],
+   "alpha_cov": 0.38790584415584417,
+   "ink_w_mean": 1.92,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.603,
+   "ink_ratio": 0.427,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 1.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.002,
+   "neg_space": 0.613,
+   "ink_levels": 6,
+   "texture_std": 11.38,
+   "saturation": 0.432,
+   "opaque_px": 4779,
+   "centroid": [
+    68.59,
+    69.52
+   ]
+  },
+  {
+   "file": "09_CoatBack2_CoatBack2.png",
+   "size": [
+    111,
+    109
+   ],
+   "bbox": [
+    110,
+    108
+   ],
+   "alpha_cov": 0.7808922558922559,
+   "ink_w_mean": 2.27,
+   "ink_w_p50": 3.0,
+   "ink_w_p90": 5.0,
+   "ink_cv": 0.609,
+   "ink_ratio": 0.149,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.383,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.617,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.219,
+   "ink_levels": 4,
+   "texture_std": 1.17,
+   "saturation": 0.536,
+   "opaque_px": 9277,
+   "centroid": [
+    57.31,
+    53.35
+   ]
+  },
+  {
+   "file": "10_HandBackRest_HandBackRest.png",
+   "size": [
+    66,
+    53
+   ],
+   "bbox": [
+    64,
+    53
+   ],
+   "alpha_cov": 0.734375,
+   "ink_w_mean": 2.09,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.597,
+   "ink_ratio": 0.576,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.266,
+   "ink_levels": 3,
+   "texture_std": 32.7,
+   "saturation": 0.373,
+   "opaque_px": 2491,
+   "centroid": [
+    32.73,
+    24.81
+   ]
+  },
+  {
+   "file": "11_CoatBack1_CoatBack1.png",
+   "size": [
+    121,
+    117
+   ],
+   "bbox": [
+    119,
+    115
+   ],
+   "alpha_cov": 0.7794665692363902,
+   "ink_w_mean": 2.12,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.61,
+   "ink_ratio": 0.099,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.004,
+    "石绿": 0.358,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.638,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.221,
+   "ink_levels": 4,
+   "texture_std": 1.16,
+   "saturation": 0.539,
+   "opaque_px": 10667,
+   "centroid": [
+    61.79,
+    58.3
+   ]
+  },
+  {
+   "file": "12_TorsoBelly_TorsoBelly.png",
+   "size": [
+    151,
+    197
+   ],
+   "bbox": [
+    149,
+    196
+   ],
+   "alpha_cov": 0.7924256951102588,
+   "ink_w_mean": 2.05,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.604,
+   "ink_ratio": 0.156,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.299,
+    "石绿": 0.384,
+    "赭石": 0.045,
+    "藤黄": 0.0,
+    "花青": 0.272,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.208,
+   "ink_levels": 4,
+   "texture_std": 1.04,
+   "saturation": 0.548,
+   "opaque_px": 23142,
+   "centroid": [
+    74.58,
+    99.28
+   ]
+  },
+  {
+   "file": "13_TorsoChest_TorsoChest.png",
+   "size": [
+    151,
+    131
+   ],
+   "bbox": [
+    149,
+    130
+   ],
+   "alpha_cov": 0.6862674238513164,
+   "ink_w_mean": 2.12,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.589,
+   "ink_ratio": 0.342,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.752,
+    "石绿": 0.0,
+    "赭石": 0.215,
+    "藤黄": 0.0,
+    "花青": 0.033,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.072,
+   "neg_space": 0.363,
+   "ink_levels": 7,
+   "texture_std": 13.64,
+   "saturation": 0.569,
+   "opaque_px": 13293,
+   "centroid": [
+    72.15,
+    63.68
+   ]
+  },
+  {
+   "file": "14_FootTip_FootTip.png",
+   "size": [
+    71,
+    23
+   ],
+   "bbox": [
+    69,
+    23
+   ],
+   "alpha_cov": 0.7844990548204159,
+   "ink_w_mean": 1.92,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.613,
+   "ink_ratio": 0.569,
+   "pigment": {
+    "朱红": 0.067,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.933,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.216,
+   "ink_levels": 4,
+   "texture_std": 9.52,
+   "saturation": 0.657,
+   "opaque_px": 1245,
+   "centroid": [
+    32.34,
+    11.64
+   ]
+  },
+  {
+   "file": "15_FootHeel_FootHeel.png",
+   "size": [
+    84,
+    52
+   ],
+   "bbox": [
+    76,
+    51
+   ],
+   "alpha_cov": 0.6240970072239422,
+   "ink_w_mean": 1.87,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.587,
+   "ink_ratio": 0.581,
+   "pigment": {
+    "朱红": 0.027,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.973,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.376,
+   "ink_levels": 4,
+   "texture_std": 5.03,
+   "saturation": 0.616,
+   "opaque_px": 2419,
+   "centroid": [
+    44.66,
+    30.43
+   ]
+  },
+  {
+   "file": "16_LegLowBack_LegLowBack.png",
+   "size": [
+    49,
+    108
+   ],
+   "bbox": [
+    46,
+    105
+   ],
+   "alpha_cov": 0.8047619047619048,
+   "ink_w_mean": 1.87,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.594,
+   "ink_ratio": 0.382,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.713,
+    "石绿": 0.287,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.195,
+   "ink_levels": 4,
+   "texture_std": 19.9,
+   "saturation": 0.572,
+   "opaque_px": 3887,
+   "centroid": [
+    25.68,
+    52.77
+   ]
+  },
+  {
+   "file": "17_LegUpBack_LegUpBack.png",
+   "size": [
+    104,
+    85
+   ],
+   "bbox": [
+    102,
+    83
+   ],
+   "alpha_cov": 0.6198913300259863,
+   "ink_w_mean": 1.69,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.591,
+   "ink_ratio": 0.186,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.689,
+    "石绿": 0.305,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.006,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.38,
+   "ink_levels": 5,
+   "texture_std": 2.63,
+   "saturation": 0.576,
+   "opaque_px": 5248,
+   "centroid": [
+    50.3,
+    42.67
+   ]
+  },
+  {
+   "file": "18_NeckPiece_NeckPieceGangstersRunners.png",
+   "size": [
+    42,
+    41
+   ],
+   "bbox": [
+    41,
+    40
+   ],
+   "alpha_cov": 0.6939024390243902,
+   "ink_w_mean": 2.11,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.604,
+   "ink_ratio": 0.76,
+   "pigment": {
+    "朱红": 0.222,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.778,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.022,
+   "neg_space": 0.321,
+   "ink_levels": 7,
+   "texture_std": 13.13,
+   "saturation": 0.518,
+   "opaque_px": 1138,
+   "centroid": [
+    20.25,
+    19.42
+   ]
+  },
+  {
+   "file": "19_Crotch_Crotch.png",
+   "size": [
+    123,
+    87
+   ],
+   "bbox": [
+    121,
+    85
+   ],
+   "alpha_cov": 0.5988332523091882,
+   "ink_w_mean": 1.91,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.602,
+   "ink_ratio": 0.36,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.556,
+    "石绿": 0.437,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.006,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.401,
+   "ink_levels": 6,
+   "texture_std": 13.63,
+   "saturation": 0.539,
+   "opaque_px": 6159,
+   "centroid": [
+    61.8,
+    44.39
+   ]
+  },
+  {
+   "file": "20_Tie4_Tie4.png",
+   "size": [
+    22,
+    31
+   ],
+   "bbox": [
+    21,
+    30
+   ],
+   "alpha_cov": 0.6698412698412698,
+   "ink_w_mean": 1.71,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.592,
+   "ink_ratio": 0.701,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.33,
+   "ink_levels": 3,
+   "texture_std": 9.85,
+   "saturation": 0.629,
+   "opaque_px": 422,
+   "centroid": [
+    10.18,
+    12.72
+   ]
+  },
+  {
+   "file": "21_Tie3_Tie3.png",
+   "size": [
+    22,
+    43
+   ],
+   "bbox": [
+    22,
+    42
+   ],
+   "alpha_cov": 0.7186147186147186,
+   "ink_w_mean": 1.62,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.577,
+   "ink_ratio": 0.637,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.281,
+   "ink_levels": 3,
+   "texture_std": 10.11,
+   "saturation": 0.633,
+   "opaque_px": 664,
+   "centroid": [
+    10.23,
+    21.69
+   ]
+  },
+  {
+   "file": "22_Tie2_Tie2.png",
+   "size": [
+    22,
+    42
+   ],
+   "bbox": [
+    21,
+    42
+   ],
+   "alpha_cov": 0.6984126984126984,
+   "ink_w_mean": 1.55,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.576,
+   "ink_ratio": 0.627,
+   "pigment": {
+    "朱红": 0.016,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.984,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.302,
+   "ink_levels": 3,
+   "texture_std": 10.6,
+   "saturation": 0.634,
+   "opaque_px": 616,
+   "centroid": [
+    10.69,
+    20.68
+   ]
+  },
+  {
+   "file": "23_Tie1_Tie1.png",
+   "size": [
+    22,
+    49
+   ],
+   "bbox": [
+    21,
+    47
+   ],
+   "alpha_cov": 0.6443768996960486,
+   "ink_w_mean": 1.55,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.576,
+   "ink_ratio": 0.637,
+   "pigment": {
+    "朱红": 0.076,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.924,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.356,
+   "ink_levels": 5,
+   "texture_std": 9.26,
+   "saturation": 0.639,
+   "opaque_px": 636,
+   "centroid": [
+    10.53,
+    25.69
+   ]
+  },
+  {
+   "file": "24_Head_Head.png",
+   "size": [
+    109,
+    134
+   ],
+   "bbox": [
+    106,
+    132
+   ],
+   "alpha_cov": 0.6786020583190394,
+   "ink_w_mean": 2.09,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.604,
+   "ink_ratio": 0.413,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.321,
+   "ink_levels": 6,
+   "texture_std": 17.21,
+   "saturation": 0.381,
+   "opaque_px": 9495,
+   "centroid": [
+    55.71,
+    66.96
+   ]
+  },
+  {
+   "file": "25_HeadDead_HeadDead.png",
+   "size": [
+    109,
+    134
+   ],
+   "bbox": [
+    105,
+    132
+   ],
+   "alpha_cov": 0.6852813852813853,
+   "ink_w_mean": 2.09,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.605,
+   "ink_ratio": 0.473,
+   "pigment": {
+    "朱红": 0.127,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.873,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.315,
+   "ink_levels": 9,
+   "texture_std": 21.93,
+   "saturation": 0.436,
+   "opaque_px": 9498,
+   "centroid": [
+    55.82,
+    66.93
+   ]
+  },
+  {
+   "file": "26_HeadScream_HeadScream.png",
+   "size": [
+    109,
+    134
+   ],
+   "bbox": [
+    106,
+    133
+   ],
+   "alpha_cov": 0.6869059441055468,
+   "ink_w_mean": 2.01,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.591,
+   "ink_ratio": 0.444,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.012,
+   "neg_space": 0.321,
+   "ink_levels": 6,
+   "texture_std": 23.43,
+   "saturation": 0.384,
+   "opaque_px": 9684,
+   "centroid": [
+    56.08,
+    68.1
+   ]
+  },
+  {
+   "file": "27_HeadScreamPain_HeadScreamPain.png",
+   "size": [
+    109,
+    134
+   ],
+   "bbox": [
+    106,
+    134
+   ],
+   "alpha_cov": 0.6857223317375387,
+   "ink_w_mean": 2.09,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.601,
+   "ink_ratio": 0.471,
+   "pigment": {
+    "朱红": 0.271,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.729,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.009,
+   "neg_space": 0.321,
+   "ink_levels": 8,
+   "texture_std": 17.5,
+   "saturation": 0.507,
+   "opaque_px": 9740,
+   "centroid": [
+    56.08,
+    67.94
+   ]
+  },
+  {
+   "file": "28_HeadTeeth_HeadTeeth.png",
+   "size": [
+    109,
+    134
+   ],
+   "bbox": [
+    106,
+    133
+   ],
+   "alpha_cov": 0.6873315363881402,
+   "ink_w_mean": 2.01,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.592,
+   "ink_ratio": 0.43,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.014,
+   "neg_space": 0.322,
+   "ink_levels": 7,
+   "texture_std": 24.14,
+   "saturation": 0.383,
+   "opaque_px": 9690,
+   "centroid": [
+    56.08,
+    68.14
+   ]
+  },
+  {
+   "file": "29_HeadTeethSmall_HeadTeethSmall.png",
+   "size": [
+    109,
+    134
+   ],
+   "bbox": [
+    106,
+    133
+   ],
+   "alpha_cov": 0.6795999432543623,
+   "ink_w_mean": 2.05,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.599,
+   "ink_ratio": 0.426,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.32,
+   "ink_levels": 6,
+   "texture_std": 19.75,
+   "saturation": 0.382,
+   "opaque_px": 9581,
+   "centroid": [
+    55.84,
+    67.51
+   ]
+  },
+  {
+   "file": "30_Headlips_HeadLips.png",
+   "size": [
+    109,
+    134
+   ],
+   "bbox": [
+    106,
+    134
+   ],
+   "alpha_cov": 0.6776260208392002,
+   "ink_w_mean": 2.1,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.603,
+   "ink_ratio": 0.418,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.322,
+   "ink_levels": 6,
+   "texture_std": 19.44,
+   "saturation": 0.382,
+   "opaque_px": 9625,
+   "centroid": [
+    55.79,
+    66.7
+   ]
+  },
+  {
+   "file": "31_Hat_Hat.png",
+   "size": [
+    139,
+    76
+   ],
+   "bbox": [
+    136,
+    74
+   ],
+   "alpha_cov": 0.5669713831478538,
+   "ink_w_mean": 2.09,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.608,
+   "ink_ratio": 0.583,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 1.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.433,
+   "ink_levels": 4,
+   "texture_std": 8.04,
+   "saturation": 0.367,
+   "opaque_px": 5706,
+   "centroid": [
+    61.85,
+    42.58
+   ]
+  },
+  {
+   "file": "32_LegLowFront_LegLowFront.png",
+   "size": [
+    102,
+    77
+   ],
+   "bbox": [
+    101,
+    75
+   ],
+   "alpha_cov": 0.49636963696369635,
+   "ink_w_mean": 1.91,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.599,
+   "ink_ratio": 0.352,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.743,
+    "石绿": 0.257,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.504,
+   "ink_levels": 4,
+   "texture_std": 16.78,
+   "saturation": 0.581,
+   "opaque_px": 3760,
+   "centroid": [
+    54.11,
+    38.7
+   ]
+  },
+  {
+   "file": "33_LegUpFront_LegUpFront.png",
+   "size": [
+    58,
+    94
+   ],
+   "bbox": [
+    56,
+    91
+   ],
+   "alpha_cov": 0.7784536891679749,
+   "ink_w_mean": 2.05,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.591,
+   "ink_ratio": 0.155,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.008,
+    "石绿": 0.277,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.715,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.222,
+   "ink_levels": 3,
+   "texture_std": 1.22,
+   "saturation": 0.574,
+   "opaque_px": 3967,
+   "centroid": [
+    30.4,
+    44.39
+   ]
+  },
+  {
+   "file": "34_CoatBottom_CoatBottom.png",
+   "size": [
+    77,
+    69
+   ],
+   "bbox": [
+    74,
+    68
+   ],
+   "alpha_cov": 0.7603338632750397,
+   "ink_w_mean": 2.24,
+   "ink_w_p50": 3.0,
+   "ink_w_p90": 5.0,
+   "ink_cv": 0.597,
+   "ink_ratio": 0.305,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.662,
+    "石绿": 0.298,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.04,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.24,
+   "ink_levels": 3,
+   "texture_std": 2.36,
+   "saturation": 0.578,
+   "opaque_px": 3826,
+   "centroid": [
+    41.08,
+    34.72
+   ]
+  },
+  {
+   "file": "35_CoatMid3_CoatMid3.png",
+   "size": [
+    68,
+    74
+   ],
+   "bbox": [
+    67,
+    73
+   ],
+   "alpha_cov": 0.7926804334491924,
+   "ink_w_mean": 2.08,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.624,
+   "ink_ratio": 0.177,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.001,
+    "石绿": 0.343,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.657,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.207,
+   "ink_levels": 3,
+   "texture_std": 1.46,
+   "saturation": 0.559,
+   "opaque_px": 3877,
+   "centroid": [
+    34.1,
+    36.72
+   ]
+  },
+  {
+   "file": "36_CoatMid2_CoatMid2.png",
+   "size": [
+    67,
+    70
+   ],
+   "bbox": [
+    66,
+    69
+   ],
+   "alpha_cov": 0.7828282828282829,
+   "ink_w_mean": 2.21,
+   "ink_w_p50": 3.0,
+   "ink_w_p90": 5.0,
+   "ink_cv": 0.605,
+   "ink_ratio": 0.207,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.001,
+    "石绿": 0.339,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.659,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.217,
+   "ink_levels": 3,
+   "texture_std": 1.34,
+   "saturation": 0.56,
+   "opaque_px": 3565,
+   "centroid": [
+    32.92,
+    34.57
+   ]
+  },
+  {
+   "file": "37_CoatMid1_CoatMid1.png",
+   "size": [
+    66,
+    70
+   ],
+   "bbox": [
+    64,
+    69
+   ],
+   "alpha_cov": 0.8066123188405797,
+   "ink_w_mean": 2.27,
+   "ink_w_p50": 3.0,
+   "ink_w_p90": 5.0,
+   "ink_cv": 0.588,
+   "ink_ratio": 0.212,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.026,
+    "石绿": 0.344,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.63,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.193,
+   "ink_levels": 3,
+   "texture_std": 1.32,
+   "saturation": 0.563,
+   "opaque_px": 3562,
+   "centroid": [
+    32.61,
+    34.51
+   ]
+  },
+  {
+   "file": "38_CoatTop_CoatTop.png",
+   "size": [
+    74,
+    70
+   ],
+   "bbox": [
+    71,
+    70
+   ],
+   "alpha_cov": 0.7700201207243461,
+   "ink_w_mean": 2.16,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.6,
+   "ink_cv": 0.616,
+   "ink_ratio": 0.114,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.378,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.622,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.23,
+   "ink_levels": 4,
+   "texture_std": 1.23,
+   "saturation": 0.539,
+   "opaque_px": 3827,
+   "centroid": [
+    37.77,
+    34.49
+   ]
+  },
+  {
+   "file": "39_BulletCasingFull_BulletCasingFull.png",
+   "size": [
+    39,
+    16
+   ],
+   "bbox": [
+    35,
+    16
+   ],
+   "alpha_cov": 0.8553571428571428,
+   "ink_w_mean": 1.59,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.574,
+   "ink_ratio": 0.524,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.531,
+    "藤黄": 0.469,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.145,
+   "ink_levels": 7,
+   "texture_std": 27.96,
+   "saturation": 0.695,
+   "opaque_px": 479,
+   "centroid": [
+    18.08,
+    7.14
+   ]
+  },
+  {
+   "file": "40_ShotgunShell_ShotgunShell.png",
+   "size": [
+    57,
+    26
+   ],
+   "bbox": [
+    54,
+    24
+   ],
+   "alpha_cov": 0.8564814814814815,
+   "ink_w_mean": 1.77,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.57,
+   "ink_ratio": 0.607,
+   "pigment": {
+    "朱红": 0.121,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.702,
+    "藤黄": 0.172,
+    "花青": 0.005,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.144,
+   "ink_levels": 7,
+   "texture_std": 14.85,
+   "saturation": 0.63,
+   "opaque_px": 1110,
+   "centroid": [
+    27.92,
+    12.98
+   ]
+  },
+  {
+   "file": "41_ammoclip_ammoclip.png",
+   "size": [
+    38,
+    54
+   ],
+   "bbox": [
+    38,
+    53
+   ],
+   "alpha_cov": 0.5084409136047666,
+   "ink_w_mean": 1.81,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.584,
+   "ink_ratio": 0.608,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.371,
+    "藤黄": 0.629,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.492,
+   "ink_levels": 7,
+   "texture_std": 26.93,
+   "saturation": 0.687,
+   "opaque_px": 1024,
+   "centroid": [
+    18.33,
+    25.01
+   ]
+  },
+  {
+   "file": "42_Bazooka_Bazooka.png",
+   "size": [
+    448,
+    140
+   ],
+   "bbox": [
+    444,
+    137
+   ],
+   "alpha_cov": 0.47976260932465314,
+   "ink_w_mean": 2.1,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.613,
+   "ink_ratio": 0.619,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.52,
+   "ink_levels": 7,
+   "texture_std": 9.81,
+   "saturation": 0.515,
+   "opaque_px": 29183,
+   "centroid": [
+    227.28,
+    64.93
+   ]
+  },
+  {
+   "file": "43_Flamethrower_Flamethrower.png",
+   "size": [
+    299,
+    109
+   ],
+   "bbox": [
+    298,
+    108
+   ],
+   "alpha_cov": 0.43406661695252297,
+   "ink_w_mean": 1.85,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.594,
+   "ink_ratio": 0.43,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 1.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.566,
+   "ink_levels": 4,
+   "texture_std": 5.12,
+   "saturation": 0.18,
+   "opaque_px": 13970,
+   "centroid": [
+    141.55,
+    42.76
+   ]
+  },
+  {
+   "file": "44_Gun_Tommygun.png",
+   "size": [
+    333,
+    105
+   ],
+   "bbox": [
+    332,
+    102
+   ],
+   "alpha_cov": 0.4271793054571226,
+   "ink_w_mean": 1.85,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.595,
+   "ink_ratio": 0.464,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.05,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.95,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.573,
+   "ink_levels": 5,
+   "texture_std": 5.51,
+   "saturation": 0.401,
+   "opaque_px": 14466,
+   "centroid": [
+    145.08,
+    48.58
+   ]
+  },
+  {
+   "file": "45_HandBackShells_HandBackShells.png",
+   "size": [
+    85,
+    64
+   ],
+   "bbox": [
+    85,
+    63
+   ],
+   "alpha_cov": 0.6795518207282913,
+   "ink_w_mean": 2.17,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.609,
+   "ink_ratio": 0.672,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.32,
+   "ink_levels": 7,
+   "texture_std": 19.32,
+   "saturation": 0.419,
+   "opaque_px": 3639,
+   "centroid": [
+    43.64,
+    33.68
+   ]
+  },
+  {
+   "file": "46_Lupara_Lupara.png",
+   "size": [
+    136,
+    96
+   ],
+   "bbox": [
+    134,
+    94
+   ],
+   "alpha_cov": 0.44236265481105114,
+   "ink_w_mean": 1.95,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.593,
+   "ink_ratio": 0.71,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.994,
+    "藤黄": 0.0,
+    "花青": 0.006,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.558,
+   "ink_levels": 7,
+   "texture_std": 8.21,
+   "saturation": 0.499,
+   "opaque_px": 5572,
+   "centroid": [
+    68.14,
+    45.02
+   ]
+  },
+  {
+   "file": "47_Magnum357_Magnum357.png",
+   "size": [
+    176,
+    109
+   ],
+   "bbox": [
+    175,
+    107
+   ],
+   "alpha_cov": 0.4158611481975968,
+   "ink_w_mean": 2.07,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.6,
+   "ink_ratio": 0.749,
+   "pigment": {
+    "朱红": 0.296,
+    "石青": 0.018,
+    "石绿": 0.0,
+    "赭石": 0.278,
+    "藤黄": 0.0,
+    "花青": 0.408,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.584,
+   "ink_levels": 5,
+   "texture_std": 9.83,
+   "saturation": 0.548,
+   "opaque_px": 7787,
+   "centroid": [
+    77.47,
+    42.71
+   ]
+  },
+  {
+   "file": "48_Maximgun_MaxiGunMG08.png",
+   "size": [
+    414,
+    158
+   ],
+   "bbox": [
+    413,
+    157
+   ],
+   "alpha_cov": 0.3859440785922487,
+   "ink_w_mean": 1.86,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.606,
+   "ink_ratio": 0.33,
+   "pigment": {
+    "朱红": 0.768,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.229,
+    "藤黄": 0.0,
+    "花青": 0.003,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.614,
+   "ink_levels": 4,
+   "texture_std": 5.0,
+   "saturation": 0.681,
+   "opaque_px": 25025,
+   "centroid": [
+    211.07,
+    55.54
+   ]
+  },
+  {
+   "file": "49_Pistol_Pistol45.png",
+   "size": [
+    130,
+    91
+   ],
+   "bbox": [
+    128,
+    82
+   ],
+   "alpha_cov": 0.3782393292682927,
+   "ink_w_mean": 1.97,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.613,
+   "ink_ratio": 0.587,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.622,
+   "ink_levels": 4,
+   "texture_std": 4.61,
+   "saturation": 0.0,
+   "opaque_px": 3970,
+   "centroid": [
+    47.83,
+    41.51
+   ]
+  },
+  {
+   "file": "50_Revolver_Revolver.png",
+   "size": [
+    119,
+    97
+   ],
+   "bbox": [
+    118,
+    94
+   ],
+   "alpha_cov": 0.43301478543094124,
+   "ink_w_mean": 1.91,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.589,
+   "ink_ratio": 0.608,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.567,
+   "ink_levels": 5,
+   "texture_std": 5.84,
+   "saturation": 0.508,
+   "opaque_px": 4803,
+   "centroid": [
+    51.44,
+    41.35
+   ]
+  },
+  {
+   "file": "51_Shotgun_Shotgun.png",
+   "size": [
+    387,
+    97
+   ],
+   "bbox": [
+    386,
+    94
+   ],
+   "alpha_cov": 0.3746279351780399,
+   "ink_w_mean": 2.2,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 5.0,
+   "ink_cv": 0.622,
+   "ink_ratio": 0.516,
+   "pigment": {
+    "朱红": 0.67,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.329,
+    "藤黄": 0.0,
+    "花青": 0.001,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.625,
+   "ink_levels": 7,
+   "texture_std": 5.9,
+   "saturation": 0.639,
+   "opaque_px": 13593,
+   "centroid": [
+    176.04,
+    35.57
+   ]
+  },
+  {
+   "file": "52_Teslacoilgun_Teslacoilgun.png",
+   "size": [
+    415,
+    318
+   ],
+   "bbox": [
+    410,
+    207
+   ],
+   "alpha_cov": 0.35381171203016376,
+   "ink_w_mean": 1.85,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.611,
+   "ink_ratio": 0.592,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.646,
+   "ink_levels": 7,
+   "texture_std": 7.08,
+   "saturation": 0.516,
+   "opaque_px": 30028,
+   "centroid": [
+    183.35,
+    217.04
+   ]
+  },
+  {
+   "file": "53_TommygunTop_TommygunTop.png",
+   "size": [
+    17,
+    19
+   ],
+   "bbox": [
+    15,
+    17
+   ],
+   "alpha_cov": 0.8392156862745098,
+   "ink_w_mean": 1.77,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.58,
+   "ink_ratio": 0.72,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.161,
+   "ink_levels": 2,
+   "texture_std": 3.4,
+   "saturation": 0.0,
+   "opaque_px": 214,
+   "centroid": [
+    8.93,
+    9.06
+   ]
+  },
+  {
+   "file": "54_ActionPumpShotgun_ActionPumpShotgun.png",
+   "size": [
+    99,
+    35
+   ],
+   "bbox": [
+    96,
+    33
+   ],
+   "alpha_cov": 0.8945707070707071,
+   "ink_w_mean": 2.03,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.613,
+   "ink_ratio": 0.711,
+   "pigment": {
+    "朱红": 0.459,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.535,
+    "藤黄": 0.0,
+    "花青": 0.006,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.105,
+   "ink_levels": 7,
+   "texture_std": 13.61,
+   "saturation": 0.622,
+   "opaque_px": 2834,
+   "centroid": [
+    45.98,
+    16.77
+   ]
+  },
+  {
+   "file": "55_HandFront_HandFront.png",
+   "size": [
+    70,
+    59
+   ],
+   "bbox": [
+    68,
+    58
+   ],
+   "alpha_cov": 0.6483265720081136,
+   "ink_w_mean": 2.16,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.599,
+   "ink_ratio": 0.384,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.352,
+   "ink_levels": 4,
+   "texture_std": 25.75,
+   "saturation": 0.376,
+   "opaque_px": 2557,
+   "centroid": [
+    30.75,
+    27.78
+   ]
+  },
+  {
+   "file": "56_Pistol45-Slide_Pistol45-Slide.png",
+   "size": [
+    112,
+    23
+   ],
+   "bbox": [
+    111,
+    23
+   ],
+   "alpha_cov": 0.7700744222483353,
+   "ink_w_mean": 1.95,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.616,
+   "ink_ratio": 0.595,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.23,
+   "ink_levels": 4,
+   "texture_std": 8.49,
+   "saturation": 0.0,
+   "opaque_px": 1966,
+   "centroid": [
+    57.62,
+    13.4
+   ]
+  },
+  {
+   "file": "57_MaximGunMagazine_MaximGunMagazine.png",
+   "size": [
+    78,
+    101
+   ],
+   "bbox": [
+    76,
+    99
+   ],
+   "alpha_cov": 0.8107389686337054,
+   "ink_w_mean": 1.84,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.601,
+   "ink_ratio": 0.296,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.189,
+   "ink_levels": 3,
+   "texture_std": 3.57,
+   "saturation": 0.0,
+   "opaque_px": 6100,
+   "centroid": [
+    38.79,
+    49.4
+   ]
+  },
+  {
+   "file": "58_ShotgunShell1_LuparaShell.png",
+   "size": [
+    57,
+    26
+   ],
+   "bbox": [
+    54,
+    24
+   ],
+   "alpha_cov": 0.8564814814814815,
+   "ink_w_mean": 1.99,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.594,
+   "ink_ratio": 0.583,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.661,
+    "藤黄": 0.339,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.144,
+   "ink_levels": 7,
+   "texture_std": 19.35,
+   "saturation": 0.65,
+   "opaque_px": 1110,
+   "centroid": [
+    27.92,
+    12.98
+   ]
+  },
+  {
+   "file": "59_TommygunDrum_TommygunDrum.png",
+   "size": [
+    55,
+    84
+   ],
+   "bbox": [
+    52,
+    81
+   ],
+   "alpha_cov": 0.827397910731244,
+   "ink_w_mean": 1.79,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.602,
+   "ink_ratio": 0.533,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.027,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.973,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.173,
+   "ink_levels": 5,
+   "texture_std": 8.35,
+   "saturation": 0.394,
+   "opaque_px": 3485,
+   "centroid": [
+    26.78,
+    41.55
+   ]
+  },
+  {
+   "file": "60_HandBack_HandBack.png",
+   "size": [
+    69,
+    63
+   ],
+   "bbox": [
+    69,
+    59
+   ],
+   "alpha_cov": 0.6055023335789732,
+   "ink_w_mean": 2.12,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.587,
+   "ink_ratio": 0.647,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.394,
+   "ink_levels": 4,
+   "texture_std": 34.15,
+   "saturation": 0.374,
+   "opaque_px": 2465,
+   "centroid": [
+    32.09,
+    29.23
+   ]
+  },
+  {
+   "file": "61_HandBack_HandSupport.png",
+   "size": [
+    71,
+    49
+   ],
+   "bbox": [
+    68,
+    48
+   ],
+   "alpha_cov": 0.7276348039215687,
+   "ink_w_mean": 2.08,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.57,
+   "ink_ratio": 0.626,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.272,
+   "ink_levels": 4,
+   "texture_std": 35.86,
+   "saturation": 0.372,
+   "opaque_px": 2375,
+   "centroid": [
+    37.63,
+    24.51
+   ]
+  },
+  {
+   "file": "62_HandBack_HandBackTeslacoilGun.png",
+   "size": [
+    66,
+    69
+   ],
+   "bbox": [
+    66,
+    68
+   ],
+   "alpha_cov": 0.6916221033868093,
+   "ink_w_mean": 2.22,
+   "ink_w_p50": 3.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.597,
+   "ink_ratio": 0.613,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.308,
+   "ink_levels": 5,
+   "texture_std": 31.24,
+   "saturation": 0.374,
+   "opaque_px": 3104,
+   "centroid": [
+    32.3,
+    33.43
+   ]
+  },
+  {
+   "file": "63_HandSupport2_HandSupport2.png",
+   "size": [
+    76,
+    44
+   ],
+   "bbox": [
+    74,
+    44
+   ],
+   "alpha_cov": 0.6397420147420148,
+   "ink_w_mean": 2.01,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.579,
+   "ink_ratio": 0.61,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.36,
+   "ink_levels": 4,
+   "texture_std": 36.11,
+   "saturation": 0.374,
+   "opaque_px": 2083,
+   "centroid": [
+    38.25,
+    23.14
+   ]
+  },
+  {
+   "file": "64_LuparaBarrels_LuparaBarrels.png",
+   "size": [
+    165,
+    47
+   ],
+   "bbox": [
+    164,
+    45
+   ],
+   "alpha_cov": 0.6463414634146342,
+   "ink_w_mean": 1.86,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.602,
+   "ink_ratio": 0.568,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.185,
+    "石绿": 0.0,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.815,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.354,
+   "ink_levels": 5,
+   "texture_std": 7.69,
+   "saturation": 0.391,
+   "opaque_px": 4770,
+   "centroid": [
+    75.99,
+    23.18
+   ]
+  },
+  {
+   "file": "65_ArmFront_ArmFront.png",
+   "size": [
+    54,
+    126
+   ],
+   "bbox": [
+    53,
+    124
+   ],
+   "alpha_cov": 0.7859099208764455,
+   "ink_w_mean": 1.99,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.606,
+   "ink_ratio": 0.31,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.605,
+    "石绿": 0.395,
+    "赭石": 0.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.214,
+   "ink_levels": 4,
+   "texture_std": 12.7,
+   "saturation": 0.557,
+   "opaque_px": 5165,
+   "centroid": [
+    26.42,
+    63.68
+   ]
+  },
+  {
+   "file": "66_ArmLowFront_ArmLowFront.png",
+   "size": [
+    107,
+    51
+   ],
+   "bbox": [
+    103,
+    49
+   ],
+   "alpha_cov": 0.6934812760055479,
+   "ink_w_mean": 1.86,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.607,
+   "ink_ratio": 0.318,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.917,
+    "石绿": 0.0,
+    "赭石": 0.082,
+    "藤黄": 0.0,
+    "花青": 0.001,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.008,
+   "neg_space": 0.312,
+   "ink_levels": 6,
+   "texture_std": 17.93,
+   "saturation": 0.612,
+   "opaque_px": 3500,
+   "centroid": [
+    54.64,
+    25.34
+   ]
+  },
+  {
+   "file": "67_BulletCasing_BulletCasing.png",
+   "size": [
+    34,
+    16
+   ],
+   "bbox": [
+    30,
+    16
+   ],
+   "alpha_cov": 0.9,
+   "ink_w_mean": 1.67,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.566,
+   "ink_ratio": 0.507,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 0.573,
+    "藤黄": 0.427,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.1,
+   "ink_levels": 6,
+   "texture_std": 29.55,
+   "saturation": 0.695,
+   "opaque_px": 432,
+   "centroid": [
+    16.42,
+    7.13
+   ]
+  },
+  {
+   "file": "68_BazookaFront_BazookaFront.png",
+   "size": [
+    448,
+    140
+   ],
+   "bbox": [
+    443,
+    137
+   ],
+   "alpha_cov": 0.48575571336771517,
+   "ink_w_mean": 2.06,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.611,
+   "ink_ratio": 0.589,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.0,
+    "石绿": 0.0,
+    "赭石": 1.0,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.514,
+   "ink_levels": 7,
+   "texture_std": 9.95,
+   "saturation": 0.515,
+   "opaque_px": 29481,
+   "centroid": [
+    223.06,
+    66.48
+   ]
+  },
+  {
+   "file": "frame_00000.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    72,
+    98
+   ],
+   "alpha_cov": 0.4662698412698413,
+   "ink_w_mean": 1.78,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.629,
+   "ink_ratio": 0.675,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.142,
+    "石绿": 0.586,
+    "赭石": 0.221,
+    "藤黄": 0.0,
+    "花青": 0.052,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.012,
+   "neg_space": 0.539,
+   "ink_levels": 8,
+   "texture_std": 12.65,
+   "saturation": 0.428,
+   "opaque_px": 3290,
+   "centroid": [
+    62.3,
+    83.92
+   ]
+  },
+  {
+   "file": "frame_00001.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    73,
+    97
+   ],
+   "alpha_cov": 0.47013133738172574,
+   "ink_w_mean": 1.79,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.641,
+   "ink_ratio": 0.642,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.175,
+    "石绿": 0.562,
+    "赭石": 0.205,
+    "藤黄": 0.0,
+    "花青": 0.059,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.008,
+   "neg_space": 0.534,
+   "ink_levels": 7,
+   "texture_std": 12.53,
+   "saturation": 0.444,
+   "opaque_px": 3329,
+   "centroid": [
+    62.54,
+    84.21
+   ]
+  },
+  {
+   "file": "frame_00002.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    72,
+    96
+   ],
+   "alpha_cov": 0.48466435185185186,
+   "ink_w_mean": 1.73,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.63,
+   "ink_ratio": 0.65,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.156,
+    "石绿": 0.582,
+    "赭石": 0.207,
+    "藤黄": 0.0,
+    "花青": 0.056,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.521,
+   "ink_levels": 9,
+   "texture_std": 14.28,
+   "saturation": 0.439,
+   "opaque_px": 3350,
+   "centroid": [
+    61.07,
+    84.86
+   ]
+  },
+  {
+   "file": "frame_00003.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    73,
+    95
+   ],
+   "alpha_cov": 0.48147080028839223,
+   "ink_w_mean": 1.75,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.644,
+   "ink_ratio": 0.624,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.163,
+    "石绿": 0.24,
+    "赭石": 0.198,
+    "藤黄": 0.0,
+    "花青": 0.399,
+    "未归类": 0.002
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.524,
+   "ink_levels": 7,
+   "texture_std": 14.08,
+   "saturation": 0.499,
+   "opaque_px": 3339,
+   "centroid": [
+    61.79,
+    84.98
+   ]
+  },
+  {
+   "file": "frame_00004.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    71,
+    95
+   ],
+   "alpha_cov": 0.4951816160118606,
+   "ink_w_mean": 1.72,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.635,
+   "ink_ratio": 0.643,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.151,
+    "石绿": 0.596,
+    "赭石": 0.21,
+    "藤黄": 0.0,
+    "花青": 0.043,
+    "未归类": 0.002
+   },
+   "paper_ratio": 0.012,
+   "neg_space": 0.511,
+   "ink_levels": 8,
+   "texture_std": 14.62,
+   "saturation": 0.436,
+   "opaque_px": 3340,
+   "centroid": [
+    60.89,
+    85.0
+   ]
+  },
+  {
+   "file": "frame_00005.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    72,
+    95
+   ],
+   "alpha_cov": 0.4885964912280702,
+   "ink_w_mean": 1.74,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.626,
+   "ink_ratio": 0.649,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.152,
+    "石绿": 0.601,
+    "赭石": 0.204,
+    "藤黄": 0.0,
+    "花青": 0.043,
+    "未归类": 0.005
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.517,
+   "ink_levels": 8,
+   "texture_std": 14.32,
+   "saturation": 0.434,
+   "opaque_px": 3342,
+   "centroid": [
+    61.6,
+    85.05
+   ]
+  },
+  {
+   "file": "frame_00006.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    71,
+    95
+   ],
+   "alpha_cov": 0.4954781319495923,
+   "ink_w_mean": 1.71,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.63,
+   "ink_ratio": 0.64,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.158,
+    "石绿": 0.594,
+    "赭石": 0.206,
+    "藤黄": 0.0,
+    "花青": 0.042,
+    "未归类": 0.003
+   },
+   "paper_ratio": 0.013,
+   "neg_space": 0.511,
+   "ink_levels": 7,
+   "texture_std": 14.68,
+   "saturation": 0.432,
+   "opaque_px": 3342,
+   "centroid": [
+    60.96,
+    85.08
+   ]
+  },
+  {
+   "file": "frame_00007.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    72,
+    95
+   ],
+   "alpha_cov": 0.4899122807017544,
+   "ink_w_mean": 1.7,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.627,
+   "ink_ratio": 0.64,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.161,
+    "石绿": 0.585,
+    "赭石": 0.204,
+    "藤黄": 0.0,
+    "花青": 0.05,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.515,
+   "ink_levels": 7,
+   "texture_std": 14.83,
+   "saturation": 0.435,
+   "opaque_px": 3351,
+   "centroid": [
+    61.6,
+    85.18
+   ]
+  },
+  {
+   "file": "frame_00008.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    72,
+    95
+   ],
+   "alpha_cov": 0.49078947368421055,
+   "ink_w_mean": 1.67,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.631,
+   "ink_ratio": 0.607,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.177,
+    "石绿": 0.251,
+    "赭石": 0.196,
+    "藤黄": 0.0,
+    "花青": 0.376,
+    "未归类": 0.002
+   },
+   "paper_ratio": 0.012,
+   "neg_space": 0.515,
+   "ink_levels": 7,
+   "texture_std": 14.84,
+   "saturation": 0.503,
+   "opaque_px": 3357,
+   "centroid": [
+    61.07,
+    85.2
+   ]
+  },
+  {
+   "file": "frame_00009.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    73,
+    95
+   ],
+   "alpha_cov": 0.483633741888969,
+   "ink_w_mean": 1.76,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.638,
+   "ink_ratio": 0.645,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.159,
+    "石绿": 0.594,
+    "赭石": 0.197,
+    "藤黄": 0.0,
+    "花青": 0.049,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.01,
+   "neg_space": 0.521,
+   "ink_levels": 7,
+   "texture_std": 14.27,
+   "saturation": 0.433,
+   "opaque_px": 3354,
+   "centroid": [
+    61.82,
+    85.35
+   ]
+  },
+  {
+   "file": "frame_00010.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    72,
+    95
+   ],
+   "alpha_cov": 0.49064327485380116,
+   "ink_w_mean": 1.72,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.631,
+   "ink_ratio": 0.644,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.175,
+    "石绿": 0.581,
+    "赭石": 0.202,
+    "藤黄": 0.0,
+    "花青": 0.042,
+    "未归类": 0.003
+   },
+   "paper_ratio": 0.012,
+   "neg_space": 0.515,
+   "ink_levels": 8,
+   "texture_std": 15.44,
+   "saturation": 0.435,
+   "opaque_px": 3356,
+   "centroid": [
+    61.12,
+    85.19
+   ]
+  },
+  {
+   "file": "frame_00011.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    72,
+    95
+   ],
+   "alpha_cov": 0.489766081871345,
+   "ink_w_mean": 1.62,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.621,
+   "ink_ratio": 0.593,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.649,
+    "石绿": 0.143,
+    "赭石": 0.186,
+    "藤黄": 0.0,
+    "花青": 0.022,
+    "未归类": 0.003
+   },
+   "paper_ratio": 0.008,
+   "neg_space": 0.514,
+   "ink_levels": 8,
+   "texture_std": 18.42,
+   "saturation": 0.526,
+   "opaque_px": 3350,
+   "centroid": [
+    61.87,
+    85.11
+   ]
+  },
+  {
+   "file": "frame_00012.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    72,
+    96
+   ],
+   "alpha_cov": 0.48466435185185186,
+   "ink_w_mean": 1.64,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.618,
+   "ink_ratio": 0.604,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.645,
+    "石绿": 0.147,
+    "赭石": 0.19,
+    "藤黄": 0.0,
+    "花青": 0.017,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.009,
+   "neg_space": 0.52,
+   "ink_levels": 9,
+   "texture_std": 19.4,
+   "saturation": 0.53,
+   "opaque_px": 3350,
+   "centroid": [
+    61.07,
+    84.86
+   ]
+  },
+  {
+   "file": "frame_00013.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    74,
+    96
+   ],
+   "alpha_cov": 0.46776463963963966,
+   "ink_w_mean": 1.69,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.635,
+   "ink_ratio": 0.586,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.607,
+    "石绿": 0.168,
+    "赭石": 0.221,
+    "藤黄": 0.0,
+    "花青": 0.003,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.537,
+   "ink_levels": 9,
+   "texture_std": 18.43,
+   "saturation": 0.52,
+   "opaque_px": 3323,
+   "centroid": [
+    62.2,
+    84.07
+   ]
+  },
+  {
+   "file": "frame_00014.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    75,
+    97
+   ],
+   "alpha_cov": 0.45676975945017184,
+   "ink_w_mean": 1.79,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.635,
+   "ink_ratio": 0.63,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.169,
+    "石绿": 0.524,
+    "赭石": 0.246,
+    "藤黄": 0.0,
+    "花青": 0.061,
+    "未归类": 0.002
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.548,
+   "ink_levels": 9,
+   "texture_std": 14.28,
+   "saturation": 0.438,
+   "opaque_px": 3323,
+   "centroid": [
+    62.37,
+    83.04
+   ]
+  },
+  {
+   "file": "frame_00015.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    84,
+    97
+   ],
+   "alpha_cov": 0.41310751104565535,
+   "ink_w_mean": 1.79,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.64,
+   "ink_ratio": 0.626,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.199,
+    "石绿": 0.539,
+    "赭石": 0.221,
+    "藤黄": 0.0,
+    "花青": 0.041,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.592,
+   "ink_levels": 8,
+   "texture_std": 14.08,
+   "saturation": 0.445,
+   "opaque_px": 3366,
+   "centroid": [
+    64.45,
+    82.77
+   ]
+  },
+  {
+   "file": "frame_00016.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    81,
+    96
+   ],
+   "alpha_cov": 0.4324845679012346,
+   "ink_w_mean": 1.65,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.633,
+   "ink_ratio": 0.6,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.193,
+    "石绿": 0.247,
+    "赭石": 0.203,
+    "藤黄": 0.0,
+    "花青": 0.357,
+    "未归类": 0.003
+   },
+   "paper_ratio": 0.015,
+   "neg_space": 0.574,
+   "ink_levels": 9,
+   "texture_std": 12.71,
+   "saturation": 0.495,
+   "opaque_px": 3363,
+   "centroid": [
+    63.73,
+    82.16
+   ]
+  },
+  {
+   "file": "frame_00017.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    83,
+    97
+   ],
+   "alpha_cov": 0.4115016768103341,
+   "ink_w_mean": 1.75,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.633,
+   "ink_ratio": 0.639,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.187,
+    "石绿": 0.52,
+    "赭石": 0.187,
+    "藤黄": 0.0,
+    "花青": 0.106,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.593,
+   "ink_levels": 6,
+   "texture_std": 13.19,
+   "saturation": 0.445,
+   "opaque_px": 3313,
+   "centroid": [
+    64.68,
+    80.97
+   ]
+  },
+  {
+   "file": "frame_00018.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    83,
+    97
+   ],
+   "alpha_cov": 0.38516954415600546,
+   "ink_w_mean": 1.58,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.61,
+   "ink_ratio": 0.591,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.707,
+    "石绿": 0.084,
+    "赭石": 0.197,
+    "藤黄": 0.0,
+    "花青": 0.012,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.619,
+   "ink_levels": 7,
+   "texture_std": 18.73,
+   "saturation": 0.54,
+   "opaque_px": 3101,
+   "centroid": [
+    65.67,
+    78.43
+   ]
+  },
+  {
+   "file": "frame_00019.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    77,
+    99
+   ],
+   "alpha_cov": 0.3873802964712056,
+   "ink_w_mean": 1.79,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.641,
+   "ink_ratio": 0.643,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.138,
+    "石绿": 0.209,
+    "赭石": 0.238,
+    "藤黄": 0.0,
+    "花青": 0.416,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.009,
+   "neg_space": 0.616,
+   "ink_levels": 8,
+   "texture_std": 14.42,
+   "saturation": 0.496,
+   "opaque_px": 2953,
+   "centroid": [
+    66.69,
+    75.63
+   ]
+  },
+  {
+   "file": "frame_00020.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    76,
+    101
+   ],
+   "alpha_cov": 0.39512767066180304,
+   "ink_w_mean": 1.77,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.619,
+   "ink_ratio": 0.661,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.166,
+    "石绿": 0.523,
+    "赭石": 0.293,
+    "藤黄": 0.0,
+    "花青": 0.018,
+    "未归类": 0.003
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.609,
+   "ink_levels": 8,
+   "texture_std": 17.13,
+   "saturation": 0.437,
+   "opaque_px": 3033,
+   "centroid": [
+    64.89,
+    73.3
+   ]
+  },
+  {
+   "file": "frame_00021.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    81,
+    96
+   ],
+   "alpha_cov": 0.40573559670781895,
+   "ink_w_mean": 1.74,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.628,
+   "ink_ratio": 0.66,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.191,
+    "石绿": 0.476,
+    "赭石": 0.217,
+    "藤黄": 0.0,
+    "花青": 0.116,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.012,
+   "neg_space": 0.599,
+   "ink_levels": 7,
+   "texture_std": 13.33,
+   "saturation": 0.447,
+   "opaque_px": 3155,
+   "centroid": [
+    66.54,
+    72.83
+   ]
+  },
+  {
+   "file": "frame_00022.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    87,
+    88
+   ],
+   "alpha_cov": 0.4106583072100313,
+   "ink_w_mean": 1.7,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.618,
+   "ink_ratio": 0.643,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.336,
+    "石绿": 0.375,
+    "赭石": 0.287,
+    "藤黄": 0.0,
+    "花青": 0.003,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.014,
+   "neg_space": 0.595,
+   "ink_levels": 8,
+   "texture_std": 20.68,
+   "saturation": 0.468,
+   "opaque_px": 3144,
+   "centroid": [
+    66.1,
+    73.01
+   ]
+  },
+  {
+   "file": "frame_00023.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    86,
+    94
+   ],
+   "alpha_cov": 0.3929985155863434,
+   "ink_w_mean": 1.77,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.635,
+   "ink_ratio": 0.675,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.235,
+    "石绿": 0.472,
+    "赭石": 0.287,
+    "藤黄": 0.0,
+    "花青": 0.007,
+    "未归类": 0.003
+   },
+   "paper_ratio": 0.009,
+   "neg_space": 0.61,
+   "ink_levels": 9,
+   "texture_std": 16.9,
+   "saturation": 0.444,
+   "opaque_px": 3177,
+   "centroid": [
+    66.01,
+    76.34
+   ]
+  },
+  {
+   "file": "frame_00024.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    84,
+    96
+   ],
+   "alpha_cov": 0.39025297619047616,
+   "ink_w_mean": 1.74,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.633,
+   "ink_ratio": 0.639,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.321,
+    "石绿": 0.241,
+    "赭石": 0.229,
+    "藤黄": 0.0,
+    "花青": 0.209,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.012,
+   "neg_space": 0.614,
+   "ink_levels": 8,
+   "texture_std": 17.31,
+   "saturation": 0.496,
+   "opaque_px": 3147,
+   "centroid": [
+    64.47,
+    78.2
+   ]
+  },
+  {
+   "file": "frame_00025.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    85,
+    98
+   ],
+   "alpha_cov": 0.37923169267707085,
+   "ink_w_mean": 1.79,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.645,
+   "ink_ratio": 0.643,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.216,
+    "石绿": 0.428,
+    "赭石": 0.206,
+    "藤黄": 0.0,
+    "花青": 0.15,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.621,
+   "ink_levels": 7,
+   "texture_std": 13.44,
+   "saturation": 0.467,
+   "opaque_px": 3159,
+   "centroid": [
+    65.49,
+    77.42
+   ]
+  },
+  {
+   "file": "frame_00026.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    81,
+    101
+   ],
+   "alpha_cov": 0.4074074074074074,
+   "ink_w_mean": 1.59,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.6,
+   "ink_ratio": 0.597,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.685,
+    "石绿": 0.103,
+    "赭石": 0.188,
+    "藤黄": 0.0,
+    "花青": 0.024,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.01,
+   "neg_space": 0.597,
+   "ink_levels": 7,
+   "texture_std": 19.41,
+   "saturation": 0.532,
+   "opaque_px": 3333,
+   "centroid": [
+    64.29,
+    76.45
+   ]
+  },
+  {
+   "file": "frame_00027.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    86,
+    102
+   ],
+   "alpha_cov": 0.3849749202006384,
+   "ink_w_mean": 1.77,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.653,
+   "ink_ratio": 0.657,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.126,
+    "石绿": 0.566,
+    "赭石": 0.201,
+    "藤黄": 0.0,
+    "花青": 0.107,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.008,
+   "neg_space": 0.618,
+   "ink_levels": 9,
+   "texture_std": 14.1,
+   "saturation": 0.435,
+   "opaque_px": 3377,
+   "centroid": [
+    66.62,
+    74.98
+   ]
+  },
+  {
+   "file": "frame_00028.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    85,
+    97
+   ],
+   "alpha_cov": 0.4041237113402062,
+   "ink_w_mean": 1.78,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.64,
+   "ink_ratio": 0.647,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.155,
+    "石绿": 0.59,
+    "赭石": 0.228,
+    "藤黄": 0.0,
+    "花青": 0.027,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.01,
+   "neg_space": 0.6,
+   "ink_levels": 8,
+   "texture_std": 15.93,
+   "saturation": 0.435,
+   "opaque_px": 3332,
+   "centroid": [
+    66.08,
+    75.56
+   ]
+  },
+  {
+   "file": "frame_00029.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    91,
+    98
+   ],
+   "alpha_cov": 0.3649921507064364,
+   "ink_w_mean": 1.79,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.644,
+   "ink_ratio": 0.657,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.155,
+    "石绿": 0.557,
+    "赭石": 0.204,
+    "藤黄": 0.0,
+    "花青": 0.085,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.006,
+   "neg_space": 0.637,
+   "ink_levels": 7,
+   "texture_std": 13.94,
+   "saturation": 0.443,
+   "opaque_px": 3255,
+   "centroid": [
+    66.66,
+    78.35
+   ]
+  },
+  {
+   "file": "frame_00030.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    79,
+    97
+   ],
+   "alpha_cov": 0.43807908129975204,
+   "ink_w_mean": 1.64,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.615,
+   "ink_ratio": 0.623,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.338,
+    "石绿": 0.429,
+    "赭石": 0.213,
+    "藤黄": 0.0,
+    "花青": 0.02,
+    "未归类": 0.002
+   },
+   "paper_ratio": 0.011,
+   "neg_space": 0.567,
+   "ink_levels": 9,
+   "texture_std": 17.36,
+   "saturation": 0.467,
+   "opaque_px": 3357,
+   "centroid": [
+    65.31,
+    79.45
+   ]
+  },
+  {
+   "file": "frame_00031.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    80,
+    97
+   ],
+   "alpha_cov": 0.43698453608247423,
+   "ink_w_mean": 1.72,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.648,
+   "ink_ratio": 0.594,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.246,
+    "石绿": 0.472,
+    "赭石": 0.278,
+    "藤黄": 0.0,
+    "花青": 0.004,
+    "未归类": 0.001
+   },
+   "paper_ratio": 0.009,
+   "neg_space": 0.567,
+   "ink_levels": 7,
+   "texture_std": 20.53,
+   "saturation": 0.458,
+   "opaque_px": 3391,
+   "centroid": [
+    61.15,
+    81.37
+   ]
+  },
+  {
+   "file": "frame_00032.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    70,
+    95
+   ],
+   "alpha_cov": 0.49759398496240603,
+   "ink_w_mean": 1.73,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.636,
+   "ink_ratio": 0.631,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.2,
+    "石绿": 0.519,
+    "赭石": 0.276,
+    "藤黄": 0.0,
+    "花青": 0.004,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.012,
+   "neg_space": 0.509,
+   "ink_levels": 8,
+   "texture_std": 16.25,
+   "saturation": 0.443,
+   "opaque_px": 3309,
+   "centroid": [
+    60.16,
+    83.11
+   ]
+  },
+  {
+   "file": "frame_00033.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    71,
+    94
+   ],
+   "alpha_cov": 0.48801318549595446,
+   "ink_w_mean": 1.81,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.633,
+   "ink_ratio": 0.645,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.149,
+    "石绿": 0.553,
+    "赭石": 0.238,
+    "藤黄": 0.0,
+    "花青": 0.06,
+    "未归类": 0.002
+   },
+   "paper_ratio": 0.0,
+   "neg_space": 0.512,
+   "ink_levels": 7,
+   "texture_std": 13.64,
+   "saturation": 0.445,
+   "opaque_px": 3257,
+   "centroid": [
+    61.84,
+    84.3
+   ]
+  },
+  {
+   "file": "frame_00034.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    70,
+    94
+   ],
+   "alpha_cov": 0.4928571428571429,
+   "ink_w_mean": 1.8,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.634,
+   "ink_ratio": 0.66,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.161,
+    "石绿": 0.561,
+    "赭石": 0.227,
+    "藤黄": 0.0,
+    "花青": 0.05,
+    "未归类": 0.004
+   },
+   "paper_ratio": 0.01,
+   "neg_space": 0.512,
+   "ink_levels": 7,
+   "texture_std": 14.74,
+   "saturation": 0.436,
+   "opaque_px": 3243,
+   "centroid": [
+    61.5,
+    84.5
+   ]
+  },
+  {
+   "file": "frame_00035.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    72,
+    95
+   ],
+   "alpha_cov": 0.47719298245614034,
+   "ink_w_mean": 1.77,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.633,
+   "ink_ratio": 0.686,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.173,
+    "石绿": 0.531,
+    "赭石": 0.293,
+    "藤黄": 0.0,
+    "花青": 0.003,
+    "未归类": 0.004
+   },
+   "paper_ratio": 0.01,
+   "neg_space": 0.528,
+   "ink_levels": 8,
+   "texture_std": 14.6,
+   "saturation": 0.429,
+   "opaque_px": 3264,
+   "centroid": [
+    62.08,
+    84.6
+   ]
+  },
+  {
+   "file": "frame_00036.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    71,
+    95
+   ],
+   "alpha_cov": 0.4867309117865085,
+   "ink_w_mean": 1.73,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.62,
+   "ink_ratio": 0.647,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.149,
+    "石绿": 0.547,
+    "赭石": 0.217,
+    "藤黄": 0.0,
+    "花青": 0.087,
+    "未归类": 0.003
+   },
+   "paper_ratio": 0.012,
+   "neg_space": 0.519,
+   "ink_levels": 7,
+   "texture_std": 12.01,
+   "saturation": 0.437,
+   "opaque_px": 3283,
+   "centroid": [
+    61.21,
+    84.59
+   ]
+  },
+  {
+   "file": "frame_00037.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    76,
+    96
+   ],
+   "alpha_cov": 0.4605263157894737,
+   "ink_w_mean": 1.72,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.63,
+   "ink_ratio": 0.63,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.454,
+    "石绿": 0.293,
+    "赭石": 0.253,
+    "藤黄": 0.0,
+    "花青": 0.0,
+    "未归类": 0.004
+   },
+   "paper_ratio": 0.007,
+   "neg_space": 0.543,
+   "ink_levels": 9,
+   "texture_std": 19.78,
+   "saturation": 0.491,
+   "opaque_px": 3360,
+   "centroid": [
+    63.69,
+    84.78
+   ]
+  },
+  {
+   "file": "frame_00038.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    79,
+    97
+   ],
+   "alpha_cov": 0.4410805167688895,
+   "ink_w_mean": 1.73,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.628,
+   "ink_ratio": 0.651,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.181,
+    "石绿": 0.551,
+    "赭石": 0.201,
+    "藤黄": 0.0,
+    "花青": 0.067,
+    "未归类": 0.0
+   },
+   "paper_ratio": 0.007,
+   "neg_space": 0.562,
+   "ink_levels": 7,
+   "texture_std": 15.28,
+   "saturation": 0.437,
+   "opaque_px": 3380,
+   "centroid": [
+    65.07,
+    84.55
+   ]
+  },
+  {
+   "file": "frame_00039.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    78,
+    97
+   ],
+   "alpha_cov": 0.4431667988369019,
+   "ink_w_mean": 1.82,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.644,
+   "ink_ratio": 0.663,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.198,
+    "石绿": 0.561,
+    "赭石": 0.209,
+    "藤黄": 0.001,
+    "花青": 0.03,
+    "未归类": 0.002
+   },
+   "paper_ratio": 0.008,
+   "neg_space": 0.56,
+   "ink_levels": 7,
+   "texture_std": 12.61,
+   "saturation": 0.433,
+   "opaque_px": 3353,
+   "centroid": [
+    64.85,
+    84.66
+   ]
+  },
+  {
+   "file": "frame_00040.png",
+   "size": [
+    128,
+    128
+   ],
+   "bbox": [
+    76,
+    98
+   ],
+   "alpha_cov": 0.44750268528464016,
+   "ink_w_mean": 1.84,
+   "ink_w_p50": 1.0,
+   "ink_w_p90": 3.0,
+   "ink_cv": 0.638,
+   "ink_ratio": 0.666,
+   "pigment": {
+    "朱红": 0.0,
+    "石青": 0.153,
+    "石绿": 0.567,
+    "赭石": 0.223,
+    "藤黄": 0.0,
+    "花青": 0.058,
+    "未归类": 0.002
+   },
+   "paper_ratio": 0.009,
+   "neg_space": 0.557,
+   "ink_levels": 8,
+   "texture_std": 12.06,
+   "saturation": 0.435,
+   "opaque_px": 3333,
+   "centroid": [
+    64.2,
+    84.5
+   ]
+  }
+ ],
+ "aggregate": {
+  "count": 110,
+  "ink_w_mean": 1.882,
+  "ink_w_p50": 1.109,
+  "ink_w_p90": 3.096,
+  "ink_cv": 0.611,
+  "ink_ratio": 0.534,
+  "paper_ratio": 0.005,
+  "neg_space": 0.416,
+  "ink_levels": 6.064,
+  "texture_std": 13.758,
+  "saturation": 0.474,
+  "alpha_cov": 0.587,
+  "pig_朱红": 0.028,
+  "pig_石青": 0.159,
+  "pig_石绿": 0.244,
+  "pig_赭石": 0.364,
+  "pig_藤黄": 0.019,
+  "pig_花青": 0.151,
+  "pig_未归类": 0.001
+ }
+}

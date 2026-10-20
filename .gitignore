@@ -8,6 +8,12 @@ extracted/primary/**/*.avi
 *.pak
 *.bundle
 
+# 原始 .assets 备份（约 2.7GB，仅本地回滚用，不入库）
+# 回滚方法见 validation/STEP4_INGAME_VERIFICATION.md 第 7 节
+backup/
+*.assets
+!validation/roundtrip_*.assets
+
 # Tools binaries
 tools/bin/*.exe
 tools/bin/*.dll

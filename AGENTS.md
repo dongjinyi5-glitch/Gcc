@@ -12,13 +12,48 @@
 | 项 | 值 | 确认方式 |
 |----|----|---------|
 | 游戏 | Guns, Gore and Cannoli (GOG 版) | 用户确认 |
-| 引擎 | Unity 5.x (2015), Mono 后端, 非 IL2CPP | ggc_Data 结构一手确认 |
+| 引擎 | **Unity 4.3.4f1**, Mono 后端, 非 IL2CPP | UnityPy 读取 33 个 .assets 的 `unity_version` 字段 |
 | 代码 | Assembly-CSharp.dll (C#, 可 dnSpy/ILSpy 反编译) | Managed 目录确认 |
 | 资源 | 标准 .assets 格式 (resources.assets 1.3GB + sharedassets0-15 + level0-14) | 文件系统确认 |
 | 平台 | 仅 Windows | 用户确认 |
 | 游戏路径 | `D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli` | 用户确认 |
-| 美术风格 | 中国国画（水墨五色、留白、笔触肌理） | 用户确认 |
+| 美术风格 | **重彩**国画（矿物颜料、墨骨、低留白），笔触**中等粗细** | 用户确认 |
+| 量化验收基准 | `docs/STYLE_SPEC.md`（8 项风格指标 + 6 项颜料配比 + 3 项几何否决） | Agent A 建立，实测通过 |
 | 工具下载授权 | 授权通过 | 用户确认 |
+
+---
+
+## 硬约束（违反即破坏产物，实测确认）
+
+### ① 禁用 `env.save()`
+
+UnityPy 1.25.4 在该 build 上重写整个 SerializedFile 并按错误长度重序列化 `TextAsset`，引擎报 `resources.assets is corrupted`。
+
+**唯一允许的回填方式：定点字节覆盖。**
+
+```python
+pixel_offset = obj.byte_start + (len(obj.raw_bytes) - w*h*4)
+with open(path, "r+b") as fh:
+    fh.seek(pixel_offset); fh.write(raw_new)
+```
+
+写入前必须先用原始像素重编码比对，确认定位正确。落地脚本：`tools/scripts/patch_textures.py`。
+
+### ② ARGB32 字节序是 `A,R,G,B` 逐像素、行自下而上
+
+不是 BGRA，不是 RGBA。写错**不会报错**，只会红蓝互换（大衣变橙、皮肤变青）。详见 `docs/REVERSE_ENGINEERING.md` 第 13.3 节。
+
+### ③ PPtr 的 `m_FileID` 用**引用方所在文件**的 externals 解析
+
+`0` = 同文件，`n` = `externals[n-1]`。用错会取到同 path_id 的错误对象（曾导致形象图出现皮肤色乱块）。
+
+### ④ 几何保真是**一票否决**门禁
+
+`alpha_iou ≥ 0.98`、`centroid_shift ≤ 1.0px`、`area_delta ±2%`。碰撞盒与动画枢轴都依赖原始 alpha 轮廓，任何一项越界即判 FAIL，不得回填。
+
+### ⑤ 引擎日志里的 `is corrupted` 是**该发行版自带**的
+
+`resources.assets` 那 3 组 `is corrupted` / `Position out of bounds` / `Mismatched serialization in TextAsset` 在**原始未修改**文件上同样出现（两次日志各 93 行，剥离数字后 `diff` 为空）。不要误判为补丁破坏了文件。
 
 ---
 
@@ -78,19 +113,37 @@ D:\AI\DAIGuns, Gore and Cannoli from WB\    ← 唯一主工作目录（全部�
 ├── AGENTS.md              ← 本文件（AI 操作前必读）
 ├── DECISION_LOG.md        ← 决策日志
 ├── .gitignore
+├── backup/                ← 原始 .assets 备份（2.7GB，不入库，回滚用）
 ├── docs/
-│   └── REVERSE_ENGINEERING.md   ← M1 逆向文档产出
+│   ├── REVERSE_ENGINEERING.md   ← M1 逆向文档产出
+│   ├── STYLE_SPEC.md            ← 重彩量化验收基准
+│   ├── CHARACTER_ROSTER.md/.html ← 33 角色清单（可填写替换描述）
 ├── extracted/
-│   └── primary/           ← UnityPy 提取输出
-├── tools/
-│   ├── bin/               ← 下载的工具（AssetRipper/dnSpy 等）
-│   ├── scripts/           ← Python 脚本（解析/提取/打包）
-│   └── logs/              ← 运行日志
+│   ├── primary/           ← UnityPy 提取输出
+│   └── characters/        ← 33 角色形象图 + contact_sheet.png
 ├── art/
 │   ├── style-reference/   ← 国画风格参考图
-│   └── original-capture/  ← 原版游戏截图/捕获
-└── validation/            ← 验证报告
+│   ├── original-capture/  ← 原版/重彩版游戏内比对图
+│   └── vinnie_parts/      ← 部件提取(original/) + 重绘(restyled/) + manifest.json
+├── tools/
+│   ├── bin/               ← 下载的工具（AssetRipper/dnSpy 等）
+│   ├── scripts/           ← Python 脚本
+│   └── logs/              ← 运行日志
+└── validation/            ← 验收报告与度量 JSON
 ```
+
+### 核心脚本（按调用顺序）
+
+| 脚本 | 职责 |
+|---|---|
+| `ggc_assets.py` | **共享访问层**：PPtr 解析、图集裁切、预制体遍历。所有脚本必须走它，不得自行重复实现 |
+| `extract_parts.py` | 提取角色全部件 PNG + `manifest.json` |
+| `style_metrics.py` | 度量器，`SPEC` 内嵌 |
+| `restyle_ink.py` | 重绘引擎（`preview` / `batch`） |
+| `render_compare.py` | 按引擎层级合成原始/重彩双版，输出透明合成图供度量 |
+| `acceptance.py` | 门禁，越界退出码 1 |
+| `patch_textures.py` | 回填（`--check` / `--apply`），定点字节覆盖 |
+| `render_ingame.py` | **直接从打完补丁的游戏文件**渲染，作为实机比对证据 |
 
 ---
 
@@ -150,22 +203,33 @@ D:\AI\DAIGuns, Gore and Cannoli from WB\    ← 唯一主工作目录（全部�
 - 笔触：**中等粗细**
 - 黄金回路往返测试：**已完成**（4/4 文件字节一致，含 1.29GB resources.assets）
 
-**已完成产出**：
+**已完成产出（角色清单）**：
 - `extracted/characters/*.png` — 33 个角色形象图（预制体层级拼合渲染）
 - `extracted/characters/contact_sheet.png` — 全角色对照总图
 - `extracted/characters/roster.json` — 结构化清单（阵营/部件数/脚本/关卡）
 - `docs/CHARACTER_ROSTER.html` — 可填写替换描述的对照表（导出 CSV/JSON）
 - `docs/CHARACTER_ROSTER.md` — Markdown 版清单
 - `art/roster_reply_template.csv` — 回复模板
-- `tools/scripts/render_characters.py` — 角色渲染器
-- `tools/scripts/build_roster.py` — 清单构建器
+- `tools/scripts/render_characters.py` / `build_roster.py`
 
-**等待产品输入**：逐角色替代形象描述（用户回复 CSV 或文字）
+**已完成产出（Vinnie 试点全链路，四步闭环 ✅）**：
 
-**之后步骤**：
-1. 建立重彩国画量化验收基准（墨线宽度区间、朱红/石青/石绿比例、留白率）
-2. 按角色逐部件重绘（保持剪影与 Alpha，确保碰撞盒对齐）
-3. 逐角色回填 .assets → 游戏内验证 → 截图比对
+| 步骤 | 产出 | 结果 |
+|---|---|---|
+| ① 重彩量化验收基准 | `docs/STYLE_SPEC.md`、`style_metrics.py`、`acceptance.py` | PASS 17/17 |
+| ② 按部件重绘 Vinnie 全套动作 | `restyle_ink.py`、`art/vinnie_parts/restyled/*.png` | 110/110 张（69 部件 + 41 烘焙帧） |
+| ③ 回填 .assets | `patch_textures.py` | 110 ok / 0 skipped，8 文件字节数未变 |
+| ④ 游戏内比对 | `render_ingame.py`、`validation/STEP4_INGAME_VERIFICATION.md` | alpha IoU 1.000，引擎日志与原始基线零差异 |
+
+**关键实测数字**：墨线均宽 1.63px、CV 0.627、墨覆盖 40.6%、留白 0.5%、饱和度 0.554、石青:石绿:朱红 = 70.4:24.1:5.5
+
+**待处理缺口（批量前必须解决）**：
+1. `SPEC` 需按阵营扩为 3 套（人类 / 僵尸 / 鼠怪）——僵尸明度偏灰绿，套用会画成正常人肤色
+2. 朱红实测 5.5% vs 设计 10%，需美术决策（加朱红内衬/袖口，或把目标区间下调至 4–7%）
+3. 青绿积染阴影带呈块状，应改为按光照方向的连续梯度场
+4. 真实 `ggc.exe` 运行截图待补（需用户解锁会话）
+
+**等待产品输入**：逐角色替代形象描述（用户回复 CSV 或文字）——33 个角色的重绘必须在此之前不做，避免返工。
 
 ---
 

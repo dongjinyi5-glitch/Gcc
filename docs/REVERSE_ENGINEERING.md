@@ -501,6 +501,8 @@ UnityPy 解析 489 个 Texture2D（resources + sharedassets4 + sharedassets11 �
 
 **→ 绝大多数为未压缩 ARGB32/RGB24，替换时直接输出 PNG 即可，无需处理 DXT 压缩。**
 
+> ⚠️ 注意：`ARGB32`（format 5）在字节层面是 **A,R,G,B 逐像素、行自下而上**，不是 BGRA 也不是 RGBA。详见第 13.3 节。
+
 ### 10.2 尺寸分布
 
 | 尺寸 | 数量 | 用途 |
@@ -642,6 +644,71 @@ GameObject → m_Component[4]=Transform → m_Children 递归
 | `docs/CHARACTER_ROSTER.html` | 可填写替换描述的交互对照表 |
 | `docs/CHARACTER_ROSTER.md` | Markdown 清单 |
 | `art/roster_reply_template.csv` | 回复模板 |
+
+---
+
+## 13. 纹理回填方法（M2 实战确认）
+
+本节记录"改完的 PNG 怎么安全写回 .assets"。这部分不是推测，是踩了两个坑之后用实测确定的。
+
+### 13.1 坑一：`env.save()` 会破坏该 build
+
+UnityPy 1.25.4 的 `env.save()` 会重写整个 SerializedFile，并把 `TextAsset` 按错误长度重新序列化。引擎启动日志：
+
+```
+The file '...resources.assets' is corrupted! Remove it and launch unity again!
+[Position out of bounds! 1346676232 > 1346676228]
+Mismatched serialization in the builtin class 'TextAsset'. (Read 8800 bytes but expected 8784 bytes)
+```
+
+`env.save(pack=False)` 另有 `FileNotFoundError: output/sharedassets7.assets` 与 `ValueError: seek of closed file` 两个问题（writer 需要 reader 保持打开）。这些都不是配置问题，是库对该 Unity 版本的支持不完整。
+
+**结论：本项目禁用 `env.save()`。**
+
+### 13.2 正确做法：只覆写像素块
+
+ARGB32 未压缩纹理的像素数据是对象的**最后 `w*h*4` 字节**。因此：
+
+```
+pixel_offset = obj.byte_start + (len(obj.raw_bytes) - w*h*4)
+```
+
+写入前先用原始像素重新编码、与该区段逐字节比对，确认定位无误；然后只覆写这一段。
+
+```python
+with open(path, "r+b") as fh:
+    fh.seek(int(obj.byte_start) + rel)
+    fh.write(raw_new)
+```
+
+**结果：文件字节数不变、对象表不变、对象数不变、`Texture2D` 计数不变、其它对象逐字节不变。** 这是"只改像素"的最强证据。
+
+### 13.3 坑二：像素编码是 `A,R,G,B` 逐像素、行自下而上
+
+**不是 BGRA，不是 RGBA。**
+
+确定方法：把 24 种通道排列 × 是否垂直翻转全部试一遍，与已知纹理的原始字节逐字节比对，只有 `(3,0,1,2)` + 行倒序达到 100% 命中。
+
+```python
+def encode_argb32(img):
+    a = np.array(img.convert("RGBA"), dtype=np.uint8)
+    a = a[::-1]                       # rows bottom-up
+    argb = a[..., [3, 0, 1, 2]]       # A,R,G,B
+    return np.ascontiguousarray(argb).tobytes()
+```
+
+这个坑的危险在于**不会报错**：用 BGRA 写入后文件完全合法，只是红蓝互换（藏青大衣变橙、皮肤变青）。只能靠"看起来不对"发现。
+
+### 13.4 落地结果
+
+```text
+Vinnie: 110 texture(s) across 8 file(s) (CHECK)
+RESULT: 110 ok, 0 skipped
+```
+
+`--check` 是重新从游戏文件读取、解码、与重绘 PNG 逐像素比对，所以 110/110 证明补丁已落盘且可被正确解码。8 个文件字节数与原始备份完全一致。
+
+详细验收见 `validation/STEP4_INGAME_VERIFICATION.md`。
 
 ---
 

@@ -1,0 +1,93 @@
+Mono path[0] = 'D:/BaiduNetdiskDownload/意大利黑1/Guns, Gore and Cannoli/ggc_Data/Managed'
+Mono path[1] = 'D:/BaiduNetdiskDownload/意大利黑1/Guns, Gore and Cannoli/ggc_Data/Mono'
+Mono config path = 'D:/BaiduNetdiskDownload/意大利黑1/Guns, Gore and Cannoli/ggc_Data/Mono/etc'
+Initialize engine version: 4.3.4f1 (e444f76e01cd)
+Forcing GfxDevice: 4
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Begin MonoManager ReloadAssembly
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\GamepadImport.dll (this message is harmless)
+Loading D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\GamepadImport.dll into Unity Child Domain
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\HardwareVideoImport.dll (this message is harmless)
+Loading D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\HardwareVideoImport.dll into Unity Child Domain
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\UnityPluginLogImport.dll (this message is harmless)
+Loading D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\UnityPluginLogImport.dll into Unity Child Domain
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\XboxOneCommonImport.dll (this message is harmless)
+Loading D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\XboxOneCommonImport.dll into Unity Child Domain
+- Completed reload, in  0.037 seconds
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\System.dll (this message is harmless)
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\System.Core.dll (this message is harmless)
+The file 'D:/BaiduNetdiskDownload/意大利黑1/Guns, Gore and Cannoli/ggc_Data/resources.assets' is corrupted! Remove it and launch unity again!
+[Position out of bounds! 1346660120 > 1346660104]
+ 
+(Filename:  Line: 276)
+
+Mismatched serialization in the builtin class 'TextAsset'. (Read 8800 bytes but expected 8784 bytes)
+ 
+(Filename:  Line: 1173)
+
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\System.Xml.dll (this message is harmless)
+The file 'D:/BaiduNetdiskDownload/意大利黑1/Guns, Gore and Cannoli/ggc_Data/resources.assets' is corrupted! Remove it and launch unity again!
+[Position out of bounds! 1346676232 > 1346676228]
+ 
+(Filename:  Line: 269)
+
+The file 'D:/BaiduNetdiskDownload/意大利黑1/Guns, Gore and Cannoli/ggc_Data/resources.assets' is corrupted! Remove it and launch unity again!
+[Position out of bounds! 1346676232 > 1346676228]
+ 
+(Filename:  Line: 276)
+
+[Steamworks.NET] DllCheck Test returned false, One or more of the Steamworks binaries seems to be the wrong version.
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+SteamManager.Initialized
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Platform assembly: D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data\Managed\Boo.Lang.dll (this message is harmless)
+The image effect Main Camera (Vignetting) has been disabled as it's not supported on the current platform.
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 34 unused Assets to reduce memory usage. Loaded Objects now: 2874.
+Total: 1.520700 ms (FindLiveObjects: 0.094700 ms CreateObjectMapping: 0.030500 ms MarkObjects: 1.291600 ms  DeleteObjects: 0.033600 ms)
+
+UnloadTime: 0.072200 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 2999.
+Total: 1.529000 ms (FindLiveObjects: 0.089600 ms CreateObjectMapping: 0.029800 ms MarkObjects: 1.346500 ms  DeleteObjects: 0.005900 ms)
+
+Received stats and achievements from Steam
+
+ 
+(Filename: C:/BuildAgent/work/d3d49558e4d408f4/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 53)
+
+STEAM Save Type:0 Used
+Main APPID:00322210 Used
+Steam Player Name:ALI213 Used
+Steam Player ID32:L2024423264(78AA3F60)/H17825793(01100001) Used
+Steam Player ID64:76561199984688992(0110000178AA3F60) Used
+Steam APP Language:english
+Steam User Is Online:1
+Steam User Is LoggedOn:1
+Steam API 2.37.91.26 USED
+Steam API 2.37.91.26 USED
+Steam APP UseCALLBACK:1
+Steam APP UseSavesBackup:0
+Steam APP BlockNetwork:0
