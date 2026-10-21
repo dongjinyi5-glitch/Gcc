@@ -39,6 +39,21 @@ def main():
         raise SystemExit(f"unknown faction {faction!r}; "
                          f"expected one of {list(M.SPEC_FACTION)}")
 
+    role = sys.argv[sys.argv.index("--role") + 1] if "--role" in sys.argv else None
+    if role is None:
+        try:
+            import theme_cbi
+            role = theme_cbi.role_of(char)
+        except ImportError:
+            role = None
+    # A role with no calibrated band yet falls back to the faction band, and the
+    # gate is expected to fail until it is calibrated. Say so out loud rather
+    # than silently judging olive drab against a navy-suit ruler.
+    if role and role not in M.SPEC_ROLE:
+        print(f"[warn] role {role!r} has no SPEC_ROLE band yet -- "
+              f"judging against the {faction} faction band; calibrate after "
+              f"the first render")
+
     a_path = os.path.join(VAL, f"composite_{char}_original.png")
     b_path = os.path.join(VAL, f"composite_{char}_restyled.png")
     if not (os.path.isfile(a_path) and os.path.isfile(b_path)):
@@ -48,14 +63,15 @@ def main():
     before = M.measure(a_path)
     after = M.measure(b_path)
     fid = M.compare(a_path, b_path)
-    rows = M.check(after, fid, faction=faction)
-    triad = M.triad_ratio(after, faction=faction)
-    design = M.SPEC_FACTION[faction]["triad"]
+    rows = M.check(after, fid, faction=faction, role=role)
+    triad = M.triad_ratio(after, faction=faction, role=role)
+    design = M.triad_for(faction, role)
     failed = [r for r in rows if not r["pass"]]
 
     report = {
         "character": char,
         "faction": faction,
+        "role": role,
         "baseline_original": before,
         "restyled": after,
         "fidelity": fid,
@@ -75,14 +91,15 @@ def main():
         json.dump(report, fh, indent=1, ensure_ascii=False)
 
     lines = [
-        f"# 重彩风格验收报告 — {char}（{faction}）",
+        f"# 重彩风格验收报告 — {char}（{faction} / {role}）",
         "",
         f"**结论：{report['gate']}**  "
         f"（{report['passed']}/{report['total']} 项通过）",
         "",
         f"度量对象：`validation/composite_{char}_restyled.png`"
         "（全部部件按引擎层级合成，原生分辨率）",
-        f"判定基准：`SPEC_COMMON`（统一笔触）+ `SPEC_FACTION[{faction}]`（阵营颜料）",
+        f"判定基准：`SPEC_COMMON`（统一笔触）+ "
+        f"`SPEC_ROLE[{role}]`（兵种颜料）或 `SPEC_FACTION[{faction}]`（回退）",
         "",
         "## 1. 风格指标（三阵营共用）",
         "",
@@ -115,7 +132,7 @@ def main():
                 f"| {pig} | {before['pigment'].get(pig)} | {r['value']} | "
                 f"{r['min']}–{r['max']} | {'✅' if r['pass'] else '❌'} |")
 
-    lines += ["", f"## 3. 三色配比（{faction}）", "",
+    lines += ["", f"## 3. 三色配比（{role or faction}）", "",
               "| 颜料 | 设计意图 | 实测 |", "|---|---|---|"]
     for k in design:
         lines.append(f"| {k} | {design[k]:.0%} | {triad.get(k, 0):.1%} |")
@@ -137,7 +154,7 @@ def main():
                  encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")
 
-    print(f"[{char} / {faction}] {report['gate']}: "
+    print(f"[{char} / {faction} / {role}] {report['gate']}: "
           f"{report['passed']}/{report['total']}")
     for r in failed:
         print(f"  FAIL {r['name']} = {r['value']} (need {r['min']}-{r['max']})")

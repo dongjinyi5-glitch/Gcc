@@ -1,6 +1,7 @@
 {
  "character": "Vinnie",
  "faction": "人类",
+ "role": "远征军",
  "baseline_original": {
   "file": "composite_Vinnie_original.png",
   "size": [
@@ -48,25 +49,25 @@
    297
   ],
   "alpha_cov": 0.4027,
-  "ink_w_mean": 1.5,
+  "ink_w_mean": 1.64,
   "ink_w_p50": 1.0,
   "ink_w_p90": 3.0,
-  "ink_cv": 0.631,
-  "ink_ratio": 0.354,
+  "ink_cv": 0.639,
+  "ink_ratio": 0.459,
   "pigment": {
-   "朱红": 0.033,
-   "石青": 0.538,
-   "石绿": 0.137,
-   "赭石": 0.271,
-   "藤黄": 0.006,
-   "花青": 0.015,
+   "朱红": 0.009,
+   "石青": 0.005,
+   "石绿": 0.443,
+   "赭石": 0.514,
+   "藤黄": 0.007,
+   "花青": 0.022,
    "未归类": 0.0
   },
   "paper_ratio": 0.005,
   "neg_space": 0.599,
   "ink_levels": 7,
-  "texture_std": 8.82,
-  "saturation": 0.548,
+  "texture_std": 8.99,
+  "saturation": 0.366,
   "opaque_px": 34803,
   "centroid": [
    159.26,
@@ -82,7 +83,7 @@
  "checks": [
   {
    "name": "ink_w_mean",
-   "value": 1.5,
+   "value": 1.64,
    "min": 1.15,
    "max": 3.0,
    "pass": true
@@ -96,7 +97,7 @@
   },
   {
    "name": "ink_cv",
-   "value": 0.631,
+   "value": 0.639,
    "min": 0.3,
    "max": 1.2,
    "pass": true
@@ -110,7 +111,7 @@
   },
   {
    "name": "texture_std",
-   "value": 8.82,
+   "value": 8.99,
    "min": 2.5,
    "max": 20.0,
    "pass": true
@@ -124,56 +125,56 @@
   },
   {
    "name": "ink_ratio",
-   "value": 0.354,
-   "min": 0.2,
-   "max": 0.45,
+   "value": 0.459,
+   "min": 0.28,
+   "max": 0.52,
    "pass": true
   },
   {
    "name": "saturation",
-   "value": 0.548,
-   "min": 0.35,
-   "max": 0.85,
+   "value": 0.366,
+   "min": 0.3,
+   "max": 0.55,
    "pass": true
   },
   {
    "name": "pig_石青",
-   "value": 0.538,
-   "min": 0.3,
-   "max": 0.68,
+   "value": 0.005,
+   "min": 0.0,
+   "max": 0.06,
    "pass": true
   },
   {
    "name": "pig_石绿",
-   "value": 0.137,
-   "min": 0.06,
-   "max": 0.26,
+   "value": 0.443,
+   "min": 0.3,
+   "max": 0.62,
    "pass": true
   },
   {
    "name": "pig_朱红",
-   "value": 0.033,
-   "min": 0.012,
-   "max": 0.1,
+   "value": 0.009,
+   "min": 0.004,
+   "max": 0.08,
    "pass": true
   },
   {
    "name": "pig_赭石",
-   "value": 0.271,
-   "min": 0.14,
-   "max": 0.42,
+   "value": 0.514,
+   "min": 0.28,
+   "max": 0.62,
    "pass": true
   },
   {
    "name": "pig_花青",
-   "value": 0.015,
+   "value": 0.022,
    "min": 0.0,
-   "max": 0.2,
+   "max": 0.12,
    "pass": true
   },
   {
    "name": "pig_藤黄",
-   "value": 0.006,
+   "value": 0.007,
    "min": 0.0,
    "max": 0.08,
    "pass": true
@@ -201,14 +202,14 @@
   }
  ],
  "triad_measured": {
-  "石青": 0.76,
-  "石绿": 0.194,
-  "朱红": 0.047
+  "石绿": 0.459,
+  "赭石": 0.532,
+  "朱红": 0.009
  },
  "triad_design": {
-  "石青": 0.6,
-  "石绿": 0.3,
-  "朱红": 0.1
+  "石绿": 0.46,
+  "赭石": 0.5,
+  "朱红": 0.04
  },
  "passed": 17,
  "total": 17,

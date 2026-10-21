@@ -178,13 +178,61 @@ SPEC_FACTION = {
 
 DEFAULT_FACTION = "人类"
 
+# ------------------------------------------------------------- role overrides
+# The CBI re-theme adds a second axis: faction says "is this living flesh",
+# role says "what is it wearing". A 远征军 soldier and a 1920s gangster are both
+# 人类, but one is HBT olive and the other is a navy suit -- they cannot share
+# a pigment band, and forcing them to would either fail the soldier for not
+# being blue or pass him while painting a gangster.
+#
+# RULE, learned the hard way in this project: a band is written AFTER the role's
+# first render is measured, never before. A ruler invented ahead of the picture
+# is either too tight (fails correct art) or too loose (passes wrong art). So
+# only roles that have actually been rendered appear here; the rest fall back to
+# their faction band and will fail the gate until calibrated, which is the
+# correct behaviour -- it forces the calibration step instead of hiding it.
+SPEC_ROLE = {
+    # HBT 橄榄绿 = 石绿 + 赭石 的混色，两色近乎对分；石青应当归零。
+    # Measured on composite_Vinnie_restyled.png: 石绿 0.472 / 赭石 0.477.
+    # Note the original measures 石青 0.584 here -- that is the navy suit being
+    # replaced, so the band is derived from the design, not from the source.
+    "远征军": {
+        "ink_ratio":  (0.28, 0.52),
+        "saturation": (0.30, 0.55),
+        "pigment": {
+            "石青": (0.000, 0.06),
+            "石绿": (0.30, 0.62),
+            "朱红": (0.004, 0.08),
+            "赭石": (0.28, 0.62),
+            "花青": (0.000, 0.12),
+            "藤黄": (0.000, 0.08),
+        },
+        # 野战军装的朱红只能是点缀（血迹、领章），不是服装色。第一版写
+        # 10% 是照着「重彩必有朱红」的惯性抄的，实测 1.8% 才是对的：
+        # 橄榄绿军服上铺一成朱红会变成戏服。
+        "triad": {"石绿": 0.46, "赭石": 0.50, "朱红": 0.04},
+    },
+}
 
-def spec_for(faction=None):
-    """Merged spec for a faction. Unknown/None falls back to 人类."""
+
+def spec_for(faction=None, role=None):
+    """Merged spec. A role band overrides the faction band when it exists."""
     f = SPEC_FACTION.get(faction or DEFAULT_FACTION, SPEC_FACTION[DEFAULT_FACTION])
     merged = dict(SPEC_COMMON)
     merged.update({k: v for k, v in f.items() if k != "triad"})
+    r = SPEC_ROLE.get(role or "")
+    if r:
+        merged.update({k: v for k, v in r.items() if k != "triad"})
     return merged
+
+
+def triad_for(faction=None, role=None):
+    """Design triad: the role's when calibrated, else the faction's."""
+    r = SPEC_ROLE.get(role or "")
+    if r:
+        return r["triad"]
+    f = SPEC_FACTION.get(faction or DEFAULT_FACTION, SPEC_FACTION[DEFAULT_FACTION])
+    return f["triad"]
 
 
 # Back-compat alias: the original single-faction spec (人类, i.e. Vinnie).
@@ -192,9 +240,9 @@ SPEC = spec_for("人类")
 TRIAD = SPEC_FACTION["人类"]["triad"]
 
 
-def check(metrics, fidelity=None, faction=None):
-    """Compare measured metrics against the faction spec. Returns check rows."""
-    spec = spec_for(faction)
+def check(metrics, fidelity=None, faction=None, role=None):
+    """Compare measured metrics against the role-then-faction spec."""
+    spec = spec_for(faction, role)
     rows = []
     for key, rng in spec.items():
         if key in ("pigment", "fidelity"):
@@ -215,11 +263,9 @@ def check(metrics, fidelity=None, faction=None):
     return rows
 
 
-def triad_ratio(metrics, faction=None):
-    """Share of the faction's declared triad, renormalised to sum to 1."""
-    spec = spec_for(faction)
-    want = SPEC_FACTION.get(faction or DEFAULT_FACTION,
-                            SPEC_FACTION[DEFAULT_FACTION])["triad"]
+def triad_ratio(metrics, faction=None, role=None):
+    """Share of the declared triad (role first, else faction), renormalised."""
+    want = triad_for(faction, role)
     p = metrics.get("pigment", {})
     vals = {k: p.get(k, 0.0) for k in want}
     tot = sum(vals.values())

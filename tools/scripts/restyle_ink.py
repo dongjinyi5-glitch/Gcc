@@ -63,6 +63,23 @@ SKIN_TONE_FACTION = {
 # desaturated grey-brown is CIELAB-nearest to 花青 among six mineral pigments.
 # Painting it 花青 produced a navy-blue dog. Fur needs its own ramp.
 FUR_TONE = ((124, 108, 90), (80, 70, 58), (162, 148, 128))
+
+# 军装色是**混色**，没有一个矿物颜料直接落在那里。
+#   石绿 straight from the dish = forest green, which is not olive drab;
+#   赭石 straight from the dish = terracotta, which is not 国防色土黄.
+# Same failure mode as the rat's fur (see FUR_TONE): a pigment name is not a
+# colour. These two ramps are the 重彩 reading of the real fabric tones.
+HBT_TONE = ((104, 106, 72), (62, 66, 46), (152, 152, 112))     # 美制 HBT 橄榄绿
+KHAKI_TONE = ((134, 116, 80), (86, 74, 50), (178, 164, 126))   # 日军国防色土黄
+
+# role -> pigment -> ramp, applied to GARMENT parts only. 赭石 on a face must
+# keep the flesh ramp; only cloth takes the fabric ramp.
+ROLE_RAMP = {
+    "远征军":   {"石绿": HBT_TONE},
+    "日军将官": {"赭石": KHAKI_TONE},
+    "日军佐官": {"赭石": KHAKI_TONE},
+    "日军士兵": {"赭石": KHAKI_TONE},
+}
 INK_RGB = np.array([28, 25, 23], dtype=np.float32)
 PAPER_RGB = np.array([243, 235, 220], dtype=np.float32)
 
@@ -215,8 +232,26 @@ FACTION_KIND = {
 }
 
 
-def rule_for(slot, faction=None):
-    """(kind, primary, secondary) for a slot, resolved against a faction."""
+# 兵种层（CBI 题材）。faction 回答「这是不是活人肉体」，role 回答「穿什么」。
+# 两层正交：日军士兵丧尸和日军士兵本人共用同一套军服配色，皮肤一个走活人
+# 肉色、一个走尸斑灰。role 优先于 faction——兵种比生死更具体地决定布料颜色。
+SHADOW_LAYER_ROLES = {"日军士兵"}
+# 用户明确标注「不变」的兵种类（鼠怪）。命中则原样返回，不做任何像素改写。
+UNCHANGED_ROLES = {"鼠怪"}
+
+
+def _role_kind_table(role):
+    if not role:
+        return None
+    try:
+        import theme_cbi
+    except ImportError:          # 旧题材下没有这个模块，退回 faction
+        return None
+    return theme_cbi.ROLE_KIND.get(role)
+
+
+def rule_for(slot, faction=None, role=None):
+    """(kind, primary, secondary) for a slot, resolved against role then faction."""
     s = (slot or "").lower()
     rule = DEFAULT_RULE
     for prefix, r in SLOT_RULES:
@@ -224,9 +259,9 @@ def rule_for(slot, faction=None):
             rule = r
             break
     kind, primary, secondary = rule
-    fk = FACTION_KIND.get(faction or "人类", {})
-    if kind in fk:
-        fp, fs, _allowed = fk[kind]
+    table = _role_kind_table(role) or FACTION_KIND.get(faction or "人类", {})
+    if kind in table:
+        fp, fs, _allowed = table[kind]
         if fp is not None:
             primary = fp
         if fs is not None:
@@ -234,8 +269,11 @@ def rule_for(slot, faction=None):
     return kind, primary, secondary
 
 
-def allowed_for(kind, faction=None):
-    """Pigments a kind of part may use under a faction."""
+def allowed_for(kind, faction=None, role=None):
+    """Pigments a kind of part may use under a role (falling back to faction)."""
+    table = _role_kind_table(role)
+    if table and kind in table:
+        return table[kind][2]
     fk = FACTION_KIND.get(faction or "人类", {})
     if kind in fk:
         return fk[kind][2]
@@ -363,9 +401,13 @@ def pigment_shade(name, rel, ramp=None):
 
 
 # ------------------------------------------------------------------ the restyle
-def restyle(img, slot="", seed=0, cfg=None, faction=None):
+def restyle(img, slot="", seed=0, cfg=None, faction=None, role=None):
     cfg = cfg or {}
     rng = np.random.default_rng(seed)
+
+    # 「不变」必须是可执行的，不能靠批处理脚本里手写 if 来记得
+    if role in UNCHANGED_ROLES:
+        return img.copy()
 
     arr = np.array(img.convert("RGBA"), dtype=np.float32)
     h, w = arr.shape[:2]
@@ -377,7 +419,7 @@ def restyle(img, slot="", seed=0, cfg=None, faction=None):
 
     L = luminance(rgb)
     H, S, V = rgb_to_hsv(rgb)
-    kind, primary, secondary = rule_for(slot, faction)
+    kind, primary, secondary = rule_for(slot, faction, role)
 
     # ---- 1. separate stroke from dark fill -----------------------------------
     dark = opaque & (L < 30)
@@ -416,7 +458,16 @@ def restyle(img, slot="", seed=0, cfg=None, faction=None):
                         "S": cS, "H": cH, "dark_frac": dark_frac})
     regions.sort(key=lambda r: -r["area"])
 
-    allowed = allowed_for(kind, faction)
+    allowed = allowed_for(kind, faction, role)
+
+    # 青绿积染 needs 石绿 specifically. Under the role layer the secondary is
+    # often 墨 or 藤黄 (khaki, navy, white), and laying those as an "underlayer"
+    # would just muddy the garment -- so the technique is gated on the pigment,
+    # not only on the faction.
+    green_layer = bool(
+        secondary == "石绿"
+        and (role in SHADOW_LAYER_ROLES if role
+             else (faction or "人类") in SHADOW_LAYER_FACTIONS))
     chromatic = [p for p in allowed if p in PIG_HUE]
 
     def hue_dist(hue, pig):
@@ -523,10 +574,14 @@ def restyle(img, slot="", seed=0, cfg=None, faction=None):
             # the pale flesh ramp. Same pigment, two very different results.
             is_skin = (pig == "赭石" and (r["skinlike"] or kind == "skin"))
             is_fur = (faction == "鼠怪" and pig == "赭石")
+            fabric = (ROLE_RAMP.get(role or "", {}).get(pig)
+                      if kind == "garment" else None)
             if is_fur:
                 ramp = FUR_TONE
             elif is_skin:
                 ramp = SKIN_TONE_FACTION.get(faction or "人类", SKIN_TONE)
+            elif fabric is not None:
+                ramp = fabric
             else:
                 ramp = PIGMENTS[pig]
             # flesh and fur are soft materials, not mineral glazes: raise the
@@ -542,8 +597,7 @@ def restyle(img, slot="", seed=0, cfg=None, faction=None):
         # It must be a SOFT weight, not a quantile split. A binary cut on
         # luminance drew a hard horizontal green bar across the zombie's waist
         # and knees -- visible in review, invisible to every numeric gate.
-        if (rank == 0 and kind == "garment" and secondary
-                and (faction or "人类") in SHADOW_LAYER_FACTIONS
+        if (rank == 0 and kind == "garment" and green_layer
                 and m.sum() > 0.10 * opaque.sum()):
             dev = L[m] - r["L"]
             sd = float(dev.std())
@@ -685,6 +739,13 @@ def main():
     if faction not in FACTION_KIND:
         raise SystemExit(f"unknown faction {faction!r}; "
                          f"expected one of {list(FACTION_KIND)}")
+    role = opt("--role")
+    if role is None:
+        try:
+            import theme_cbi
+            role = theme_cbi.role_of(char)
+        except ImportError:
+            role = None
 
     src = os.path.join(PROJECT, "art", f"{char.lower()}_parts", "original")
     dst = os.path.join(PROJECT, "art", f"{char.lower()}_parts", "restyled")
@@ -700,11 +761,12 @@ def main():
         picked = [f for f in files if any(f.startswith(p) for p in want)]
         files = picked or files[:8]
 
-    print(f"[{char} / {faction}] {len(files)} part(s) -> {dst}", flush=True)
+    print(f"[{char} / {faction} / {role}] {len(files)} part(s) -> {dst}", flush=True)
     for i, f in enumerate(files):
         img = Image.open(os.path.join(src, f))
         slot = f.split("_")[1] if "_" in f else f
-        res = restyle(img, slot=slot, seed=i * 7919 + 13, faction=faction)
+        res = restyle(img, slot=slot, seed=i * 7919 + 13,
+                      faction=faction, role=role)
         res.save(os.path.join(dst, f))
         print(f"[{i + 1}/{len(files)}] {f}", flush=True)
 

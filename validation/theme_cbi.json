@@ -1,0 +1,338 @@
+{
+ "Vinnie": {
+  "cn": "文尼·卡诺利",
+  "en": "Vinnie Cannoli",
+  "faction": "玩家",
+  "role": "远征军",
+  "brief": "中国远征军新一军 / 新六军基层突击手，全副美械。\n服饰：美制 HBT 人字纹橄榄绿战斗服，袖子卷至肘部露出结实小臂；美军棕色高帮帆布战斗靴，帆布绑腿缠至小腿；美制 M1 钢盔外罩伪装网，网内插胡康河谷的热带枝叶。\n装备：汤姆逊 M1928A1 或 M1A1 冲锋枪（30 发直弹匣）；胸前交叉佩戴美制帆布五联装弹匣袋，腰间 M1910 水壶、M2 刺刀、Mk 2 手榴弹；防毒面具包斜挎背后。\n面部（虚构）：滇缅战场晒出的黑红肤色，颧骨高、下颌方、眉骨重，眼神狠而稳；脸上有抗疟药膏与泥浆混合的掩护迷彩。",
+  "unchanged": false
+ },
+ "Gangster1": {
+  "cn": "黑帮枪手·黑西装",
+  "en": "Mafia Mobster",
+  "faction": "人类敌人",
+  "role": "日军士兵",
+  "brief": "日军陆军步兵·步枪兵（虚构人物）。\n服饰：九八式军服（国防色土黄），昭五式铁帽，绑腿、编上靴。\n装备：三八式步枪加三十年式刺刀，前挂式弹药盒，帆布背囊。\n面部（虚构）：二十出头、脸瘦、唇薄，皮肤粗糙。",
+  "unchanged": false
+ },
+ "Gangster2": {
+  "cn": "黑帮枪手·黑大衣",
+  "en": "Mafia Mobster (Topcoat)",
+  "faction": "人类敌人",
+  "role": "日军士兵",
+  "brief": "日军陆军步兵·分队长（军曹，虚构人物）。\n服饰：九八式军服加曹长臂章，昭五式铁帽，绑腿。\n装备：九九式短步枪、九八式军刀、望远镜挂胸前、地图袋。\n面部（虚构）：三十余岁、络腮胡渣、颈短，神情老练。",
+  "unchanged": false
+ },
+ "Gangster3": {
+  "cn": "黑帮枪手·黑马甲",
+  "en": "Mafia Mobster (Vest)",
+  "faction": "人类敌人",
+  "role": "日军佐官",
+  "brief": "日军陆军大尉（虚构人物），中队长。\n服饰：九八式尉官服，立领、肩章，绑腿、编上靴。\n装备：九八式军刀、十四年式手枪皮套、望远镜。\n面部（虚构）：清瘦、颧骨高、留细髭，神情紧绷。",
+  "unchanged": false
+ },
+ "Gangster4": {
+  "cn": "黑帮枪手·棕马甲",
+  "en": "Mafia Mobster (Brown Vest)",
+  "faction": "人类敌人",
+  "role": "日军佐官",
+  "brief": "日军陆军少佐（虚构人物），大队副。\n服饰：呢料佐官服，参谋绶带，马靴。\n装备：军刀、地图包。\n面部（虚构）：方脸、眉粗、面色沉，下颌有须根。",
+  "unchanged": false
+ },
+ "Gangster5": {
+  "cn": "黑帮精英·白西装",
+  "en": "Mafia Mobster (White Suit)",
+  "faction": "人类敌人",
+  "role": "日军佐官",
+  "brief": "日军陆军中佐（虚构人物），联队附。\n服饰：呢料中佐服，外罩将校大衣，白手套。\n装备：九八式军刀、望远镜。\n面部（虚构）：长脸、鼻梁高、眼细，神情倨傲。",
+  "unchanged": false
+ },
+ "Gangster6": {
+  "cn": "黑帮枪手·蓝条纹",
+  "en": "Mafia Mobster (Pinstripe)",
+  "faction": "人类敌人",
+  "role": "日军佐官",
+  "brief": "日军陆军大佐（虚构人物），联队长。\n服饰：呢料大佐服，立领、肩章与袖章，白手套、马靴。\n装备：九八式军刀、手枪皮套。\n面部（虚构）：宽额、下颌重、鬓角灰，法令纹深。",
+  "unchanged": false
+ },
+ "Goon1": {
+  "cn": "棒球棍打手",
+  "en": "Baseball Bat Gangster",
+  "faction": "人类敌人",
+  "role": "日军士兵",
+  "brief": "日军陆军白刃兵（虚构人物），军服上衣脱去只余衬衣，持军刀近战（原棒球棍位）。\n服饰：国防色衬衣、军裤、绑腿、编上靴。\n装备：九八式军刀、腰间手榴弹。\n面部（虚构）：凶悍，左眉一道旧疤，牙关紧咬。",
+  "unchanged": false
+ },
+ "Goon2": {
+  "cn": "管钳打手",
+  "en": "Pipe Wrench Goon",
+  "faction": "人类敌人",
+  "role": "日军士兵",
+  "brief": "日军陆军工兵（虚构人物），持工兵铁锹近战（原管钳位）。\n服饰：作训衬衣、军裤、昭五式铁帽、工具腰带。\n装备：工兵铁锹、腰间炸药包。\n面部（虚构）：粗壮、圆脸、短颈，表情蛮横。",
+  "unchanged": false
+ },
+ "Goon3": {
+  "cn": "铁盾打手",
+  "en": "Shield Goon",
+  "faction": "人类敌人",
+  "role": "日军士兵",
+  "brief": "日军陆军防盾兵（虚构人物），持钢板防盾推进（原铁盾位）。\n服饰：作训衬衣、昭五式铁帽、军裤、绑腿。\n装备：钢板防盾、腰间手榴弹、南部十四年式手枪。\n面部（虚构）：敦实、眉低压、下颌宽，神情木然。",
+  "unchanged": false
+ },
+ "Vito": {
+  "cn": "维托",
+  "en": "Vito",
+  "faction": "人类敌人",
+  "role": "日军佐官",
+  "brief": "日军陆军中佐（虚构人物），参谋。\n服饰：呢料佐官服，立领、肩章，外罩将校用毛呢大衣。\n装备：九八式军刀、公文皮包、望远镜。\n面部（虚构）：白净、细框眼镜、鬓角整齐，书卷气。",
+  "unchanged": false
+ },
+ "Salvatore": {
+  "cn": "萨尔瓦托雷",
+  "en": "Salvatore",
+  "faction": "人类敌人",
+  "role": "日军佐官",
+  "brief": "日军陆军大佐（虚构人物），正在温泉疗养，被突袭时仓促应战。\n服饰：藏青和式作务衣（浴衣），敞怀，木屐；军刀随手搁在身侧。\n装备：军刀、手巾。\n面部（虚构）：壮硕、胸毛浓密、胡茬未刮，神情恼怒。",
+  "unchanged": false
+ },
+ "Paulie": {
+  "cn": "保利",
+  "en": "Paulie",
+  "faction": "人类敌人",
+  "role": "日军佐官",
+  "brief": "日军陆军少佐（虚构人物），野战部队长。\n服饰：国防色军官大衣（原卡其风衣位），略帽，皮手套。\n装备：九八式军刀、手枪皮套、地图袋。\n面部（虚构）：中等身材、眉平、脸型方，神情戒备。",
+  "unchanged": false
+ },
+ "Soldier": {
+  "cn": "美军正规军士兵",
+  "en": "US Army Soldier",
+  "faction": "人类敌人",
+  "role": "日军士兵",
+  "brief": "日军陆军正规步兵（虚构人物）。\n服饰：九八式军服、昭五式铁帽、绑腿、编上靴。\n装备：九九式步枪、防毒面具挎包、行军背囊、水壶。\n面部（虚构）：标准兵役年龄、面无表情，颧骨平。",
+  "unchanged": false
+ },
+ "Scientist": {
+  "cn": "德国科学家",
+  "en": "German Scientist",
+  "faction": "人类敌人",
+  "role": "日军军医",
+  "brief": "日军陆军军医（虚构人物）。\n服饰：白色军医外套（原白实验服位），陆军军医阶级章，圆框眼镜，口罩挂在颈上。\n装备：器械盘、听诊器、病历夹。\n面部（虚构）：秃顶、鬓角灰白、面容清瘦，眼袋深。",
+  "unchanged": false
+ },
+ "BonninoBoss": {
+  "cn": "桑尼·波尼诺",
+  "en": "Sonny Bonnino",
+  "faction": "Boss",
+  "role": "日军将官",
+  "brief": "日军陆军大将（虚构人物）。\n服饰：昭和呢料大将服，立领、金线肩章与袖章、绶带斜挎，白手套、高筒马靴；魁梧肥胖的体型保留原设计。\n装备：九八式军刀、将官略帽、地图筒。\n面部（虚构）：圆胖、下颌叠肉、眼小、蓄短须，威压感来自体量而非表情。",
+  "unchanged": false
+ },
+ "Frankie": {
+  "cn": "飞人法兰琪",
+  "en": "Frankie the Fly",
+  "faction": "Boss",
+  "role": "日军将官",
+  "brief": "日军陆军中将（虚构人物），方面军参谋长。\n服饰：呢料中将服，立领、肩章、绶带，马靴。\n装备：九八式军刀、略帽、作战地图筒。\n面部（虚构）：瘦长脸、颧骨高、唇薄，眼窝深，神色冷淡。",
+  "unchanged": false
+ },
+ "EvilFrankie": {
+  "cn": "暗黑教父",
+  "en": "The Dark Don",
+  "faction": "Boss",
+  "role": "日军将官",
+  "brief": "日军陆军中将（虚构人物），情报系统出身，气质阴鸷。\n服饰：深色呢料军官大衣罩在军服外，衣领立起，军刀挂在腰侧。\n装备：军刀、手套、公文皮包。\n面部（虚构）：面颊凹陷、眉骨投下阴影、眼神阴冷，嘴角不带笑意。",
+  "unchanged": false
+ },
+ "EvilFrankieOnFloor": {
+  "cn": "暗黑教父·倒地",
+  "en": "The Dark Don (downed)",
+  "faction": "Boss",
+  "role": "日军将官",
+  "brief": "同上，倒地姿态（原瘫坐姿势保留）。\n服饰：深色呢料军官大衣散开，军服领口松脱，军刀脱手落在身侧。\n面部（虚构）：同 EvilFrankie，面色更灰败，额角有伤。",
+  "unchanged": false
+ },
+ "ZombieRatBoss": {
+  "cn": "鼠王米基",
+  "en": "Mickey the Rat",
+  "faction": "Boss",
+  "role": "鼠怪",
+  "brief": "保持原状，不做任何改写。",
+  "unchanged": true
+ },
+ "ZombieRegular": {
+  "cn": "普通平民丧尸",
+  "en": "Civilian Zombie",
+  "faction": "僵尸",
+  "role": "日本平民·劳作",
+  "brief": "日本农民丧尸（虚构人物）。\n服饰：藏青粗布作务衣、草鞋、麦秆斗笠（原软呢帽位），腰间系手巾。\n面部（虚构）：晒黑、皱纹深、颧骨突出，皮肤灰绿。",
+  "unchanged": false
+ },
+ "ZombieRunner1": {
+  "cn": "平民丧尸·白衬衫",
+  "en": "Civilian Zombie (Runner)",
+  "faction": "僵尸",
+  "role": "日本平民·劳作",
+  "brief": "日本工人丧尸（虚构人物）。\n服饰：白衬衫卷袖、深色工装裤、布帽、工具袋。\n面部（虚构）：粗眉、方下颌，皮肤灰绿。",
+  "unchanged": false
+ },
+ "ZombieRunner2": {
+  "cn": "平民丧尸·黑西装",
+  "en": "Civilian Zombie (Suit Runner)",
+  "faction": "僵尸",
+  "role": "日本平民·劳作",
+  "brief": "日本商人丧尸（虚构人物）。\n服饰：昭和商家深色西装、圆顶礼帽、算盘袋。\n面部（虚构）：圆脸、留八字胡，皮肤灰绿。",
+  "unchanged": false
+ },
+ "ZombieRunner3": {
+  "cn": "平民丧尸·白裙女子",
+  "en": "Civilian Zombie (Female Runner)",
+  "faction": "僵尸",
+  "role": "日本平民·浅色",
+  "brief": "日本女学生丧尸（虚构人物）。\n服饰：深藏青水手领制服（セーラー服）、百褶裙、白袜、黑皮鞋，齐耳短发（原金发改为黑发）。\n面部（虚构）：圆脸、皮肤灰绿，血迹自额角淌下。",
+  "unchanged": false
+ },
+ "ZombieSailor": {
+  "cn": "水手丧尸",
+  "en": "Sailor Zombie",
+  "faction": "僵尸",
+  "role": "日本海军",
+  "brief": "日本海军水兵丧尸（虚构人物）。\n服饰：白色水兵服（セーラー）配藏青领巾，水兵帽，黑皮鞋、绑腿。\n面部（虚构）：腐烂、皮肤灰绿，短发贴额。",
+  "unchanged": false
+ },
+ "ZombiePaulie": {
+  "cn": "保利丧尸",
+  "en": "Paulie Zombie",
+  "faction": "僵尸",
+  "role": "日本平民·劳作",
+  "brief": "日本公务员丧尸（虚构人物）。\n服饰：深色西装、袖章、圆帽、公文包。\n面部（虚构）：窄脸、戴细框眼镜，皮肤灰绿。",
+  "unchanged": false
+ },
+ "ZombieCop": {
+  "cn": "警察丧尸",
+  "en": "Cop Zombie",
+  "faction": "僵尸",
+  "role": "日本平民·劳作",
+  "brief": "日本警察丧尸（虚构人物）。\n服饰：深藏青警察制服、八角警帽配警徽、白手套、皮腰带、警棍。\n面部（虚构）：方脸、短髭，皮肤灰绿。",
+  "unchanged": false
+ },
+ "ZombieOfficer": {
+  "cn": "军官丧尸",
+  "en": "Officer Zombie",
+  "faction": "僵尸",
+  "role": "日军将官",
+  "brief": "日军陆军中将（虚构人物），前线指挥官。\n服饰：卡其将官服，战斗帽（原宽檐战役帽位），金色领章与肩章，皮腰带、马靴。\n装备：九八式军刀、望远镜挂胸前。\n面部（虚构）：方脸、眉粗、面色沉，短髭。",
+  "unchanged": false
+ },
+ "ZombieGun": {
+  "cn": "持枪丧尸",
+  "en": "Armed Zombie",
+  "faction": "僵尸",
+  "role": "日军佐官",
+  "brief": "日军宪兵军官（虚构人物），右手仍握着左轮（原持枪姿态保留）。\n服饰：深藏青宪兵制服，宪兵臂章，八角帽配宪兵徽。\n装备：十四年式手枪 / 左轮、白手套、皮腰带、军刀。\n面部（虚构）：窄脸、薄唇、眼神锐利，颧下阴影重。",
+  "unchanged": false
+ },
+ "ZombieSoldier": {
+  "cn": "士兵丧尸",
+  "en": "Soldier Zombie",
+  "faction": "僵尸",
+  "role": "日军士兵",
+  "brief": "日军陆军士兵丧尸（虚构人物），手持百式冲锋枪（原汤姆逊位保留）。\n服饰：残破的国防色军服、昭五式铁帽、战术腰带。\n装备：百式冲锋枪、弹药盒。\n面部（虚构）：腐烂、眼窝塌陷，皮肤走尸斑灰绿。",
+  "unchanged": false
+ },
+ "ZombieSandwichBoard": {
+  "cn": "三明治人丧尸",
+  "en": "Sandwich Man Zombie",
+  "faction": "僵尸",
+  "role": "日本平民·劳作",
+  "brief": "街头广告人丧尸（虚构人物），前后两块木质广告牌保留，牌面改写为昭和样式的手写日文。\n服饰：作务衣、草鞋、束额手巾。\n面部（虚构）：瘦削、皮肤灰绿，眼窝深陷。",
+  "unchanged": false
+ },
+ "ZombieCharger": {
+  "cn": "橄榄球手丧尸",
+  "en": "Football Player Zombie",
+  "faction": "僵尸",
+  "role": "日本海军",
+  "brief": "日本海军陆战队队员丧尸（虚构人物），冲撞型。\n服饰：藏青作训服，昭五式铁帽，皮质护具（原橄榄球护肩位改为防弹护胸与护肩），帆布绑腿。\n装备：护具、腰间手榴弹。\n面部（虚构）：面部溃烂、下颌脱位，体型壮硕。",
+  "unchanged": false
+ },
+ "ZombieBurping": {
+  "cn": "打嗝女丧尸",
+  "en": "Burping Maid Zombie",
+  "faction": "僵尸",
+  "role": "日本平民·浅色",
+  "brief": "酒场女招待丧尸（虚构人物）。\n服饰：白底蓝纹割烹着（家政围裙）、束发、木屐；鼓胀的腹部保留。\n面部（虚构）：面部严重溃烂、皮肤灰绿。",
+  "unchanged": false
+ },
+ "ZombieStripper": {
+  "cn": "脱衣舞女丧尸",
+  "en": "Stripper Zombie",
+  "faction": "僵尸",
+  "role": "日本平民·浅色",
+  "brief": "酒场舞女丧尸（虚构人物），手持皮鞭（保留）。\n服饰：深色舞台襦袢配束腰、木屐；黑发盘髻（原金发改为黑发）。\n面部（虚构）：皮肤灰绿、唇色暗，眼妆晕开。",
+  "unchanged": false
+ },
+ "ZombieCrawler": {
+  "cn": "爬行丧尸",
+  "en": "Creeping Zombie",
+  "faction": "僵尸",
+  "role": "日军士兵",
+  "brief": "日军陆军士兵丧尸（虚构人物），下半身被炸断，仅余胸腔与双臂拖行。\n服饰：国防色军服残片、昭五式铁帽，断口处缠污损绷带。\n面部（虚构）：半张脸缺失、牙床外露，皮肤灰绿。",
+  "unchanged": false
+ },
+ "ZombieJumper": {
+  "cn": "扑跳爬行丧尸",
+  "en": "Leaping Crawler",
+  "faction": "僵尸",
+  "role": "日军士兵",
+  "brief": "日军陆军士兵丧尸（虚构人物），断腿，双臂撑地扑跳。\n服饰：作训衬衣残片、绑腿残余，断口绷带。\n面部（虚构）：面部溃烂、眼球浑浊。",
+  "unchanged": false
+ },
+ "ZombieFloater": {
+  "cn": "气球浮尸丧尸",
+  "en": "Balloon Floater Zombie",
+  "faction": "僵尸",
+  "role": "日本平民·劳作",
+  "brief": "街头小贩丧尸（虚构人物），脚踝绳子与红气球保留。\n服饰：作务衣、草帽、腰间挂气球绳。\n面部（虚构）：小个子、圆脸，皮肤灰绿。",
+  "unchanged": false
+ },
+ "FatCook": {
+  "cn": "屠夫丧尸",
+  "en": "Butcher Zombie",
+  "faction": "僵尸",
+  "role": "日本平民·浅色",
+  "brief": "屠夫丧尸（虚构人物），手拿出刃包丁、背后插锯（保留）。\n服饰：血迹斑斑的白色围裙（原白围裙位）、赤膊、黑色长裤。\n面部（虚构）：圆胖、光头、下颌叠肉，皮肤灰绿。",
+  "unchanged": false
+ },
+ "FatDockworker": {
+  "cn": "码头工丧尸",
+  "en": "Dockworker Zombie",
+  "faction": "僵尸",
+  "role": "日本平民·劳作",
+  "brief": "码头工丧尸（虚构人物），手持斧头（保留）。\n服饰：工装背心、宽檐工帽、黑色长裤、布鞋。\n面部（虚构）：壮硕、宽脸、胡茬，皮肤灰绿。",
+  "unchanged": false
+ },
+ "ZombieRat": {
+  "cn": "普通变异老鼠",
+  "en": "Medium Rat",
+  "faction": "鼠怪",
+  "role": "鼠怪",
+  "brief": "保持原状，不做任何改写。",
+  "unchanged": true
+ },
+ "ZombieRatJumper": {
+  "cn": "扑咬巨鼠",
+  "en": "Leaping Rat",
+  "faction": "鼠怪",
+  "role": "鼠怪",
+  "brief": "保持原状，不做任何改写。",
+  "unchanged": true
+ },
+ "ZombieRatSpitter": {
+  "cn": "毒液巨鼠",
+  "en": "Big Poisonous Rat",
+  "faction": "鼠怪",
+  "role": "鼠怪",
+  "brief": "保持原状，不做任何改写。",
+  "unchanged": true
+ }
+}
