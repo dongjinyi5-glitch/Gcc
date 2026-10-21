@@ -335,3 +335,33 @@ Texture2D（pathID 88/121/145/…，尺寸 94×100 / 115×117 / 123×87 …）�
 替代描述 + 导出 CSV）、`docs/CHARACTER_ROSTER.md`、`art/roster_reply_template.csv`、
 `art/character_roster_sheet.png`、`tools/scripts/characters_meta.py`（唯一身份表）。
 旧图归档在 `extracted/characters_v1_superseded/`。
+
+---
+
+## 填写回传通道（2026-10-21 晚，M2 前置）
+
+**第一次交付的"导出 CSV"按钮是坏的，用户填的 42 条描述全丢了。** 根因不在浏览器，
+在生成器：`build_roster_v2.py` 用 Python 普通三引号字符串拼 HTML，JS 里写了
+`join('\r\n')` 和 `'\ufeff'`，Python 先把它解释成**真字符**——生成出来的 HTML 里
+是 `join('` 换行 换行 `')`，字符串字面量在换行处断开，整段 `<script>` 解析失败
+（`SyntaxError: Invalid or unexpected token`）。脚本一死，筛选、搜索、导出全部失效，
+localStorage 也一次都没写进去，所以事后翻遍 Chrome/Edge 的 Local Storage 和全盘
+`.csv` 都找不到任何残留。
+
+**三条规矩，以后所有 HTML 生成器都适用：**
+1. Python 模板里拼 JS，**字符串内一律不写反斜杠转义**。要 CRLF 用
+   `String.fromCharCode(13,10)`，要 BOM 用 `String.fromCharCode(65279)`。
+2. 生成完必须 **`node --check` 过一遍**抽出来的 `<script>`。这次就是没做这步，
+   页面照样能打开、卡片照样好看，但所有交互都是死的。
+3. 注释里也不能写 `\r\n` 这种示例——同一个坑我第二次就栽在自己的注释上。
+
+**替代方案：不再依赖浏览器下载。** 新增 `tools/scripts/brief_server.py`
+（`http://127.0.0.1:8770/`），页面每敲一个字就 `POST /save`，直接落到
+`validation/roster_briefs.json`；`GET /state` 回灌（草稿打底 + 填写覆盖），
+`GET /csv` 直接出 CSV。浏览器拦截下载、localStorage 被沙箱清掉都不影响——
+文件在工程目录里，随时可读。
+
+**草稿预填**：`draft_briefs.py` 按 `SPEC_FACTION` + `FACTION_KIND` + 每角色的
+`look/role/weapon` 文本，为 42 个角色各生成一条含【颜料】【笔法】【本色】【要点】
+的草稿，写到 `roster_briefs_draft.json`。用户是"改"而不是"从空白写"，
+同时草稿与真实填写分文件存放，diff 一下就知道用户到底动了哪几条。

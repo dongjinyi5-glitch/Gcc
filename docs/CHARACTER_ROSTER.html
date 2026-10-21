@@ -32,6 +32,21 @@ h1 small{display:block;font-size:13px;letter-spacing:.32em;color:var(--gold);
 .chip b{font-family:Georgia,serif;opacity:.6;margin-left:4px;font-weight:400}
 .chip.exp{border-color:var(--gold);color:var(--accent);margin-left:auto}
 .chip.exp:hover{background:var(--gold);color:#fff}
+.save{font-size:11.5px;letter-spacing:.04em;color:var(--sub);
+  font-family:Consolas,monospace;padding:5px 10px;border-radius:3px;
+  background:#efe8d8;border:1px solid var(--line);white-space:nowrap}
+.save.ok{color:#3d6b45;background:#e9f0e4;border-color:#c4d8bd}
+.save.bad{color:#8a4a3a;background:#f6e8e2;border-color:#e0c6bb}
+#csvmodal{position:fixed;inset:0;z-index:99;background:rgba(40,32,24,.55);
+  display:flex;align-items:center;justify-content:center;padding:24px}
+#csvmodal .csvbox{background:var(--card);border:1px solid var(--gold);border-radius:4px;
+  padding:22px;width:min(760px,100%);box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
+#csvmodal h3{font-family:Georgia,serif;font-weight:400;margin:0 0 6px;font-size:19px}
+#csvmodal p{margin:0 0 12px;font-size:12.5px;color:var(--sub);line-height:1.7}
+#csvmodal textarea{width:100%;height:240px;font-family:Consolas,monospace;font-size:12px;
+  border:1px solid var(--line);background:#fbf6ea;padding:10px;border-radius:2px;
+  resize:vertical;color:var(--ink)}
+#csvmodal .row{display:flex;gap:10px;margin-top:12px;justify-content:flex-end}
 .brief{margin-top:10px;font-size:11px;letter-spacing:.06em;color:var(--sub);
   display:flex;flex-direction:column;gap:4px}
 .brief textarea{width:100%;resize:vertical;border:1px solid var(--line);
@@ -104,7 +119,8 @@ footer li{margin:6px 0}
 
 <div class="toolbar">
   <button class="chip on" data-f="all">全部 <b>42</b></button><button class="chip" data-f="玩家">玩家 <b>1</b></button><button class="chip" data-f="人类敌人">人类敌人 <b>14</b></button><button class="chip" data-f="僵尸">僵尸 <b>19</b></button><button class="chip" data-f="鼠怪">鼠怪 <b>3</b></button><button class="chip" data-f="Boss">Boss <b>5</b></button>
-  <button class="chip exp" id="exp">导出填写结果 CSV</button>
+  <span class="save" id="save">正在连接本地保存服务…</span>
+  <button class="chip exp" id="exp">导出 / 保存 CSV</button>
   <input id="q" type="search" placeholder="搜索中文名 / 英文名 / 预制体…">
 </div>
 
@@ -1159,35 +1175,90 @@ chips.forEach(b=>b.addEventListener('click',()=>{
 }));
 q.addEventListener('input',apply);
 
-// ---- fill-in briefs: persist to localStorage, export as CSV ----
+// ---- 填写内容：即时落盘（本地服务 → validation/roster_briefs.json） ----
+// NOTE: 这个模板是 Python 普通字符串。JS 字符串里不能写反斜杠转义序列，
+// Python 会先把它解释成真字符（换行 / BOM），生成出来的 script 直接解析失败。
+// 所以下面一律用 String.fromCharCode 拼 CRLF 和 BOM。
 const KEY='ggc_roster_briefs_v1';
-const saved=JSON.parse(localStorage.getItem(KEY)||'{}');
-document.querySelectorAll('.brief textarea').forEach(t=>{
-  const k=t.dataset.prefab;
-  if(saved[k]) t.value=saved[k];
-  t.addEventListener('input',()=>{
-    const all=JSON.parse(localStorage.getItem(KEY)||'{}');
-    if(t.value.trim()) all[k]=t.value; else delete all[k];
-    localStorage.setItem(KEY,JSON.stringify(all));
-  });
-});
-document.getElementById('exp').addEventListener('click',()=>{
+const CRLF=String.fromCharCode(13,10);
+const BOM=String.fromCharCode(65279);
+const SRV=(location.protocol==='file:')?'http://127.0.0.1:8770':'';
+const boxes=[...document.querySelectorAll('.brief textarea')];
+const elSave=document.getElementById('save');
+
+function lsGet(){ try{ return JSON.parse(localStorage.getItem(KEY)||'{}'); }catch(e){ return {}; } }
+function lsSet(o){ try{ localStorage.setItem(KEY,JSON.stringify(o)); }catch(e){} }
+function collect(){ const o={}; boxes.forEach(t=>{ if(t.value.trim()) o[t.dataset.prefab]=t.value; }); return o; }
+function mark(cls,txt){ elSave.className='save'+(cls?' '+cls:''); elSave.textContent=txt; }
+
+let tmr=null;
+function flush(){
+  const data=collect(); lsSet(data);
+  fetch(SRV+'/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    .then(r=>r.ok?r.json():Promise.reject(r.status))
+    .then(j=>mark('ok','已保存 '+j.count+'/'+boxes.length+' · '+j.time))
+    .catch(()=>mark('bad','已填写 '+Object.keys(data).length+'/'+boxes.length+' · 未连服务'));
+}
+boxes.forEach(t=>t.addEventListener('input',()=>{
+  mark('','填写中 '+Object.keys(collect()).length+'/'+boxes.length);
+  clearTimeout(tmr); tmr=setTimeout(flush,450);
+}));
+
+(async function(){
+  let src=null;
+  try{ const r=await fetch(SRV+'/state',{cache:'no-store'}); if(r.ok) src=await r.json(); }catch(e){}
+  if(!src) src=lsGet();
+  let n=0;
+  boxes.forEach(t=>{ const v=src[t.dataset.prefab]; if(v){ t.value=v; n++; } });
+  mark(n?'ok':'', '已载入 '+n+'/'+boxes.length+'（输入即自动保存到工程）');
+})();
+
+function csvText(){
   const rows=[['预制体','中文名','英文名','阵营','类型','国画重彩替代描述']];
   document.querySelectorAll('.card').forEach(c=>{
     const t=c.querySelector('.brief textarea');
-    rows.push([t.dataset.prefab,
-               c.querySelector('h3').textContent,
-               c.querySelector('.en').textContent,
-               c.querySelector('.faction').textContent,
-               c.querySelector('.role').textContent,
-               (t.value||'').replace(/"/g,'""')]);
+    rows.push([t.dataset.prefab,c.querySelector('h3').textContent,
+               c.querySelector('.en').textContent,c.querySelector('.faction').textContent,
+               c.querySelector('.role').textContent,(t.value||'').replace(/"/g,'""')]);
   });
-  const csv='﻿'+rows.map(r=>r.map(x=>'"'+x+'"').join(',')).join('
-');
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv'}));
-  a.download='GGC_角色替代描述.csv';
-  a.click();
+  return BOM+rows.map(r=>r.map(x=>'"'+x+'"').join(',')).join(CRLF);
+}
+function showCsv(csv){
+  let m=document.getElementById('csvmodal');
+  if(!m){
+    m=document.createElement('div'); m.id='csvmodal';
+    m.innerHTML='<div class="csvbox"><h3>填写结果 CSV</h3>'+
+      '<p>浏览器拦住了自动下载。点“复制”后粘贴到记事本另存为 <code>.csv</code>，'+
+      '或直接把这段文本贴回对话。</p><textarea readonly></textarea>'+
+      '<div class="row"><button class="chip" id="cpc">复制</button>'+
+      '<button class="chip" id="cls">关闭</button></div></div>';
+    document.body.appendChild(m);
+    m.querySelector('#cls').onclick=()=>m.remove();
+    m.querySelector('#cpc').onclick=()=>{
+      const ta=m.querySelector('textarea'); ta.focus(); ta.select();
+      try{ document.execCommand('copy'); }catch(e){}
+      if(navigator.clipboard) navigator.clipboard.writeText(ta.value);
+      m.querySelector('#cpc').textContent='已复制';
+    };
+  }
+  const ta=m.querySelector('textarea');
+  ta.value=csv; ta.focus(); ta.select();
+}
+document.getElementById('exp').addEventListener('click',()=>{
+  const data=collect(); lsSet(data);
+  const csv=csvText();
+  let served=false;
+  fetch(SRV+'/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)})
+    .then(r=>r.ok?r.json():Promise.reject(0))
+    .then(j=>{ served=true; mark('ok','已保存 '+j.count+'/'+boxes.length+' · '+j.time); })
+    .catch(()=>{});
+  try{
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));
+    a.download='GGC_角色替代描述.csv'; a.rel='noopener';
+    document.body.appendChild(a); a.click(); a.remove();
+  }catch(e){ showCsv(csv); return; }
+  setTimeout(()=>{ if(!served) showCsv(csv); },800);
 });
 </script>
 </body>
