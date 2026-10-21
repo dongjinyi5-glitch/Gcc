@@ -89,14 +89,22 @@ def camo_net(w, h, cell=6, seed=0):
     return out
 
 
-def apply_net(img, cell=6, seed=0):
-    """Keep the alpha, replace the pixels with netting."""
+def apply_net(img, cell=6, seed=0, edge_src=None):
+    """Keep the alpha, replace the pixels with netting.
+
+    ``edge_src`` supplies the luminance the ink outline is read from. It must
+    be the PRISTINE part: the net's own grid lines are dark, so reading them
+    off an already-netted sprite would let the outline creep on every re-run.
+    Passing the original keeps the op idempotent.
+    """
     a = np.array(img.convert("RGBA"))
     h, w = a.shape[:2]
     net = camo_net(w, h, cell=cell, seed=seed)
     # the outline stays ink, so the part still reads as a drawn shape
-    lum = (0.2126 * a[..., 0] + 0.7152 * a[..., 1] + 0.0722 * a[..., 2])
-    edge = (lum < 60) & (a[..., 3] > 8)
+    lum_src = a if edge_src is None else np.array(edge_src.convert("RGBA"))
+    lum = (0.2126 * lum_src[..., 0] + 0.7152 * lum_src[..., 1]
+           + 0.0722 * lum_src[..., 2])
+    edge = (lum < 60) & (lum_src[..., 3] > 8)
     net[..., :3][edge] = NET_EDGE
     net[..., 3] = a[..., 3]
     return Image.fromarray(net)
@@ -229,9 +237,12 @@ def diffuse(rgb, fix, seed, iters=500):
 def denet(img, orig, hat, rect, orig_rect, hat_rect, spec):
     """Heal the net the Hat sprite now covers, back to forehead skin.
 
-    ``spec`` keys: gray_max (net/skin divider), ear [x0,y0,x1,y1] box left
-    alone, detail [y0,y1,x0,x1] where the face's brush detail is lifted from,
-    shade_top (helmet brim shadow at the top of the healed band).
+    ``spec`` keys: gray_max (net/skin divider), y_max (how far down the head
+    the net can hang -- the face's own dark outlines and the collar read dark
+    too, and healing those would erase the eye and the uniform), ear
+    [x0,y0,x1,y1] box left alone, detail [y0,y1,x0,x1] where the face's brush
+    detail is lifted from, shade_top (helmet brim shadow at the top of the
+    healed band).
     """
     a = np.array(img.convert("RGBA")).astype(np.float32)
     rgb, al = a[..., :3], a[..., 3]
@@ -246,7 +257,8 @@ def denet(img, orig, hat, rect, orig_rect, hat_rect, spec):
 
     ex0, ey0, ex1, ey1 = spec.get("ear", [4, 44, 33, 82])
     ear = (xs >= ex0) & (xs <= ex1) & (ys >= ey0) & (ys <= ey1)
-    fix = oskin & ~cov & (gray < spec.get("gray_max", 112)) & ~ear & op
+    fix = (oskin & ~cov & (gray < spec.get("gray_max", 112)) & ~ear & op
+           & (ys < spec.get("y_max", 62)))
     if not fix.any():
         return img, 0
     seed = op & (gray >= 118) & ~fix
@@ -278,10 +290,21 @@ def denet(img, orig, hat, rect, orig_rect, hat_rect, spec):
     t = np.clip((ys - 24) / 36.0, 0, 1)
     healed = healed * (spec.get("shade_top", 0.86) + (1 - spec.get("shade_top", 0.86)) * t)[..., None]
 
-    # feather so the patch does not stamp a hard edge
-    wgt = np.clip(box_blur(fix.astype(np.float32)[..., None], 5)[..., 0] * 1.6, 0, 1)
+    # the healed pixels must read as skin on the next pass too, otherwise a
+    # re-run finds them dark again and drifts; scale the luminance up (keeping
+    # the hue) rather than clipping channels, because the test is on the mean.
+    # Applied AFTER the feather blend, which can otherwise drag an edge pixel
+    # back below the divider.
+    fl = spec.get("floor", 118)
+    # feather INSIDE the region only: a ring outside would blend dark pixels
+    # back in and escape the floor, so the next pass would find them again
+    wgt = np.where(fix, np.clip(box_blur(fix.astype(np.float32)[..., None], 3)[..., 0], 0, 1), 0.0)
     out = a.copy()
-    out[..., :3] = np.clip(rgb * (1 - wgt[..., None]) + healed * wgt[..., None], 0, 255)
+    fin = rgb * (1 - wgt[..., None]) + healed * wgt[..., None]
+    g = fin[fix].mean(axis=1)
+    scale = np.where(g < fl, fl / np.maximum(g, 1e-3), 1.0).astype(np.float32)
+    fin[fix] = fin[fix] * scale[:, None]
+    out[..., :3] = np.clip(fin, 0, 255)
     return Image.fromarray(out.astype(np.uint8)), int(fix.sum())
 
 
@@ -328,8 +351,13 @@ def run(char, base=None):
             if not os.path.isfile(path) or not f.lower().endswith(".png"):
                 continue
             img = Image.open(path)
+            # the ink outline is read from the pristine part, never from the
+            # current file, so re-running over an already-netted sprite is a
+            # no-op instead of letting the outline creep
+            orig_path = os.path.join(root, "original", f)
+            edge_src = Image.open(orig_path) if os.path.isfile(orig_path) else None
             netted = apply_net(img, cell=spec.get("cell", 6),
-                               seed=spec.get("seed", 0))
+                               seed=spec.get("seed", 0), edge_src=edge_src)
             if keep:
                 hole = keeper_hole(root, keep, f, img.size)
                 netted = punch_holes(netted, hole)

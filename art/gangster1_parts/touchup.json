@@ -39,6 +39,8 @@
       "file": "23_Head_Head.png",
       "hat": "30_Hat_Hat.png",
       "gray_max": 112,
+      "y_max": 62,
+      "floor": 118,
       "ear": [4, 44, 33, 82],
       "detail": [66, 100, 42, 102],
       "shade_top": 0.86,
