@@ -6,6 +6,8 @@ engine, so if the composition is wrong here it will be wrong in game too.
 
 Outputs art/<char>_parts/_character_compare.png
 """
+import fnmatch
+import io
 import json
 import math
 import os
@@ -53,8 +55,64 @@ def load_overrides():
     return ov
 
 
-def compose(db, parts, overrides):
-    """Return (canvas, part_count). Uses restyled art when available."""
+def hidden_overrides():
+    """{(sprite_file, sprite_path_id): path} for parts declared gone.
+
+    Reads the character's touchup.json "hide" list and points at the ORIGINAL
+    art, not the override folder: the mask has to cover exactly the pixels the
+    hose used to occupy, so both sides of the comparison can drop them. Because
+    it is rendered by the same compose() maths as the composite itself, the mask
+    cannot drift out of alignment with it.
+    """
+    cfg_path = os.path.join(BASE, "touchup.json")
+    if not os.path.isfile(cfg_path):
+        return {}
+    with io.open(cfg_path, encoding="utf-8") as fh:
+        cfg = json.load(fh)
+    pats = cfg.get("hide") or []
+    if not pats:
+        return {}
+    with io.open(MANIFEST, encoding="utf-8") as fh:
+        man = json.load(fh)
+    ov = {}
+    for p in man["parts"]:
+        f = p.get("file") or ""
+        if not any(fnmatch.fnmatch(f, pat) for pat in pats):
+            continue
+        path = os.path.join(BASE, "original", f)
+        if os.path.isfile(path):
+            ov[(p["sprite_file"], p["sprite_path_id"])] = path
+    return ov
+
+
+def hidden_parts(db, parts, hidden):
+    """The subset of ``parts`` whose sprite is declared hidden.
+
+    compose() substitutes overrides but still draws every part it is given, so
+    the mask has to be handed a filtered list -- otherwise it is a second copy
+    of the whole character and masks nothing out.
+    """
+    out = []
+    for p in parts:
+        sp = db.resolve(p.sprite, p.ctx)
+        if tn(sp) != "Sprite":
+            continue
+        meta = db.sprite_meta(sp)
+        if not meta or "image" not in meta:
+            continue
+        if (meta["sprite_file"], meta["sprite_path_id"]) in hidden:
+            out.append(p)
+    return out
+
+
+def compose(db, parts, overrides, window=None):
+    """Return (canvas, part_count, window).
+
+    ``window`` forces the canvas geometry to (minx, miny, maxx, maxy) instead of
+    deriving it from the parts drawn. The declared-hidden mask needs that: it
+    draws only the hose, but must land on the same pixel grid as the composite
+    it will be subtracted from.
+    """
     resolved = []
     minx = miny = 1e9
     maxx = maxy = -1e9
@@ -80,7 +138,9 @@ def compose(db, parts, overrides):
         resolved.append((lx, ly, ux, uy, img))
 
     if not resolved:
-        return None, 0
+        return None, 0, None
+    if window is not None:
+        minx, miny, maxx, maxy = window
     W = int(math.ceil((maxx - minx) * PPU_OUT)) + PAD * 2
     H = int(math.ceil((maxy - miny) * PPU_OUT)) + PAD * 2
     canvas = Image.new("RGBA", (W, H), (0, 0, 0, 0))
@@ -90,8 +150,8 @@ def compose(db, parts, overrides):
         pw = max(1, int(round((ux - lx) * PPU_OUT)))
         ph = max(1, int(round((uy - ly) * PPU_OUT)))
         canvas.alpha_composite(img.resize((pw, ph), Image.LANCZOS),
-                               (int(round(px)), int(round(py))))
-    return canvas, len(resolved)
+                               (int(round(px)), int(int(round(py)))))
+    return canvas, len(resolved), (minx, miny, maxx, maxy)
 
 
 def main():
@@ -104,9 +164,9 @@ def main():
         raise SystemExit(f"{CHAR} not found")
     parts = [p for p in db.walk(go) if p.active]
 
-    before, n1 = compose(db, parts, {})
+    before, n1, _ = compose(db, parts, {})
     overrides = load_overrides()
-    after, n2 = compose(db, parts, overrides)
+    after, n2, window = compose(db, parts, overrides)
     print(f"parts composed: original {n1}, restyled {n2}, overrides {len(overrides)}")
 
     # paper background, side by side with a divider
@@ -135,6 +195,22 @@ def main():
     os.makedirs(vdir, exist_ok=True)
     before.save(os.path.join(vdir, f"composite_{CHAR}_original.png"))
     after.save(os.path.join(vdir, f"composite_{CHAR}_{SUFFIX}.png"))
+
+    # A part the character declares gone leaves the silhouette on purpose. Emit
+    # a mask of it so the acceptance gate can tell that apart from damage,
+    # instead of failing a decision that was made deliberately.
+    hidden = hidden_overrides()
+    if hidden:
+        hp = hidden_parts(db, parts, hidden)
+        mask, n, _ = compose(db, hp, hidden, window=window)
+        if mask is not None and mask.size == after.size:
+            mask.save(os.path.join(vdir,
+                                   f"composite_{CHAR}_{SUFFIX}_hidden.png"))
+            print(f"declared-hidden mask: {n} part(s) -> "
+                  f"composite_{CHAR}_{SUFFIX}_hidden.png")
+        else:
+            print("[warn] declared-hidden mask size mismatch -- not written; "
+                  "the gate will judge the raw silhouette")
     # keep the plain names pointing at the reference character (Vinnie)
     if CHAR == "Vinnie" and SUFFIX == "restyled":
         before.save(os.path.join(vdir, "composite_original.png"))

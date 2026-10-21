@@ -1,0 +1,873 @@
+{
+ "char": "ZombieSoldier",
+ "ppu": 200.0,
+ "pad": 8,
+ "canvas": [
+  471,
+  423
+ ],
+ "origin": [
+  1.7273180230725482,
+  -6.827038144721188
+ ],
+ "parts": [
+  {
+   "slot": "RightArmLow",
+   "file": "00_RightArmLow_BackArmLow.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/RightArmUp/RightArmLow",
+   "order": 0,
+   "depth": 7,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3835,
+   "size": [
+    79,
+    49
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.578969955370971,
+    -5.479822647302693,
+    2.9344699459534374,
+    -5.259322653143948
+   ],
+   "canvas_rect": [
+    178,
+    101,
+    71,
+    44
+   ]
+  },
+  {
+   "slot": "RightArmUp",
+   "file": "01_RightArmUp_BackArmUp.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/RightArmUp",
+   "order": 0,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3540,
+   "size": [
+    105,
+    42
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.1975003060287963,
+    -5.512762340894295,
+    2.670000293511821,
+    -5.323762345901086
+   ],
+   "canvas_rect": [
+    102,
+    114,
+    94,
+    38
+   ]
+  },
+  {
+   "slot": "Thompson",
+   "file": "02_Thompson_Thompson.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/RightArmUp/RightArmLow/HandGun/Thompson",
+   "order": 1,
+   "depth": 9,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3721,
+   "size": [
+    350,
+    131
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.4262879240291015,
+    -5.5488493119067295,
+    4.00128788230585,
+    -4.959349327523146
+   ],
+   "canvas_rect": [
+    148,
+    41,
+    315,
+    118
+   ]
+  },
+  {
+   "slot": "HandGun",
+   "file": "03_HandGun_BackHandTrigger.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/RightArmUp/RightArmLow/HandGun",
+   "order": 2,
+   "depth": 8,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4281,
+   "size": [
+    64,
+    60
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.868141960397258,
+    -5.424766696867848,
+    3.1561419527678636,
+    -5.154766704020405
+   ],
+   "canvas_rect": [
+    236,
+    80,
+    58,
+    54
+   ]
+  },
+  {
+   "slot": "ShoeTipBack",
+   "file": "22_ShoeTipBack_ShoeTip.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/BackLegUp/BackLegLow/ShoeHeelBack/ShoeTipBack",
+   "order": 2,
+   "depth": 7,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3785,
+   "size": [
+    57,
+    25
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.4793131245858118,
+    -6.827038144721188,
+    2.735813117790882,
+    -6.71453814770142
+   ],
+   "canvas_rect": [
+    158,
+    392,
+    51,
+    22
+   ]
+  },
+  {
+   "slot": "ShoeHeelBack",
+   "file": "23_ShoeHeelBack_ShoeHeel.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/BackLegUp/BackLegLow/ShoeHeelBack",
+   "order": 3,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3711,
+   "size": [
+    89,
+    47
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.1942265776107432,
+    -6.825281306446043,
+    2.5947265670011164,
+    -6.6137813120488795
+   ],
+   "canvas_rect": [
+    101,
+    372,
+    80,
+    42
+   ]
+  },
+  {
+   "slot": "BackLegLow",
+   "file": "05_BackLegLow_BackLegLow.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/BackLegUp/BackLegLow",
+   "order": 4,
+   "depth": 5,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3310,
+   "size": [
+    72,
+    88
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.277726187670545,
+    -6.686097966365022,
+    2.6017261790874757,
+    -6.2900979768554395
+   ],
+   "canvas_rect": [
+    118,
+    307,
+    65,
+    79
+   ]
+  },
+  {
+   "slot": "BackLegUp",
+   "file": "06_BackLegUp_BackLegUp.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/BackLegUp",
+   "order": 5,
+   "depth": 4,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3245,
+   "size": [
+    54,
+    103
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.3700742056138338,
+    -6.4218338623236075,
+    2.6130741991765323,
+    -5.958333874602165
+   ],
+   "canvas_rect": [
+    137,
+    241,
+    49,
+    93
+   ]
+  },
+  {
+   "slot": "TorsoBellyDead",
+   "file": "08_TorsoBellyDead_TorsoBellyDead.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoBellyDead",
+   "order": 6,
+   "depth": 5,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3115,
+   "size": [
+    102,
+    147
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.0628991873344145,
+    -5.998162642962679,
+    2.521899175175067,
+    -5.336662660486445
+   ],
+   "canvas_rect": [
+    75,
+    117,
+    92,
+    132
+   ]
+  },
+  {
+   "slot": "TorsoBelly",
+   "file": "07_TorsoBelly_TorsoBelly.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly",
+   "order": 6,
+   "depth": 4,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4694,
+   "size": [
+    146,
+    150
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8737162013182203,
+    -6.088540947911001,
+    2.530716183913664,
+    -5.413540965792395
+   ],
+   "canvas_rect": [
+    37,
+    132,
+    131,
+    135
+   ]
+  },
+  {
+   "slot": "TorsoChestDead",
+   "file": "10_TorsoChestDead_TorsoChestDead.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/TorsoChestDead",
+   "order": 7,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 2999,
+   "size": [
+    84,
+    82
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.0116035668453742,
+    -5.726246343045129,
+    2.389603601892904,
+    -5.357246308832064
+   ],
+   "canvas_rect": [
+    65,
+    121,
+    76,
+    74
+   ]
+  },
+  {
+   "slot": "TorsoChest",
+   "file": "09_TorsoChest_TorsoChest.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest",
+   "order": 7,
+   "depth": 5,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3029,
+   "size": [
+    147,
+    125
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8633617885003821,
+    -5.834936888495716,
+    2.5248617709766163,
+    -5.272436903396877
+   ],
+   "canvas_rect": [
+    35,
+    104,
+    132,
+    112
+   ]
+  },
+  {
+   "slot": "Crotch",
+   "file": "11_Crotch_Crotch.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/Crotch",
+   "order": 8,
+   "depth": 4,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3671,
+   "size": [
+    98,
+    75
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.126443459504368,
+    -6.199976545716565,
+    2.5674434478218577,
+    -5.8624765546572615
+   ],
+   "canvas_rect": [
+    88,
+    222,
+    88,
+    67
+   ]
+  },
+  {
+   "slot": "Bite07",
+   "file": "18_Bite07_Bite07.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/Head/Bite01/Bite02/Bite03/Bite04/Bite05/Bite06/Bite07",
+   "order": 9,
+   "depth": 13,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3617,
+   "size": [
+    111,
+    120
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8911208794198093,
+    -5.399258054991177,
+    2.3906208661875783,
+    -4.859258069296291
+   ],
+   "canvas_rect": [
+    41,
+    21,
+    100,
+    108
+   ]
+  },
+  {
+   "slot": "Bite06",
+   "file": "17_Bite06_Bite06.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/Head/Bite01/Bite02/Bite03/Bite04/Bite05/Bite06",
+   "order": 9,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4062,
+   "size": [
+    110,
+    121
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8870855220309402,
+    -5.3866809183533,
+    2.3820855089179185,
+    -4.842180932777624
+   ],
+   "canvas_rect": [
+    40,
+    18,
+    99,
+    109
+   ]
+  },
+  {
+   "slot": "Bite05",
+   "file": "16_Bite05_Bite05.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/Head/Bite01/Bite02/Bite03/Bite04/Bite05",
+   "order": 9,
+   "depth": 11,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4055,
+   "size": [
+    111,
+    119
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8939808799078308,
+    -5.381081049727232,
+    2.3934808666755996,
+    -4.845581063913137
+   ],
+   "canvas_rect": [
+    41,
+    18,
+    100,
+    107
+   ]
+  },
+  {
+   "slot": "Bite04",
+   "file": "15_Bite04_Bite04.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/Head/Bite01/Bite02/Bite03/Bite04",
+   "order": 9,
+   "depth": 10,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3760,
+   "size": [
+    97,
+    149
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8857119564521725,
+    -5.522272614361566,
+    2.3222119448888714,
+    -4.85177263212375
+   ],
+   "canvas_rect": [
+    40,
+    20,
+    87,
+    134
+   ]
+  },
+  {
+   "slot": "Bite03",
+   "file": "14_Bite03_Bite03.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/Head/Bite01/Bite02/Bite03",
+   "order": 9,
+   "depth": 9,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3023,
+   "size": [
+    100,
+    141
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8934332917807022,
+    -5.477529223489144,
+    2.3434332798597732,
+    -4.843029240297654
+   ],
+   "canvas_rect": [
+    41,
+    18,
+    90,
+    127
+   ]
+  },
+  {
+   "slot": "Bite02",
+   "file": "13_Bite02_Bite02.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/Head/Bite01/Bite02",
+   "order": 9,
+   "depth": 8,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3676,
+   "size": [
+    103,
+    134
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8932825387634555,
+    -5.450953468891298,
+    2.3567825264848987,
+    -4.847953484865343
+   ],
+   "canvas_rect": [
+    41,
+    19,
+    93,
+    121
+   ]
+  },
+  {
+   "slot": "Bite01",
+   "file": "12_Bite01_Bite01.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/Head/Bite01",
+   "order": 9,
+   "depth": 7,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4292,
+   "size": [
+    113,
+    126
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8882080558441248,
+    -5.419927911533951,
+    2.396708042373475,
+    -4.8529279265543215
+   ],
+   "canvas_rect": [
+    40,
+    20,
+    102,
+    113
+   ]
+  },
+  {
+   "slot": "Head",
+   "file": "19_Head_Head.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/Head",
+   "order": 9,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3337,
+   "size": [
+    102,
+    132
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8690697978902062,
+    -5.427956571790021,
+    2.3280697857308588,
+    -4.8339565875256465
+   ],
+   "canvas_rect": [
+    36,
+    16,
+    92,
+    119
+   ]
+  },
+  {
+   "slot": "Hat",
+   "file": "20_Hat_Hat.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/Head/Hat",
+   "order": 10,
+   "depth": 7,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4456,
+   "size": [
+    132,
+    89
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8347216884521342,
+    -5.1939762997348256,
+    2.428721672716508,
+    -4.793476310344452
+   ],
+   "canvas_rect": [
+    29,
+    8,
+    119,
+    80
+   ]
+  },
+  {
+   "slot": "NeckPiece",
+   "file": "21_NeckPiece_NeckPieceZombies.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/NeckPiece",
+   "order": 10,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3082,
+   "size": [
+    33,
+    21
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.0395295750212927,
+    -5.396429111096435,
+    2.2045295962206772,
+    -5.291429108871195
+   ],
+   "canvas_rect": [
+    70,
+    108,
+    33,
+    21
+   ]
+  },
+  {
+   "slot": "ShoeTipBack",
+   "file": "22_ShoeTipBack_ShoeTip.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/FrontLegUp/FrontLegLow/ShoeHeelFront/ShoeTipFront",
+   "order": 11,
+   "depth": 7,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3785,
+   "size": [
+    57,
+    25
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.125730048788137,
+    -6.676719169231359,
+    2.3822300419932074,
+    -6.564219172211591
+   ],
+   "canvas_rect": [
+    88,
+    362,
+    51,
+    22
+   ]
+  },
+  {
+   "slot": "ShoeHeelBack",
+   "file": "23_ShoeHeelBack_ShoeHeel.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/FrontLegUp/FrontLegLow/ShoeHeelFront",
+   "order": 12,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3711,
+   "size": [
+    89,
+    47
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.834438198010454,
+    -6.6758869286122895,
+    2.2349381874008274,
+    -6.464386934215126
+   ],
+   "canvas_rect": [
+    29,
+    342,
+    80,
+    42
+   ]
+  },
+  {
+   "slot": "FrontLegLow",
+   "file": "24_FrontLegLow_FrontLegLow.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/FrontLegUp/FrontLegLow",
+   "order": 13,
+   "depth": 5,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3280,
+   "size": [
+    99,
+    59
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.9513422286936526,
+    -6.59737132786517,
+    2.3968422168919328,
+    -6.331871334898518
+   ],
+   "canvas_rect": [
+    53,
+    316,
+    89,
+    53
+   ]
+  },
+  {
+   "slot": "FrontLegUp",
+   "file": "25_FrontLegUp_FrontLegUp.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/FrontLegUp",
+   "order": 14,
+   "depth": 4,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4158,
+   "size": [
+    45,
+    91
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.2339469261236617,
+    -6.452592837700055,
+    2.4364469207592436,
+    -6.043092848548101
+   ],
+   "canvas_rect": [
+    109,
+    258,
+    40,
+    82
+   ]
+  },
+  {
+   "slot": "SkirtBack",
+   "file": "26_SkirtBack_SkirtBack.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/Crotch/Belt/SkirtBack",
+   "order": 15,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4399,
+   "size": [
+    68,
+    61
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.304881256250223,
+    -6.194024531822861,
+    2.6108812481439916,
+    -5.919524539094628
+   ],
+   "canvas_rect": [
+    124,
+    233,
+    61,
+    55
+   ]
+  },
+  {
+   "slot": "SkirtFront",
+   "file": "27_SkirtFront_SkirtFront.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/Crotch/Belt/SkirtFront",
+   "order": 16,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3553,
+   "size": [
+    66,
+    63
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.169464319431582,
+    -6.23683876577243,
+    2.466464311563769,
+    -5.953338773282615
+   ],
+   "canvas_rect": [
+    96,
+    240,
+    59,
+    57
+   ]
+  },
+  {
+   "slot": "Belt",
+   "file": "28_Belt_Belt.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Lower/Crotch/Belt",
+   "order": 17,
+   "depth": 5,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4301,
+   "size": [
+    98,
+    51
+   ],
+   "ppu": 200.0,
+   "rect": [
+    2.137019488428031,
+    -6.086492888129226,
+    2.5780194767455207,
+    -5.8569928942089
+   ],
+   "canvas_rect": [
+    90,
+    221,
+    88,
+    46
+   ]
+  },
+  {
+   "slot": "LeftArmUp",
+   "file": "29_LeftArmUp_FrontArmUp.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/LeftArmUp",
+   "order": 18,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3758,
+   "size": [
+    43,
+    103
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.860578183475398,
+    -5.878625689997869,
+    2.0540781783493984,
+    -5.415125702276426
+   ],
+   "canvas_rect": [
+    35,
+    132,
+    39,
+    93
+   ]
+  },
+  {
+   "slot": "LeftArmLow",
+   "file": "30_LeftArmLow_FrontArmLow.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/LeftArmUp/LeftArmLow",
+   "order": 19,
+   "depth": 7,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3739,
+   "size": [
+    45,
+    85
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.8622951190645278,
+    -6.15323817242344,
+    2.06479511370011,
+    -5.770738182556229
+   ],
+   "canvas_rect": [
+    35,
+    203,
+    40,
+    76
+   ]
+  },
+  {
+   "slot": "LeftHand",
+   "file": "31_LeftHand_FrontHand.png",
+   "go_path": "ZombieSoldier/Offset/ZombieSoldierFull/Upper/TorsoBelly/TorsoChest/LeftArmUp/LeftArmLow/LeftHand",
+   "order": 20,
+   "depth": 8,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3776,
+   "size": [
+    70,
+    83
+   ],
+   "ppu": 200.0,
+   "rect": [
+    1.7273180230725482,
+    -6.45205035074877,
+    2.042318014727898,
+    -6.078550360643141
+   ],
+   "canvas_rect": [
+    8,
+    265,
+    63,
+    75
+   ]
+  }
+ ]
+}

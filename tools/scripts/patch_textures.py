@@ -20,6 +20,10 @@ Usage
 -----
     python patch_textures.py Vinnie --check    # verify encoder + report offsets
     python patch_textures.py Vinnie            # patch in place
+
+``--dir`` picks the source folder: ``restyled`` (the deterministic palette
+recolor) or ``redraw`` (plan B). It defaults to ``restyled`` so existing
+commands keep working.
 """
 import io
 import json
@@ -32,6 +36,10 @@ from PIL import Image
 
 PROJECT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
 DATA = r"D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data"
+
+
+def opt(flag, default=None):
+    return sys.argv[sys.argv.index(flag) + 1] if flag in sys.argv else default
 
 
 def encode_argb32(img):
@@ -49,11 +57,11 @@ def encode_argb32(img):
     return np.ascontiguousarray(argb).tobytes()
 
 
-def load_jobs(char):
+def load_jobs(char, folder="restyled"):
     path = os.path.join(PROJECT, "art", f"{char.lower()}_parts", "manifest.json")
     with io.open(path, encoding="utf-8") as fh:
         man = json.load(fh)
-    base = os.path.join(PROJECT, "art", f"{char.lower()}_parts", "restyled")
+    base = os.path.join(PROJECT, "art", f"{char.lower()}_parts", folder)
     jobs = {}
     for p in man["parts"]:
         key = (p["texture_file"], p["texture_path_id"])
@@ -138,17 +146,21 @@ def process_file(fname, jobs, apply=False):
 
 
 def main():
-    char = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("-") else "Vinnie"
-    apply = "--apply" in sys.argv
-    check = "--check" in sys.argv or not apply
+    args = sys.argv[1:]
+    char = next((a for a in args if not a.startswith("-")), "Vinnie")
+    folder = opt("--dir", "restyled")
+    if folder not in ("restyled", "redraw"):
+        raise SystemExit(f"--dir must be restyled or redraw, got {folder!r}")
+    apply = "--apply" in args
+    check = "--check" in args or not apply
 
-    jobs = load_jobs(char)
+    jobs = load_jobs(char, folder)
     by_file = {}
     for (fname, tex_pid), joblist in jobs.items():
         by_file.setdefault(fname, {})[tex_pid] = joblist
 
-    print(f"{char}: {len(jobs)} texture(s) across {len(by_file)} file(s) "
-          f"({'APPLY' if apply else 'CHECK'})")
+    print(f"{char} [{folder}]: {len(jobs)} texture(s) across "
+          f"{len(by_file)} file(s) ({'APPLY' if apply else 'CHECK'})")
     ok = bad = 0
     for fname, jl in by_file.items():
         res = process_file(fname, jl, apply=apply)

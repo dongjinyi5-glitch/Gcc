@@ -591,6 +591,18 @@ def slice_concept(path):
     print(f"redrew {kept} body parts, {props} props kept from palette "
           f"({copied} files carried over) -> {REDRAW}")
 
+    # Last, the fixes the concept cannot express: a stray sprite the game leaves
+    # switched on, the redundant hands in a stacked foregrip, a garment no
+    # redraw inside the old outline can grow. Declared per character in
+    # touchup.json and applied here, so a re-slice cannot lose them.
+    try:
+        import touchup
+        n = touchup.run(CHAR)
+        if n:
+            print(f"touchup: {n} declared fix(es) applied")
+    except ImportError:
+        print("[warn] touchup.py not importable -- declared fixes were NOT applied")
+
 
 def main():
     if "--canvas" in sys.argv:

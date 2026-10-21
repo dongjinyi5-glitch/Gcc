@@ -18,6 +18,11 @@ backup/
 # 注意只匹配 art/ 顶层，art/<char>_parts/_native_canvas.png 这类管线产物照常入库。
 art/_*.png
 
+# 一次性诊断渲染：把某个部件拷一份改空再看合成结果，用完即弃，不是交付物。
+art/*_parts/diag/
+art/*_parts/_character_compare_diag.png
+validation/composite_*_diag*.png
+
 # Tools binaries
 tools/bin/*.exe
 tools/bin/*.dll

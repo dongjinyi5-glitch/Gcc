@@ -1,0 +1,36 @@
+{
+  "_comment": "Declarative post-slice fixes for Gangster1. Applied by touchup.py at the end of slice_concept, so a re-slice cannot lose them. Each entry exists because the concept cannot express it, not because the drawing is wrong.",
+
+  "hide": [
+    "02_HoseFlamethrower*"
+  ],
+
+  "_hide_why": "HoseFlamethrower is active in the default pose while FuelTankFlamethrower is not -- a hose with no tank, i.e. a permanent stray element rather than part of the flamethrower weapon. sharedassets7#127 is referenced by Gangster1 and Vinnie only, and both are the same archetype. The hose carries no Collider2D, so blanking its pixels moves no collision.",
+
+  "net": [
+    {
+      "file": "60_HandBack_HandBackTeslacoilGun.png",
+      "cell": 6,
+      "seed": 7,
+      "keep": "58_HandBack_HandBack.png",
+      "_why": "foregrip stack: 58 (x257), 60 (x258), 61 (x264) each carry a whole hand, so the stack shows three sets of fingers on one handguard"
+    },
+    {
+      "file": "61_HandSupport2_HandSupport2.png",
+      "cell": 6,
+      "seed": 11,
+      "keep": "58_HandBack_HandBack.png",
+      "_why": "same stack, second placement also at x301"
+    }
+  ],
+
+  "_net_why": "Keep 58_HandBack: its left edge (x257) sits against the drum magazine (x214-262), so it is the hand nearest the magazine. 60 and 61 are the redundant ones. 'keep' punches the netting open wherever 58 is opaque, because 60 and 61 paint on top of it and would otherwise bury the hand that is meant to survive.",
+
+  "transplant": [
+    {
+      "from": "ZombieSoldier",
+      "slot": "hat",
+      "_why": "ZombieSoldier's Hat is a genuine WWII steel helmet (132x89). A fedora is a brim and a helmet is a dome; no redraw inside the fedora's outline grows one. Transplanting into this character's own Hat texture keeps its pivot, PPU and size, so it stays an equal-length pixel edit."
+    }
+  ]
+}

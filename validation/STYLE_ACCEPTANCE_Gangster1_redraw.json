@@ -46,45 +46,51 @@
    358
   ],
   "bbox": [
-   291,
+   244,
    297
   ],
-  "alpha_cov": 0.4,
-  "ink_w_mean": 1.54,
+  "alpha_cov": 0.4475,
+  "ink_w_mean": 1.53,
   "ink_w_p50": 1.0,
   "ink_w_p90": 3.0,
   "ink_cv": 0.633,
-  "ink_ratio": 0.217,
+  "ink_ratio": 0.204,
   "pigment": {
    "朱红": 0.005,
    "石青": 0.0,
-   "石绿": 0.086,
-   "赭石": 0.346,
-   "藤黄": 0.564,
+   "石绿": 0.094,
+   "赭石": 0.31,
+   "藤黄": 0.59,
    "花青": 0.0,
    "未归类": 0.0
   },
   "paper_ratio": 0.0,
-  "neg_space": 0.6,
+  "neg_space": 0.552,
   "ink_levels": 9,
-  "texture_std": 13.53,
-  "saturation": 0.534,
-  "opaque_px": 34571,
+  "texture_std": 13.37,
+  "saturation": 0.537,
+  "opaque_px": 32430,
   "centroid": [
-   158.53,
-   195.64
+   164.42,
+   193.95
   ]
  },
  "fidelity": {
   "size_match": true,
-  "alpha_iou": 1.0,
-  "area_delta": 0.0,
-  "centroid_shift": 0.0
+  "alpha_iou": 0.9282,
+  "area_delta": -0.0619,
+  "centroid_shift": 6.12
+ },
+ "fidelity_declared": {
+  "size_match": true,
+  "alpha_iou": 0.9848,
+  "area_delta": -0.0043,
+  "centroid_shift": 0.41
  },
  "checks": [
   {
    "name": "ink_w_mean",
-   "value": 1.54,
+   "value": 1.53,
    "min": 1.15,
    "max": 3.0,
    "pass": true
@@ -112,7 +118,7 @@
   },
   {
    "name": "texture_std",
-   "value": 13.53,
+   "value": 13.37,
    "min": 2.5,
    "max": 20.0,
    "pass": true
@@ -126,14 +132,14 @@
   },
   {
    "name": "ink_ratio",
-   "value": 0.217,
+   "value": 0.204,
    "min": 0.2,
    "max": 0.45,
    "pass": true
   },
   {
    "name": "saturation",
-   "value": 0.534,
+   "value": 0.537,
    "min": 0.44,
    "max": 0.62,
    "pass": true
@@ -147,7 +153,7 @@
   },
   {
    "name": "pig_石绿",
-   "value": 0.086,
+   "value": 0.094,
    "min": 0.02,
    "max": 0.2,
    "pass": true
@@ -161,7 +167,7 @@
   },
   {
    "name": "pig_赭石",
-   "value": 0.346,
+   "value": 0.31,
    "min": 0.22,
    "max": 0.5,
    "pass": true
@@ -175,37 +181,37 @@
   },
   {
    "name": "pig_藤黄",
-   "value": 0.564,
+   "value": 0.59,
    "min": 0.3,
    "max": 0.72,
    "pass": true
   },
   {
    "name": "fid_alpha_iou",
-   "value": 1.0,
+   "value": 0.9848,
    "min": 0.98,
    "max": 1.0,
    "pass": true
   },
   {
    "name": "fid_centroid_shift",
-   "value": 0.0,
+   "value": 0.41,
    "min": 0.0,
    "max": 1.0,
    "pass": true
   },
   {
    "name": "fid_area_delta",
-   "value": 0.0,
+   "value": -0.0043,
    "min": -0.02,
    "max": 0.02,
    "pass": true
   }
  ],
  "triad_measured": {
-  "赭石": 0.347,
-  "藤黄": 0.566,
-  "石绿": 0.086
+  "赭石": 0.312,
+  "藤黄": 0.594,
+  "石绿": 0.095
  },
  "triad_design": {
   "赭石": 0.38,

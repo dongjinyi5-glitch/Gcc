@@ -69,7 +69,16 @@ def main():
     before = M.measure(a_path)
     after = M.measure(b_path)
     fid = M.compare(a_path, b_path)
-    rows = M.check(after, fid, faction=faction, role=role)
+    # A part this character declares gone (touchup.json "hide") leaves the
+    # silhouette on purpose, and the alpha gate would read that as damage. Judge
+    # the gate on the silhouette actually being claimed, and print the raw
+    # number beside it so a deliberate change stays visible rather than hiding
+    # inside a pass.
+    declared_path = os.path.join(VAL, f"composite_{char}_{suffix}_hidden.png")
+    fid_declared = (M.compare(a_path, b_path, ignore_path=declared_path)
+                    if os.path.isfile(declared_path) else None)
+    gate_fid = fid_declared or fid
+    rows = M.check(after, gate_fid, faction=faction, role=role)
     triad = M.triad_ratio(after, faction=faction, role=role)
     design = M.triad_for(faction, role)
     failed = [r for r in rows if not r["pass"]]
@@ -82,6 +91,7 @@ def main():
         "baseline_original": before,
         "restyled": after,
         "fidelity": fid,
+        "fidelity_declared": fid_declared,
         "checks": rows,
         "triad_measured": triad,
         "triad_design": design,
@@ -110,6 +120,21 @@ def main():
         f"判定基准：`SPEC_COMMON`（统一笔触）+ "
         f"`SPEC_ROLE[{role}]`（兵种颜料）或 `SPEC_FACTION[{faction}]`（回退）",
         "",
+    ]
+
+    # When a part was declared gone, say so in the report instead of letting a
+    # lower alpha IoU look like the drawing slipped.
+    if fid_declared and fid_declared != fid:
+        lines += [
+            f"> **声明性轮廓变更**：`touchup.json` 声明隐藏了部件，那些像素"
+            f"按产品指示离开轮廓，不是绘制失误。"
+            f"原始 alpha IoU **{fid['alpha_iou']}**，"
+            f"剔除已声明区域后 **{fid_declared['alpha_iou']}**"
+            f"（几何验收按后者判定）。",
+            "",
+        ]
+
+    lines += [
         "## 1. 风格指标（三阵营共用）",
         "",
         "| 指标 | 原始卡通 | 重彩版 | 验收区间 | 结果 |",

@@ -1,0 +1,321 @@
+[
+ {
+  "character": "Vinnie",
+  "slot": "Hat",
+  "file": "Vinnie__Hat.png",
+  "size": [
+   139,
+   76
+  ],
+  "fill": 0.564,
+  "active": true
+ },
+ {
+  "character": "Gangster1",
+  "slot": "Hat",
+  "file": "Gangster1__Hat.png",
+  "size": [
+   139,
+   76
+  ],
+  "fill": 0.564,
+  "active": true
+ },
+ {
+  "character": "Gangster2",
+  "slot": "Hat",
+  "file": "Gangster2__Hat.png",
+  "size": [
+   138,
+   76
+  ],
+  "fill": 0.569,
+  "active": true
+ },
+ {
+  "character": "Gangster3",
+  "slot": "Hat",
+  "file": "Gangster3__Hat.png",
+  "size": [
+   138,
+   76
+  ],
+  "fill": 0.569,
+  "active": true
+ },
+ {
+  "character": "Gangster4",
+  "slot": "Hat",
+  "file": "Gangster4__Hat.png",
+  "size": [
+   138,
+   76
+  ],
+  "fill": 0.57,
+  "active": true
+ },
+ {
+  "character": "Gangster5",
+  "slot": "Hat",
+  "file": "Gangster5__Hat.png",
+  "size": [
+   138,
+   76
+  ],
+  "fill": 0.569,
+  "active": true
+ },
+ {
+  "character": "Gangster6",
+  "slot": "Hat",
+  "file": "Gangster6__Hat.png",
+  "size": [
+   138,
+   76
+  ],
+  "fill": 0.569,
+  "active": true
+ },
+ {
+  "character": "Goon1",
+  "slot": "Hat",
+  "file": "Goon1__Hat.png",
+  "size": [
+   117,
+   62
+  ],
+  "fill": 0.697,
+  "active": true
+ },
+ {
+  "character": "Goon2",
+  "slot": "Hat",
+  "file": "Goon2__Hat.png",
+  "size": [
+   122,
+   67
+  ],
+  "fill": 0.691,
+  "active": true
+ },
+ {
+  "character": "Goon3",
+  "slot": "Hat",
+  "file": "Goon3__Hat.png",
+  "size": [
+   139,
+   76
+  ],
+  "fill": 0.564,
+  "active": true
+ },
+ {
+  "character": "Vito",
+  "slot": "Hat",
+  "file": "Vito__Hat.png",
+  "size": [
+   139,
+   76
+  ],
+  "fill": 0.567,
+  "active": true
+ },
+ {
+  "character": "Salvatore",
+  "slot": "Hat",
+  "file": "Salvatore__Hat.png",
+  "size": [
+   139,
+   76
+  ],
+  "fill": 0.564,
+  "active": false
+ },
+ {
+  "character": "Paulie",
+  "slot": "Hat",
+  "file": "Paulie__Hat.png",
+  "size": [
+   138,
+   76
+  ],
+  "fill": 0.569,
+  "active": true
+ },
+ {
+  "character": "Soldier",
+  "slot": "Hat",
+  "file": "Soldier__Hat.png",
+  "size": [
+   139,
+   76
+  ],
+  "fill": 0.667,
+  "active": true
+ },
+ {
+  "character": "Scientist",
+  "slot": "Hat",
+  "file": "Scientist__Hat.png",
+  "size": [
+   139,
+   76
+  ],
+  "fill": 0.564,
+  "active": false
+ },
+ {
+  "character": "BonninoBoss",
+  "slot": "Hat",
+  "file": "BonninoBoss__Hat.png",
+  "size": [
+   138,
+   76
+  ],
+  "fill": 0.569,
+  "active": true
+ },
+ {
+  "character": "Frankie",
+  "slot": "Hat",
+  "file": "Frankie__Hat.png",
+  "size": [
+   139,
+   76
+  ],
+  "fill": 0.564,
+  "active": true
+ },
+ {
+  "character": "EvilFrankieOnFloor",
+  "slot": "Hat",
+  "file": "EvilFrankieOnFloor__Hat.png",
+  "size": [
+   139,
+   76
+  ],
+  "fill": 0.564,
+  "active": true
+ },
+ {
+  "character": "ZombieRegular",
+  "slot": "Hat",
+  "file": "ZombieRegular__Hat.png",
+  "size": [
+   131,
+   90
+  ],
+  "fill": 0.422,
+  "active": true
+ },
+ {
+  "character": "ZombieSailor",
+  "slot": "Hat",
+  "file": "ZombieSailor__Hat.png",
+  "size": [
+   131,
+   90
+  ],
+  "fill": 0.524,
+  "active": true
+ },
+ {
+  "character": "ZombiePaulie",
+  "slot": "Hat",
+  "file": "ZombiePaulie__Hat.png",
+  "size": [
+   131,
+   90
+  ],
+  "fill": 0.458,
+  "active": true
+ },
+ {
+  "character": "ZombieCop",
+  "slot": "Hat",
+  "file": "ZombieCop__Hat.png",
+  "size": [
+   131,
+   90
+  ],
+  "fill": 0.498,
+  "active": true
+ },
+ {
+  "character": "ZombieOfficer",
+  "slot": "Hat",
+  "file": "ZombieOfficer__Hat.png",
+  "size": [
+   131,
+   90
+  ],
+  "fill": 0.503,
+  "active": true
+ },
+ {
+  "character": "ZombieGun",
+  "slot": "Hat",
+  "file": "ZombieGun__Hat.png",
+  "size": [
+   131,
+   90
+  ],
+  "fill": 0.498,
+  "active": true
+ },
+ {
+  "character": "ZombieSoldier",
+  "slot": "Hat",
+  "file": "ZombieSoldier__Hat.png",
+  "size": [
+   132,
+   89
+  ],
+  "fill": 0.599,
+  "active": true
+ },
+ {
+  "character": "ZombieSandwichBoard",
+  "slot": "Hat",
+  "file": "ZombieSandwichBoard__Hat.png",
+  "size": [
+   131,
+   90
+  ],
+  "fill": 0.422,
+  "active": true
+ },
+ {
+  "character": "ZombieCharger",
+  "slot": "Hat",
+  "file": "ZombieCharger__Hat.png",
+  "size": [
+   106,
+   106
+  ],
+  "fill": 0.569,
+  "active": true
+ },
+ {
+  "character": "ZombieFloater",
+  "slot": "Hat",
+  "file": "ZombieFloater__Hat.png",
+  "size": [
+   86,
+   106
+  ],
+  "fill": 0.711,
+  "active": true
+ },
+ {
+  "character": "FatDockworker",
+  "slot": "Hat",
+  "file": "FatDockworker__Hat.png",
+  "size": [
+   109,
+   56
+  ],
+  "fill": 0.715,
+  "active": true
+ }
+]

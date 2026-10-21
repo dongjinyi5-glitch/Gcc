@@ -509,12 +509,24 @@ def aggregate(metrics):
     return agg
 
 
-def compare(before, after):
-    """Fidelity deltas that must stay inside the geometry tolerance."""
+def compare(before, after, ignore_path=None):
+    """Fidelity deltas that must stay inside the geometry tolerance.
+
+    ``ignore_path`` is a mask image of pixels the character has *declared* gone
+    (a part listed under touchup.json "hide"). Those pixels leave the silhouette
+    on purpose, so measuring them as damage would fail a deliberate art
+    decision. Drop them from both sides first and the gate keeps its meaning.
+    """
     a = np.array(Image.open(before).convert("RGBA"), dtype=np.float32)[..., 3] > 127
     b = np.array(Image.open(after).convert("RGBA"), dtype=np.float32)[..., 3] > 127
     if a.shape != b.shape:
         return {"size_match": False, "shape": [list(a.shape), list(b.shape)]}
+    if ignore_path and os.path.isfile(ignore_path):
+        ig = np.array(Image.open(ignore_path).convert("RGBA"),
+                      dtype=np.float32)[..., 3] > 127
+        if ig.shape == a.shape:
+            a = a & ~ig
+            b = b & ~ig
     inter = (a & b).sum()
     union = (a | b).sum()
     ya, xa = np.where(a)
