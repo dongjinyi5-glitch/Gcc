@@ -37,16 +37,16 @@ h1 small{display:block;font-size:13px;letter-spacing:.32em;color:var(--gold);
   background:#efe8d8;border:1px solid var(--line);white-space:nowrap}
 .save.ok{color:#3d6b45;background:#e9f0e4;border-color:#c4d8bd}
 .save.bad{color:#8a4a3a;background:#f6e8e2;border-color:#e0c6bb}
-#csvmodal{position:fixed;inset:0;z-index:99;background:rgba(40,32,24,.55);
+#csvmodal,#impmodal{position:fixed;inset:0;z-index:99;background:rgba(40,32,24,.55);
   display:flex;align-items:center;justify-content:center;padding:24px}
-#csvmodal .csvbox{background:var(--card);border:1px solid var(--gold);border-radius:4px;
+#csvmodal .csvbox,#impmodal .csvbox{background:var(--card);border:1px solid var(--gold);border-radius:4px;
   padding:22px;width:min(760px,100%);box-shadow:0 30px 80px -30px rgba(0,0,0,.6)}
-#csvmodal h3{font-family:Georgia,serif;font-weight:400;margin:0 0 6px;font-size:19px}
-#csvmodal p{margin:0 0 12px;font-size:12.5px;color:var(--sub);line-height:1.7}
-#csvmodal textarea{width:100%;height:240px;font-family:Consolas,monospace;font-size:12px;
+#csvmodal h3,#impmodal h3{font-family:Georgia,serif;font-weight:400;margin:0 0 6px;font-size:19px}
+#csvmodal p,#impmodal p{margin:0 0 12px;font-size:12.5px;color:var(--sub);line-height:1.7}
+#csvmodal textarea,#impmodal textarea{width:100%;height:240px;font-family:Consolas,monospace;font-size:12px;
   border:1px solid var(--line);background:#fbf6ea;padding:10px;border-radius:2px;
   resize:vertical;color:var(--ink)}
-#csvmodal .row{display:flex;gap:10px;margin-top:12px;justify-content:flex-end}
+#csvmodal .row,#impmodal .row{display:flex;gap:10px;margin-top:12px;justify-content:flex-end}
 .brief{margin-top:10px;font-size:11px;letter-spacing:.06em;color:var(--sub);
   display:flex;flex-direction:column;gap:4px}
 .brief textarea{width:100%;resize:vertical;border:1px solid var(--line);
@@ -121,6 +121,7 @@ footer li{margin:6px 0}
   <button class="chip on" data-f="all">全部 <b>42</b></button><button class="chip" data-f="玩家">玩家 <b>1</b></button><button class="chip" data-f="人类敌人">人类敌人 <b>14</b></button><button class="chip" data-f="僵尸">僵尸 <b>19</b></button><button class="chip" data-f="鼠怪">鼠怪 <b>3</b></button><button class="chip" data-f="Boss">Boss <b>5</b></button>
   <span class="save" id="save">正在连接本地保存服务…</span>
   <button class="chip exp" id="exp">导出 / 保存 CSV</button>
+  <button class="chip" id="imp">整段导入</button>
   <input id="q" type="search" placeholder="搜索中文名 / 英文名 / 预制体…">
 </div>
 
@@ -1259,6 +1260,39 @@ document.getElementById('exp').addEventListener('click',()=>{
     document.body.appendChild(a); a.click(); a.remove();
   }catch(e){ showCsv(csv); return; }
   setTimeout(()=>{ if(!served) showCsv(csv); },800);
+});
+
+// ---- 整段导入：一行一条「预制体 + Tab + 描述」 ----
+const TAB=String.fromCharCode(9), LF=String.fromCharCode(10);
+document.getElementById('imp').addEventListener('click',()=>{
+  let m=document.getElementById('impmodal');
+  if(!m){
+    m=document.createElement('div'); m.id='impmodal';
+    m.innerHTML='<div class="csvbox"><h3>整段导入</h3>'+
+      '<p>每行一条，格式：<code>预制体名</code> + Tab + <code>描述</code>。'+
+      '从旧页面控制台复制出来的就是这种格式，直接粘进来即可。</p>'+
+      '<textarea placeholder="Vinnie&#9;【颜料】主色石青…"></textarea>'+
+      '<div class="row"><button class="chip" id="ido">导入并保存</button>'+
+      '<button class="chip" id="icl">关闭</button></div></div>';
+    document.body.appendChild(m);
+    m.querySelector('#icl').onclick=()=>m.remove();
+    m.querySelector('#ido').onclick=()=>{
+      const lines=m.querySelector('textarea').value.split(LF);
+      let n=0; const miss=[];
+      lines.forEach(ln=>{
+        const i=ln.indexOf(TAB);
+        if(i<0) return;
+        const k=ln.slice(0,i).trim(), v=ln.slice(i+1).trim();
+        if(!k||!v) return;
+        const t=boxes.find(b=>b.dataset.prefab===k);
+        if(t){ t.value=v; n++; } else { miss.push(k); }
+      });
+      flush();
+      mark(n?'ok':'bad','已导入 '+n+' 条'+(miss.length?'，未匹配 '+miss.length:''));
+      m.remove();
+    };
+  }
+  const ta=m.querySelector('textarea'); ta.value=''; ta.focus();
 });
 </script>
 </body>
