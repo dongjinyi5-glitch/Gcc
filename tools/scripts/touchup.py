@@ -23,13 +23,23 @@ editing the concept:
    into this character's own Hat texture, keeping that texture's pivot, PPU
    and size. Declared with "transplant".
 
+4. The concept drew the helmet AND its camo net inside the head sprite. Once
+   the transplant supplies the helmet, that copy is redundant, and the net
+   hanging below the transplant's brim eats the forehead -- the face reads as
+   "cut off". The original head sprite has the identical alpha silhouette, so
+   its skin mask is the ground truth for where skin belongs: heal every pixel
+   the original calls skin and the redraw calls dark. The brim shadow and the
+   black left edge stay dark in the original too, so they are left alone.
+   Declared with "denet".
+
 Run automatically at the end of slice_concept, so a re-slice cannot lose it.
 
     art/<char>_parts/touchup.json
     {
       "hide": ["02_HoseFlamethrower*"],
       "net": [{"file": "60_HandBack*.png", "cell": 6, "seed": 7}],
-      "transplant": [{"from": "ZombieSoldier", "slot": "hat"}]
+      "transplant": [{"from": "ZombieSoldier", "slot": "hat"}],
+      "denet": [{"file": "23_Head_Head.png", "hat": "30_Hat_Hat.png"}]
     }
 """
 import fnmatch
@@ -149,6 +159,132 @@ def punch_holes(img, hole):
     return Image.fromarray(a)
 
 
+def box_blur(a, k):
+    """Separable box blur, reflect-padded. scipy is not in this venv."""
+    if k <= 1:
+        return a.astype(np.float32)
+    p = np.pad(a.astype(np.float32), ((k // 2, k // 2), (k // 2, k // 2), (0, 0)),
+               mode="reflect")
+    c = np.cumsum(np.cumsum(p, 0), 1)
+    c = np.pad(c, ((1, 0), (1, 0), (0, 0)))
+    return (c[k:, k:] - c[:-k, k:] - c[k:, :-k] + c[:-k, :-k]) / float(k * k)
+
+
+def part_rect(man, pattern):
+    """The part entry whose file matches, preferring the largest canvas_rect."""
+    best, area = None, -1
+    for p in man["parts"]:
+        f = p.get("file") or ""
+        if not fnmatch.fnmatch(f, pattern):
+            continue
+        a = p["canvas_rect"][2] * p["canvas_rect"][3]
+        if a > area:
+            best, area = p, a
+    return best
+
+
+def map_alpha(shape, src_img, src_rect, dst_rect):
+    """Sample src alpha into dst-texture space. Rects are [x,y,w,h] canvas."""
+    dh, dw = shape
+    sx, sy, sw, sh = src_rect
+    dx, dy, dw_, dh_ = dst_rect
+    hx = np.arange(dw)[None, :]
+    hy = np.arange(dh)[:, None]
+    cx = dx + hx * (dw_ / float(dw))
+    cy = dy + hy * (dh_ / float(dh))
+    tx = np.clip(np.round((cx - sx) * (src_img.width / float(sw))),
+                 0, src_img.width - 1).astype(np.intp)
+    ty = np.clip(np.round((cy - sy) * (src_img.height / float(sh))),
+                 0, src_img.height - 1).astype(np.intp)
+    return np.array(src_img)[..., 3][ty, tx] > 8
+
+
+def skin_mask(arr):
+    """Warm bright flesh. The original's palette is flat enough for a hard rule."""
+    R, G, B = arr[..., 0], arr[..., 1], arr[..., 2]
+    return (arr[..., 3] > 127) & (R > 150) & (R - B > 55) & (R - G > 25)
+
+
+def diffuse(rgb, fix, seed, iters=500):
+    """Fill `fix` pixels from `seed` pixels by averaging known neighbours."""
+    h, w = fix.shape
+    u = np.where(seed[..., None], rgb, 0.0).astype(np.float32)
+    k = seed.astype(np.float32)
+    for _ in range(iters):
+        pu = np.pad(u, ((1, 1), (1, 1), (0, 0)), mode="edge")
+        pk = np.pad(k, ((1, 1), (1, 1)), mode="edge")
+        acc = np.zeros_like(u)
+        wsum = np.zeros((h, w, 1), dtype=np.float32)
+        for dy, dx in ((0, 1), (0, -1), (1, 0), (-1, 0)):
+            su = pu[1 + dy:1 + dy + h, 1 + dx:1 + dx + w]
+            sk = pk[1 + dy:1 + dy + h, 1 + dx:1 + dx + w]
+            acc += su * sk[..., None]
+            wsum += sk[..., None]
+        newu = np.where(wsum > 0, acc / np.maximum(wsum, 1e-6), u)
+        u = np.where(fix[..., None], newu, u)
+        k = np.maximum(k, fix.astype(np.float32))
+    return u
+
+
+def denet(img, orig, hat, rect, orig_rect, hat_rect, spec):
+    """Heal the net the Hat sprite now covers, back to forehead skin.
+
+    ``spec`` keys: gray_max (net/skin divider), ear [x0,y0,x1,y1] box left
+    alone, detail [y0,y1,x0,x1] where the face's brush detail is lifted from,
+    shade_top (helmet brim shadow at the top of the healed band).
+    """
+    a = np.array(img.convert("RGBA")).astype(np.float32)
+    rgb, al = a[..., :3], a[..., 3]
+    h, w = al.shape
+    xs = np.arange(w)[None, :]
+    ys = np.arange(h)[:, None]
+
+    cov = map_alpha((h, w), hat, hat_rect, rect)
+    op = al > 127
+    gray = rgb.mean(axis=2)
+    oskin = skin_mask(np.array(orig.convert("RGBA")).astype(np.float32))
+
+    ex0, ey0, ex1, ey1 = spec.get("ear", [4, 44, 33, 82])
+    ear = (xs >= ex0) & (xs <= ex1) & (ys >= ey0) & (ys <= ey1)
+    fix = oskin & ~cov & (gray < spec.get("gray_max", 112)) & ~ear & op
+    if not fix.any():
+        return img, 0
+    seed = op & (gray >= 118) & ~fix
+
+    base = diffuse(rgb, fix, seed)
+
+    # re-texture with the face's own brush detail, re-centred over the hole
+    dy0, dy1, dx0, dx1 = spec.get("detail", [66, 100, 42, 102])
+    src = np.zeros((h, w), bool)
+    src[dy0:dy1, dx0:dx1] = True
+    src &= op
+    if src.any():
+        detail = rgb - box_blur(rgb, 11)
+        fy, fx_ = np.nonzero(fix)
+        oy, ox = (dy0 + dy1) // 2, (dx0 + dx1) // 2
+        det = np.roll(detail, (int(fy.mean()) - oy, int(fx_.mean()) - ox), axis=(0, 1))
+        healed = base + 0.9 * det
+        # colour-match the patch to that same region, mean and spread
+        tmean = rgb[src].mean(axis=0) * 0.94
+        tstd = rgb[src].std(axis=0) * 0.8
+        cur = healed[fix]
+        for c in range(3):
+            mu, sd = cur[:, c].mean(), cur[:, c].std()
+            healed[fix, c] = (healed[fix, c] - mu) * (tstd[c] / max(sd, 1e-3)) + tmean[c]
+    else:
+        healed = base
+
+    # brim shadow: the helmet darkens the top of the healed band
+    t = np.clip((ys - 24) / 36.0, 0, 1)
+    healed = healed * (spec.get("shade_top", 0.86) + (1 - spec.get("shade_top", 0.86)) * t)[..., None]
+
+    # feather so the patch does not stamp a hard edge
+    wgt = np.clip(box_blur(fix.astype(np.float32)[..., None], 5)[..., 0] * 1.6, 0, 1)
+    out = a.copy()
+    out[..., :3] = np.clip(rgb * (1 - wgt[..., None]) + healed * wgt[..., None], 0, 255)
+    return Image.fromarray(out.astype(np.uint8)), int(fix.sum())
+
+
 def run(char, base=None):
     """Apply the character's declared fixes. Returns the number of ops run.
 
@@ -220,6 +356,31 @@ def run(char, base=None):
         print(f"  [touchup] {st['file']} <- {st['src']} "
               f"{st['scaled'][0]}x{st['scaled'][1]} at x={st['x0']} "
               f"(alpha IoU {st['alpha_iou']})")
+        done += 1
+
+    for spec in cfg.get("denet", []):
+        man_path = os.path.join(root, "placement.json")
+        if not os.path.isfile(man_path):
+            print("  [touchup] denet needs placement.json -- skipped")
+            continue
+        with io.open(man_path, encoding="utf-8") as fh:
+            man = json.load(fh)
+        head_p = part_rect(man, spec["file"])
+        hat_p = part_rect(man, spec.get("hat", "*Hat*.png"))
+        if head_p is None or hat_p is None:
+            print(f"  [touchup] denet: {spec['file']} or its hat not located")
+            continue
+        path = os.path.join(parts, head_p["file"])
+        opath = os.path.join(root, "original", head_p["file"])
+        if not (os.path.isfile(path) and os.path.isfile(opath)):
+            print(f"  [touchup] denet: {head_p['file']} or its original missing")
+            continue
+        out, n = denet(Image.open(path), Image.open(opath),
+                       Image.open(os.path.join(parts, hat_p["file"])),
+                       head_p["canvas_rect"], head_p["canvas_rect"],
+                       hat_p["canvas_rect"], spec)
+        out.save(path)
+        print(f"  [touchup] de-netted {head_p['file']}: {n} px healed to skin")
         done += 1
     return done
 

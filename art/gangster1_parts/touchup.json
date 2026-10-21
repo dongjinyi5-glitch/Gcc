@@ -32,5 +32,19 @@
       "slot": "hat",
       "_why": "ZombieSoldier's Hat is a genuine WWII steel helmet (132x89). A fedora is a brim and a helmet is a dome; no redraw inside the fedora's outline grows one. Transplanting into this character's own Hat texture keeps its pivot, PPU and size, so it stays an equal-length pixel edit."
     }
-  ]
+  ],
+
+  "denet": [
+    {
+      "file": "23_Head_Head.png",
+      "hat": "30_Hat_Hat.png",
+      "gray_max": 112,
+      "ear": [4, 44, 33, 82],
+      "detail": [66, 100, 42, 102],
+      "shade_top": 0.86,
+      "_why": "The concept drew the helmet AND its camo net inside the head sprite. Once the transplant supplies the helmet, that copy is redundant, and the net hanging below the transplant's brim eats the forehead -- the face reads as 'cut off'. The original head sprite has the identical alpha silhouette, so its skin mask is the ground truth for where skin belongs: heal every pixel the original calls skin and the redraw calls dark. The brim shadow and the black left edge are dark in the original too, so they are left alone; the ear is carved out because the redraw shadows it hard and the original does not."
+    }
+  ],
+
+  "_denet_why": "gray_max divides net (~78 gray) from skin (~138). 'detail' is where the face's own brush detail is lifted from to re-texture the patch; a plain diffusion averages the strokes away and the forehead comes out as a smooth sticker. shade_top is the helmet brim shadow at the top of the healed band."
 }
