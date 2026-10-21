@@ -16,6 +16,12 @@ from PIL import Image, ImageDraw
 from ggc_assets import AssetDB, PROJECT, tn
 
 CHAR = sys.argv[1] if len(sys.argv) > 1 else "Vinnie"
+# Which override folder to compose from. "restyled" is the deterministic ink
+# recolor; "redraw" is the plan-B redrawn art. Both compose into the same
+# baseline so the two routes can be judged against one original.
+OVERRIDE_DIR = (sys.argv[sys.argv.index("--dir") + 1]
+                if "--dir" in sys.argv else "restyled")
+SUFFIX = OVERRIDE_DIR
 BASE = os.path.join(PROJECT, "art", CHAR.lower() + "_parts")
 MANIFEST = os.path.join(BASE, "manifest.json")
 PPU_OUT = 150.0
@@ -37,11 +43,11 @@ def load_overrides():
         man = json.load(fh)
     ov = {}
     for p in man["parts"]:
-        path = os.path.join(BASE, "restyled", p["file"])
+        path = os.path.join(BASE, OVERRIDE_DIR, p["file"])
         if os.path.isfile(path):
             ov[(p["sprite_file"], p["sprite_path_id"])] = path
     for f in man["frames"]:
-        path = os.path.join(BASE, "restyled", f["file"])
+        path = os.path.join(BASE, OVERRIDE_DIR, f["file"])
         if os.path.isfile(path):
             ov[("frame", f["texture_name"])] = path
     return ov
@@ -117,7 +123,7 @@ def main():
 
     dr = ImageDraw.Draw(sheet)
     dr.text((6, 10), f"{CHAR}  —  original (cartoon)", fill=(40, 30, 24))
-    dr.text((before.width + gap + 6, 10), f"{CHAR}  —  重彩国画 (restyled)",
+    dr.text((before.width + gap + 6, 10), f"{CHAR}  —  {SUFFIX}",
             fill=(40, 30, 24))
     dr.line([(before.width + gap // 2, 0), (before.width + gap // 2, H)],
             fill=(190, 178, 158))
@@ -128,13 +134,13 @@ def main():
     vdir = os.path.join(PROJECT, "validation")
     os.makedirs(vdir, exist_ok=True)
     before.save(os.path.join(vdir, f"composite_{CHAR}_original.png"))
-    after.save(os.path.join(vdir, f"composite_{CHAR}_restyled.png"))
+    after.save(os.path.join(vdir, f"composite_{CHAR}_{SUFFIX}.png"))
     # keep the plain names pointing at the reference character (Vinnie)
-    if CHAR == "Vinnie":
+    if CHAR == "Vinnie" and SUFFIX == "restyled":
         before.save(os.path.join(vdir, "composite_original.png"))
         after.save(os.path.join(vdir, "composite_restyled.png"))
 
-    out = os.path.join(BASE, "_character_compare.png")
+    out = os.path.join(BASE, f"_character_compare_{SUFFIX}.png")
     sheet.save(out)
     print("saved", out, sheet.size)
 

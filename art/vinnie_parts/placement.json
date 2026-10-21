@@ -1,0 +1,1315 @@
+{
+ "char": "Vinnie",
+ "ppu": 200.0,
+ "pad": 8,
+ "canvas": [
+  405,
+  414
+ ],
+ "origin": [
+  20.2591861247642,
+  -12.887304132401765
+ ],
+ "parts": [
+  {
+   "slot": "ArmBack",
+   "file": "01_ArmBack_ArmBack.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmBack",
+   "order": 0,
+   "depth": 8,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3765,
+   "size": [
+    53,
+    126
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.06903629226514,
+    -11.981441685181855,
+    21.299471048640015,
+    -11.433615660592524
+   ],
+   "canvas_rect": [
+    170,
+    114,
+    46,
+    110
+   ]
+  },
+  {
+   "slot": "HoseFlamethrower",
+   "file": "02_HoseFlamethrower_HoseFlamethrower.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/FuelTankFlamethrower/HoseFlamethrower",
+   "order": 0,
+   "depth": 7,
+   "sprite_file": "sharedassets7.assets",
+   "sprite_path_id": 281,
+   "size": [
+    162,
+    112
+   ],
+   "ppu": 210.0,
+   "rect": [
+    20.2591861247642,
+    -12.4287791941259,
+    20.97436515704609,
+    -11.954027461535329
+   ],
+   "canvas_rect": [
+    8,
+    218,
+    143,
+    95
+   ]
+  },
+  {
+   "slot": "ArmLowBack",
+   "file": "03_ArmLowBack_ArmLowBack.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmBack/ArmLowBack",
+   "order": 1,
+   "depth": 9,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4269,
+   "size": [
+    108,
+    54
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.113182012260893,
+    -12.031117458247211,
+    21.58204551039619,
+    -11.796334876280355
+   ],
+   "canvas_rect": [
+    179,
+    187,
+    94,
+    47
+   ]
+  },
+  {
+   "slot": "BazookaBack",
+   "file": "04_BazookaBack_BazookaBack.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Bazooka/BazookaFront/BazookaBack",
+   "order": 2,
+   "depth": 13,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4181,
+   "size": [
+    22,
+    63
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.9236295071961,
+    -11.88223213472403,
+    22.019281670219634,
+    -11.625956088422562
+   ],
+   "canvas_rect": [
+    341,
+    153,
+    19,
+    51
+   ]
+  },
+  {
+   "slot": "CoatBack3",
+   "file": "05_CoatBack3_CoatBack3.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/CoatBack1/CoatBack2/CoatBack3",
+   "order": 2,
+   "depth": 7,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3441,
+   "size": [
+    100,
+    80
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.95822646753378,
+    -12.662363295690415,
+    21.39300902673166,
+    -12.31453724833211
+   ],
+   "canvas_rect": [
+    148,
+    291,
+    87,
+    70
+   ]
+  },
+  {
+   "slot": "CoatBack2",
+   "file": "09_CoatBack2_CoatBack2.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/CoatBack1/CoatBack2",
+   "order": 3,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3041,
+   "size": [
+    111,
+    109
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.90234418998005,
+    -12.596925405748244,
+    21.3849528306897,
+    -12.123012416222554
+   ],
+   "canvas_rect": [
+    137,
+    252,
+    97,
+    95
+   ]
+  },
+  {
+   "slot": "CoatBack1",
+   "file": "11_CoatBack1_CoatBack1.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/CoatBack1",
+   "order": 4,
+   "depth": 5,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3732,
+   "size": [
+    121,
+    117
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.85719979745129,
+    -12.468429412561203,
+    21.383286694080727,
+    -11.959733818299682
+   ],
+   "canvas_rect": [
+    128,
+    220,
+    105,
+    102
+   ]
+  },
+  {
+   "slot": "TorsoBelly",
+   "file": "12_TorsoBelly_TorsoBelly.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly",
+   "order": 5,
+   "depth": 4,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3331,
+   "size": [
+    151,
+    197
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.67847778735518,
+    -12.252707441445002,
+    21.334999451743982,
+    -11.396185799825176
+   ],
+   "canvas_rect": [
+    92,
+    107,
+    131,
+    171
+   ]
+  },
+  {
+   "slot": "TorsoChest",
+   "file": "13_TorsoChest_TorsoChest.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest",
+   "order": 6,
+   "depth": 5,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4189,
+   "size": [
+    151,
+    131
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.65144408591356,
+    -11.840595981070404,
+    21.307965750302362,
+    -11.27103082852118
+   ],
+   "canvas_rect": [
+    86,
+    82,
+    131,
+    114
+   ]
+  },
+  {
+   "slot": "FootTip",
+   "file": "14_FootTip_FootTip.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Lower/LegUpBack/LegLowBack/FootHeel/FootTip",
+   "order": 7,
+   "depth": 7,
+   "sprite_file": "sharedassets15.assets",
+   "sprite_path_id": 231,
+   "size": [
+    71,
+    23
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.552752430741233,
+    -12.887304132401765,
+    21.85470464874994,
+    -12.789488608471366
+   ],
+   "canvas_rect": [
+    267,
+    386,
+    60,
+    20
+   ]
+  },
+  {
+   "slot": "FootHeel",
+   "file": "15_FootHeel_FootHeel.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Lower/LegUpBack/LegLowBack/FootHeel",
+   "order": 8,
+   "depth": 6,
+   "sprite_file": "sharedassets15.assets",
+   "sprite_path_id": 172,
+   "size": [
+    84,
+    52
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.308094447536416,
+    -12.885879820524547,
+    21.665333691377704,
+    -12.664731679464516
+   ],
+   "canvas_rect": [
+    218,
+    361,
+    71,
+    44
+   ]
+  },
+  {
+   "slot": "LegLowBack",
+   "file": "16_LegLowBack_LegLowBack.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Lower/LegUpBack/LegLowBack",
+   "order": 9,
+   "depth": 5,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3276,
+   "size": [
+    49,
+    108
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.3697741026284,
+    -12.789963793453722,
+    21.582817580000384,
+    -12.320398526523183
+   ],
+   "canvas_rect": [
+    230,
+    292,
+    43,
+    94
+   ]
+  },
+  {
+   "slot": "NeckPiece",
+   "file": "18_NeckPiece_NeckPieceGangstersRunners.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/NeckPiece",
+   "order": 10,
+   "depth": 6,
+   "sprite_file": "sharedassets15.assets",
+   "sprite_path_id": 254,
+   "size": [
+    42,
+    41
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.932249956322668,
+    -11.516420112831437,
+    21.142249949830166,
+    -11.311420119169357
+   ],
+   "canvas_rect": [
+    143,
+    90,
+    42,
+    41
+   ]
+  },
+  {
+   "slot": "LegUpBack",
+   "file": "17_LegUpBack_LegUpBack.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Lower/LegUpBack",
+   "order": 10,
+   "depth": 4,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4533,
+   "size": [
+    104,
+    85
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.103645247535948,
+    -12.486243560312774,
+    21.55581915869281,
+    -12.116678303932257
+   ],
+   "canvas_rect": [
+    177,
+    251,
+    90,
+    74
+   ]
+  },
+  {
+   "slot": "Crotch",
+   "file": "19_Crotch_Crotch.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Lower/Crotch",
+   "order": 11,
+   "depth": 4,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3743,
+   "size": [
+    123,
+    87
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.80648642922899,
+    -12.399913811897596,
+    21.341269035693355,
+    -12.02165298539544
+   ],
+   "canvas_rect": [
+    117,
+    232,
+    107,
+    76
+   ]
+  },
+  {
+   "slot": "Tie4",
+   "file": "20_Tie4_Tie4.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Tie1/Tie2/Tie3/Tie4",
+   "order": 12,
+   "depth": 9,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3256,
+   "size": [
+    22,
+    31
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.100825424838185,
+    -12.134575922017284,
+    21.196477587861718,
+    -11.999793328665941
+   ],
+   "canvas_rect": [
+    176,
+    228,
+    19,
+    27
+   ]
+  },
+  {
+   "slot": "Tie3",
+   "file": "21_Tie3_Tie3.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Tie1/Tie2/Tie3",
+   "order": 13,
+   "depth": 8,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3314,
+   "size": [
+    22,
+    43
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.09204136390875,
+    -12.085166670831546,
+    21.187693526932282,
+    -11.898210170376457
+   ],
+   "canvas_rect": [
+    175,
+    207,
+    19,
+    37
+   ]
+  },
+  {
+   "slot": "Tie2",
+   "file": "22_Tie2_Tie2.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Tie1/Tie2",
+   "order": 14,
+   "depth": 7,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3017,
+   "size": [
+    22,
+    42
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.067068144268063,
+    -11.966878557062298,
+    21.162720307291597,
+    -11.784269882199188
+   ],
+   "canvas_rect": [
+    170,
+    185,
+    19,
+    37
+   ]
+  },
+  {
+   "slot": "Tie1",
+   "file": "23_Tie1_Tie1.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Tie1",
+   "order": 15,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3817,
+   "size": [
+    22,
+    49
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.04503731639286,
+    -11.844305133118601,
+    21.140689479416395,
+    -11.631261679111638
+   ],
+   "canvas_rect": [
+    165,
+    154,
+    19,
+    43
+   ]
+  },
+  {
+   "slot": "Head",
+   "file": "24_Head_Head.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Head",
+   "order": 16,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4011,
+   "size": [
+    109,
+    134
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.828830255586674,
+    -11.61230659153463,
+    21.302743245112364,
+    -11.029697962209468
+   ],
+   "canvas_rect": [
+    122,
+    34,
+    95,
+    117
+   ]
+  },
+  {
+   "slot": "Hat",
+   "file": "31_Hat_Hat.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Head/Hat",
+   "order": 17,
+   "depth": 7,
+   "sprite_file": "sharedassets15.assets",
+   "sprite_path_id": 229,
+   "size": [
+    139,
+    76
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.76931165404125,
+    -11.232052352702558,
+    21.373659411326305,
+    -10.901617607712168
+   ],
+   "canvas_rect": [
+    110,
+    8,
+    121,
+    66
+   ]
+  },
+  {
+   "slot": "FootTip",
+   "file": "14_FootTip_FootTip.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Lower/LegUpFront/LegLowFront/FootHeel/FootTip",
+   "order": 18,
+   "depth": 7,
+   "sprite_file": "sharedassets15.assets",
+   "sprite_path_id": 231,
+   "size": [
+    71,
+    23
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.78315989219413,
+    -12.864292740110466,
+    21.091855543080065,
+    -12.764292740527699
+   ],
+   "canvas_rect": [
+    113,
+    381,
+    62,
+    20
+   ]
+  },
+  {
+   "slot": "FootHeel",
+   "file": "15_FootHeel_FootHeel.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Lower/LegUpFront/LegLowFront/FootHeel",
+   "order": 19,
+   "depth": 6,
+   "sprite_file": "sharedassets15.assets",
+   "sprite_path_id": 172,
+   "size": [
+    84,
+    52
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.53662668180493,
+    -12.865449343877348,
+    20.901844071585472,
+    -12.639362388298917
+   ],
+   "canvas_rect": [
+    63,
+    356,
+    73,
+    45
+   ]
+  },
+  {
+   "slot": "LegLowFront",
+   "file": "32_LegLowFront_LegLowFront.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Lower/LegUpFront/LegLowFront",
+   "order": 20,
+   "depth": 5,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4020,
+   "size": [
+    102,
+    77
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.636065087463567,
+    -12.787285087029522,
+    21.079543346482797,
+    -12.452502479730692
+   ],
+   "canvas_rect": [
+    83,
+    318,
+    89,
+    67
+   ]
+  },
+  {
+   "slot": "LegUpFront",
+   "file": "33_LegUpFront_LegUpFront.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Lower/LegUpFront",
+   "order": 21,
+   "depth": 4,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3257,
+   "size": [
+    58,
+    94
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.851860968415057,
+    -12.626121911040995,
+    21.104034880406385,
+    -12.217426260572294
+   ],
+   "canvas_rect": [
+    127,
+    271,
+    50,
+    82
+   ]
+  },
+  {
+   "slot": "CoatBottom",
+   "file": "34_CoatBottom_CoatBottom.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/CoatTop/CoatMid1/CoatMid2/CoatMid3/CoatBottom",
+   "order": 22,
+   "depth": 9,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3295,
+   "size": [
+    77,
+    69
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.63280083541966,
+    -12.691047396302523,
+    20.967583406002028,
+    -12.391047430455984
+   ],
+   "canvas_rect": [
+    83,
+    306,
+    67,
+    60
+   ]
+  },
+  {
+   "slot": "CoatMid3",
+   "file": "35_CoatMid3_CoatMid3.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/CoatTop/CoatMid1/CoatMid2/CoatMid3",
+   "order": 23,
+   "depth": 8,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3898,
+   "size": [
+    68,
+    74
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.69370156615558,
+    -12.596019849457628,
+    20.98935370641014,
+    -12.274280755651196
+   ],
+   "canvas_rect": [
+    95,
+    283,
+    59,
+    64
+   ]
+  },
+  {
+   "slot": "CoatMid2",
+   "file": "36_CoatMid2_CoatMid2.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/CoatTop/CoatMid1/CoatMid2",
+   "order": 24,
+   "depth": 7,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3279,
+   "size": [
+    67,
+    70
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.731407953959337,
+    -12.48496460664618,
+    21.022712268621916,
+    -12.180616815207664
+   ],
+   "canvas_rect": [
+    102,
+    264,
+    58,
+    61
+   ]
+  },
+  {
+   "slot": "CoatMid1",
+   "file": "37_CoatMid1_CoatMid1.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/CoatTop/CoatMid1",
+   "order": 25,
+   "depth": 6,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 2975,
+   "size": [
+    66,
+    70
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.757573876918627,
+    -12.413797482101053,
+    21.044530365989228,
+    -12.109449690662537
+   ],
+   "canvas_rect": [
+    108,
+    250,
+    57,
+    61
+   ]
+  },
+  {
+   "slot": "CoatTop",
+   "file": "38_CoatTop_CoatTop.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/CoatTop",
+   "order": 26,
+   "depth": 5,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3901,
+   "size": [
+    74,
+    70
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.734801162035293,
+    -12.254522849058695,
+    21.056540255841725,
+    -11.950175057620179
+   ],
+   "canvas_rect": [
+    103,
+    218,
+    64,
+    61
+   ]
+  },
+  {
+   "slot": "ammoclip",
+   "file": "41_ammoclip_ammoclip.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Pistol/ammoclip",
+   "order": 29,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3726,
+   "size": [
+    38,
+    54
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.080728326132274,
+    -12.100621205748533,
+    21.27072833995355,
+    -11.830621186107772
+   ],
+   "canvas_rect": [
+    172,
+    194,
+    38,
+    54
+   ]
+  },
+  {
+   "slot": "TommygunTop",
+   "file": "53_TommygunTop_TommygunTop.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Gun/TommygunTop",
+   "order": 30,
+   "depth": 12,
+   "sprite_file": "sharedassets4.assets",
+   "sprite_path_id": 383,
+   "size": [
+    17,
+    19
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.20744983377579,
+    -11.704572140436621,
+    21.28136286443387,
+    -11.622319144088776
+   ],
+   "canvas_rect": [
+    198,
+    152,
+    15,
+    16
+   ]
+  },
+  {
+   "slot": "Pistol45-Slide",
+   "file": "56_Pistol45-Slide_Pistol45-Slide.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Pistol/Pistol45-Slide",
+   "order": 31,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4223,
+   "size": [
+    112,
+    23
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.129841732807154,
+    -11.818780830912957,
+    21.616798257158514,
+    -11.718780830376517
+   ],
+   "canvas_rect": [
+    182,
+    171,
+    97,
+    20
+   ]
+  },
+  {
+   "slot": "ActionPumpShotgun",
+   "file": "54_ActionPumpShotgun_ActionPumpShotgun.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Shotgun/ActionPumpShotgun",
+   "order": 31,
+   "depth": 12,
+   "sprite_file": "sharedassets6.assets",
+   "sprite_path_id": 186,
+   "size": [
+    99,
+    35
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.70164550909381,
+    -11.971163307361321,
+    22.1273455472444,
+    -11.82066329387374
+   ],
+   "canvas_rect": [
+    296,
+    192,
+    85,
+    30
+   ]
+  },
+  {
+   "slot": "HandFront",
+   "file": "55_HandFront_HandFront.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront",
+   "order": 31,
+   "depth": 10,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3538,
+   "size": [
+    70,
+    59
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.030131211006236,
+    -12.08857209215698,
+    21.334479002444752,
+    -11.83205038223023
+   ],
+   "canvas_rect": [
+    162,
+    194,
+    61,
+    51
+   ]
+  },
+  {
+   "slot": "TommygunDrum",
+   "file": "59_TommygunDrum_TommygunDrum.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Gun/TommygunDrum",
+   "order": 32,
+   "depth": 12,
+   "sprite_file": "sharedassets4.assets",
+   "sprite_path_id": 394,
+   "size": [
+    55,
+    84
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.287273089010043,
+    -12.10518192018215,
+    21.526403482315594,
+    -11.741537094223252
+   ],
+   "canvas_rect": [
+    214,
+    176,
+    48,
+    73
+   ]
+  },
+  {
+   "slot": "MaximGunMagazine",
+   "file": "57_MaximGunMagazine_MaximGunMagazine.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Maximgun/MaximGunMagazine",
+   "order": 32,
+   "depth": 12,
+   "sprite_file": "sharedassets6.assets",
+   "sprite_path_id": 142,
+   "size": [
+    78,
+    101
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.203163149597202,
+    -12.135673842429284,
+    21.54229354577155,
+    -11.696543457639425
+   ],
+   "canvas_rect": [
+    197,
+    167,
+    68,
+    88
+   ]
+  },
+  {
+   "slot": "HandSupport2",
+   "file": "63_HandSupport2_HandSupport2.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Shotgun/ActionPumpShotgun/HandSupport2",
+   "order": 33,
+   "depth": 13,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3908,
+   "size": [
+    76,
+    44
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.723841301946003,
+    -12.032803401944289,
+    22.050641331233322,
+    -11.843603384988473
+   ],
+   "canvas_rect": [
+    301,
+    196,
+    65,
+    38
+   ]
+  },
+  {
+   "slot": "HandBack",
+   "file": "60_HandBack_HandBack.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Gun/HandBack",
+   "order": 33,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3226,
+   "size": [
+    69,
+    63
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.50320613552617,
+    -12.069350378703787,
+    21.803206083491318,
+    -11.796616759234615
+   ],
+   "canvas_rect": [
+    257,
+    187,
+    60,
+    55
+   ]
+  },
+  {
+   "slot": "HandBack",
+   "file": "61_HandBack_HandSupport.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Magnum357/HandBack",
+   "order": 33,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4705,
+   "size": [
+    71,
+    49
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.078663300125566,
+    -12.145065712973071,
+    21.38735891715606,
+    -11.932022258966109
+   ],
+   "canvas_rect": [
+    172,
+    214,
+    62,
+    43
+   ]
+  },
+  {
+   "slot": "HandBack",
+   "file": "61_HandBack_HandSupport.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Pistol/HandBack",
+   "order": 33,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4705,
+   "size": [
+    71,
+    49
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.076645773832325,
+    -12.141403163458964,
+    21.38534139086282,
+    -11.928359709452002
+   ],
+   "canvas_rect": [
+    171,
+    213,
+    62,
+    43
+   ]
+  },
+  {
+   "slot": "HandBack",
+   "file": "60_HandBack_HandBack.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Flamethrower/HandBack",
+   "order": 33,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3226,
+   "size": [
+    69,
+    63
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.506428689776016,
+    -12.068457220161395,
+    21.806428655622554,
+    -11.795723584365735
+   ],
+   "canvas_rect": [
+    257,
+    187,
+    60,
+    55
+   ]
+  },
+  {
+   "slot": "HandBack",
+   "file": "61_HandBack_HandSupport.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Revolver/HandBack",
+   "order": 33,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4705,
+   "size": [
+    71,
+    49
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.0786407669809,
+    -12.144647139402789,
+    21.387336384011395,
+    -11.931603685395826
+   ],
+   "canvas_rect": [
+    172,
+    214,
+    62,
+    43
+   ]
+  },
+  {
+   "slot": "HandBack",
+   "file": "60_HandBack_HandBack.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Maximgun/HandBack",
+   "order": 33,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3226,
+   "size": [
+    69,
+    63
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.503272766727292,
+    -12.069467768220731,
+    21.80327273257383,
+    -11.796733071203365
+   ],
+   "canvas_rect": [
+    257,
+    187,
+    60,
+    55
+   ]
+  },
+  {
+   "slot": "HandBack",
+   "file": "62_HandBack_HandBackTeslacoilGun.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Teslacoilgun/HandBack",
+   "order": 33,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4672,
+   "size": [
+    66,
+    69
+   ],
+   "ppu": 225.0,
+   "rect": [
+    21.508259270700528,
+    -12.059783797843378,
+    21.76333170542995,
+    -11.793117161535344
+   ],
+   "canvas_rect": [
+    258,
+    186,
+    51,
+    53
+   ]
+  },
+  {
+   "slot": "LuparaBarrels",
+   "file": "64_LuparaBarrels_LuparaBarrels.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Lupara/LuparaBarrels",
+   "order": 33,
+   "depth": 12,
+   "sprite_file": "sharedassets4.assets",
+   "sprite_path_id": 371,
+   "size": [
+    165,
+    47
+   ],
+   "ppu": 205.0,
+   "rect": [
+    21.50334867549028,
+    -11.928385271248645,
+    22.203242551272236,
+    -11.729021561177422
+   ],
+   "canvas_rect": [
+    257,
+    173,
+    140,
+    40
+   ]
+  },
+  {
+   "slot": "HandBack",
+   "file": "60_HandBack_HandBack.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Bazooka/HandBack",
+   "order": 33,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3226,
+   "size": [
+    69,
+    63
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.453255978346345,
+    -12.073362105583778,
+    21.749367421056927,
+    -11.800889169534265
+   ],
+   "canvas_rect": [
+    247,
+    188,
+    59,
+    54
+   ]
+  },
+  {
+   "slot": "HandSupport2",
+   "file": "63_HandSupport2_HandSupport2.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Lupara/HandSupport2",
+   "order": 34,
+   "depth": 12,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3908,
+   "size": [
+    76,
+    44
+   ],
+   "ppu": 200.0,
+   "rect": [
+    21.54109240406299,
+    -11.982973022283494,
+    21.86789239395942,
+    -11.79377302813293
+   ],
+   "canvas_rect": [
+    264,
+    186,
+    65,
+    38
+   ]
+  },
+  {
+   "slot": "ArmFront",
+   "file": "65_ArmFront_ArmFront.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront",
+   "order": 34,
+   "depth": 8,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 2884,
+   "size": [
+    54,
+    126
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.60224527745422,
+    -12.020879950141326,
+    20.837027859421074,
+    -11.473053925551996
+   ],
+   "canvas_rect": [
+    77,
+    122,
+    47,
+    110
+   ]
+  },
+  {
+   "slot": "ArmLowFront",
+   "file": "66_ArmLowFront_ArmLowFront.png",
+   "go_path": "Vinnie/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront",
+   "order": 35,
+   "depth": 9,
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4442,
+   "size": [
+    107,
+    51
+   ],
+   "ppu": 200.0,
+   "rect": [
+    20.65358134237549,
+    -12.072788706790426,
+    21.118798680717223,
+    -11.851049601599508
+   ],
+   "canvas_rect": [
+    87,
+    198,
+    93,
+    44
+   ]
+  }
+ ]
+}

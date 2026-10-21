@@ -2,11 +2,12 @@
 
 Usage:
     python acceptance.py [CharacterName] [--faction 人类|僵尸|鼠怪]
+                         [--role 远征军|...] [--suffix restyled|redraw]
 
 Reads   validation/composite_<Char>_original.png
-        validation/composite_<Char>_restyled.png
-Writes  validation/STYLE_ACCEPTANCE_<Char>.json
-        validation/STYLE_ACCEPTANCE_<Char>.md
+        validation/composite_<Char>_<suffix>.png
+Writes  validation/STYLE_ACCEPTANCE_<Char>[_<suffix>].json
+        validation/STYLE_ACCEPTANCE_<Char>[_<suffix>].md
 
 The faction decides which palette the character is judged against -- see
 style_metrics.SPEC_FACTION. The brush metrics are shared by all factions on
@@ -54,8 +55,13 @@ def main():
               f"judging against the {faction} faction band; calibrate after "
               f"the first render")
 
+    # which render is being judged: "restyled" (palette) or "redraw" (plan B)
+    suffix = (sys.argv[sys.argv.index("--suffix") + 1]
+              if "--suffix" in sys.argv else "restyled")
+    ROUTE_LABEL = {"restyled": "方案 A — 调色（逐像素，0 积分）",
+                   "redraw": "方案 B — 重绘（生成概念图 + 按部件切回）"}
     a_path = os.path.join(VAL, f"composite_{char}_original.png")
-    b_path = os.path.join(VAL, f"composite_{char}_restyled.png")
+    b_path = os.path.join(VAL, f"composite_{char}_{suffix}.png")
     if not (os.path.isfile(a_path) and os.path.isfile(b_path)):
         raise SystemExit(f"composites for {char} missing -- "
                          f"run render_compare.py {char} first")
@@ -72,6 +78,7 @@ def main():
         "character": char,
         "faction": faction,
         "role": role,
+        "render": suffix,
         "baseline_original": before,
         "restyled": after,
         "fidelity": fid,
@@ -85,7 +92,8 @@ def main():
     # One report per character. A single shared filename meant the third
     # faction silently overwrote the first two, so the three-faction evidence
     # never existed at the same time.
-    stem = f"STYLE_ACCEPTANCE_{char}"
+    stem = f"STYLE_ACCEPTANCE_{char}" + ("" if suffix == "restyled"
+                                        else f"_{suffix}")
     with io.open(os.path.join(VAL, stem + ".json"), "w",
                  encoding="utf-8") as fh:
         json.dump(report, fh, indent=1, ensure_ascii=False)
@@ -96,7 +104,8 @@ def main():
         f"**结论：{report['gate']}**  "
         f"（{report['passed']}/{report['total']} 项通过）",
         "",
-        f"度量对象：`validation/composite_{char}_restyled.png`"
+        f"渲染路线：`{ROUTE_LABEL.get(suffix, suffix)}`",
+        f"度量对象：`validation/composite_{char}_{suffix}.png`"
         "（全部部件按引擎层级合成，原生分辨率）",
         f"判定基准：`SPEC_COMMON`（统一笔触）+ "
         f"`SPEC_ROLE[{role}]`（兵种颜料）或 `SPEC_FACTION[{faction}]`（回退）",
@@ -154,7 +163,7 @@ def main():
                  encoding="utf-8") as fh:
         fh.write("\n".join(lines) + "\n")
 
-    print(f"[{char} / {faction} / {role}] {report['gate']}: "
+    print(f"[{char} / {faction} / {role} / {suffix}] {report['gate']}: "
           f"{report['passed']}/{report['total']}")
     for r in failed:
         print(f"  FAIL {r['name']} = {r['value']} (need {r['min']}-{r['max']})")

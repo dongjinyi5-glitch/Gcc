@@ -2,6 +2,7 @@
  "character": "Vinnie",
  "faction": "人类",
  "role": "远征军",
+ "render": "restyled",
  "baseline_original": {
   "file": "composite_Vinnie_original.png",
   "size": [
@@ -176,7 +177,7 @@
    "name": "pig_藤黄",
    "value": 0.007,
    "min": 0.0,
-   "max": 0.08,
+   "max": 0.24,
    "pass": true
   },
   {

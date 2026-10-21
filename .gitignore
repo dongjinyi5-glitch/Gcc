@@ -14,6 +14,10 @@ backup/
 *.assets
 !validation/roundtrip_*.assets
 
+# 调试草稿：art/ 顶层下划线前缀的图（对齐检查、放大切片等），不是交付物。
+# 注意只匹配 art/ 顶层，art/<char>_parts/_native_canvas.png 这类管线产物照常入库。
+art/_*.png
+
 # Tools binaries
 tools/bin/*.exe
 tools/bin/*.dll
