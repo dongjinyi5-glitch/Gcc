@@ -24,7 +24,20 @@ OUT = os.path.join(PROJECT, "art", CHAR.lower() + "_parts")
 ORIG = os.path.join(OUT, "original")
 os.makedirs(ORIG, exist_ok=True)
 
-db = AssetDB()
+# Once a character has been patched in place, its textures in ggc_Data are the
+# RESTYLED pixels. Extracting from there and calling the result "original" is
+# how a contaminated baseline happens, so read backup/ whenever it exists.
+BACKUP = os.path.join(PROJECT, "backup")
+PRISTINE = ({f: os.path.join(BACKUP, f)
+             for f in os.listdir(BACKUP) if f.endswith(".assets")}
+            if os.path.isdir(BACKUP) else {})
+if "--live" not in sys.argv and PRISTINE:
+    db = AssetDB(file_map=PRISTINE)
+    print("[extract] source: backup/ (pristine)", flush=True)
+else:
+    db = AssetDB()
+    print("[extract] source: live ggc_Data -- only valid before patching",
+          flush=True)
 
 go = db.find_go(CHAR)
 if go is None:

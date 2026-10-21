@@ -1,0 +1,2021 @@
+{
+ "character": "Gangster1",
+ "parts": [
+  {
+   "key": [
+    "sharedassets7.assets",
+    273
+   ],
+   "slot": "FuelTankFlamethrower",
+   "active": false,
+   "order": -1,
+   "sprite_name": "FuelTankFlamethrower",
+   "sprite_path_id": 273,
+   "sprite_file": "sharedassets7.assets",
+   "texture_name": "FuelTankFlamethrower",
+   "texture_path_id": 119,
+   "texture_file": "sharedassets7.assets",
+   "texture_size": [
+    143,
+    232
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    143,
+    232
+   ],
+   "size": [
+    143.0,
+    232.0
+   ],
+   "ppu": 200.0,
+   "file": "00_FuelTankFlamethrower_FuelTankFlamethrower.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    2876
+   ],
+   "slot": "ArmBack",
+   "active": true,
+   "order": 0,
+   "sprite_name": "ArmBack",
+   "sprite_path_id": 2876,
+   "sprite_file": "resources.assets",
+   "texture_name": "ArmBack",
+   "texture_path_id": 66,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    53,
+    126
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    53,
+    126
+   ],
+   "size": [
+    53.0,
+    126.0
+   ],
+   "ppu": 200.0,
+   "file": "01_ArmBack_ArmBack.png"
+  },
+  {
+   "key": [
+    "sharedassets7.assets",
+    281
+   ],
+   "slot": "HoseFlamethrower",
+   "active": true,
+   "order": 0,
+   "sprite_name": "HoseFlamethrower",
+   "sprite_path_id": 281,
+   "sprite_file": "sharedassets7.assets",
+   "texture_name": "HoseFlamethrower",
+   "texture_path_id": 127,
+   "texture_file": "sharedassets7.assets",
+   "texture_size": [
+    162,
+    112
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    162,
+    112
+   ],
+   "size": [
+    162.0,
+    112.0
+   ],
+   "ppu": 210.0,
+   "file": "02_HoseFlamethrower_HoseFlamethrower.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3809
+   ],
+   "slot": "ArmLowBack",
+   "active": true,
+   "order": 1,
+   "sprite_name": "ArmLowBack",
+   "sprite_path_id": 3809,
+   "sprite_file": "resources.assets",
+   "texture_name": "ArmLowBack",
+   "texture_path_id": 1010,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    108,
+    54
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    108,
+    54
+   ],
+   "size": [
+    108.0,
+    54.0
+   ],
+   "ppu": 200.0,
+   "file": "03_ArmLowBack_ArmLowBack.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4056
+   ],
+   "slot": "CoatBack3",
+   "active": true,
+   "order": 2,
+   "sprite_name": "CoatBack3",
+   "sprite_path_id": 4056,
+   "sprite_file": "resources.assets",
+   "texture_name": "CoatBack3",
+   "texture_path_id": 1262,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    100,
+    80
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    100,
+    80
+   ],
+   "size": [
+    100.0,
+    80.0
+   ],
+   "ppu": 200.0,
+   "file": "04_CoatBack3_CoatBack3.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3804
+   ],
+   "slot": "GasGrenade",
+   "active": false,
+   "order": 2,
+   "sprite_name": "GasGrenade",
+   "sprite_path_id": 3804,
+   "sprite_file": "resources.assets",
+   "texture_name": "GasGrenade",
+   "texture_path_id": 1005,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    35,
+    80
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    35,
+    80
+   ],
+   "size": [
+    35.0,
+    80.0
+   ],
+   "ppu": 200.0,
+   "file": "05_GasGrenade_GasGrenade.png"
+  },
+  {
+   "key": [
+    "sharedassets15.assets",
+    216
+   ],
+   "slot": "Grenade",
+   "active": false,
+   "order": 2,
+   "sprite_name": "Grenade",
+   "sprite_path_id": 216,
+   "sprite_file": "sharedassets15.assets",
+   "texture_name": "Grenade",
+   "texture_path_id": 58,
+   "texture_file": "sharedassets15.assets",
+   "texture_size": [
+    52,
+    80
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    52,
+    80
+   ],
+   "size": [
+    52.0,
+    80.0
+   ],
+   "ppu": 200.0,
+   "file": "06_Grenade_Grenade.png"
+  },
+  {
+   "key": [
+    "sharedassets15.assets",
+    215
+   ],
+   "slot": "Molotov",
+   "active": false,
+   "order": 2,
+   "sprite_name": "molotov-cocktail_0",
+   "sprite_path_id": 215,
+   "sprite_file": "sharedassets15.assets",
+   "texture_name": "molotov-cocktail",
+   "texture_path_id": 57,
+   "texture_file": "sharedassets15.assets",
+   "texture_size": [
+    512,
+    256
+   ],
+   "atlas_rect": [
+    0,
+    128,
+    128,
+    128
+   ],
+   "size": [
+    128.0,
+    128.0
+   ],
+   "ppu": 200.0,
+   "file": "07_Molotov_molotov-cocktail.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3771
+   ],
+   "slot": "CoatBack2",
+   "active": true,
+   "order": 3,
+   "sprite_name": "CoatBack2",
+   "sprite_path_id": 3771,
+   "sprite_file": "resources.assets",
+   "texture_name": "CoatBack2",
+   "texture_path_id": 970,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    111,
+    109
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    111,
+    109
+   ],
+   "size": [
+    111.0,
+    109.0
+   ],
+   "ppu": 200.0,
+   "file": "08_CoatBack2_CoatBack2.png"
+  },
+  {
+   "key": [
+    "sharedassets15.assets",
+    225
+   ],
+   "slot": "HandBackRest",
+   "active": false,
+   "order": 3,
+   "sprite_name": "HandBackRest",
+   "sprite_path_id": 225,
+   "sprite_file": "sharedassets15.assets",
+   "texture_name": "HandBackRest",
+   "texture_path_id": 67,
+   "texture_file": "sharedassets15.assets",
+   "texture_size": [
+    66,
+    53
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    66,
+    53
+   ],
+   "size": [
+    66.0,
+    53.0
+   ],
+   "ppu": 200.0,
+   "file": "09_HandBackRest_HandBackRest.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3103
+   ],
+   "slot": "CoatBack1",
+   "active": true,
+   "order": 4,
+   "sprite_name": "CoatBack1",
+   "sprite_path_id": 3103,
+   "sprite_file": "resources.assets",
+   "texture_name": "CoatBack1",
+   "texture_path_id": 294,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    121,
+    117
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    121,
+    117
+   ],
+   "size": [
+    121.0,
+    117.0
+   ],
+   "ppu": 200.0,
+   "file": "10_CoatBack1_CoatBack1.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3670
+   ],
+   "slot": "TorsoBelly",
+   "active": true,
+   "order": 5,
+   "sprite_name": "TorsoBelly",
+   "sprite_path_id": 3670,
+   "sprite_file": "resources.assets",
+   "texture_name": "TorsoBelly",
+   "texture_path_id": 869,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    151,
+    197
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    151,
+    197
+   ],
+   "size": [
+    151.0,
+    197.0
+   ],
+   "ppu": 200.0,
+   "file": "11_TorsoBelly_TorsoBelly.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3867
+   ],
+   "slot": "TorsoChest",
+   "active": true,
+   "order": 6,
+   "sprite_name": "TorsoChest",
+   "sprite_path_id": 3867,
+   "sprite_file": "resources.assets",
+   "texture_name": "TorsoChest",
+   "texture_path_id": 1068,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    151,
+    131
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    151,
+    131
+   ],
+   "size": [
+    151.0,
+    131.0
+   ],
+   "ppu": 200.0,
+   "file": "12_TorsoChest_TorsoChest.png"
+  },
+  {
+   "key": [
+    "sharedassets15.assets",
+    231
+   ],
+   "slot": "FootTip",
+   "active": true,
+   "order": 7,
+   "sprite_name": "FootTip",
+   "sprite_path_id": 231,
+   "sprite_file": "sharedassets15.assets",
+   "texture_name": "FootTip",
+   "texture_path_id": 73,
+   "texture_file": "sharedassets15.assets",
+   "texture_size": [
+    71,
+    23
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    71,
+    23
+   ],
+   "size": [
+    71.0,
+    23.0
+   ],
+   "ppu": 200.0,
+   "file": "13_FootTip_FootTip.png"
+  },
+  {
+   "key": [
+    "sharedassets15.assets",
+    172
+   ],
+   "slot": "FootHeel",
+   "active": true,
+   "order": 8,
+   "sprite_name": "FootHeel",
+   "sprite_path_id": 172,
+   "sprite_file": "sharedassets15.assets",
+   "texture_name": "FootHeel",
+   "texture_path_id": 14,
+   "texture_file": "sharedassets15.assets",
+   "texture_size": [
+    84,
+    52
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    84,
+    52
+   ],
+   "size": [
+    84.0,
+    52.0
+   ],
+   "ppu": 200.0,
+   "file": "14_FootHeel_FootHeel.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4260
+   ],
+   "slot": "LegLowBack",
+   "active": true,
+   "order": 9,
+   "sprite_name": "LegLowBack",
+   "sprite_path_id": 4260,
+   "sprite_file": "resources.assets",
+   "texture_name": "LegLowBack",
+   "texture_path_id": 1465,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    49,
+    108
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    49,
+    108
+   ],
+   "size": [
+    49.0,
+    108.0
+   ],
+   "ppu": 200.0,
+   "file": "15_LegLowBack_LegLowBack.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3400
+   ],
+   "slot": "LegUpBack",
+   "active": true,
+   "order": 10,
+   "sprite_name": "LegUpBack",
+   "sprite_path_id": 3400,
+   "sprite_file": "resources.assets",
+   "texture_name": "LegUpBack",
+   "texture_path_id": 597,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    104,
+    85
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    104,
+    85
+   ],
+   "size": [
+    104.0,
+    85.0
+   ],
+   "ppu": 200.0,
+   "file": "16_LegUpBack_LegUpBack.png"
+  },
+  {
+   "key": [
+    "sharedassets15.assets",
+    254
+   ],
+   "slot": "NeckPiece",
+   "active": true,
+   "order": 10,
+   "sprite_name": "NeckPieceGangstersRunners",
+   "sprite_path_id": 254,
+   "sprite_file": "sharedassets15.assets",
+   "texture_name": "NeckPieceGangstersRunners",
+   "texture_path_id": 96,
+   "texture_file": "sharedassets15.assets",
+   "texture_size": [
+    42,
+    41
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    42,
+    41
+   ],
+   "size": [
+    42.0,
+    41.0
+   ],
+   "ppu": 200.0,
+   "file": "17_NeckPiece_NeckPieceGangstersRunners.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3265
+   ],
+   "slot": "Crotch",
+   "active": true,
+   "order": 11,
+   "sprite_name": "Crotch",
+   "sprite_path_id": 3265,
+   "sprite_file": "resources.assets",
+   "texture_name": "Crotch",
+   "texture_path_id": 458,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    123,
+    87
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    123,
+    87
+   ],
+   "size": [
+    123.0,
+    87.0
+   ],
+   "ppu": 200.0,
+   "file": "18_Crotch_Crotch.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3256
+   ],
+   "slot": "Tie4",
+   "active": true,
+   "order": 12,
+   "sprite_name": "Tie4",
+   "sprite_path_id": 3256,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tie4",
+   "texture_path_id": 448,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    22,
+    31
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    22,
+    31
+   ],
+   "size": [
+    22.0,
+    31.0
+   ],
+   "ppu": 200.0,
+   "file": "19_Tie4_Tie4.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3314
+   ],
+   "slot": "Tie3",
+   "active": true,
+   "order": 13,
+   "sprite_name": "Tie3",
+   "sprite_path_id": 3314,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tie3",
+   "texture_path_id": 507,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    22,
+    43
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    22,
+    43
+   ],
+   "size": [
+    22.0,
+    43.0
+   ],
+   "ppu": 200.0,
+   "file": "20_Tie3_Tie3.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3017
+   ],
+   "slot": "Tie2",
+   "active": true,
+   "order": 14,
+   "sprite_name": "Tie2",
+   "sprite_path_id": 3017,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tie2",
+   "texture_path_id": 207,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    22,
+    42
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    22,
+    42
+   ],
+   "size": [
+    22.0,
+    42.0
+   ],
+   "ppu": 200.0,
+   "file": "21_Tie2_Tie2.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3817
+   ],
+   "slot": "Tie1",
+   "active": true,
+   "order": 15,
+   "sprite_name": "Tie1",
+   "sprite_path_id": 3817,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tie1",
+   "texture_path_id": 1018,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    22,
+    49
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    22,
+    49
+   ],
+   "size": [
+    22.0,
+    49.0
+   ],
+   "ppu": 200.0,
+   "file": "22_Tie1_Tie1.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4551
+   ],
+   "slot": "Head",
+   "active": true,
+   "order": 16,
+   "sprite_name": "Head",
+   "sprite_path_id": 4551,
+   "sprite_file": "resources.assets",
+   "texture_name": "Head",
+   "texture_path_id": 1754,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    109,
+    134
+   ],
+   "atlas_rect": [
+    1,
+    0,
+    108,
+    134
+   ],
+   "size": [
+    109.0,
+    134.0
+   ],
+   "ppu": 200.0,
+   "file": "23_Head_Head.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3024
+   ],
+   "slot": "HeadDead",
+   "active": false,
+   "order": 16,
+   "sprite_name": "HeadDead",
+   "sprite_path_id": 3024,
+   "sprite_file": "resources.assets",
+   "texture_name": "HeadDead",
+   "texture_path_id": 214,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    109,
+    134
+   ],
+   "atlas_rect": [
+    1,
+    0,
+    102,
+    134
+   ],
+   "size": [
+    109.0,
+    134.0
+   ],
+   "ppu": 200.0,
+   "file": "24_HeadDead_HeadDead.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3253
+   ],
+   "slot": "HeadScream",
+   "active": false,
+   "order": 16,
+   "sprite_name": "HeadScream",
+   "sprite_path_id": 3253,
+   "sprite_file": "resources.assets",
+   "texture_name": "HeadScream",
+   "texture_path_id": 445,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    109,
+    134
+   ],
+   "atlas_rect": [
+    1,
+    0,
+    104,
+    134
+   ],
+   "size": [
+    109.0,
+    134.0
+   ],
+   "ppu": 200.0,
+   "file": "25_HeadScream_HeadScream.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4391
+   ],
+   "slot": "HeadScreamPain",
+   "active": false,
+   "order": 16,
+   "sprite_name": "HeadScreamPain",
+   "sprite_path_id": 4391,
+   "sprite_file": "resources.assets",
+   "texture_name": "HeadScreamPain",
+   "texture_path_id": 1595,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    109,
+    134
+   ],
+   "atlas_rect": [
+    1,
+    0,
+    104,
+    134
+   ],
+   "size": [
+    109.0,
+    134.0
+   ],
+   "ppu": 200.0,
+   "file": "26_HeadScreamPain_HeadScreamPain.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3592
+   ],
+   "slot": "HeadTeeth",
+   "active": false,
+   "order": 16,
+   "sprite_name": "HeadTeeth",
+   "sprite_path_id": 3592,
+   "sprite_file": "resources.assets",
+   "texture_name": "HeadTeeth",
+   "texture_path_id": 790,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    109,
+    134
+   ],
+   "atlas_rect": [
+    1,
+    0,
+    104,
+    134
+   ],
+   "size": [
+    109.0,
+    134.0
+   ],
+   "ppu": 200.0,
+   "file": "27_HeadTeeth_HeadTeeth.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3579
+   ],
+   "slot": "HeadTeethSmall",
+   "active": false,
+   "order": 16,
+   "sprite_name": "HeadTeethSmall",
+   "sprite_path_id": 3579,
+   "sprite_file": "resources.assets",
+   "texture_name": "HeadTeethSmall",
+   "texture_path_id": 777,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    109,
+    134
+   ],
+   "atlas_rect": [
+    1,
+    0,
+    108,
+    134
+   ],
+   "size": [
+    109.0,
+    134.0
+   ],
+   "ppu": 200.0,
+   "file": "28_HeadTeethSmall_HeadTeethSmall.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3905
+   ],
+   "slot": "Headlips",
+   "active": false,
+   "order": 16,
+   "sprite_name": "HeadLips",
+   "sprite_path_id": 3905,
+   "sprite_file": "resources.assets",
+   "texture_name": "HeadLips",
+   "texture_path_id": 1107,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    109,
+    134
+   ],
+   "atlas_rect": [
+    1,
+    0,
+    108,
+    134
+   ],
+   "size": [
+    109.0,
+    134.0
+   ],
+   "ppu": 200.0,
+   "file": "29_Headlips_HeadLips.png"
+  },
+  {
+   "key": [
+    "sharedassets15.assets",
+    229
+   ],
+   "slot": "Hat",
+   "active": true,
+   "order": 17,
+   "sprite_name": "Hat",
+   "sprite_path_id": 229,
+   "sprite_file": "sharedassets15.assets",
+   "texture_name": "Hat",
+   "texture_path_id": 71,
+   "texture_file": "sharedassets15.assets",
+   "texture_size": [
+    139,
+    76
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    139,
+    76
+   ],
+   "size": [
+    139.0,
+    76.0
+   ],
+   "ppu": 200.0,
+   "file": "30_Hat_Hat.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3800
+   ],
+   "slot": "LegLowFront",
+   "active": true,
+   "order": 20,
+   "sprite_name": "LegLowFront",
+   "sprite_path_id": 3800,
+   "sprite_file": "resources.assets",
+   "texture_name": "LegLowFront",
+   "texture_path_id": 1001,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    102,
+    77
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    102,
+    77
+   ],
+   "size": [
+    102.0,
+    77.0
+   ],
+   "ppu": 200.0,
+   "file": "31_LegLowFront_LegLowFront.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4479
+   ],
+   "slot": "LegUpFront",
+   "active": true,
+   "order": 21,
+   "sprite_name": "LegUpFront",
+   "sprite_path_id": 4479,
+   "sprite_file": "resources.assets",
+   "texture_name": "LegUpFront",
+   "texture_path_id": 1683,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    58,
+    94
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    58,
+    94
+   ],
+   "size": [
+    58.0,
+    94.0
+   ],
+   "ppu": 200.0,
+   "file": "32_LegUpFront_LegUpFront.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3838
+   ],
+   "slot": "CoatBottom",
+   "active": true,
+   "order": 22,
+   "sprite_name": "CoatBottom",
+   "sprite_path_id": 3838,
+   "sprite_file": "resources.assets",
+   "texture_name": "CoatBottom",
+   "texture_path_id": 1039,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    77,
+    69
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    77,
+    69
+   ],
+   "size": [
+    77.0,
+    69.0
+   ],
+   "ppu": 200.0,
+   "file": "33_CoatBottom_CoatBottom.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4620
+   ],
+   "slot": "CoatMid3",
+   "active": true,
+   "order": 23,
+   "sprite_name": "CoatMid3",
+   "sprite_path_id": 4620,
+   "sprite_file": "resources.assets",
+   "texture_name": "CoatMid3",
+   "texture_path_id": 1824,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    68,
+    74
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    68,
+    74
+   ],
+   "size": [
+    68.0,
+    74.0
+   ],
+   "ppu": 200.0,
+   "file": "34_CoatMid3_CoatMid3.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    2964
+   ],
+   "slot": "CoatMid2",
+   "active": true,
+   "order": 24,
+   "sprite_name": "CoatMid2",
+   "sprite_path_id": 2964,
+   "sprite_file": "resources.assets",
+   "texture_name": "CoatMid2",
+   "texture_path_id": 154,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    67,
+    70
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    67,
+    70
+   ],
+   "size": [
+    67.0,
+    70.0
+   ],
+   "ppu": 200.0,
+   "file": "35_CoatMid2_CoatMid2.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3458
+   ],
+   "slot": "CoatMid1",
+   "active": true,
+   "order": 25,
+   "sprite_name": "CoatMid1",
+   "sprite_path_id": 3458,
+   "sprite_file": "resources.assets",
+   "texture_name": "CoatMid1",
+   "texture_path_id": 655,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    66,
+    70
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    66,
+    70
+   ],
+   "size": [
+    66.0,
+    70.0
+   ],
+   "ppu": 200.0,
+   "file": "36_CoatMid1_CoatMid1.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4480
+   ],
+   "slot": "CoatTop",
+   "active": true,
+   "order": 26,
+   "sprite_name": "CoatTop",
+   "sprite_path_id": 4480,
+   "sprite_file": "resources.assets",
+   "texture_name": "CoatTop",
+   "texture_path_id": 1684,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    74,
+    70
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    74,
+    70
+   ],
+   "size": [
+    74.0,
+    70.0
+   ],
+   "ppu": 200.0,
+   "file": "37_CoatTop_CoatTop.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3273
+   ],
+   "slot": "BulletCasingFull",
+   "active": false,
+   "order": 29,
+   "sprite_name": "BulletCasingFull",
+   "sprite_path_id": 3273,
+   "sprite_file": "resources.assets",
+   "texture_name": "BulletCasingFull",
+   "texture_path_id": 466,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    39,
+    16
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    39,
+    16
+   ],
+   "size": [
+    39.0,
+    16.0
+   ],
+   "ppu": 200.0,
+   "file": "38_BulletCasingFull_BulletCasingFull.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3128
+   ],
+   "slot": "ShotgunShell",
+   "active": false,
+   "order": 29,
+   "sprite_name": "ShotgunShell",
+   "sprite_path_id": 3128,
+   "sprite_file": "resources.assets",
+   "texture_name": "ShotgunShell",
+   "texture_path_id": 320,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    57,
+    26
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    57,
+    26
+   ],
+   "size": [
+    57.0,
+    26.0
+   ],
+   "ppu": 200.0,
+   "file": "39_ShotgunShell_ShotgunShell.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3726
+   ],
+   "slot": "ammoclip",
+   "active": true,
+   "order": 29,
+   "sprite_name": "ammoclip",
+   "sprite_path_id": 3726,
+   "sprite_file": "resources.assets",
+   "texture_name": "ammoclip",
+   "texture_path_id": 924,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    38,
+    54
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    38,
+    54
+   ],
+   "size": [
+    38.0,
+    54.0
+   ],
+   "ppu": 200.0,
+   "file": "40_ammoclip_ammoclip.png"
+  },
+  {
+   "key": [
+    "sharedassets7.assets",
+    298
+   ],
+   "slot": "Flamethrower",
+   "active": false,
+   "order": 30,
+   "sprite_name": "Flamethrower_0",
+   "sprite_path_id": 298,
+   "sprite_file": "sharedassets7.assets",
+   "texture_name": "Flamethrower",
+   "texture_path_id": 144,
+   "texture_file": "sharedassets7.assets",
+   "texture_size": [
+    299,
+    109
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    299,
+    109
+   ],
+   "size": [
+    299.0,
+    109.0
+   ],
+   "ppu": 200.0,
+   "file": "41_Flamethrower_Flamethrower.png"
+  },
+  {
+   "key": [
+    "sharedassets4.assets",
+    369
+   ],
+   "slot": "Gun",
+   "active": false,
+   "order": 30,
+   "sprite_name": "Tommygun",
+   "sprite_path_id": 369,
+   "sprite_file": "sharedassets4.assets",
+   "texture_name": "Tommygun",
+   "texture_path_id": 133,
+   "texture_file": "sharedassets4.assets",
+   "texture_size": [
+    333,
+    105
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    333,
+    105
+   ],
+   "size": [
+    333.0,
+    105.0
+   ],
+   "ppu": 200.0,
+   "file": "42_Gun_Tommygun.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3247
+   ],
+   "slot": "HandBackShells",
+   "active": false,
+   "order": 30,
+   "sprite_name": "HandBackShells",
+   "sprite_path_id": 3247,
+   "sprite_file": "resources.assets",
+   "texture_name": "HandBackShells",
+   "texture_path_id": 439,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    97,
+    76
+   ],
+   "atlas_rect": [
+    0,
+    12,
+    85,
+    64
+   ],
+   "size": [
+    85.0,
+    64.0
+   ],
+   "ppu": 250.0,
+   "file": "43_HandBackShells_HandBackShells.png"
+  },
+  {
+   "key": [
+    "sharedassets4.assets",
+    287
+   ],
+   "slot": "Lupara",
+   "active": false,
+   "order": 30,
+   "sprite_name": "Lupara",
+   "sprite_path_id": 287,
+   "sprite_file": "sharedassets4.assets",
+   "texture_name": "Lupara",
+   "texture_path_id": 50,
+   "texture_file": "sharedassets4.assets",
+   "texture_size": [
+    136,
+    96
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    136,
+    96
+   ],
+   "size": [
+    136.0,
+    96.0
+   ],
+   "ppu": 205.0,
+   "file": "44_Lupara_Lupara.png"
+  },
+  {
+   "key": [
+    "sharedassets5.assets",
+    220
+   ],
+   "slot": "Magnum357",
+   "active": false,
+   "order": 30,
+   "sprite_name": "Magnum357_0",
+   "sprite_path_id": 220,
+   "sprite_file": "sharedassets5.assets",
+   "texture_name": "Magnum357",
+   "texture_path_id": 7,
+   "texture_file": "sharedassets5.assets",
+   "texture_size": [
+    176,
+    109
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    176,
+    109
+   ],
+   "size": [
+    176.0,
+    109.0
+   ],
+   "ppu": 200.0,
+   "file": "45_Magnum357_Magnum357.png"
+  },
+  {
+   "key": [
+    "sharedassets6.assets",
+    218
+   ],
+   "slot": "Maximgun",
+   "active": false,
+   "order": 30,
+   "sprite_name": "MaxiGunMG08",
+   "sprite_path_id": 218,
+   "sprite_file": "sharedassets6.assets",
+   "texture_name": "MaxiGunMG08",
+   "texture_path_id": 93,
+   "texture_file": "sharedassets6.assets",
+   "texture_size": [
+    415,
+    182
+   ],
+   "atlas_rect": [
+    0,
+    10,
+    414,
+    158
+   ],
+   "size": [
+    414.0,
+    158.0
+   ],
+   "ppu": 200.0,
+   "file": "46_Maximgun_MaxiGunMG08.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3113
+   ],
+   "slot": "Pistol",
+   "active": false,
+   "order": 30,
+   "sprite_name": "Pistol45_0",
+   "sprite_path_id": 3113,
+   "sprite_file": "resources.assets",
+   "texture_name": "Pistol45",
+   "texture_path_id": 304,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    130,
+    91
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    130,
+    91
+   ],
+   "size": [
+    130.0,
+    91.0
+   ],
+   "ppu": 200.0,
+   "file": "47_Pistol_Pistol45.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3805
+   ],
+   "slot": "Revolver",
+   "active": false,
+   "order": 30,
+   "sprite_name": "Revolver38_0",
+   "sprite_path_id": 3805,
+   "sprite_file": "resources.assets",
+   "texture_name": "Revolver",
+   "texture_path_id": 1006,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    119,
+    97
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    119,
+    97
+   ],
+   "size": [
+    119.0,
+    97.0
+   ],
+   "ppu": 200.0,
+   "file": "48_Revolver_Revolver.png"
+  },
+  {
+   "key": [
+    "sharedassets6.assets",
+    181
+   ],
+   "slot": "Shotgun",
+   "active": false,
+   "order": 30,
+   "sprite_name": "Shotgun_0",
+   "sprite_path_id": 181,
+   "sprite_file": "sharedassets6.assets",
+   "texture_name": "Shotgun",
+   "texture_path_id": 56,
+   "texture_file": "sharedassets6.assets",
+   "texture_size": [
+    387,
+    97
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    387,
+    97
+   ],
+   "size": [
+    387.0,
+    98.0
+   ],
+   "ppu": 200.0,
+   "file": "49_Shotgun_Shotgun.png"
+  },
+  {
+   "key": [
+    "sharedassets8.assets",
+    188
+   ],
+   "slot": "Teslacoilgun",
+   "active": false,
+   "order": 30,
+   "sprite_name": "Teslacoilgun",
+   "sprite_path_id": 188,
+   "sprite_file": "sharedassets8.assets",
+   "texture_name": "Teslacoilgun",
+   "texture_path_id": 87,
+   "texture_file": "sharedassets8.assets",
+   "texture_size": [
+    415,
+    318
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    415,
+    318
+   ],
+   "size": [
+    415.0,
+    318.0
+   ],
+   "ppu": 200.0,
+   "file": "50_Teslacoilgun_Teslacoilgun.png"
+  },
+  {
+   "key": [
+    "sharedassets4.assets",
+    383
+   ],
+   "slot": "TommygunTop",
+   "active": true,
+   "order": 30,
+   "sprite_name": "TommygunTop",
+   "sprite_path_id": 383,
+   "sprite_file": "sharedassets4.assets",
+   "texture_name": "TommygunTop",
+   "texture_path_id": 147,
+   "texture_file": "sharedassets4.assets",
+   "texture_size": [
+    17,
+    19
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    17,
+    19
+   ],
+   "size": [
+    17.0,
+    19.0
+   ],
+   "ppu": 200.0,
+   "file": "51_TommygunTop_TommygunTop.png"
+  },
+  {
+   "key": [
+    "sharedassets6.assets",
+    186
+   ],
+   "slot": "ActionPumpShotgun",
+   "active": true,
+   "order": 31,
+   "sprite_name": "ActionPumpShotgun",
+   "sprite_path_id": 186,
+   "sprite_file": "sharedassets6.assets",
+   "texture_name": "ActionPumpShotgun",
+   "texture_path_id": 61,
+   "texture_file": "sharedassets6.assets",
+   "texture_size": [
+    99,
+    35
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    99,
+    35
+   ],
+   "size": [
+    99.0,
+    35.0
+   ],
+   "ppu": 200.0,
+   "file": "52_ActionPumpShotgun_ActionPumpShotgun.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3538
+   ],
+   "slot": "HandFront",
+   "active": true,
+   "order": 31,
+   "sprite_name": "HandFront",
+   "sprite_path_id": 3538,
+   "sprite_file": "resources.assets",
+   "texture_name": "HandFront",
+   "texture_path_id": 736,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    70,
+    59
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    70,
+    59
+   ],
+   "size": [
+    70.0,
+    59.0
+   ],
+   "ppu": 200.0,
+   "file": "53_HandFront_HandFront.png"
+  },
+  {
+   "key": [
+    "sharedassets4.assets",
+    371
+   ],
+   "slot": "LuparaBarrels",
+   "active": true,
+   "order": 31,
+   "sprite_name": "LuparaBarrels",
+   "sprite_path_id": 371,
+   "sprite_file": "sharedassets4.assets",
+   "texture_name": "LuparaBarrels",
+   "texture_path_id": 135,
+   "texture_file": "sharedassets4.assets",
+   "texture_size": [
+    165,
+    47
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    165,
+    47
+   ],
+   "size": [
+    165.0,
+    47.0
+   ],
+   "ppu": 205.0,
+   "file": "54_LuparaBarrels_LuparaBarrels.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4223
+   ],
+   "slot": "Pistol45-Slide",
+   "active": true,
+   "order": 31,
+   "sprite_name": "Pistol45-Slide",
+   "sprite_path_id": 4223,
+   "sprite_file": "resources.assets",
+   "texture_name": "Pistol45-Slide",
+   "texture_path_id": 1428,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    112,
+    23
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    112,
+    23
+   ],
+   "size": [
+    112.0,
+    23.0
+   ],
+   "ppu": 200.0,
+   "file": "55_Pistol45-Slide_Pistol45-Slide.png"
+  },
+  {
+   "key": [
+    "sharedassets6.assets",
+    142
+   ],
+   "slot": "MaximGunMagazine",
+   "active": true,
+   "order": 32,
+   "sprite_name": "MaximGunMagazine",
+   "sprite_path_id": 142,
+   "sprite_file": "sharedassets6.assets",
+   "texture_name": "MaximGunMagazine",
+   "texture_path_id": 17,
+   "texture_file": "sharedassets6.assets",
+   "texture_size": [
+    78,
+    101
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    78,
+    101
+   ],
+   "size": [
+    78.0,
+    101.0
+   ],
+   "ppu": 200.0,
+   "file": "56_MaximGunMagazine_MaximGunMagazine.png"
+  },
+  {
+   "key": [
+    "sharedassets4.assets",
+    394
+   ],
+   "slot": "TommygunDrum",
+   "active": true,
+   "order": 32,
+   "sprite_name": "TommygunDrum",
+   "sprite_path_id": 394,
+   "sprite_file": "sharedassets4.assets",
+   "texture_name": "TommygunDrum",
+   "texture_path_id": 158,
+   "texture_file": "sharedassets4.assets",
+   "texture_size": [
+    55,
+    84
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    55,
+    84
+   ],
+   "size": [
+    55.0,
+    84.0
+   ],
+   "ppu": 200.0,
+   "file": "57_TommygunDrum_TommygunDrum.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3226
+   ],
+   "slot": "HandBack",
+   "active": true,
+   "order": 33,
+   "sprite_name": "HandBack",
+   "sprite_path_id": 3226,
+   "sprite_file": "resources.assets",
+   "texture_name": "HandBack",
+   "texture_path_id": 418,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    69,
+    63
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    69,
+    63
+   ],
+   "size": [
+    69.0,
+    63.0
+   ],
+   "ppu": 200.0,
+   "file": "58_HandBack_HandBack.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4705
+   ],
+   "slot": "HandBack",
+   "active": true,
+   "order": 33,
+   "sprite_name": "HandSupport",
+   "sprite_path_id": 4705,
+   "sprite_file": "resources.assets",
+   "texture_name": "HandSupport",
+   "texture_path_id": 1909,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    84,
+    49
+   ],
+   "atlas_rect": [
+    7,
+    0,
+    71,
+    49
+   ],
+   "size": [
+    71.0,
+    49.0
+   ],
+   "ppu": 200.0,
+   "file": "59_HandBack_HandSupport.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4672
+   ],
+   "slot": "HandBack",
+   "active": true,
+   "order": 33,
+   "sprite_name": "HandBackTeslacoilGun",
+   "sprite_path_id": 4672,
+   "sprite_file": "resources.assets",
+   "texture_name": "HandBackTeslacoilGun",
+   "texture_path_id": 1876,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    66,
+    69
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    66,
+    69
+   ],
+   "size": [
+    66.0,
+    69.0
+   ],
+   "ppu": 225.0,
+   "file": "60_HandBack_HandBackTeslacoilGun.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3908
+   ],
+   "slot": "HandSupport2",
+   "active": true,
+   "order": 33,
+   "sprite_name": "HandSupport2",
+   "sprite_path_id": 3908,
+   "sprite_file": "resources.assets",
+   "texture_name": "HandSupport2",
+   "texture_path_id": 1110,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    76,
+    44
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    76,
+    44
+   ],
+   "size": [
+    76.0,
+    44.0
+   ],
+   "ppu": 200.0,
+   "file": "61_HandSupport2_HandSupport2.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3407
+   ],
+   "slot": "ArmFront",
+   "active": true,
+   "order": 34,
+   "sprite_name": "ArmFront",
+   "sprite_path_id": 3407,
+   "sprite_file": "resources.assets",
+   "texture_name": "ArmFront",
+   "texture_path_id": 604,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    54,
+    126
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    54,
+    126
+   ],
+   "size": [
+    54.0,
+    126.0
+   ],
+   "ppu": 200.0,
+   "file": "62_ArmFront_ArmFront.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3157
+   ],
+   "slot": "ArmLowFront",
+   "active": true,
+   "order": 35,
+   "sprite_name": "ArmLowFront",
+   "sprite_path_id": 3157,
+   "sprite_file": "resources.assets",
+   "texture_name": "ArmLowFront",
+   "texture_path_id": 349,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    107,
+    51
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    107,
+    51
+   ],
+   "size": [
+    107.0,
+    51.0
+   ],
+   "ppu": 200.0,
+   "file": "63_ArmLowFront_ArmLowFront.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3261
+   ],
+   "slot": "BulletCasing",
+   "active": false,
+   "order": 35,
+   "sprite_name": "BulletCasing",
+   "sprite_path_id": 3261,
+   "sprite_file": "resources.assets",
+   "texture_name": "BulletCasing",
+   "texture_path_id": 454,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    34,
+    16
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    34,
+    16
+   ],
+   "size": [
+    34.0,
+    16.0
+   ],
+   "ppu": 200.0,
+   "file": "64_BulletCasing_BulletCasing.png"
+  }
+ ],
+ "frames": []
+}

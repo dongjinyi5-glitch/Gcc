@@ -65,6 +65,20 @@ PAD = 8
 # strength of the khaki->olive hue correction on cloth parts
 OLIVE_K = 0.30
 OLIVE_TARGET = 100.0
+# How many pixels to grow the ink stroke by.
+#
+# A dark garment already carries a lot of dark area, so 1 px is enough for
+# Vinnie's navy coat (ink_ratio 0.285). A light khaki uniform carries far less:
+# the same drawing measures 0.193, under the shared 0.2 floor, purely because
+# 国防色 is a light colour. Thickening to 2 px brings it to 0.218 and still
+# reads as brushwork rather than as a thick outline. The table is per role
+# because it follows the garment's value, not the character.
+INK_PX_BY_ROLE = {
+    "日军士兵": 2, "日军佐官": 2, "日军将官": 2,
+    "日本海军": 2, "日军军医": 2,
+    "日本平民·浅色": 2,
+}
+INK_PX = int(sys.argv[sys.argv.index("--ink") + 1]) if "--ink" in sys.argv else None
 
 
 def part_png(p):
@@ -307,6 +321,10 @@ def _is_prop(slot):
 # A face is not: shifting skin hue turns a man green. Matched by prefix.
 _CLOTH = ("coat", "torso", "crotch", "leg", "arm", "hat", "neckpiece", "tie")
 
+# The head group. These sprites are stacked at one pivot, so they must be
+# placed by a single shared transform -- see _group_transform.
+HEAD_SLOTS = ("hat", "head", "neckpiece", "headlips")
+
 
 def _olive_shift(img, k=0.30):
     """Nudge khaki-brown cloth toward olive, keeping every bit of drawn detail.
@@ -401,6 +419,51 @@ def _thicken_ink(img, px=1, weight=0.85):
     return Image.fromarray(out)
 
 
+def _group_box(parts, want):
+    """Union canvas bbox of the parts whose slot satisfies want."""
+    rects = [p["canvas_rect"] for p in parts if want(p.get("slot"))]
+    if not rects:
+        return None
+    x0 = min(r[0] for r in rects)
+    y0 = min(r[1] for r in rects)
+    x1 = max(r[0] + r[2] for r in rects)
+    y1 = max(r[1] + r[3] for r in rects)
+    return (x0, y0, x1, y1)
+
+
+def _group_transform(filled, canvas, box, pad=22, ds=1):
+    """One transform for a whole group of parts, applied together.
+
+    The head needs its own transform. The generated head sits lower and a bit
+    smaller than the hand-drawn one, so a single body-wide fit paints the face
+    onto the neck. But the parts of the group must move TOGETHER: aligning them
+    one at a time (each part against its own alpha) is what put the helmet over
+    the face, because every part then had a different idea of where the head
+    was. A shared transform keeps the assembly intact, which is the whole point
+    of this pipeline.
+
+    Returns (transformed_window, (wx0, wy0)).
+    """
+    wx0 = max(0, box[0] - pad)
+    wy0 = max(0, box[1] - pad)
+    wx1 = min(filled.width, box[2] + pad)
+    wy1 = min(filled.height, box[3] + pad)
+    win = filled.crop((wx0, wy0, wx1, wy1))
+    tgt = canvas.crop((wx0, wy0, wx1, wy1)).copy()
+    iou, s, dx, dy = _register(win, tgt, ds=ds)
+    print(f"  group fit: IoU {iou:.3f} at scale {s:.2f} offset ({dx},{dy})")
+    return _apply(win, tgt, iou, s, dx, dy), (wx0, wy0)
+
+
+def _head_slot(slot):
+    """Head group: the hat, the skull/face sprite and every expression variant.
+
+    Kept as a group because they are stacked at the same pivot -- move one
+    without the others and the face separates from the hat.
+    """
+    return (slot or "").lower().startswith(HEAD_SLOTS)
+
+
 def slice_concept(path):
     with io.open(PLACEMENT, encoding="utf-8") as fh:
         man = json.load(fh)
@@ -413,6 +476,17 @@ def slice_concept(path):
     target = (int(xs.min()), int(ys.min()), int(xs.max()) + 1, int(ys.max()) + 1)
     fitted, s = _fit(concept, target)
     print(f"concept bbox-fitted to {target} at scale {s:.3f}")
+
+    # ink stroke width follows the garment's value, not the operator's memory
+    ink_px = INK_PX
+    if ink_px is None:
+        try:
+            import theme_cbi
+            role = theme_cbi.role_of(CHAR)
+        except Exception:
+            role = None
+        ink_px = INK_PX_BY_ROLE.get(role, 1)
+        print(f"ink stroke: {ink_px}px (role {role})")
 
     iou, rs, rdx, rdy = _register(concept, canvas)
     print(f"registration: IoU {iou:.3f} at scale {rs:.2f} offset ({rdx},{rdy})")
@@ -430,14 +504,6 @@ def slice_concept(path):
     filled = _bleed_colors(fitted)
 
     os.makedirs(REDRAW, exist_ok=True)
-    # coverage of the generated figure, before the colour bleed -- it decides,
-    # per pixel, whether to trust the redraw or fall back to the route-A
-    # palette art. Registration between a hand-drawn cartoon and a generated
-    # illustration tops out around IoU 0.75 (the legs are simply posed
-    # differently), so "redraw where the concept actually covers, palette
-    # everywhere else" is what keeps the uncovered areas looking painted
-    # instead of smeared.
-    cov = np.array(fitted)[..., 3].astype(np.float32) / 255.0
 
     # One texture can be placed many times: the hand sprite alone is used at
     # four different hand positions, and the two foot sprites at two each. If
@@ -456,6 +522,16 @@ def slice_concept(path):
             canonical[f] = (area, p)
 
     os.makedirs(REDRAW, exist_ok=True)
+
+    # The head gets its own shared transform. Everything else uses the global
+    # one. The two are independent by design: the head is where the generated
+    # figure deviates most, and forcing it onto the body's transform is what
+    # painted the face onto the neck.
+    head_img = head_off = None
+    head_box = _group_box(man["parts"], _head_slot)
+    if head_box:
+        head_img, head_off = _group_transform(filled, canvas, head_box)
+
     kept = 0
     props = 0
     for f, (area, p) in canonical.items():
@@ -467,21 +543,24 @@ def slice_concept(path):
             continue
         orig = Image.open(src).convert("RGBA")
         px, py, pw, ph = p["canvas_rect"]
-        crop = filled.crop((px, py, px + pw, py + ph))
-        if (pw, ph) != (orig.width, orig.height):
-            crop = crop.resize((orig.width, orig.height), Image.LANCZOS)
+        if head_img is not None and _head_slot(p.get("slot")):
+            lx, ly = px - head_off[0], py - head_off[1]
+            crop = head_img.crop((lx, ly, lx + pw, ly + ph))
+        else:
+            crop = filled.crop((px, py, px + pw, py + ph))
+        if crop.size != orig.size:
+            crop = crop.resize(orig.size, Image.LANCZOS)
 
         alt_path = os.path.join(BASE, "restyled", f)
         alt = (Image.open(alt_path).convert("RGBA")
                if os.path.isfile(alt_path) else orig)
         if alt.size != orig.size:
             alt = alt.resize(orig.size, Image.LANCZOS)
-        if crop.size != orig.size:
-            crop = crop.resize(orig.size, Image.LANCZOS)
 
-        w = cov[py:py + ph, px:px + pw]
-        w = np.array(Image.fromarray((w * 255).astype(np.uint8))
-                     .resize(orig.size, Image.LANCZOS), dtype=np.float32) / 255.0
+        # trust the redraw only where the aligned concept actually has paint;
+        # everywhere else keep the route-A palette art, so an area the new
+        # costume does not reach continues the old drawing instead of smearing
+        w = np.array(crop)[..., 3].astype(np.float32) / 255.0
         w = w[..., None]
 
         ca = np.array(crop).astype(np.float32)
@@ -492,7 +571,7 @@ def slice_concept(path):
         part = Image.fromarray(np.clip(mixed, 0, 255).astype(np.uint8))
         if any((p.get("slot") or "").lower().startswith(k) for k in _CLOTH):
             part = _olive_shift(part, k=OLIVE_K)
-            part = _thicken_ink(part)
+            part = _thicken_ink(part, px=ink_px)
         part.save(os.path.join(REDRAW, f))
         kept += 1
 
