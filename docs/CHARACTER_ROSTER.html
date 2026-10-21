@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>《枪、血、意大利卷》角色全清单 · 42 单位</title>
 <style>
@@ -121,6 +122,7 @@ footer li{margin:6px 0}
   <button class="chip on" data-f="all">全部 <b>42</b></button><button class="chip" data-f="玩家">玩家 <b>1</b></button><button class="chip" data-f="人类敌人">人类敌人 <b>14</b></button><button class="chip" data-f="僵尸">僵尸 <b>19</b></button><button class="chip" data-f="鼠怪">鼠怪 <b>3</b></button><button class="chip" data-f="Boss">Boss <b>5</b></button>
   <span class="save" id="save">正在连接本地保存服务…</span>
   <button class="chip exp" id="exp">导出 / 保存 CSV</button>
+  <button class="chip" id="draftbtn">载入草稿</button>
   <button class="chip" id="imp">整段导入</button>
   <input id="q" type="search" placeholder="搜索中文名 / 英文名 / 预制体…">
 </div>
@@ -1211,8 +1213,20 @@ boxes.forEach(t=>t.addEventListener('input',()=>{
   if(!src) src=lsGet();
   let n=0;
   boxes.forEach(t=>{ const v=src[t.dataset.prefab]; if(v){ t.value=v; n++; } });
-  mark(n?'ok':'', '已载入 '+n+'/'+boxes.length+'（输入即自动保存到工程）');
+  if(n) mark('ok','已载入 '+n+'/'+boxes.length+'（输入即自动保存到工程）');
+  else mark('', '空白清单 '+boxes.length+' 条 · 输入即自动保存到工程');
 })();
+
+// 草稿是可选动作：只填空框，不覆盖已经写过的
+document.getElementById('draftbtn').addEventListener('click',async ()=>{
+  let d=null;
+  try{ const r=await fetch(SRV+'/draft',{cache:'no-store'}); if(r.ok) d=await r.json(); }catch(e){}
+  if(!d){ mark('bad','草稿服务不可用'); return; }
+  let n=0;
+  boxes.forEach(t=>{ const v=d[t.dataset.prefab]; if(v && !t.value.trim()){ t.value=v; n++; } });
+  flush();
+  mark('ok','已载入草稿 '+n+' 条（只填空框，可再改）');
+});
 
 function csvText(){
   const rows=[['预制体','中文名','英文名','阵营','类型','国画重彩替代描述']];

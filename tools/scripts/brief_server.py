@@ -45,6 +45,16 @@ def load_state():
         return {}
 
 
+def load_draft():
+    if not os.path.isfile(DRAFT):
+        return {}
+    try:
+        with io.open(DRAFT, encoding="utf-8") as fh:
+            return json.load(fh)
+    except Exception:
+        return {}
+
+
 def effective_state():
     """草稿打底、真实填写覆盖。这样页面一打开 42 个框都有字，用户改而不是从零写。"""
     base = {}
@@ -117,7 +127,11 @@ class Handler(BaseHTTPRequestHandler):
                 self._send(200, fh.read(), "text/html; charset=utf-8")
             return
         if path == "/state":
-            self._send(200, json.dumps(effective_state(), ensure_ascii=False))
+            # 默认只回用户自己填的：空白清单，不塞草稿
+            self._send(200, json.dumps(load_state(), ensure_ascii=False))
+            return
+        if path == "/draft":
+            self._send(200, json.dumps(load_draft(), ensure_ascii=False))
             return
         if path == "/csv":
             body = build_csv(effective_state()).encode("utf-8")
