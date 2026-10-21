@@ -1,0 +1,812 @@
+{
+ "character": "ZombieRat",
+ "parts": [
+  {
+   "key": [
+    "resources.assets",
+    4233
+   ],
+   "slot": "Tail01_0",
+   "active": true,
+   "order": 0,
+   "sprite_name": "Tail01_0",
+   "sprite_path_id": 4233,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail01",
+   "texture_path_id": 1438,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    71,
+    97
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    71,
+    97
+   ],
+   "size": [
+    71.0,
+    97.0
+   ],
+   "ppu": 200.0,
+   "file": "00_Tail01_0_Tail01.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4589
+   ],
+   "slot": "Tail02_0",
+   "active": true,
+   "order": 1,
+   "sprite_name": "Tail02_0",
+   "sprite_path_id": 4589,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail02",
+   "texture_path_id": 1793,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    68,
+    81
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    68,
+    81
+   ],
+   "size": [
+    68.0,
+    81.0
+   ],
+   "ppu": 200.0,
+   "file": "01_Tail02_0_Tail02.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3053
+   ],
+   "slot": "Tail03_0",
+   "active": true,
+   "order": 2,
+   "sprite_name": "Tail03_0",
+   "sprite_path_id": 3053,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail03",
+   "texture_path_id": 243,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    61,
+    71
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    61,
+    71
+   ],
+   "size": [
+    61.0,
+    71.0
+   ],
+   "ppu": 200.0,
+   "file": "02_Tail03_0_Tail03.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4141
+   ],
+   "slot": "Tail04_0",
+   "active": true,
+   "order": 3,
+   "sprite_name": "Tail04_0",
+   "sprite_path_id": 4141,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail04",
+   "texture_path_id": 1347,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    57,
+    72
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    57,
+    72
+   ],
+   "size": [
+    57.0,
+    72.0
+   ],
+   "ppu": 200.0,
+   "file": "03_Tail04_0_Tail04.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3238
+   ],
+   "slot": "Tail05_0",
+   "active": true,
+   "order": 4,
+   "sprite_name": "Tail05_0",
+   "sprite_path_id": 3238,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail05",
+   "texture_path_id": 430,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    50,
+    70
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    50,
+    70
+   ],
+   "size": [
+    50.0,
+    70.0
+   ],
+   "ppu": 200.0,
+   "file": "04_Tail05_0_Tail05.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3203
+   ],
+   "slot": "Tail06_0",
+   "active": true,
+   "order": 5,
+   "sprite_name": "Tail06_0",
+   "sprite_path_id": 3203,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail06",
+   "texture_path_id": 395,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    43,
+    62
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    43,
+    62
+   ],
+   "size": [
+    43.0,
+    62.0
+   ],
+   "ppu": 200.0,
+   "file": "05_Tail06_0_Tail06.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3343
+   ],
+   "slot": "Tail07_0",
+   "active": true,
+   "order": 6,
+   "sprite_name": "Tail07_0",
+   "sprite_path_id": 3343,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail07",
+   "texture_path_id": 538,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    38,
+    50
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    38,
+    50
+   ],
+   "size": [
+    38.0,
+    50.0
+   ],
+   "ppu": 200.0,
+   "file": "06_Tail07_0_Tail07.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3984
+   ],
+   "slot": "Tail08_0",
+   "active": true,
+   "order": 7,
+   "sprite_name": "Tail08_0",
+   "sprite_path_id": 3984,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail08",
+   "texture_path_id": 1187,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    34,
+    47
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    34,
+    47
+   ],
+   "size": [
+    34.0,
+    47.0
+   ],
+   "ppu": 200.0,
+   "file": "07_Tail08_0_Tail08.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4567
+   ],
+   "slot": "Tail09_0",
+   "active": true,
+   "order": 8,
+   "sprite_name": "Tail09_0",
+   "sprite_path_id": 4567,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail09",
+   "texture_path_id": 1770,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    31,
+    44
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    31,
+    44
+   ],
+   "size": [
+    31.0,
+    44.0
+   ],
+   "ppu": 200.0,
+   "file": "08_Tail09_0_Tail09.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4637
+   ],
+   "slot": "Tail10_0",
+   "active": true,
+   "order": 9,
+   "sprite_name": "Tail10_0",
+   "sprite_path_id": 4637,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail10",
+   "texture_path_id": 1841,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    26,
+    35
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    26,
+    35
+   ],
+   "size": [
+    26.0,
+    35.0
+   ],
+   "ppu": 200.0,
+   "file": "09_Tail10_0_Tail10.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4584
+   ],
+   "slot": "Tail11_0",
+   "active": true,
+   "order": 10,
+   "sprite_name": "Tail11_0",
+   "sprite_path_id": 4584,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail11",
+   "texture_path_id": 1788,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    22,
+    31
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    22,
+    31
+   ],
+   "size": [
+    22.0,
+    31.0
+   ],
+   "ppu": 200.0,
+   "file": "10_Tail11_0_Tail11.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3566
+   ],
+   "slot": "Tail12_0",
+   "active": true,
+   "order": 11,
+   "sprite_name": "Tail12_0",
+   "sprite_path_id": 3566,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail12",
+   "texture_path_id": 764,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    19,
+    27
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    19,
+    27
+   ],
+   "size": [
+    19.0,
+    27.0
+   ],
+   "ppu": 200.0,
+   "file": "11_Tail12_0_Tail12.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3188
+   ],
+   "slot": "Tail13_0",
+   "active": true,
+   "order": 12,
+   "sprite_name": "Tail13_0",
+   "sprite_path_id": 3188,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail13",
+   "texture_path_id": 380,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    19,
+    27
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    19,
+    27
+   ],
+   "size": [
+    19.0,
+    27.0
+   ],
+   "ppu": 200.0,
+   "file": "12_Tail13_0_Tail13.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4577
+   ],
+   "slot": "Tail14_0",
+   "active": true,
+   "order": 13,
+   "sprite_name": "Tail14_0",
+   "sprite_path_id": 4577,
+   "sprite_file": "resources.assets",
+   "texture_name": "Tail14",
+   "texture_path_id": 1781,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    14,
+    23
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    14,
+    23
+   ],
+   "size": [
+    14.0,
+    23.0
+   ],
+   "ppu": 200.0,
+   "file": "13_Tail14_0_Tail14.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3496
+   ],
+   "slot": "BackHand",
+   "active": true,
+   "order": 16,
+   "sprite_name": "BackHand",
+   "sprite_path_id": 3496,
+   "sprite_file": "resources.assets",
+   "texture_name": "BackHand",
+   "texture_path_id": 694,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    93,
+    115
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    93,
+    115
+   ],
+   "size": [
+    93.0,
+    115.0
+   ],
+   "ppu": 200.0,
+   "file": "14_BackHand_BackHand.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3945
+   ],
+   "slot": "TorsoBelly",
+   "active": true,
+   "order": 20,
+   "sprite_name": "TorsoBelly",
+   "sprite_path_id": 3945,
+   "sprite_file": "resources.assets",
+   "texture_name": "TorsoBelly",
+   "texture_path_id": 1148,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    232,
+    242
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    232,
+    242
+   ],
+   "size": [
+    232.0,
+    242.0
+   ],
+   "ppu": 200.0,
+   "file": "15_TorsoBelly_TorsoBelly.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3057
+   ],
+   "slot": "TorsoChest",
+   "active": true,
+   "order": 21,
+   "sprite_name": "TorsoChest",
+   "sprite_path_id": 3057,
+   "sprite_file": "resources.assets",
+   "texture_name": "TorsoChest",
+   "texture_path_id": 247,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    258,
+    217
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    258,
+    217
+   ],
+   "size": [
+    258.0,
+    217.0
+   ],
+   "ppu": 200.0,
+   "file": "16_TorsoChest_TorsoChest.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3547
+   ],
+   "slot": "Head",
+   "active": true,
+   "order": 23,
+   "sprite_name": "Head",
+   "sprite_path_id": 3547,
+   "sprite_file": "resources.assets",
+   "texture_name": "Head",
+   "texture_path_id": 745,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    235,
+    207
+   ],
+   "atlas_rect": [
+    2,
+    0,
+    233,
+    207
+   ],
+   "size": [
+    235.0,
+    207.0
+   ],
+   "ppu": 200.0,
+   "file": "17_Head_Head.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4619
+   ],
+   "slot": "FootHeelBack",
+   "active": true,
+   "order": 25,
+   "sprite_name": "FootHeel",
+   "sprite_path_id": 4619,
+   "sprite_file": "resources.assets",
+   "texture_name": "FootHeel",
+   "texture_path_id": 1823,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    42,
+    121
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    42,
+    121
+   ],
+   "size": [
+    42.0,
+    121.0
+   ],
+   "ppu": 200.0,
+   "file": "18_FootHeelBack_FootHeel.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4655
+   ],
+   "slot": "FootTipBack",
+   "active": true,
+   "order": 26,
+   "sprite_name": "FootTip",
+   "sprite_path_id": 4655,
+   "sprite_file": "resources.assets",
+   "texture_name": "FootTip",
+   "texture_path_id": 1859,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    110,
+    45
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    110,
+    45
+   ],
+   "size": [
+    110.0,
+    45.0
+   ],
+   "ppu": 200.0,
+   "file": "19_FootTipBack_FootTip.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3186
+   ],
+   "slot": "BackLegLow",
+   "active": true,
+   "order": 27,
+   "sprite_name": "LegLow",
+   "sprite_path_id": 3186,
+   "sprite_file": "resources.assets",
+   "texture_name": "LegLow",
+   "texture_path_id": 378,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    118,
+    93
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    118,
+    93
+   ],
+   "size": [
+    118.0,
+    93.0
+   ],
+   "ppu": 200.0,
+   "file": "20_BackLegLow_LegLow.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3562
+   ],
+   "slot": "BackLegUp",
+   "active": true,
+   "order": 28,
+   "sprite_name": "LegUp",
+   "sprite_path_id": 3562,
+   "sprite_file": "resources.assets",
+   "texture_name": "LegUp",
+   "texture_path_id": 760,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    115,
+    159
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    115,
+    159
+   ],
+   "size": [
+    115.0,
+    159.0
+   ],
+   "ppu": 200.0,
+   "file": "21_BackLegUp_LegUp.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3558
+   ],
+   "slot": "BackArmUp",
+   "active": true,
+   "order": 29,
+   "sprite_name": "ArmUp",
+   "sprite_path_id": 3558,
+   "sprite_file": "resources.assets",
+   "texture_name": "ArmUp",
+   "texture_path_id": 756,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    172,
+    60
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    172,
+    60
+   ],
+   "size": [
+    172.0,
+    60.0
+   ],
+   "ppu": 200.0,
+   "file": "22_BackArmUp_ArmUp.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3519
+   ],
+   "slot": "BackArmLow",
+   "active": true,
+   "order": 30,
+   "sprite_name": "ArmLow",
+   "sprite_path_id": 3519,
+   "sprite_file": "resources.assets",
+   "texture_name": "ArmLow",
+   "texture_path_id": 717,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    144,
+    65
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    144,
+    65
+   ],
+   "size": [
+    144.0,
+    65.0
+   ],
+   "ppu": 200.0,
+   "file": "23_BackArmLow_ArmLow.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4306
+   ],
+   "slot": "NeckPiece",
+   "active": true,
+   "order": 30,
+   "sprite_name": "NeckPieceRat",
+   "sprite_path_id": 4306,
+   "sprite_file": "resources.assets",
+   "texture_name": "NeckPieceRat",
+   "texture_path_id": 1511,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    64,
+    98
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    64,
+    98
+   ],
+   "size": [
+    64.0,
+    98.0
+   ],
+   "ppu": 200.0,
+   "file": "24_NeckPiece_NeckPieceRat.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4247
+   ],
+   "slot": "FrontHand",
+   "active": true,
+   "order": 31,
+   "sprite_name": "FrontHand",
+   "sprite_path_id": 4247,
+   "sprite_file": "resources.assets",
+   "texture_name": "FrontHand",
+   "texture_path_id": 1452,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    93,
+    129
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    93,
+    129
+   ],
+   "size": [
+    93.0,
+    129.0
+   ],
+   "ppu": 200.0,
+   "file": "25_FrontHand_FrontHand.png"
+  }
+ ],
+ "frames": []
+}

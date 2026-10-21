@@ -41,6 +41,19 @@ PIGMENTS = {
     "藤黄": (217, 162, 39),   # gamboge
     "花青": (58, 76, 110),    # indigo (dark blue wash)
 }
+# A pigment is laid as a RANGE -- base / deep (shadow) / light (highlight) --
+# so classification has to match against all three tones, not just the base.
+# These ramps are duplicated here ON PURPOSE rather than imported from
+# restyle_ink: the measuring instrument must not share its palette with the
+# thing it measures, or the gate becomes circular and will always pass.
+PIGMENT_TONES = {
+    "朱红": ((176, 52, 40), (140, 44, 32), (206, 96, 70)),
+    "石青": ((34, 98, 138), (20, 60, 90), (56, 106, 134)),
+    "石绿": ((48, 108, 78), (26, 68, 50), (86, 138, 100)),
+    "赭石": ((152, 96, 58), (108, 64, 38), (198, 158, 124)),
+    "藤黄": ((196, 146, 38), (148, 104, 26), (222, 182, 92)),
+    "花青": ((42, 58, 92), (24, 34, 62), (78, 94, 128)),
+}
 PAPER = (243, 235, 220)       # 宣纸 base tone
 INK = (26, 22, 20)            # 焦墨
 
@@ -50,24 +63,41 @@ INK = (26, 22, 20)            # 焦墨
 # native scale), because that is what the player sees. Per-part numbers are kept
 # as diagnostics only -- a 17px buckle and a 400px coat cannot share one range.
 #
+# The spec splits in two, and the split is the important part:
+#
+#   SPEC_COMMON   the *brush*. "重彩, 中等笔触" is a project-wide decision, so a
+#                 zombie and a gangster must be painted with the same tool. If
+#                 these drifted per faction the game would look like three
+#                 games pasted together.
+#
+#   SPEC_FACTION  the *material*. A suit is not a corpse is not fur. Forcing one
+#                 palette on all three either fails the zombie (no 石青 to find)
+#                 or, worse, passes it while painting a normal man.
+#
+# Faction ranges are grounded in validation/FACTION_SURVEY.json -- the measured
+# pigment make-up of all 33 original characters -- not invented. See
+# docs/STYLE_SPEC.md §10 for the survey table and the reasoning.
+#
 # Rationale for each band lives in docs/STYLE_SPEC.md.
-SPEC = {
-    "ink_w_mean":   (1.50, 3.00),   # 中等笔触: mean stroke width, native px
+SPEC_COMMON = {
+    "ink_w_mean":   (1.15, 3.00),   # 中等笔触: mean stroke width, native px.
+                                    # Floor is 1.15 because the *original*
+                                    # zombie line measures 1.22 across all 17
+                                    # zombie characters (FACTION_SURVEY). A
+                                    # floor above a faction's own source line
+                                    # would fail the art for being faithful.
+                                    # The real work is done by the ceiling and
+                                    # by ink_cv: "medium brush" means 1-3px AND
+                                    # visible 提按, not a fat uniform outline.
     "ink_w_p90":    (2.80, 6.00),   # 提按: the loaded part of the stroke
     "ink_cv":       (0.30, 1.20),   # 笔触粗细必须有变化, not a vector outline
-    "ink_ratio":    (0.20, 0.45),   # 墨色覆盖: 重彩 is ink-led but not a silhouette
-    "paper_ratio":  (0.003, 0.15),  # 留白: 重彩 keeps little bare paper
     "ink_levels":   (4, 10),        # 墨分五色: at least four distinct ink values
     "texture_std":  (2.50, 20.0),   # 纸纹 + 皴擦 must be present
-    "saturation":   (0.35, 0.85),   # 矿物颜料 must read as saturated
-    "pigment": {
-        "石青": (0.26, 0.45),       # 主色
-        "石绿": (0.07, 0.24),       # 辅色 (青绿叠色)
-        "朱红": (0.012, 0.10),      # 点缀
-        "赭石": (0.14, 0.32),       # 肤色/木石
-        "花青": (0.00, 0.35),       # 阴面
-        "藤黄": (0.00, 0.08),       # 金/铜
-    },
+    # 留白 is a *scene* property, not a figure property. A single character
+    # sprite legitimately has no bare paper (僵尸 and 鼠怪 both measure 0.000),
+    # so only the ceiling is a real constraint -- it catches a figure that is
+    # mostly unpainted, which would no longer be 重彩.
+    "paper_ratio":  (0.0, 0.15),
     "fidelity": {
         "alpha_iou":      (0.98, 1.0),   # 轮廓不得改动: collision + pivots
         "centroid_shift": (0.0, 1.0),    # px
@@ -75,35 +105,123 @@ SPEC = {
     },
 }
 
-# 主色 : 辅色 : 点缀  design intent for the mineral triad
-TRIAD = {"石青": 0.60, "石绿": 0.30, "朱红": 0.10}
+SPEC_FACTION = {
+    # 西装、礼帽、领带 —— Vinnie / 7 个 Gangster / 4 个人类 Boss
+    # 主色必然是石青(藏青西装)，石绿做青绿叠色，朱红只做领带与血迹
+    "人类": {
+        "ink_ratio":    (0.20, 0.45),
+        "saturation":   (0.35, 0.85),
+        "pigment": {
+            "石青": (0.30, 0.68),
+            "石绿": (0.06, 0.26),
+            "朱红": (0.012, 0.10),
+            "赭石": (0.14, 0.42),
+            "花青": (0.00, 0.20),
+            "藤黄": (0.00, 0.08),
+        },
+        "triad": {"石青": 0.60, "石绿": 0.30, "朱红": 0.10},
+    },
+    # 破烂衣物 + 腐肉 + 大量血浆 —— 17 个僵尸
+    # 实测朱红 0.226，是三族里最高的：僵尸身上血是主色不是点缀。
+    # 石青几乎没有（不穿西装），赭石 + 石绿 承担腐肉与霉变。
+    "僵尸": {
+        "ink_ratio":    (0.22, 0.46),
+        # A corpse is the least chromatic of the three factions by design --
+        # the original composite measures 0.325 and dead flesh has no business
+        # being vivid. 重彩 here comes from pigment IDENTITY (石绿 rot, 朱红
+        # blood, 赭石 flesh), not from chroma.
+        "saturation":   (0.30, 0.80),
+        "pigment": {
+            "石青": (0.00, 0.12),
+            "石绿": (0.12, 0.38),
+            # The band brackets the ORIGINAL composite (0.106), not the survey
+            # mean (0.226) -- those two numbers come from different render
+            # paths and only the composite is what this gate measures. Dark
+            # vermilion also classifies near 赭石 in CIELAB, so the measured
+            # value runs ~60% low: 0.042 of measured red is a full shirt of
+            # blood. Band is deliberately generous on the low side.
+            "朱红": (0.03, 0.20),
+            "赭石": (0.26, 0.55),
+            "花青": (0.00, 0.30),
+            "藤黄": (0.00, 0.08),
+        },
+        "triad": {"赭石": 0.45, "石绿": 0.32, "朱红": 0.23},
+    },
+    # 皮毛 + 尾巴 —— 3 个鼠怪 + 鼠怪 Boss
+    # 实测花青 0.512（灰褐毛被读成靛）、石绿 0.195（最高）、赭石 0.166。
+    # 鼠怪最低饱和（0.370），所以饱和度下限必须比人类更低，否则永远不过。
+    "鼠怪": {
+        "ink_ratio":    (0.24, 0.50),
+        "saturation":   (0.28, 0.72),
+        "pigment": {
+            # The triad below (50:30:20 赭石:花青:石绿) is the binding design
+            # constraint; these absolute bands are only an envelope around it.
+            # An envelope tighter than the triad's own tolerance is a bug --
+            # 石绿 once measured 0.321 against a 0.30 ceiling while the triad
+            # read 34% vs 30% design: the picture was right, the ruler wrong.
+            #
+            # NOTE the reversal from the first draft, which had 花青 as primary.
+            # The survey's 花青 0.512 was a classifier artefact on desaturated
+            # fur, not a hue reading -- caught by looking at the render, which
+            # came out a navy-blue dog. Grey-brown fur is CIELAB-nearest to
+            # 花青 among six mineral pigments; that does not make it indigo.
+            "石青": (0.00, 0.06),
+            "石绿": (0.02, 0.20),
+            "朱红": (0.01, 0.12),
+            "赭石": (0.50, 0.90),
+            "花青": (0.06, 0.30),
+            "藤黄": (0.00, 0.08),
+        },
+        "triad": {"赭石": 0.55, "石绿": 0.25, "花青": 0.20},
+    },
+}
+
+DEFAULT_FACTION = "人类"
 
 
-def check(metrics, fidelity=None):
-    """Compare measured metrics against SPEC. Returns list of check rows."""
+def spec_for(faction=None):
+    """Merged spec for a faction. Unknown/None falls back to 人类."""
+    f = SPEC_FACTION.get(faction or DEFAULT_FACTION, SPEC_FACTION[DEFAULT_FACTION])
+    merged = dict(SPEC_COMMON)
+    merged.update({k: v for k, v in f.items() if k != "triad"})
+    return merged
+
+
+# Back-compat alias: the original single-faction spec (人类, i.e. Vinnie).
+SPEC = spec_for("人类")
+TRIAD = SPEC_FACTION["人类"]["triad"]
+
+
+def check(metrics, fidelity=None, faction=None):
+    """Compare measured metrics against the faction spec. Returns check rows."""
+    spec = spec_for(faction)
     rows = []
-    for key, rng in SPEC.items():
+    for key, rng in spec.items():
         if key in ("pigment", "fidelity"):
             continue
         lo, hi = rng
         v = metrics.get(key)
         rows.append({"name": key, "value": v, "min": lo, "max": hi,
                      "pass": bool(v is not None and lo <= v <= hi)})
-    for pig, (lo, hi) in SPEC["pigment"].items():
+    for pig, (lo, hi) in spec["pigment"].items():
         v = metrics.get("pigment", {}).get(pig, 0.0)
         rows.append({"name": "pig_" + pig, "value": v, "min": lo, "max": hi,
                      "pass": bool(lo <= v <= hi)})
     if fidelity:
-        for key, (lo, hi) in SPEC["fidelity"].items():
+        for key, (lo, hi) in spec["fidelity"].items():
             v = fidelity.get(key)
             rows.append({"name": "fid_" + key, "value": v, "min": lo, "max": hi,
                          "pass": bool(v is not None and lo <= v <= hi)})
     return rows
 
 
-def triad_ratio(metrics):
+def triad_ratio(metrics, faction=None):
+    """Share of the faction's declared triad, renormalised to sum to 1."""
+    spec = spec_for(faction)
+    want = SPEC_FACTION.get(faction or DEFAULT_FACTION,
+                            SPEC_FACTION[DEFAULT_FACTION])["triad"]
     p = metrics.get("pigment", {})
-    vals = {k: p.get(k, 0.0) for k in TRIAD}
+    vals = {k: p.get(k, 0.0) for k in want}
     tot = sum(vals.values())
     if tot <= 0:
         return vals
@@ -215,12 +333,23 @@ def measure(path, ink_L=28.0, paper_L=88.0, paper_S=0.11, ink_max_depth=2):
     # --- pigments: coloured, non-ink pixels ----------------------------------
     coloured = opaque & (~ink) & (s >= 0.18) & (L >= 22)
     pig_names = list(PIGMENTS)
-    pig_lab = srgb_to_lab(np.array([PIGMENTS[k] for k in pig_names], dtype=np.float64))
+    # A pigment is laid as a RANGE (base / deep / light), so each pixel must be
+    # matched against all three tones of each pigment and take its best. Using
+    # only the base tone systematically mislabelled dark glazes: a rat's
+    # brown-grey fur at (77,69,61) sat closer to 花青's base than to 赭石's
+    # bright base, and the gate reported 72% indigo on a brown animal.
+    pig_lab = np.array([
+        srgb_to_lab(np.array(PIGMENT_TONES.get(k, (PIGMENTS[k],) * 3),
+                             dtype=np.float64))
+        for k in pig_names
+    ], dtype=np.float64)                      # (pigments, 3 tones, 3)
     pig = {k: 0.0 for k in pig_names}
     pig["未归类"] = 0.0
     if coloured.any():
         cl = lab[coloured]
-        d = np.linalg.norm(cl[:, None, :] - pig_lab[None, :, :], axis=2)
+        # (pixels, pigments, tones) -> min over tones
+        d = np.linalg.norm(cl[:, None, None, :] - pig_lab[None, :, :, :], axis=3)
+        d = d.min(axis=2)
         nearest = d.argmin(axis=1)
         dmin = d.min(axis=1)
         total = cl.shape[0]

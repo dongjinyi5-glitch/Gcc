@@ -32,6 +32,8 @@ import sys
 import numpy as np
 from PIL import Image, ImageFilter
 
+import factions
+
 PROJECT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
 
 # ------------------------------------------------------------------ pigments
@@ -49,6 +51,18 @@ PIGMENTS = {
 # flesh is not the same as 赭石 earth pigment: skin needs its own light ramp or
 # every face comes out muddy brown
 SKIN_TONE = ((196, 148, 106), (142, 94, 62), (232, 202, 170))
+# A corpse cannot share the living flesh ramp -- 赭石 straight off the dish
+# gives a zombie a healthy tan. Dead flesh loses chroma and picks up a green
+# cast, which is exactly what 赭石 mixed with 石绿 looks like on paper.
+SKIN_TONE_FACTION = {
+    "人类": SKIN_TONE,
+    "僵尸": ((160, 146, 114), (102, 96, 78), (202, 194, 168)),
+}
+# Rat fur is warm grey-brown, not 赭石 straight from the dish. The survey
+# measured 花青 0.512 on the rat, but that number is a classifier artefact:
+# desaturated grey-brown is CIELAB-nearest to 花青 among six mineral pigments.
+# Painting it 花青 produced a navy-blue dog. Fur needs its own ramp.
+FUR_TONE = ((124, 108, 90), (80, 70, 58), (162, 148, 128))
 INK_RGB = np.array([28, 25, 23], dtype=np.float32)
 PAPER_RGB = np.array([243, 235, 220], dtype=np.float32)
 
@@ -110,6 +124,12 @@ SLOT_RULES = [
     ("magnum",     ("weapon",  "墨",   None)),
     ("lupara",     ("weapon",  "墨",   None)),
     ("tommygun",   ("weapon",  "墨",   None)),
+    # "bite" frames are NOT a blood decal -- they are the whole HEAD posed with
+    # its mouth open (113x126, exactly the head sprite's size). Routing them to
+    # `gore` painted an entire face 朱红 and turned the zombie into a red mask.
+    # They are skin; the blood on them is found by hue, region by region.
+    ("bite",       ("skin",    "赭石", None)),
+    ("tail",       ("skin",    "赭石", None)),
 ]
 DEFAULT_RULE = ("garment", "石青", "石绿")
 
@@ -119,12 +139,107 @@ DEFAULT_RULE = ("garment", "石青", "石绿")
 DARK_ACCENT = {"crotch": "朱红"}
 
 
-def rule_for(slot):
+# ------------------------------------------------------------ faction palettes
+# A slot name describes *geometry* ("this is the torso"), not material. What the
+# torso is made of depends on the faction: a gangster's torso is a wool suit, a
+# zombie's is a torn shirt over a ribcage, a rat's is fur. So the slot rule
+# decides the kind, and the faction decides which pigment that kind gets.
+#
+# kind -> (primary, secondary, allowed pigments)
+# ``None`` means "keep whatever SLOT_RULES already decided". That matters: the
+# shoe slot deliberately splits into 朱红 toe-cap and 墨 heel, and a faction
+# table that forced one primary would flatten that two-tone shoe. Only the
+# entries that genuinely differ per faction are filled in.
+# Factions that actually have human flesh. Only they get the `skinlike` guard
+# that keeps a face/neck/hand from being recoloured by the garment hue; a rat is
+# fur from nose to tail, so the guard must not fire there.
+FLESH_FACTIONS = {"人类", "僵尸"}
+
+# Factions whose "garment" is cloth, so it can take a 石绿 underlayer. A rat's
+# torso is fur: laying 石绿 underneath it painted a green animal (石绿 0.641 on
+# one torso). 青绿积染 is a drapery technique, not a general one -- the rat gets
+# a 花青 shadow layer instead, which is what fur in shadow looks like.
+GREEN_LAYER_FACTIONS = {"人类", "僵尸"}
+SHADOW_LAYER_FACTIONS = {"人类", "僵尸", "鼠怪"}
+
+FACTION_KIND = {
+    "人类": {
+        # slot rules already say 石青/石绿 for cloth; only the whitelist differs
+        "garment":   (None, None, ["石青", "石绿", "花青", "纸"]),
+        "skin":      (None, None, ["赭石", "朱红"]),
+        "hat":       (None, None, ["墨", "花青", "朱红"]),
+        "tie":       (None, None, ["朱红", "墨"]),
+        "shoe":      (None, None, ["墨", "朱红"]),
+        "weapon":    (None, None, ["墨", "赭石", "花青"]),
+        "brass":     (None, None, ["藤黄", "赭石"]),
+        "glass":     (None, None, ["石绿", "石青", "纸"]),
+        "explosive": (None, None, ["石绿", "墨", "朱红"]),
+        "gore":      (None, None, ["朱红", "墨"]),
+    },
+    "僵尸": {
+        # rags, not tailoring: indigo wash with malachite mould, no azurite
+        "garment":   ("花青", "石绿", ["花青", "石绿", "赭石", "纸"]),
+        # decayed flesh: ochre base, malachite for the rot, vermilion for raw
+        "skin":      (None, None, ["赭石", "石绿", "朱红"]),
+        "hat":       (None, None, ["墨", "花青"]),
+        "tie":       (None, None, ["朱红", "墨"]),
+        "shoe":      (None, None, ["墨", "赭石"]),
+        "weapon":    (None, None, ["墨", "赭石"]),
+        "brass":     (None, None, ["藤黄", "赭石"]),
+        "glass":     (None, None, ["石绿", "纸"]),
+        "explosive": (None, None, ["石绿", "墨", "朱红"]),
+        # the bite frames are mostly blood -- measured 朱红 0.226 across the
+        # faction, so vermilion is a main colour here, not an accent
+        "gore":      (None, None, ["朱红", "墨", "赭石"]),
+    },
+    "鼠怪": {
+        # Fur. The survey measured 花青 0.512 here, which looks like a licence
+        # to paint the rat indigo -- but that number is a classifier artefact:
+        # desaturated grey-brown is CIELAB-nearest to 花青 among six mineral
+        # pigments. Painting it 花青 produced a navy-blue dog. Fur is 赭石 laid
+        # through a dedicated grey-brown ramp (FUR_TONE), with 花青 in the
+        # shadow and 石绿 for the sickliness.
+        "garment":   ("赭石", "花青", ["赭石", "花青", "石绿"]),
+        # A rat has no "skin" slot in the human sense -- head, hands and all
+        # fourteen tail segments are FUR.
+        "skin":      ("赭石", "花青", ["赭石", "花青", "石绿"]),
+        "hat":       (None, None, ["墨", "花青"]),
+        "tie":       (None, None, ["朱红", "墨"]),
+        "shoe":      (None, None, ["墨", "赭石"]),
+        "weapon":    (None, None, ["墨", "赭石"]),
+        "brass":     (None, None, ["藤黄", "赭石"]),
+        "glass":     (None, None, ["石绿", "纸"]),
+        "explosive": (None, None, ["石绿", "墨"]),
+        "gore":      (None, None, ["朱红", "墨"]),
+    },
+}
+
+
+def rule_for(slot, faction=None):
+    """(kind, primary, secondary) for a slot, resolved against a faction."""
     s = (slot or "").lower()
-    for prefix, rule in SLOT_RULES:
+    rule = DEFAULT_RULE
+    for prefix, r in SLOT_RULES:
         if prefix in s:
-            return rule
-    return DEFAULT_RULE
+            rule = r
+            break
+    kind, primary, secondary = rule
+    fk = FACTION_KIND.get(faction or "人类", {})
+    if kind in fk:
+        fp, fs, _allowed = fk[kind]
+        if fp is not None:
+            primary = fp
+        if fs is not None:
+            secondary = fs
+    return kind, primary, secondary
+
+
+def allowed_for(kind, faction=None):
+    """Pigments a kind of part may use under a faction."""
+    fk = FACTION_KIND.get(faction or "人类", {})
+    if kind in fk:
+        return fk[kind][2]
+    return ALLOWED.get(kind, ["墨"])
 
 
 # ------------------------------------------------------------------- utilities
@@ -248,7 +363,7 @@ def pigment_shade(name, rel, ramp=None):
 
 
 # ------------------------------------------------------------------ the restyle
-def restyle(img, slot="", seed=0, cfg=None):
+def restyle(img, slot="", seed=0, cfg=None, faction=None):
     cfg = cfg or {}
     rng = np.random.default_rng(seed)
 
@@ -262,7 +377,7 @@ def restyle(img, slot="", seed=0, cfg=None):
 
     L = luminance(rgb)
     H, S, V = rgb_to_hsv(rgb)
-    kind, primary, secondary = rule_for(slot)
+    kind, primary, secondary = rule_for(slot, faction)
 
     # ---- 1. separate stroke from dark fill -----------------------------------
     dark = opaque & (L < 30)
@@ -301,7 +416,7 @@ def restyle(img, slot="", seed=0, cfg=None):
                         "S": cS, "H": cH, "dark_frac": dark_frac})
     regions.sort(key=lambda r: -r["area"])
 
-    allowed = ALLOWED.get(kind, ALLOWED["garment"])
+    allowed = allowed_for(kind, faction)
     chromatic = [p for p in allowed if p in PIG_HUE]
 
     def hue_dist(hue, pig):
@@ -316,7 +431,12 @@ def restyle(img, slot="", seed=0, cfg=None):
         # flesh, otherwise it picks the nearest allowed garment hue and turns
         # green -- a real failure seen in review
         # NOTE: cL is 0-255 luminance, not CIELAB L*, so the window is wide
-        skinlike = ((cH <= 50 or cH >= 340) and 0.15 <= cS <= 0.65
+        #
+        # This guard exists to protect *flesh*. A rat has none -- its head,
+        # hands and tail are fur -- so firing it there forced 赭石 onto 38% of
+        # the body and turned the rat terracotta. Faction decides.
+        skinlike = (faction in FLESH_FACTIONS
+                    and (cH <= 50 or cH >= 340) and 0.15 <= cS <= 0.65
                     and 90 <= cL <= 225 and kind in ("garment", "skin"))
 
         accent = None
@@ -339,6 +459,12 @@ def restyle(img, slot="", seed=0, cfg=None):
                                  or (cL < 85 and cS < 0.30)):
             # hair and its cold highlights belong to ink, not to flesh
             pig = "墨" if cL < 110 else "花青"
+        elif cL >= 228 and cS <= 0.30 and kind == "skin":
+            # 画人点睛，眼白留纸 -- an eye white is bare paper in 国画, not flesh.
+            # Strictly the brightest neutral, so a cheek highlight (Vinnie's
+            # measured L* 168) can never be mistaken for one. This is the one
+            # exception to "a face may not contain 纸".
+            pig = "纸"
         elif cS < 0.15:
             if cL > 200 and "纸" in allowed:
                 pig = "纸"
@@ -346,6 +472,14 @@ def restyle(img, slot="", seed=0, cfg=None):
                 pig = "墨"
             else:
                 pig = ACHROMA.get(kind, allowed[0])
+        elif kind == "skin" and faction in FLESH_FACTIONS:
+            # Flesh is an earth tone, and nearest-hue matching does not know
+            # that: a corpse's cold grey face (H 249) sits closer to 石绿
+            # (H 146) than to 赭石 (H 30), so the classifier speckled green
+            # over a face. Decide by meaning instead -- green is rot, red was
+            # already caught above as blood, everything else is flesh.
+            pig = ("石绿" if (90 <= cH <= 200 and cS > 0.22
+                              and "石绿" in allowed) else "赭石")
         elif chromatic:
             # nearest allowed hue, biased towards the part's declared pigment
             pig = min(chromatic,
@@ -383,36 +517,77 @@ def restyle(img, slot="", seed=0, cfg=None):
             col = np.repeat(np.array(PIGMENTS["纸"][0], dtype=np.float32)[None, :],
                             len(t), axis=0)
         else:
-            is_skin = (pig == "赭石" and r["skinlike"])
-            ramp = SKIN_TONE if is_skin else PIGMENTS[pig]
-            # flesh is an earth tone, not a mineral glaze: raise the floor and
-            # cap the ceiling, or the face reads as a pale mask over a dark jaw
-            col = (shade_color(ramp, t, lo=0.74, hi=0.26, light_w=0.14) if is_skin
-                   else shade_color(ramp, t))
+            # On a `skin` PART, 赭石 *is* flesh -- no hue test needed. Requiring
+            # a warm hue meant a corpse's grey face fell through to the raw
+            # 赭石 mineral ramp and came out dark brown, while a living face got
+            # the pale flesh ramp. Same pigment, two very different results.
+            is_skin = (pig == "赭石" and (r["skinlike"] or kind == "skin"))
+            is_fur = (faction == "鼠怪" and pig == "赭石")
+            if is_fur:
+                ramp = FUR_TONE
+            elif is_skin:
+                ramp = SKIN_TONE_FACTION.get(faction or "人类", SKIN_TONE)
+            else:
+                ramp = PIGMENTS[pig]
+            # flesh and fur are soft materials, not mineral glazes: raise the
+            # floor and cap the ceiling, or the form reads as a pale mask over
+            # a dark jaw
+            col = (shade_color(ramp, t, lo=0.74, hi=0.26, light_w=0.14)
+                   if (is_skin or is_fur) else shade_color(ramp, t))
 
         # 青绿 layering: the shadow side of the main garment is laid in 石绿
         # underneath the 石青 glaze. Doing it inside one region (rather than by
         # picking a second cluster) keeps the band spatially coherent.
+        #
+        # It must be a SOFT weight, not a quantile split. A binary cut on
+        # luminance drew a hard horizontal green bar across the zombie's waist
+        # and knees -- visible in review, invisible to every numeric gate.
         if (rank == 0 and kind == "garment" and secondary
+                and (faction or "人类") in SHADOW_LAYER_FACTIONS
                 and m.sum() > 0.10 * opaque.sum()):
             dev = L[m] - r["L"]
             sd = float(dev.std())
             if sd > 2.5:
-                thr = np.quantile(dev, float(cfg.get("green_split", 0.35)))
-                shadow = dev <= thr
+                thr = np.quantile(dev, float(cfg.get("green_split", 0.45)))
+                span = max(1.5, sd * 0.9)
+                # gamma < 1 so the green rises quickly out of the split point.
+                # A linear ramp left almost the whole coat a 石青/石绿 average,
+                # which the classifier reads as 石青 -- 石绿 collapsed to 0.022
+                # and the 青绿 layering became invisible.
+                gw = np.clip((thr - dev) / span, 0.0, 1.0) ** 0.45
             else:
                 yy = np.nonzero(m)[0].astype(np.float32)
                 yy = (yy - yy.min()) / max(1e-6, yy.max() - yy.min())
-                shadow = yy > (1.0 - float(cfg.get("green_split", 0.35)))
-            if 0.02 < shadow.mean() < 0.85:
-                col[shadow] = shade_color(PIGMENTS[secondary], t[shadow])
+                gw = np.clip((yy - (1.0 - float(cfg.get("green_split", 0.45))))
+                             / 0.30, 0.0, 1.0) ** 0.45
+            if 0.02 < gw.mean() < 0.85:
+                g = shade_color(PIGMENTS[secondary], t)
+                col = col * (1.0 - gw)[:, None] + g * gw[:, None]
 
         # 重彩 sits on sized paper, so pigment never reaches full chroma
         col = col * float(cfg.get("pigment_gain", 0.95)) + \
             PAPER_RGB[None, :] * float(cfg.get("paper_mix", 0.06))
         out_rgb[m] = col
-        if pig == "赭石" and r["skinlike"]:
+        if pig == "赭石" and (r["skinlike"] or kind == "skin"):
             flesh[m] = True
+
+    # ---- 3d. blood is a pigment, not a region ------------------------------
+    # A wound is a few hundred pixels inside a shirt of thousands, so k-means
+    # merges it into the shirt and the red vanishes -- the zombie's measured
+    # 朱红 fell from 0.106 (original) to 0.007. Red has to be judged per PIXEL.
+    # Blood is exempt from the per-kind pigment whitelist: if the original is
+    # red, it is blood, whatever part it sits on. Gating this on `allowed`
+    # silently dropped it, because a zombie's garment palette is
+    # 花青/石绿/赭石 -- no 朱红 at all -- so the wounds vanished.
+    if kind not in ("glass", "brass"):
+        # Blood must be DARK red. Cartoon flesh sits at S~0.55 with hue ~17, so
+        # a saturation-only test painted Vinnie's whole face vermilion. Blood
+        # is also dark (L 32-70 in this game), skin is bright (L > 150).
+        blood = (fill & (S > 0.62) & ((H < 20) | (H > 340))
+                 & (L > 25) & (L < 120))
+        if blood.any():
+            tb = np.clip((L[blood] - 25.0) / 60.0, 0.0, 1.0)
+            out_rgb[blood] = shade_color(PIGMENTS["朱红"], tb)
 
     # pixels the k-means dropped (tiny islands) inherit the primary tone
     left = fill & (labels < 0)
@@ -462,11 +637,23 @@ def restyle(img, slot="", seed=0, cfg=None):
     rim_ink = ink & ~erode(opaque, 3)
     # scale-aware brush weight: a large form takes a loaded contour, a 20px
     # detail keeps a fine line (this is how a painter sizes the brush)
-    thick = dilate(rim_ink, 3) & opaque & ~ink
-    if opaque.sum() > 12000:
-        thick |= dilate(thick, 3) & opaque & ~ink
-    # a single px of bleed on interior strokes keeps them from looking wiry
-    thick |= dilate(ink, 3) & opaque & ~ink & (L < 150)
+    #
+    # The weight has to be chosen by PART SIZE, not applied flat. A flat 1px
+    # growth is 0.25% of a 400px coat but 1% of a 100px head, and the zombie
+    # head is already 36% dark linework, so the contour has to stay fine there.
+    # NOTE: dilate()/erode() take a KERNEL SIZE (odd), not an iteration count.
+    _area = int(opaque.sum())
+    brush = 5 if _area >= 45000 else 3
+    thick = dilate(rim_ink, brush) & opaque & ~ink
+    if _area >= 45000:
+        thick |= dilate(thick, brush) & opaque & ~ink
+    # A part that is ALREADY ink-dominated must not be thickened again. The
+    # zombie head is 36% dark linework; bleeding every stroke by 1px pushed it
+    # to 55% and the face collapsed into a black mask. A painter in that
+    # situation thins the brush, not loads it.
+    dark_ratio = float(dark.sum()) / max(1, _area)
+    if dark_ratio < 0.30:
+        thick |= dilate(ink, brush) & opaque & ~ink & (L < 150)
     out_rgb[thick] = INK_RGB[None, None, :] * 0.95
 
     # warm 洇 halo just inside the contour
@@ -487,10 +674,22 @@ def restyle(img, slot="", seed=0, cfg=None):
 
 # ---------------------------------------------------------------------- driver
 def main():
-    mode = sys.argv[1] if len(sys.argv) > 1 else "preview"
-    char = "vinnie"
-    src = os.path.join(PROJECT, "art", f"{char}_parts", "original")
-    dst = os.path.join(PROJECT, "art", f"{char}_parts", "restyled")
+    mode = sys.argv[1] if len(sys.argv) > 1 and not sys.argv[1].startswith("--") \
+        else "preview"
+
+    def opt(flag, default=None):
+        return sys.argv[sys.argv.index(flag) + 1] if flag in sys.argv else default
+
+    char = opt("--char", "Vinnie")
+    faction = opt("--faction") or factions.faction_of(char)
+    if faction not in FACTION_KIND:
+        raise SystemExit(f"unknown faction {faction!r}; "
+                         f"expected one of {list(FACTION_KIND)}")
+
+    src = os.path.join(PROJECT, "art", f"{char.lower()}_parts", "original")
+    dst = os.path.join(PROJECT, "art", f"{char.lower()}_parts", "restyled")
+    if not os.path.isdir(src):
+        raise SystemExit(f"no parts for {char} -- run extract_parts.py {char} first")
     os.makedirs(dst, exist_ok=True)
 
     files = [f for f in sorted(os.listdir(src))
@@ -498,12 +697,14 @@ def main():
     if mode == "preview":
         want = ["24_Head", "13_TorsoChest", "19_Crotch", "31_Hat",
                 "52_Tommygun", "47_Magnum", "16_LegLowBack", "08_Molotov"]
-        files = [f for f in files if any(f.startswith(p) for p in want)] or files[:8]
+        picked = [f for f in files if any(f.startswith(p) for p in want)]
+        files = picked or files[:8]
 
+    print(f"[{char} / {faction}] {len(files)} part(s) -> {dst}", flush=True)
     for i, f in enumerate(files):
         img = Image.open(os.path.join(src, f))
         slot = f.split("_")[1] if "_" in f else f
-        res = restyle(img, slot=slot, seed=i * 7919 + 13)
+        res = restyle(img, slot=slot, seed=i * 7919 + 13, faction=faction)
         res.save(os.path.join(dst, f))
         print(f"[{i + 1}/{len(files)}] {f}", flush=True)
 

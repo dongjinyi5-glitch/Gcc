@@ -1,0 +1,843 @@
+{
+ "character": "ZombieRegular",
+ "parts": [
+  {
+   "key": [
+    "resources.assets",
+    3892
+   ],
+   "slot": "RightArmUp",
+   "active": true,
+   "order": 0,
+   "sprite_name": "BackArmUp",
+   "sprite_path_id": 3892,
+   "sprite_file": "resources.assets",
+   "texture_name": "BackArmUp",
+   "texture_path_id": 1094,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    105,
+    42
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    104,
+    42
+   ],
+   "size": [
+    105.0,
+    42.0
+   ],
+   "ppu": 200.0,
+   "file": "00_RightArmUp_BackArmUp.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4349
+   ],
+   "slot": "RightArmLow",
+   "active": true,
+   "order": 1,
+   "sprite_name": "BackArmLow",
+   "sprite_path_id": 4349,
+   "sprite_file": "resources.assets",
+   "texture_name": "BackArmLow",
+   "texture_path_id": 1553,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    79,
+    49
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    79,
+    49
+   ],
+   "size": [
+    79.0,
+    49.0
+   ],
+   "ppu": 200.0,
+   "file": "01_RightArmLow_BackArmLow.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3378
+   ],
+   "slot": "RightHand",
+   "active": true,
+   "order": 2,
+   "sprite_name": "BackHand",
+   "sprite_path_id": 3378,
+   "sprite_file": "resources.assets",
+   "texture_name": "BackHand",
+   "texture_path_id": 574,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    77,
+    52
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    77,
+    52
+   ],
+   "size": [
+    77.0,
+    52.0
+   ],
+   "ppu": 200.0,
+   "file": "02_RightHand_BackHand.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4435
+   ],
+   "slot": "BackLegLow",
+   "active": true,
+   "order": 4,
+   "sprite_name": "BackLegLow",
+   "sprite_path_id": 4435,
+   "sprite_file": "resources.assets",
+   "texture_name": "BackLegLow",
+   "texture_path_id": 1639,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    72,
+    88
+   ],
+   "atlas_rect": [
+    0,
+    2,
+    72,
+    86
+   ],
+   "size": [
+    72.0,
+    88.0
+   ],
+   "ppu": 200.0,
+   "file": "03_BackLegLow_BackLegLow.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3425
+   ],
+   "slot": "BackLegUp",
+   "active": true,
+   "order": 5,
+   "sprite_name": "BackLegUp",
+   "sprite_path_id": 3425,
+   "sprite_file": "resources.assets",
+   "texture_name": "BackLegUp",
+   "texture_path_id": 622,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    54,
+    103
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    54,
+    103
+   ],
+   "size": [
+    54.0,
+    103.0
+   ],
+   "ppu": 200.0,
+   "file": "04_BackLegUp_BackLegUp.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3144
+   ],
+   "slot": "TorsoBelly",
+   "active": true,
+   "order": 6,
+   "sprite_name": "TorsoBelly",
+   "sprite_path_id": 3144,
+   "sprite_file": "resources.assets",
+   "texture_name": "TorsoBelly",
+   "texture_path_id": 336,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    147,
+    150
+   ],
+   "atlas_rect": [
+    23,
+    0,
+    124,
+    150
+   ],
+   "size": [
+    147.0,
+    150.0
+   ],
+   "ppu": 200.0,
+   "file": "05_TorsoBelly_TorsoBelly.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4203
+   ],
+   "slot": "TorsoBellyDead",
+   "active": true,
+   "order": 6,
+   "sprite_name": "TorsoBellyDead",
+   "sprite_path_id": 4203,
+   "sprite_file": "resources.assets",
+   "texture_name": "TorsoBellyDead",
+   "texture_path_id": 1408,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    102,
+    147
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    102,
+    147
+   ],
+   "size": [
+    102.0,
+    147.0
+   ],
+   "ppu": 200.0,
+   "file": "06_TorsoBellyDead_TorsoBellyDead.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4614
+   ],
+   "slot": "TorsoChest",
+   "active": true,
+   "order": 7,
+   "sprite_name": "TorsoChest",
+   "sprite_path_id": 4614,
+   "sprite_file": "resources.assets",
+   "texture_name": "TorsoChest",
+   "texture_path_id": 1818,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    147,
+    125
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    121,
+    125
+   ],
+   "size": [
+    147.0,
+    125.0
+   ],
+   "ppu": 200.0,
+   "file": "07_TorsoChest_TorsoChest.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4420
+   ],
+   "slot": "TorsoChestDead",
+   "active": true,
+   "order": 7,
+   "sprite_name": "TorsoChestDead",
+   "sprite_path_id": 4420,
+   "sprite_file": "resources.assets",
+   "texture_name": "TorsoChestDead",
+   "texture_path_id": 1624,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    84,
+    82
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    84,
+    82
+   ],
+   "size": [
+    84.0,
+    82.0
+   ],
+   "ppu": 200.0,
+   "file": "08_TorsoChestDead_TorsoChestDead.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3019
+   ],
+   "slot": "Crotch",
+   "active": true,
+   "order": 8,
+   "sprite_name": "Crotch",
+   "sprite_path_id": 3019,
+   "sprite_file": "resources.assets",
+   "texture_name": "Crotch",
+   "texture_path_id": 209,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    82,
+    68
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    82,
+    67
+   ],
+   "size": [
+    82.0,
+    68.0
+   ],
+   "ppu": 200.0,
+   "file": "09_Crotch_Crotch.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3366
+   ],
+   "slot": "Bite01",
+   "active": true,
+   "order": 9,
+   "sprite_name": "Bite01",
+   "sprite_path_id": 3366,
+   "sprite_file": "resources.assets",
+   "texture_name": "Bite01",
+   "texture_path_id": 561,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    161,
+    174
+   ],
+   "atlas_rect": [
+    24,
+    30,
+    103,
+    120
+   ],
+   "size": [
+    113.0,
+    126.0
+   ],
+   "ppu": 200.0,
+   "file": "10_Bite01_Bite01.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    2966
+   ],
+   "slot": "Bite02",
+   "active": true,
+   "order": 9,
+   "sprite_name": "Bite02",
+   "sprite_path_id": 2966,
+   "sprite_file": "resources.assets",
+   "texture_name": "Bite02",
+   "texture_path_id": 156,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    161,
+    174
+   ],
+   "atlas_rect": [
+    25,
+    21,
+    98,
+    129
+   ],
+   "size": [
+    103.0,
+    134.0
+   ],
+   "ppu": 200.0,
+   "file": "11_Bite02_Bite02.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    2888
+   ],
+   "slot": "Bite03",
+   "active": true,
+   "order": 9,
+   "sprite_name": "Bite03",
+   "sprite_path_id": 2888,
+   "sprite_file": "resources.assets",
+   "texture_name": "Bite03",
+   "texture_path_id": 78,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    161,
+    174
+   ],
+   "atlas_rect": [
+    25,
+    15,
+    99,
+    136
+   ],
+   "size": [
+    100.0,
+    141.0
+   ],
+   "ppu": 200.0,
+   "file": "12_Bite03_Bite03.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3551
+   ],
+   "slot": "Bite04",
+   "active": true,
+   "order": 9,
+   "sprite_name": "Bite04",
+   "sprite_path_id": 3551,
+   "sprite_file": "resources.assets",
+   "texture_name": "Bite04",
+   "texture_path_id": 749,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    161,
+    174
+   ],
+   "atlas_rect": [
+    24,
+    12,
+    97,
+    138
+   ],
+   "size": [
+    97.0,
+    149.0
+   ],
+   "ppu": 200.0,
+   "file": "13_Bite04_Bite04.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3007
+   ],
+   "slot": "Bite05",
+   "active": true,
+   "order": 9,
+   "sprite_name": "Bite05",
+   "sprite_path_id": 3007,
+   "sprite_file": "resources.assets",
+   "texture_name": "Bite05",
+   "texture_path_id": 197,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    161,
+    174
+   ],
+   "atlas_rect": [
+    25,
+    38,
+    100,
+    113
+   ],
+   "size": [
+    111.0,
+    119.0
+   ],
+   "ppu": 200.0,
+   "file": "14_Bite05_Bite05.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    2924
+   ],
+   "slot": "Bite06",
+   "active": true,
+   "order": 9,
+   "sprite_name": "Bite06",
+   "sprite_path_id": 2924,
+   "sprite_file": "resources.assets",
+   "texture_name": "Bite06",
+   "texture_path_id": 114,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    161,
+    174
+   ],
+   "atlas_rect": [
+    25,
+    31,
+    101,
+    121
+   ],
+   "size": [
+    110.0,
+    121.0
+   ],
+   "ppu": 200.0,
+   "file": "15_Bite06_Bite06.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4194
+   ],
+   "slot": "Bite07",
+   "active": true,
+   "order": 9,
+   "sprite_name": "Bite07",
+   "sprite_path_id": 4194,
+   "sprite_file": "resources.assets",
+   "texture_name": "Bite07",
+   "texture_path_id": 1399,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    161,
+    174
+   ],
+   "atlas_rect": [
+    25,
+    32,
+    103,
+    120
+   ],
+   "size": [
+    111.0,
+    120.0
+   ],
+   "ppu": 200.0,
+   "file": "16_Bite07_Bite07.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3422
+   ],
+   "slot": "Head",
+   "active": true,
+   "order": 9,
+   "sprite_name": "Head",
+   "sprite_path_id": 3422,
+   "sprite_file": "resources.assets",
+   "texture_name": "Head",
+   "texture_path_id": 619,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    113,
+    126
+   ],
+   "atlas_rect": [
+    0,
+    6,
+    103,
+    120
+   ],
+   "size": [
+    113.0,
+    126.0
+   ],
+   "ppu": 200.0,
+   "file": "17_Head_Head.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3187
+   ],
+   "slot": "Hat",
+   "active": true,
+   "order": 10,
+   "sprite_name": "Hat",
+   "sprite_path_id": 3187,
+   "sprite_file": "resources.assets",
+   "texture_name": "Hat",
+   "texture_path_id": 379,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    131,
+    90
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    130,
+    81
+   ],
+   "size": [
+    131.0,
+    90.0
+   ],
+   "ppu": 200.0,
+   "file": "18_Hat_Hat.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3082
+   ],
+   "slot": "NeckPiece",
+   "active": true,
+   "order": 10,
+   "sprite_name": "NeckPieceZombies",
+   "sprite_path_id": 3082,
+   "sprite_file": "resources.assets",
+   "texture_name": "NeckPieceZombies",
+   "texture_path_id": 273,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    33,
+    21
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    33,
+    21
+   ],
+   "size": [
+    33.0,
+    21.0
+   ],
+   "ppu": 200.0,
+   "file": "19_NeckPiece_NeckPieceZombies.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4144
+   ],
+   "slot": "ShoeTipBack",
+   "active": true,
+   "order": 11,
+   "sprite_name": "ShoeTip",
+   "sprite_path_id": 4144,
+   "sprite_file": "resources.assets",
+   "texture_name": "ShoeTip",
+   "texture_path_id": 1350,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    57,
+    25
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    57,
+    25
+   ],
+   "size": [
+    57.0,
+    25.0
+   ],
+   "ppu": 200.0,
+   "file": "20_ShoeTipBack_ShoeTip.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3787
+   ],
+   "slot": "ShoeHeelBack",
+   "active": true,
+   "order": 12,
+   "sprite_name": "ShoeHeel",
+   "sprite_path_id": 3787,
+   "sprite_file": "resources.assets",
+   "texture_name": "ShoeHeel",
+   "texture_path_id": 987,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    89,
+    47
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    89,
+    47
+   ],
+   "size": [
+    89.0,
+    47.0
+   ],
+   "ppu": 200.0,
+   "file": "21_ShoeHeelBack_ShoeHeel.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3482
+   ],
+   "slot": "FrontLegLow",
+   "active": true,
+   "order": 13,
+   "sprite_name": "FrontLegLow",
+   "sprite_path_id": 3482,
+   "sprite_file": "resources.assets",
+   "texture_name": "FrontLegLow",
+   "texture_path_id": 680,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    99,
+    59
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    99,
+    59
+   ],
+   "size": [
+    99.0,
+    59.0
+   ],
+   "ppu": 200.0,
+   "file": "22_FrontLegLow_FrontLegLow.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3318
+   ],
+   "slot": "FrontLegUp",
+   "active": true,
+   "order": 14,
+   "sprite_name": "FrontLegUp",
+   "sprite_path_id": 3318,
+   "sprite_file": "resources.assets",
+   "texture_name": "FrontLegUp",
+   "texture_path_id": 511,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    45,
+    91
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    45,
+    91
+   ],
+   "size": [
+    45.0,
+    91.0
+   ],
+   "ppu": 200.0,
+   "file": "23_FrontLegUp_FrontLegUp.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    4018
+   ],
+   "slot": "LeftArmUp",
+   "active": true,
+   "order": 15,
+   "sprite_name": "FrontArmUp",
+   "sprite_path_id": 4018,
+   "sprite_file": "resources.assets",
+   "texture_name": "FrontArmUp",
+   "texture_path_id": 1223,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    44,
+    103
+   ],
+   "atlas_rect": [
+    2,
+    0,
+    42,
+    103
+   ],
+   "size": [
+    44.0,
+    103.0
+   ],
+   "ppu": 200.0,
+   "file": "24_LeftArmUp_FrontArmUp.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3301
+   ],
+   "slot": "LeftArmLow",
+   "active": true,
+   "order": 16,
+   "sprite_name": "FrontArmLow",
+   "sprite_path_id": 3301,
+   "sprite_file": "resources.assets",
+   "texture_name": "FrontArmLow",
+   "texture_path_id": 494,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    45,
+    85
+   ],
+   "atlas_rect": [
+    3,
+    0,
+    38,
+    85
+   ],
+   "size": [
+    45.0,
+    85.0
+   ],
+   "ppu": 200.0,
+   "file": "25_LeftArmLow_FrontArmLow.png"
+  },
+  {
+   "key": [
+    "resources.assets",
+    3777
+   ],
+   "slot": "LeftHand",
+   "active": true,
+   "order": 17,
+   "sprite_name": "FrontHand",
+   "sprite_path_id": 3777,
+   "sprite_file": "resources.assets",
+   "texture_name": "FrontHand",
+   "texture_path_id": 976,
+   "texture_file": "resources.assets",
+   "texture_size": [
+    70,
+    83
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    70,
+    83
+   ],
+   "size": [
+    70.0,
+    83.0
+   ],
+   "ppu": 200.0,
+   "file": "26_LeftHand_FrontHand.png"
+  }
+ ],
+ "frames": []
+}

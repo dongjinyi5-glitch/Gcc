@@ -1,75 +1,76 @@
 {
- "character": "Vinnie",
+ "character": "ZombieRat",
+ "faction": "鼠怪",
  "baseline_original": {
-  "file": "composite_original.png",
+  "file": "composite_ZombieRat_original.png",
   "size": [
-   352,
-   358
+   351,
+   424
   ],
   "bbox": [
-   291,
-   297
+   289,
+   363
   ],
-  "alpha_cov": 0.4027,
-  "ink_w_mean": 1.53,
+  "alpha_cov": 0.405,
+  "ink_w_mean": 1.43,
   "ink_w_p50": 1.0,
   "ink_w_p90": 3.0,
-  "ink_cv": 0.632,
-  "ink_ratio": 0.352,
+  "ink_cv": 0.601,
+  "ink_ratio": 0.347,
   "pigment": {
-   "朱红": 0.019,
+   "朱红": 0.018,
    "石青": 0.0,
-   "石绿": 0.012,
-   "赭石": 0.314,
-   "藤黄": 0.001,
-   "花青": 0.654,
-   "未归类": 0.0
+   "石绿": 0.002,
+   "赭石": 0.022,
+   "藤黄": 0.0,
+   "花青": 0.957,
+   "未归类": 0.013
   },
-  "paper_ratio": 0.017,
-  "neg_space": 0.604,
-  "ink_levels": 9,
-  "texture_std": 9.32,
-  "saturation": 0.407,
-  "opaque_px": 34803,
+  "paper_ratio": 0.001,
+  "neg_space": 0.595,
+  "ink_levels": 6,
+  "texture_std": 9.5,
+  "saturation": 0.245,
+  "opaque_px": 42488,
   "centroid": [
-   159.26,
-   195.44
+   144.55,
+   215.36
   ]
  },
  "restyled": {
-  "file": "composite_restyled.png",
+  "file": "composite_ZombieRat_restyled.png",
   "size": [
-   352,
-   358
+   351,
+   424
   ],
   "bbox": [
-   291,
-   297
+   289,
+   363
   ],
-  "alpha_cov": 0.4027,
-  "ink_w_mean": 1.63,
+  "alpha_cov": 0.405,
+  "ink_w_mean": 1.43,
   "ink_w_p50": 1.0,
   "ink_w_p90": 3.0,
-  "ink_cv": 0.625,
-  "ink_ratio": 0.408,
+  "ink_cv": 0.627,
+  "ink_ratio": 0.302,
   "pigment": {
-   "朱红": 0.025,
-   "石青": 0.32,
-   "石绿": 0.108,
-   "赭石": 0.243,
-   "藤黄": 0.002,
-   "花青": 0.301,
+   "朱红": 0.052,
+   "石青": 0.004,
+   "石绿": 0.321,
+   "赭石": 0.215,
+   "藤黄": 0.0,
+   "花青": 0.409,
    "未归类": 0.0
   },
-  "paper_ratio": 0.004,
-  "neg_space": 0.599,
+  "paper_ratio": 0.0,
+  "neg_space": 0.595,
   "ink_levels": 7,
-  "texture_std": 8.88,
-  "saturation": 0.56,
-  "opaque_px": 34803,
+  "texture_std": 6.69,
+  "saturation": 0.45,
+  "opaque_px": 42488,
   "centroid": [
-   159.26,
-   195.44
+   144.55,
+   215.36
   ]
  },
  "fidelity": {
@@ -81,8 +82,8 @@
  "checks": [
   {
    "name": "ink_w_mean",
-   "value": 1.63,
-   "min": 1.5,
+   "value": 1.43,
+   "min": 1.35,
    "max": 3.0,
    "pass": true
   },
@@ -95,23 +96,9 @@
   },
   {
    "name": "ink_cv",
-   "value": 0.625,
+   "value": 0.627,
    "min": 0.3,
    "max": 1.2,
-   "pass": true
-  },
-  {
-   "name": "ink_ratio",
-   "value": 0.408,
-   "min": 0.2,
-   "max": 0.45,
-   "pass": true
-  },
-  {
-   "name": "paper_ratio",
-   "value": 0.004,
-   "min": 0.003,
-   "max": 0.15,
    "pass": true
   },
   {
@@ -123,56 +110,70 @@
   },
   {
    "name": "texture_std",
-   "value": 8.88,
+   "value": 6.69,
    "min": 2.5,
    "max": 20.0,
    "pass": true
   },
   {
+   "name": "paper_ratio",
+   "value": 0.0,
+   "min": 0.0,
+   "max": 0.15,
+   "pass": true
+  },
+  {
+   "name": "ink_ratio",
+   "value": 0.302,
+   "min": 0.24,
+   "max": 0.5,
+   "pass": true
+  },
+  {
    "name": "saturation",
-   "value": 0.56,
-   "min": 0.35,
-   "max": 0.85,
+   "value": 0.45,
+   "min": 0.28,
+   "max": 0.72,
    "pass": true
   },
   {
    "name": "pig_石青",
-   "value": 0.32,
-   "min": 0.26,
-   "max": 0.45,
+   "value": 0.004,
+   "min": 0.0,
+   "max": 0.08,
    "pass": true
   },
   {
    "name": "pig_石绿",
-   "value": 0.108,
-   "min": 0.07,
-   "max": 0.24,
+   "value": 0.321,
+   "min": 0.12,
+   "max": 0.36,
    "pass": true
   },
   {
    "name": "pig_朱红",
-   "value": 0.025,
-   "min": 0.012,
-   "max": 0.1,
+   "value": 0.052,
+   "min": 0.01,
+   "max": 0.12,
    "pass": true
   },
   {
    "name": "pig_赭石",
-   "value": 0.243,
-   "min": 0.14,
-   "max": 0.32,
+   "value": 0.215,
+   "min": 0.12,
+   "max": 0.34,
    "pass": true
   },
   {
    "name": "pig_花青",
-   "value": 0.301,
-   "min": 0.0,
-   "max": 0.35,
+   "value": 0.409,
+   "min": 0.22,
+   "max": 0.5,
    "pass": true
   },
   {
    "name": "pig_藤黄",
-   "value": 0.002,
+   "value": 0.0,
    "min": 0.0,
    "max": 0.08,
    "pass": true
@@ -200,14 +201,14 @@
   }
  ],
  "triad_measured": {
-  "石青": 0.706,
-  "石绿": 0.238,
-  "朱红": 0.055
+  "花青": 0.433,
+  "石绿": 0.34,
+  "赭石": 0.228
  },
  "triad_design": {
-  "石青": 0.6,
+  "花青": 0.48,
   "石绿": 0.3,
-  "朱红": 0.1
+  "赭石": 0.22
  },
  "passed": 17,
  "total": 17,

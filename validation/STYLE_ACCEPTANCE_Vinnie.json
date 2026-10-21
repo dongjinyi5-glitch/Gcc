@@ -1,0 +1,216 @@
+{
+ "character": "Vinnie",
+ "faction": "人类",
+ "baseline_original": {
+  "file": "composite_Vinnie_original.png",
+  "size": [
+   352,
+   358
+  ],
+  "bbox": [
+   291,
+   297
+  ],
+  "alpha_cov": 0.4027,
+  "ink_w_mean": 1.53,
+  "ink_w_p50": 1.0,
+  "ink_w_p90": 3.0,
+  "ink_cv": 0.632,
+  "ink_ratio": 0.352,
+  "pigment": {
+   "朱红": 0.02,
+   "石青": 0.584,
+   "石绿": 0.011,
+   "赭石": 0.317,
+   "藤黄": 0.01,
+   "花青": 0.058,
+   "未归类": 0.0
+  },
+  "paper_ratio": 0.017,
+  "neg_space": 0.604,
+  "ink_levels": 9,
+  "texture_std": 9.32,
+  "saturation": 0.407,
+  "opaque_px": 34803,
+  "centroid": [
+   159.26,
+   195.44
+  ]
+ },
+ "restyled": {
+  "file": "composite_Vinnie_restyled.png",
+  "size": [
+   352,
+   358
+  ],
+  "bbox": [
+   291,
+   297
+  ],
+  "alpha_cov": 0.4027,
+  "ink_w_mean": 1.5,
+  "ink_w_p50": 1.0,
+  "ink_w_p90": 3.0,
+  "ink_cv": 0.631,
+  "ink_ratio": 0.354,
+  "pigment": {
+   "朱红": 0.033,
+   "石青": 0.538,
+   "石绿": 0.137,
+   "赭石": 0.271,
+   "藤黄": 0.006,
+   "花青": 0.015,
+   "未归类": 0.0
+  },
+  "paper_ratio": 0.005,
+  "neg_space": 0.599,
+  "ink_levels": 7,
+  "texture_std": 8.82,
+  "saturation": 0.548,
+  "opaque_px": 34803,
+  "centroid": [
+   159.26,
+   195.44
+  ]
+ },
+ "fidelity": {
+  "size_match": true,
+  "alpha_iou": 1.0,
+  "area_delta": 0.0,
+  "centroid_shift": 0.0
+ },
+ "checks": [
+  {
+   "name": "ink_w_mean",
+   "value": 1.5,
+   "min": 1.15,
+   "max": 3.0,
+   "pass": true
+  },
+  {
+   "name": "ink_w_p90",
+   "value": 3.0,
+   "min": 2.8,
+   "max": 6.0,
+   "pass": true
+  },
+  {
+   "name": "ink_cv",
+   "value": 0.631,
+   "min": 0.3,
+   "max": 1.2,
+   "pass": true
+  },
+  {
+   "name": "ink_levels",
+   "value": 7,
+   "min": 4,
+   "max": 10,
+   "pass": true
+  },
+  {
+   "name": "texture_std",
+   "value": 8.82,
+   "min": 2.5,
+   "max": 20.0,
+   "pass": true
+  },
+  {
+   "name": "paper_ratio",
+   "value": 0.005,
+   "min": 0.0,
+   "max": 0.15,
+   "pass": true
+  },
+  {
+   "name": "ink_ratio",
+   "value": 0.354,
+   "min": 0.2,
+   "max": 0.45,
+   "pass": true
+  },
+  {
+   "name": "saturation",
+   "value": 0.548,
+   "min": 0.35,
+   "max": 0.85,
+   "pass": true
+  },
+  {
+   "name": "pig_石青",
+   "value": 0.538,
+   "min": 0.3,
+   "max": 0.68,
+   "pass": true
+  },
+  {
+   "name": "pig_石绿",
+   "value": 0.137,
+   "min": 0.06,
+   "max": 0.26,
+   "pass": true
+  },
+  {
+   "name": "pig_朱红",
+   "value": 0.033,
+   "min": 0.012,
+   "max": 0.1,
+   "pass": true
+  },
+  {
+   "name": "pig_赭石",
+   "value": 0.271,
+   "min": 0.14,
+   "max": 0.42,
+   "pass": true
+  },
+  {
+   "name": "pig_花青",
+   "value": 0.015,
+   "min": 0.0,
+   "max": 0.2,
+   "pass": true
+  },
+  {
+   "name": "pig_藤黄",
+   "value": 0.006,
+   "min": 0.0,
+   "max": 0.08,
+   "pass": true
+  },
+  {
+   "name": "fid_alpha_iou",
+   "value": 1.0,
+   "min": 0.98,
+   "max": 1.0,
+   "pass": true
+  },
+  {
+   "name": "fid_centroid_shift",
+   "value": 0.0,
+   "min": 0.0,
+   "max": 1.0,
+   "pass": true
+  },
+  {
+   "name": "fid_area_delta",
+   "value": 0.0,
+   "min": -0.02,
+   "max": 0.02,
+   "pass": true
+  }
+ ],
+ "triad_measured": {
+  "石青": 0.76,
+  "石绿": 0.194,
+  "朱红": 0.047
+ },
+ "triad_design": {
+  "石青": 0.6,
+  "石绿": 0.3,
+  "朱红": 0.1
+ },
+ "passed": 17,
+ "total": 17,
+ "gate": "PASS"
+}

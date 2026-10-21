@@ -123,11 +123,16 @@ def main():
             fill=(190, 178, 158))
 
     # transparent copies for measurement (a paper backdrop would count as 留白
-    # and flatten texture_std to zero)
+    # and flatten texture_std to zero). Names are character-scoped so a zombie
+    # pilot does not silently overwrite the Vinnie baseline.
     vdir = os.path.join(PROJECT, "validation")
     os.makedirs(vdir, exist_ok=True)
-    before.save(os.path.join(vdir, "composite_original.png"))
-    after.save(os.path.join(vdir, "composite_restyled.png"))
+    before.save(os.path.join(vdir, f"composite_{CHAR}_original.png"))
+    after.save(os.path.join(vdir, f"composite_{CHAR}_restyled.png"))
+    # keep the plain names pointing at the reference character (Vinnie)
+    if CHAR == "Vinnie":
+        before.save(os.path.join(vdir, "composite_original.png"))
+        after.save(os.path.join(vdir, "composite_restyled.png"))
 
     out = os.path.join(BASE, "_character_compare.png")
     sheet.save(out)

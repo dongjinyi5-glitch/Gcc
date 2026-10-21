@@ -1,0 +1,605 @@
+{
+  "total": 33,
+  "factions": {
+    "人类": {
+      "count": 12,
+      "members": [
+        "BonninoBoss",
+        "EvilFrankieOnFloor",
+        "Frankie",
+        "Gangster1",
+        "Gangster2",
+        "Gangster3",
+        "Gangster4",
+        "Gangster5",
+        "Gangster6",
+        "Scientist",
+        "Vinnie",
+        "contact_sheet"
+      ],
+      "pigment_mean": {
+        "朱红": 0.062,
+        "石青": 0.069,
+        "石绿": 0.004,
+        "赭石": 0.692,
+        "藤黄": 0.001,
+        "花青": 0.173,
+        "未归类": 0.05
+      },
+      "ink_w_mean": 1.4,
+      "ink_cv": 0.606,
+      "ink_ratio": 0.281,
+      "paper_ratio": 0.188,
+      "saturation": 0.497,
+      "texture_std": 14.4,
+      "ink_levels": 9.7,
+      "alpha_cov": 0.536,
+      "per_char": [
+        {
+          "name": "BonninoBoss",
+          "ink_ratio": 0.197,
+          "saturation": 0.712,
+          "ink_w_mean": 1.32,
+          "pigment": {
+            "朱红": 0.608,
+            "石青": 0.027,
+            "石绿": 0.002,
+            "赭石": 0.325,
+            "藤黄": 0.001,
+            "花青": 0.037,
+            "未归类": 0.518
+          }
+        },
+        {
+          "name": "EvilFrankieOnFloor",
+          "ink_ratio": 0.258,
+          "saturation": 0.505,
+          "ink_w_mean": 1.31,
+          "pigment": {
+            "朱红": 0.0,
+            "石青": 0.0,
+            "石绿": 0.0,
+            "赭石": 0.715,
+            "藤黄": 0.0,
+            "花青": 0.285,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "Frankie",
+          "ink_ratio": 0.258,
+          "saturation": 0.505,
+          "ink_w_mean": 1.31,
+          "pigment": {
+            "朱红": 0.0,
+            "石青": 0.0,
+            "石绿": 0.0,
+            "赭石": 0.715,
+            "藤黄": 0.0,
+            "花青": 0.285,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "Gangster1",
+          "ink_ratio": 0.363,
+          "saturation": 0.489,
+          "ink_w_mean": 1.54,
+          "pigment": {
+            "朱红": 0.0,
+            "石青": 0.001,
+            "石绿": 0.0,
+            "赭石": 0.948,
+            "藤黄": 0.0,
+            "花青": 0.051,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "Gangster2",
+          "ink_ratio": 0.491,
+          "saturation": 0.482,
+          "ink_w_mean": 1.64,
+          "pigment": {
+            "朱红": 0.0,
+            "石青": 0.003,
+            "石绿": 0.0,
+            "赭石": 0.919,
+            "藤黄": 0.001,
+            "花青": 0.078,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "Gangster3",
+          "ink_ratio": 0.363,
+          "saturation": 0.483,
+          "ink_w_mean": 1.47,
+          "pigment": {
+            "朱红": 0.0,
+            "石青": 0.003,
+            "石绿": 0.0,
+            "赭石": 0.924,
+            "藤黄": 0.0,
+            "花青": 0.073,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "Gangster4",
+          "ink_ratio": 0.295,
+          "saturation": 0.591,
+          "ink_w_mean": 1.44,
+          "pigment": {
+            "朱红": 0.0,
+            "石青": 0.0,
+            "石绿": 0.0,
+            "赭石": 0.988,
+            "藤黄": 0.0,
+            "花青": 0.012,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "Gangster5",
+          "ink_ratio": 0.319,
+          "saturation": 0.455,
+          "ink_w_mean": 1.5,
+          "pigment": {
+            "朱红": 0.047,
+            "石青": 0.082,
+            "石绿": 0.0,
+            "赭石": 0.757,
+            "藤黄": 0.0,
+            "花青": 0.115,
+            "未归类": 0.05
+          }
+        },
+        {
+          "name": "Gangster6",
+          "ink_ratio": 0.305,
+          "saturation": 0.328,
+          "ink_w_mean": 1.4,
+          "pigment": {
+            "朱红": 0.0,
+            "石青": 0.653,
+            "石绿": 0.0,
+            "赭石": 0.245,
+            "藤黄": 0.0,
+            "花青": 0.102,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "Scientist",
+          "ink_ratio": 0.23,
+          "saturation": 0.542,
+          "ink_w_mean": 1.22,
+          "pigment": {
+            "朱红": 0.0,
+            "石青": 0.012,
+            "石绿": 0.0,
+            "赭石": 0.948,
+            "藤黄": 0.0,
+            "花青": 0.04,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "Vinnie",
+          "ink_ratio": 0.25,
+          "saturation": 0.422,
+          "ink_w_mean": 1.35,
+          "pigment": {
+            "朱红": 0.0,
+            "石青": 0.0,
+            "石绿": 0.0,
+            "赭石": 0.254,
+            "藤黄": 0.0,
+            "花青": 0.745,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "contact_sheet",
+          "ink_ratio": 0.047,
+          "saturation": 0.45,
+          "ink_w_mean": 1.29,
+          "pigment": {
+            "朱红": 0.089,
+            "石青": 0.041,
+            "石绿": 0.042,
+            "赭石": 0.566,
+            "藤黄": 0.009,
+            "花青": 0.254,
+            "未归类": 0.027
+          }
+        }
+      ]
+    },
+    "僵尸": {
+      "count": 17,
+      "members": [
+        "ZombieBurping",
+        "ZombieCharger",
+        "ZombieCop",
+        "ZombieCrawler",
+        "ZombieFloater",
+        "ZombieGun",
+        "ZombieJumper",
+        "ZombieOfficer",
+        "ZombiePaulie",
+        "ZombieRegular",
+        "ZombieRunner1",
+        "ZombieRunner2",
+        "ZombieRunner3",
+        "ZombieSailor",
+        "ZombieSandwichBoard",
+        "ZombieSoldier",
+        "ZombieStripper"
+      ],
+      "pigment_mean": {
+        "朱红": 0.226,
+        "石青": 0.019,
+        "石绿": 0.044,
+        "赭石": 0.51,
+        "藤黄": 0.017,
+        "花青": 0.184,
+        "未归类": 0.006
+      },
+      "ink_w_mean": 1.22,
+      "ink_cv": 0.486,
+      "ink_ratio": 0.281,
+      "paper_ratio": 0.071,
+      "saturation": 0.501,
+      "texture_std": 17.46,
+      "ink_levels": 9.6,
+      "alpha_cov": 0.398,
+      "per_char": [
+        {
+          "name": "ZombieBurping",
+          "ink_ratio": 0.209,
+          "saturation": 0.524,
+          "ink_w_mean": 1.01,
+          "pigment": {
+            "朱红": 0.109,
+            "石青": 0.001,
+            "石绿": 0.128,
+            "赭石": 0.233,
+            "藤黄": 0.108,
+            "花青": 0.421,
+            "未归类": 0.007
+          }
+        },
+        {
+          "name": "ZombieCharger",
+          "ink_ratio": 0.151,
+          "saturation": 0.536,
+          "ink_w_mean": 1.05,
+          "pigment": {
+            "朱红": 0.016,
+            "石青": 0.009,
+            "石绿": 0.002,
+            "赭石": 0.448,
+            "藤黄": 0.0,
+            "花青": 0.525,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "ZombieCop",
+          "ink_ratio": 0.284,
+          "saturation": 0.559,
+          "ink_w_mean": 1.17,
+          "pigment": {
+            "朱红": 0.389,
+            "石青": 0.085,
+            "石绿": 0.039,
+            "赭石": 0.208,
+            "藤黄": 0.052,
+            "花青": 0.227,
+            "未归类": 0.002
+          }
+        },
+        {
+          "name": "ZombieCrawler",
+          "ink_ratio": 0.247,
+          "saturation": 0.5,
+          "ink_w_mean": 1.12,
+          "pigment": {
+            "朱红": 0.118,
+            "石青": 0.0,
+            "石绿": 0.0,
+            "赭石": 0.828,
+            "藤黄": 0.0,
+            "花青": 0.053,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "ZombieFloater",
+          "ink_ratio": 0.159,
+          "saturation": 0.689,
+          "ink_w_mean": 1.2,
+          "pigment": {
+            "朱红": 0.454,
+            "石青": 0.0,
+            "石绿": 0.313,
+            "赭石": 0.194,
+            "藤黄": 0.033,
+            "花青": 0.006,
+            "未归类": 0.005
+          }
+        },
+        {
+          "name": "ZombieGun",
+          "ink_ratio": 0.303,
+          "saturation": 0.556,
+          "ink_w_mean": 1.24,
+          "pigment": {
+            "朱红": 0.387,
+            "石青": 0.112,
+            "石绿": 0.04,
+            "赭石": 0.185,
+            "藤黄": 0.051,
+            "花青": 0.225,
+            "未归类": 0.004
+          }
+        },
+        {
+          "name": "ZombieJumper",
+          "ink_ratio": 0.248,
+          "saturation": 0.502,
+          "ink_w_mean": 1.12,
+          "pigment": {
+            "朱红": 0.123,
+            "石青": 0.0,
+            "石绿": 0.0,
+            "赭石": 0.824,
+            "藤黄": 0.0,
+            "花青": 0.052,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "ZombieOfficer",
+          "ink_ratio": 0.265,
+          "saturation": 0.347,
+          "ink_w_mean": 1.14,
+          "pigment": {
+            "朱红": 0.044,
+            "石青": 0.001,
+            "石绿": 0.026,
+            "赭石": 0.866,
+            "藤黄": 0.004,
+            "花青": 0.059,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "ZombiePaulie",
+          "ink_ratio": 0.412,
+          "saturation": 0.601,
+          "ink_w_mean": 1.48,
+          "pigment": {
+            "朱红": 0.529,
+            "石青": 0.009,
+            "石绿": 0.002,
+            "赭石": 0.318,
+            "藤黄": 0.0,
+            "花青": 0.143,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "ZombieRegular",
+          "ink_ratio": 0.319,
+          "saturation": 0.332,
+          "ink_w_mean": 1.23,
+          "pigment": {
+            "朱红": 0.111,
+            "石青": 0.002,
+            "石绿": 0.022,
+            "赭石": 0.805,
+            "藤黄": 0.014,
+            "花青": 0.046,
+            "未归类": 0.025
+          }
+        },
+        {
+          "name": "ZombieRunner1",
+          "ink_ratio": 0.224,
+          "saturation": 0.61,
+          "ink_w_mean": 1.16,
+          "pigment": {
+            "朱红": 0.51,
+            "石青": 0.002,
+            "石绿": 0.002,
+            "赭石": 0.403,
+            "藤黄": 0.0,
+            "花青": 0.083,
+            "未归类": 0.004
+          }
+        },
+        {
+          "name": "ZombieRunner2",
+          "ink_ratio": 0.476,
+          "saturation": 0.538,
+          "ink_w_mean": 1.47,
+          "pigment": {
+            "朱红": 0.378,
+            "石青": 0.066,
+            "石绿": 0.004,
+            "赭石": 0.173,
+            "藤黄": 0.0,
+            "花青": 0.38,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "ZombieRunner3",
+          "ink_ratio": 0.15,
+          "saturation": 0.6,
+          "ink_w_mean": 1.02,
+          "pigment": {
+            "朱红": 0.034,
+            "石青": 0.0,
+            "石绿": 0.006,
+            "赭石": 0.951,
+            "藤黄": 0.0,
+            "花青": 0.009,
+            "未归类": 0.001
+          }
+        },
+        {
+          "name": "ZombieSailor",
+          "ink_ratio": 0.29,
+          "saturation": 0.531,
+          "ink_w_mean": 1.19,
+          "pigment": {
+            "朱红": 0.373,
+            "石青": 0.025,
+            "石绿": 0.0,
+            "赭石": 0.423,
+            "藤黄": 0.0,
+            "花青": 0.179,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "ZombieSandwichBoard",
+          "ink_ratio": 0.274,
+          "saturation": 0.404,
+          "ink_w_mean": 1.27,
+          "pigment": {
+            "朱红": 0.076,
+            "石青": 0.011,
+            "石绿": 0.117,
+            "赭石": 0.667,
+            "藤黄": 0.022,
+            "花青": 0.107,
+            "未归类": 0.037
+          }
+        },
+        {
+          "name": "ZombieSoldier",
+          "ink_ratio": 0.312,
+          "saturation": 0.374,
+          "ink_w_mean": 1.31,
+          "pigment": {
+            "朱红": 0.071,
+            "石青": 0.0,
+            "石绿": 0.009,
+            "赭石": 0.81,
+            "藤黄": 0.0,
+            "花青": 0.109,
+            "未归类": 0.0
+          }
+        },
+        {
+          "name": "ZombieStripper",
+          "ink_ratio": 0.462,
+          "saturation": 0.322,
+          "ink_w_mean": 1.49,
+          "pigment": {
+            "朱红": 0.121,
+            "石青": 0.001,
+            "石绿": 0.031,
+            "赭石": 0.339,
+            "藤黄": 0.0,
+            "花青": 0.508,
+            "未归类": 0.014
+          }
+        }
+      ]
+    },
+    "鼠怪": {
+      "count": 4,
+      "members": [
+        "ZombieRat",
+        "ZombieRatBoss",
+        "ZombieRatJumper",
+        "ZombieRatSpitter"
+      ],
+      "pigment_mean": {
+        "朱红": 0.09,
+        "石青": 0.002,
+        "石绿": 0.195,
+        "赭石": 0.166,
+        "藤黄": 0.034,
+        "花青": 0.512,
+        "未归类": 0.05
+      },
+      "ink_w_mean": 1.41,
+      "ink_cv": 0.602,
+      "ink_ratio": 0.326,
+      "paper_ratio": 0.002,
+      "saturation": 0.37,
+      "texture_std": 10.52,
+      "ink_levels": 8.0,
+      "alpha_cov": 0.409,
+      "per_char": [
+        {
+          "name": "ZombieRat",
+          "ink_ratio": 0.346,
+          "saturation": 0.248,
+          "ink_w_mean": 1.39,
+          "pigment": {
+            "朱红": 0.022,
+            "石青": 0.001,
+            "石绿": 0.003,
+            "赭石": 0.023,
+            "藤黄": 0.0,
+            "花青": 0.951,
+            "未归类": 0.012
+          }
+        },
+        {
+          "name": "ZombieRatBoss",
+          "ink_ratio": 0.259,
+          "saturation": 0.239,
+          "ink_w_mean": 1.48,
+          "pigment": {
+            "朱红": 0.009,
+            "石青": 0.002,
+            "石绿": 0.014,
+            "赭石": 0.272,
+            "藤黄": 0.014,
+            "花青": 0.689,
+            "未归类": 0.021
+          }
+        },
+        {
+          "name": "ZombieRatJumper",
+          "ink_ratio": 0.5,
+          "saturation": 0.456,
+          "ink_w_mean": 1.55,
+          "pigment": {
+            "朱红": 0.299,
+            "石青": 0.006,
+            "石绿": 0.048,
+            "赭石": 0.246,
+            "藤黄": 0.0,
+            "花青": 0.401,
+            "未归类": 0.099
+          }
+        },
+        {
+          "name": "ZombieRatSpitter",
+          "ink_ratio": 0.198,
+          "saturation": 0.537,
+          "ink_w_mean": 1.23,
+          "pigment": {
+            "朱红": 0.029,
+            "石青": 0.0,
+            "石绿": 0.715,
+            "赭石": 0.124,
+            "藤黄": 0.122,
+            "花青": 0.009,
+            "未归类": 0.067
+          }
+        }
+      ]
+    }
+  }
+}
