@@ -212,3 +212,24 @@ ggc_Data/
 ---
 
 *记录者：Agent A (Architect / Tech Lead)*
+
+---
+
+## 2026-10-21 · 角色清单校正与形象图重渲染
+
+| 决策 | 依据 |
+|---|---|
+| 角色总数从 33 修正为 **42** | 按 `Unit` / `UnitSpike` 脚本枚举 GameObject，42 个；手写名单漏 9 个（Goon1–3 / Vito / Salvatore / Paulie / Soldier / FatCook / FatDockworker） |
+| 形象图改用完整 2D TRS 重渲染 | 旧渲染器丢 local rotation，鼠尾 14 节链叠成尖锥、鞭子/绳子消失、四肢角度错位 |
+| 原始美术一律从 `backup/` 读 | Vinnie 贴图已就地改写，读 `ggc_Data` 会渲染出重彩版（第二次基线污染） |
+| 不采用 `image/` dump 做逐角色贴图定位 | 同名纹理在 dump 里被去重（28 个 `Crotch` 只剩 1 个），只能证明"存在"不能证明"归属" |
+| 移除 `roster.json` 的 `levels` 字段 | 关卡文件只存刷怪点位、不含预制体引用；旧值来自子串误命中（`Vinnie` → `VinnieTeleport`） |
+| 保留每卡可填写的替代描述 + 导出 CSV | 逐角色替代描述仍是 M2 的前置输入，填写入口不能丢 |
+| 剔除 `Explosion` 父节点的精灵 | FatCook / FatDockworker 整个身体挂在一个叫 `Explosion` 的火焰特效节点下，出图会糊成橙色 |
+
+**附件（`guns_gore_and_cannoli.md`）与资产的对应结果**：17 条原型里 14 条命中预制体，
+1 条（囚犯/铁球丧尸）全库无对应 Unit（只有 `BodyOnBall_0` / `RustyOnBall` 两个场景道具），
+`Gangster5`（白西装）按配色推定对应"霰弹枪精英打手"并在备注里标注为推定——
+六个黑帮共用同一套 31 件骨架，武器由刷怪器运行时挂载，资源内没有绑定证据。
+
+*记录者：Agent A (Architect / Tech Lead)*

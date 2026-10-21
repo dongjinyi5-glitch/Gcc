@@ -1,0 +1,212 @@
+{
+  "Vinnie": {
+    "file": "Vinnie.png",
+    "parts": 31,
+    "error": null
+  },
+  "Gangster1": {
+    "file": "Gangster1.png",
+    "parts": 31,
+    "error": null
+  },
+  "Gangster2": {
+    "file": "Gangster2.png",
+    "parts": 27,
+    "error": null
+  },
+  "Gangster3": {
+    "file": "Gangster3.png",
+    "parts": 31,
+    "error": null
+  },
+  "Gangster4": {
+    "file": "Gangster4.png",
+    "parts": 31,
+    "error": null
+  },
+  "Gangster5": {
+    "file": "Gangster5.png",
+    "parts": 31,
+    "error": null
+  },
+  "Gangster6": {
+    "file": "Gangster6.png",
+    "parts": 31,
+    "error": null
+  },
+  "Scientist": {
+    "file": "Scientist.png",
+    "parts": 27,
+    "error": null
+  },
+  "Frankie": {
+    "file": "Frankie.png",
+    "parts": 31,
+    "error": null
+  },
+  "EvilFrankie": {
+    "file": null,
+    "parts": 0,
+    "error": "no sprite renderers"
+  },
+  "EvilFrankieOnFloor": {
+    "file": "EvilFrankieOnFloor.png",
+    "parts": 31,
+    "error": null
+  },
+  "BonninoBoss": {
+    "file": "BonninoBoss.png",
+    "parts": 19,
+    "error": null
+  },
+  "ZombieRegular": {
+    "file": "ZombieRegular.png",
+    "parts": 29,
+    "error": null
+  },
+  "ZombieBurping": {
+    "file": "ZombieBurping.png",
+    "parts": 19,
+    "error": null
+  },
+  "ZombieCharger": {
+    "file": "ZombieCharger.png",
+    "parts": 23,
+    "error": null
+  },
+  "ZombieCrawler": {
+    "file": "ZombieCrawler.png",
+    "parts": 21,
+    "error": null
+  },
+  "ZombieFloater": {
+    "file": "ZombieFloater.png",
+    "parts": 19,
+    "error": null
+  },
+  "ZombieGun": {
+    "file": "ZombieGun.png",
+    "parts": 30,
+    "error": null
+  },
+  "ZombieJumper": {
+    "file": "ZombieJumper.png",
+    "parts": 20,
+    "error": null
+  },
+  "ZombieCop": {
+    "file": "ZombieCop.png",
+    "parts": 30,
+    "error": null
+  },
+  "ZombieOfficer": {
+    "file": "ZombieOfficer.png",
+    "parts": 29,
+    "error": null
+  },
+  "ZombiePaulie": {
+    "file": "ZombiePaulie.png",
+    "parts": 29,
+    "error": null
+  },
+  "ZombieSailor": {
+    "file": "ZombieSailor.png",
+    "parts": 29,
+    "error": null
+  },
+  "ZombieSandwichBoard": {
+    "file": "ZombieSandwichBoard.png",
+    "parts": 31,
+    "error": null
+  },
+  "ZombieSoldier": {
+    "file": "ZombieSoldier.png",
+    "parts": 33,
+    "error": null
+  },
+  "ZombieStripper": {
+    "file": "ZombieStripper.png",
+    "parts": 21,
+    "error": null
+  },
+  "ZombieRunner1": {
+    "file": "ZombieRunner1.png",
+    "parts": 22,
+    "error": null
+  },
+  "ZombieRunner2": {
+    "file": "ZombieRunner2.png",
+    "parts": 22,
+    "error": null
+  },
+  "ZombieRunner3": {
+    "file": "ZombieRunner3.png",
+    "parts": 20,
+    "error": null
+  },
+  "ZombieRat": {
+    "file": "ZombieRat.png",
+    "parts": 32,
+    "error": null
+  },
+  "ZombieRatBoss": {
+    "file": "ZombieRatBoss.png",
+    "parts": 32,
+    "error": null
+  },
+  "ZombieRatJumper": {
+    "file": "ZombieRatJumper.png",
+    "parts": 32,
+    "error": null
+  },
+  "ZombieRatSpitter": {
+    "file": "ZombieRatSpitter.png",
+    "parts": 32,
+    "error": null
+  },
+  "Goon1": {
+    "file": "Goon1.png",
+    "parts": 23,
+    "error": null
+  },
+  "Goon2": {
+    "file": "Goon2.png",
+    "parts": 23,
+    "error": null
+  },
+  "Goon3": {
+    "file": "Goon3.png",
+    "parts": 23,
+    "error": null
+  },
+  "Vito": {
+    "file": "Vito.png",
+    "parts": 31,
+    "error": null
+  },
+  "Salvatore": {
+    "file": "Salvatore.png",
+    "parts": 26,
+    "error": null
+  },
+  "Paulie": {
+    "file": "Paulie.png",
+    "parts": 31,
+    "error": null
+  },
+  "Soldier": {
+    "file": "Soldier.png",
+    "parts": 32,
+    "error": null
+  },
+  "FatCook": {
+    "file": "FatCook.png",
+    "parts": 25,
+    "error": null
+  },
+  "FatDockworker": {
+    "file": "FatDockworker.png",
+    "parts": 20,
+    "error": null
+  }
+}

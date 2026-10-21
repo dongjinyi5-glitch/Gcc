@@ -290,3 +290,48 @@ D:\AI\DAIGuns, Gore and Cannoli from WB\    ← 唯一主工作目录（全部�
 *文件创建于：2026-10-19*
 *创建者：Agent A (Architect / Tech Lead)*
 *版本：v2.1（M1 完成，M2 待确认）*
+
+---
+
+## 角色清单校正（2026-10-21，M2 前置）
+
+**结论：角色总数不是 33，是 42。**
+
+旧清单 `TARGETS` 是手写名单，漏了 9 个带 `Unit` 脚本的战斗单位：`Goon1–3`、`Vito`、
+`Salvatore`、`Paulie`、`Soldier`、`FatCook`、`FatDockworker`。其中 `Goon1`（棒球棍打手）
+与 `Soldier`（美军正规军士兵）正是附件里两条此前"找不到对应预制体"的条目。
+权威枚举方式：遍历 `resources.assets` 全部 GameObject，取挂了 `Unit` / `UnitSpike`
+脚本的——共 42 个，一个不多一个不少。
+
+**形象图渲染器有系统性缺陷（已修）。** `render_characters.py` 只合成局部
+position + scale，**丢掉了 local rotation**。对本作是致命的：鼠尾是
+`Tail01..Tail14` 十四级父子链，鞭子是链、气球浮尸的绳子也是链——不叠旋转时
+十四节尾巴全叠在一根竖线上，最大那节被画成粉/绿尖锥；四肢角度也整体错位。
+新脚本 `render_characters_v2.py` 用完整 2D TRS（`translate · rotate · scale`）逐节点
+合成矩阵，再用逆仿射把每张精灵采样到画布，`SS=2` 超采样后降采样。
+
+三个必须记住的坑：
+1. **PIL `Image.transform(AFFINE, data)` 的参数顺序是 `(a,b,c,d,e,f)`，其中 `c`、`f`
+   是平移量**，不是 `(a,b,c,d,e,f)` 里 `e,f` 为平移。顺序写反的结果是画面几乎全空，
+   只有左上角一小块——第一次跑就是这样，`getbbox()` 只有 47×16。
+2. **输出做了 SS 倍超采样时，线性部分要除以 SS，平移部分不除。**
+3. **渲染原始美术必须读 `backup/`。** Vinnie 的贴图已被就地改写，直接读
+   `ggc_Data` 渲染出来的是重彩版 Vinnie（蓝绿大衣 + 赭红鞋）——这是第二次
+   踩"基线污染"，第一次是 `composite_original.png`。
+
+**`image/` dump 不能用来定位单个角色的贴图。** 该目录是 AssetStudio 导出，
+2745 张 Texture2D 里同名纹理只保留了一张：全库有 **28 个** 都叫 `Crotch` 的
+Texture2D（pathID 88/121/145/…，尺寸 94×100 / 115×117 / 123×87 …），dump 里只有
+一个 `Crotch.png`。因此 `dump_hit` 只能证明"这个贴图名在 dump 里存在"（42 个
+角色 1112/1112 全命中），**不能**证明"这张图属于这个角色"。权威来源始终是
+`.assets` 里的 PPtr。
+
+**关卡归属暂时无法解析。** 关卡文件里只有 `enemyspawnA3C` 这类刷怪点位，
+不含对角色预制体的引用；角色是运行时从 `resources.assets` 实例化的。旧
+`roster.json` 里的 `levels` 字段来自"关键字子串命中"（`Vinnie` 命中的其实是
+`VinnieTeleport`），**是错的**，已从清单里移除，不要再用。
+
+**产出**：`docs/CHARACTER_ROSTER.html`（42 卡、可筛选搜索、每卡带可填写的重彩
+替代描述 + 导出 CSV）、`docs/CHARACTER_ROSTER.md`、`art/roster_reply_template.csv`、
+`art/character_roster_sheet.png`、`tools/scripts/characters_meta.py`（唯一身份表）。
+旧图归档在 `extracted/characters_v1_superseded/`。
