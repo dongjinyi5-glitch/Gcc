@@ -1,0 +1,48 @@
+{
+ "family": "teslacoilgun",
+ "canvas": [
+  427,
+  330
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "TeslacoilgunWeaponPickup",
+   "active": true,
+   "order": 0,
+   "canvas_rect": [
+    6,
+    6,
+    415,
+    318
+   ],
+   "sprite_name": "Teslacoilgun",
+   "sprite_file": "sharedassets8.assets",
+   "sprite_path_id": 188,
+   "texture_name": "Teslacoilgun",
+   "texture_file": "sharedassets8.assets",
+   "texture_path_id": 87,
+   "native_size": [
+    415,
+    318
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    415,
+    318
+   ],
+   "texture_size": [
+    415,
+    318
+   ],
+   "rotation": 0,
+   "pivot": [
+    150.00778198242188,
+    159.00001525878906
+   ],
+   "ppu": 200.0,
+   "mask": "teslacoilgun_mask_0.png"
+  }
+ ]
+}

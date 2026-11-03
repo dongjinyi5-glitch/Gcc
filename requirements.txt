@@ -1,0 +1,7 @@
+# Python 3.13（实测 3.13.14）
+# 版本取自本项目实际运行的虚拟环境，不是最低要求。
+#   解释器：C:\Users\Dell\.workbuddy-ai\binaries\python\envs\daiggc\Scripts\python.exe
+Pillow==13.0.0
+numpy==2.5.4
+UnityPy==1.25.4
+openpyxl==3.1.5

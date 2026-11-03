@@ -1,0 +1,87 @@
+{
+ "family": "lupara",
+ "canvas": [
+  287,
+  108
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "LuparaWeaponPickup",
+   "active": true,
+   "order": 0,
+   "canvas_rect": [
+    6,
+    6,
+    136,
+    96
+   ],
+   "sprite_name": "Lupara",
+   "sprite_file": "sharedassets4.assets",
+   "sprite_path_id": 287,
+   "texture_name": "Lupara",
+   "texture_file": "sharedassets4.assets",
+   "texture_path_id": 50,
+   "native_size": [
+    136,
+    96
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    136,
+    96
+   ],
+   "texture_size": [
+    136,
+    96
+   ],
+   "rotation": 0,
+   "pivot": [
+    38.20073699951172,
+    42.42465591430664
+   ],
+   "ppu": 205.0,
+   "mask": "lupara_mask_0.png"
+  },
+  {
+   "index": 1,
+   "go_path": "LuparaWeaponPickup/Barrel",
+   "active": true,
+   "order": 1,
+   "canvas_rect": [
+    116,
+    14,
+    165,
+    47
+   ],
+   "sprite_name": "LuparaBarrels",
+   "sprite_file": "sharedassets4.assets",
+   "sprite_path_id": 371,
+   "texture_name": "LuparaBarrels",
+   "texture_file": "sharedassets4.assets",
+   "texture_path_id": 135,
+   "native_size": [
+    165,
+    47
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    165,
+    47
+   ],
+   "texture_size": [
+    165,
+    47
+   ],
+   "rotation": 0,
+   "pivot": [
+    12.52545166015625,
+    12.304068565368652
+   ],
+   "ppu": 205.0,
+   "mask": "lupara_mask_1.png"
+  }
+ ]
+}

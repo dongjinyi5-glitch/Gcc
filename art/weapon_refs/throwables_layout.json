@@ -1,0 +1,126 @@
+{
+ "family": "throwables",
+ "canvas": [
+  192,
+  143
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "Gangster1/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmBack/ArmLowBack/HandBackRest/Grenade",
+   "active": false,
+   "order": 2,
+   "canvas_rect": [
+    6,
+    57,
+    52,
+    80
+   ],
+   "sprite_name": "Grenade",
+   "sprite_file": "sharedassets15.assets",
+   "sprite_path_id": 216,
+   "texture_name": "Grenade",
+   "texture_file": "sharedassets15.assets",
+   "texture_path_id": 58,
+   "native_size": [
+    52,
+    80
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    52,
+    80
+   ],
+   "texture_size": [
+    52,
+    80
+   ],
+   "rotation": 0,
+   "pivot": [
+    26.0,
+    40.0
+   ],
+   "ppu": 200.0,
+   "mask": "throwables_mask_0.png"
+  },
+  {
+   "index": 1,
+   "go_path": "Gangster1/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmBack/ArmLowBack/HandBackRest/GasGrenade",
+   "active": false,
+   "order": 2,
+   "canvas_rect": [
+    80,
+    57,
+    35,
+    80
+   ],
+   "sprite_name": "GasGrenade",
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3804,
+   "texture_name": "GasGrenade",
+   "texture_file": "resources.assets",
+   "texture_path_id": 1005,
+   "native_size": [
+    35,
+    80
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    35,
+    80
+   ],
+   "texture_size": [
+    35,
+    80
+   ],
+   "rotation": 0,
+   "pivot": [
+    17.5,
+    40.0
+   ],
+   "ppu": 200.0,
+   "mask": "throwables_mask_1.png"
+  },
+  {
+   "index": 2,
+   "go_path": "Gangster1/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmBack/ArmLowBack/HandBackRest/Molotov",
+   "active": false,
+   "order": 2,
+   "canvas_rect": [
+    58,
+    6,
+    128,
+    128
+   ],
+   "sprite_name": "molotov-cocktail_0",
+   "sprite_file": "sharedassets15.assets",
+   "sprite_path_id": 215,
+   "texture_name": "molotov-cocktail",
+   "texture_file": "sharedassets15.assets",
+   "texture_path_id": 57,
+   "native_size": [
+    128,
+    128
+   ],
+   "atlas_rect": [
+    0,
+    128,
+    128,
+    128
+   ],
+   "texture_size": [
+    512,
+    256
+   ],
+   "rotation": 0,
+   "pivot": [
+    88.57172393798828,
+    36.757415771484375
+   ],
+   "ppu": 200.0,
+   "mask": "throwables_mask_2.png"
+  }
+ ]
+}

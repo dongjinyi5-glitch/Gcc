@@ -44,3 +44,36 @@ desktop.ini
 
 # Logs (keep structure, ignore content)
 tools/logs/*.log
+
+# API 密钥（绝不入库）
+.secrets/
+
+# ---------------------------------------------------------------------------
+# 2026-10-30 结构整理时补充
+# 原则：只忽略「缓存 / 临时 / 可再生」，不碰 docs/、validation/、art/*_parts/
+# 这些需要版本控制的产物。以下规则只影响未跟踪文件，不会让已入库文件消失。
+# ---------------------------------------------------------------------------
+
+# 会话与临时目录
+.tmp/
+.workbuddy-ai/
+
+# 探针与临时产物（可再生：重新跑一次脚本就有）
+out/
+
+# 机器生成物（可再生，体量大）——只列已逐目录核实过的 4 个
+# 判定标准：目录内全部为脚本/模型输出、无人工成果、可再生
+#   art/gen/              生图模型原始输出（重生成需消耗生图额度）
+#   art/scene_restyle/    场景图集重绘输出（可重跑）
+#   art/component_thumbs/ 构件缩略图（export_component_thumbs.py 可重跑）
+#   art/scene_sheets/     整层合成图（scene_stack.py --build 可重跑）
+# 故意不忽略（已核实不属于"纯可再生生成物"）：
+#   art/scene_shots/    实机截图＝验收证据，不可再生
+#   art/chapter_cards/  章节卡，可能作为交付/评审物
+#   art/l3_brief/       L3 简报参考图，来源未完全确认
+#   art/hat_split/      仅 34KB，无忽略必要
+# art/<char>_parts/ 也不在此列 —— 那是交付物，照常入库
+art/gen/
+art/scene_restyle/
+art/component_thumbs/
+art/scene_sheets/

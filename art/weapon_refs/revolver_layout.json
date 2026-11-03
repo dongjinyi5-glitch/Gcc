@@ -1,0 +1,48 @@
+{
+ "family": "revolver",
+ "canvas": [
+  131,
+  109
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "Gangster1/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Revolver",
+   "active": false,
+   "order": 30,
+   "canvas_rect": [
+    6,
+    6,
+    119,
+    97
+   ],
+   "sprite_name": "Revolver38_0",
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3805,
+   "texture_name": "Revolver",
+   "texture_file": "resources.assets",
+   "texture_path_id": 1006,
+   "native_size": [
+    119,
+    97
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    119,
+    97
+   ],
+   "texture_size": [
+    119,
+    97
+   ],
+   "rotation": 0,
+   "pivot": [
+    52.81305694580078,
+    45.87767028808594
+   ],
+   "ppu": 200.0,
+   "mask": "revolver_mask_0.png"
+  }
+ ]
+}

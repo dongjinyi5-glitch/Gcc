@@ -1,0 +1,48 @@
+{
+ "family": "bazooka",
+ "canvas": [
+  460,
+  152
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "BazookaWeaponPickup",
+   "active": true,
+   "order": 0,
+   "canvas_rect": [
+    6,
+    6,
+    448,
+    140
+   ],
+   "sprite_name": "Bazooka_0",
+   "sprite_file": "sharedassets9.assets",
+   "sprite_path_id": 330,
+   "texture_name": "Bazooka",
+   "texture_file": "sharedassets9.assets",
+   "texture_path_id": 135,
+   "native_size": [
+    448,
+    140
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    448,
+    140
+   ],
+   "texture_size": [
+    448,
+    140
+   ],
+   "rotation": 0,
+   "pivot": [
+    278.5252380371094,
+    54.018470764160156
+   ],
+   "ppu": 200.0,
+   "mask": "bazooka_mask_0.png"
+  }
+ ]
+}

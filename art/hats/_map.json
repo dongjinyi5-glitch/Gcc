@@ -1,0 +1,582 @@
+[
+ {
+  "char": "Vinnie",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "sharedassets15.assets",
+  "spid": 229,
+  "tex": "Hat",
+  "tf": "sharedassets15.assets",
+  "tpid": 71,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Gangster1",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "sharedassets15.assets",
+  "spid": 229,
+  "tex": "Hat",
+  "tf": "sharedassets15.assets",
+  "tpid": 71,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Gangster2",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3633,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 832,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Gangster3",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3633,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 832,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Gangster4",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3360,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 555,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Gangster5",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3768,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 966,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Gangster6",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3633,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 832,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Goon1",
+  "active": true,
+  "order": 6,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3391,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 587,
+  "rect": [
+   117.0,
+   62.0
+  ],
+  "piv": [
+   44.86,
+   14.05
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Goon2",
+  "active": true,
+  "order": 6,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3786,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 986,
+  "rect": [
+   122.0,
+   67.0
+  ],
+  "piv": [
+   53.98,
+   12.34
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Goon3",
+  "active": true,
+  "order": 6,
+  "sprite": "Hat",
+  "sf": "sharedassets15.assets",
+  "spid": 229,
+  "tex": "Hat",
+  "tf": "sharedassets15.assets",
+  "tpid": 71,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Vito",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 4490,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 1694,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   69.6,
+   30.88
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Salvatore",
+  "active": false,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "sharedassets15.assets",
+  "spid": 229,
+  "tex": "Hat",
+  "tf": "sharedassets15.assets",
+  "tpid": 71,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Paulie",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3051,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 241,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Soldier",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3707,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 906,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   63.73,
+   31.2
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Scientist",
+  "active": false,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "sharedassets15.assets",
+  "spid": 229,
+  "tex": "Hat",
+  "tf": "sharedassets15.assets",
+  "tpid": 71,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "BonninoBoss",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3633,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 832,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "Frankie",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "sharedassets15.assets",
+  "spid": 229,
+  "tex": "Hat",
+  "tf": "sharedassets15.assets",
+  "tpid": 71,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "EvilFrankieOnFloor",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "sharedassets15.assets",
+  "spid": 229,
+  "tex": "Hat",
+  "tf": "sharedassets15.assets",
+  "tpid": 71,
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "piv": [
+   65.58,
+   29.01
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "ZombieRegular",
+  "active": true,
+  "order": 10,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3187,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 379,
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "piv": [
+   52.93,
+   42.68
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "ZombieSailor",
+  "active": true,
+  "order": 10,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 4364,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 1568,
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "piv": [
+   52.93,
+   42.68
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "ZombiePaulie",
+  "active": true,
+  "order": 10,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 4127,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 1333,
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "piv": [
+   52.93,
+   42.68
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "ZombieCop",
+  "active": true,
+  "order": 10,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 4716,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 1921,
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "piv": [
+   52.93,
+   42.68
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "ZombieOfficer",
+  "active": true,
+  "order": 10,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 4299,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 1504,
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "piv": [
+   52.93,
+   42.68
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "ZombieGun",
+  "active": true,
+  "order": 10,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 4716,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 1921,
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "piv": [
+   52.93,
+   42.68
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "ZombieSoldier",
+  "active": true,
+  "order": 10,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 4456,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 1660,
+  "rect": [
+   132.0,
+   90.0
+  ],
+  "piv": [
+   52.21,
+   45.39
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "ZombieSandwichBoard",
+  "active": true,
+  "order": 17,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3681,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 880,
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "piv": [
+   52.93,
+   42.68
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "ZombieCharger",
+  "active": true,
+  "order": 6,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 4170,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 1376,
+  "rect": [
+   106.0,
+   106.0
+  ],
+  "piv": [
+   47.03,
+   57.12
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "ZombieFloater",
+  "active": true,
+  "order": 9,
+  "sprite": "Hat",
+  "sf": "resources.assets",
+  "spid": 3881,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 1083,
+  "rect": [
+   86.0,
+   106.0
+  ],
+  "piv": [
+   43.0,
+   53.0
+  ],
+  "ppu": 200.0
+ },
+ {
+  "char": "FatDockworker",
+  "active": true,
+  "order": 24,
+  "sprite": "Hat_0",
+  "sf": "resources.assets",
+  "spid": 4369,
+  "tex": "Hat",
+  "tf": "resources.assets",
+  "tpid": 1573,
+  "rect": [
+   109.0,
+   56.0
+  ],
+  "piv": [
+   51.55,
+   19.55
+  ],
+  "ppu": 200.0
+ }
+]

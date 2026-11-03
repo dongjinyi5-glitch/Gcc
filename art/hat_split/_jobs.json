@@ -1,0 +1,111 @@
+{
+ "dry": false,
+ "jobs": [
+  {
+   "kind": "tex",
+   "file": "sharedassets15.assets",
+   "path_id": 71,
+   "offset": 23228048,
+   "bytes": 42256,
+   "applied": true
+  },
+  {
+   "kind": "tex",
+   "file": "resources.assets",
+   "path_id": 832,
+   "offset": 513234624,
+   "bytes": 42256,
+   "applied": true
+  },
+  {
+   "kind": "pptr",
+   "sr": 15797,
+   "name": "Gangster1",
+   "offset": 1346382724,
+   "from": [
+    5,
+    229
+   ],
+   "to": [
+    0,
+    3633
+   ],
+   "applied": true
+  },
+  {
+   "kind": "pptr",
+   "sr": 15795,
+   "name": "Frankie",
+   "offset": 1346382532,
+   "from": [
+    5,
+    229
+   ],
+   "to": [
+    0,
+    3633
+   ],
+   "applied": true
+  },
+  {
+   "kind": "pptr",
+   "sr": 15794,
+   "name": "EvilFrankieOnFloor",
+   "offset": 1346382436,
+   "from": [
+    5,
+    229
+   ],
+   "to": [
+    0,
+    3633
+   ],
+   "applied": true
+  },
+  {
+   "kind": "pptr",
+   "sr": 15311,
+   "name": "Goon3",
+   "offset": 1346336068,
+   "from": [
+    5,
+    229
+   ],
+   "to": [
+    0,
+    3633
+   ],
+   "applied": true
+  },
+  {
+   "kind": "pptr",
+   "sr": 15754,
+   "name": "Scientist",
+   "offset": 1346378596,
+   "from": [
+    5,
+    229
+   ],
+   "to": [
+    0,
+    3633
+   ],
+   "applied": true
+  },
+  {
+   "kind": "pptr",
+   "sr": 15808,
+   "name": "Salvatore",
+   "offset": 1346383780,
+   "from": [
+    5,
+    229
+   ],
+   "to": [
+    0,
+    3633
+   ],
+   "applied": true
+  }
+ ]
+}

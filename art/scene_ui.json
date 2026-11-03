@@ -1,0 +1,178 @@
+[
+ {
+  "texture": "MainMenuBackground",
+  "file": "resources.assets",
+  "path_id": 411,
+  "size": [
+   2048,
+   1536
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ },
+ {
+  "texture": "HudAtlasHD",
+  "file": "resources.assets",
+  "path_id": 1693,
+  "size": [
+   2048,
+   1024
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ },
+ {
+  "texture": "logoClaeys_1920x1080",
+  "file": "resources.assets",
+  "path_id": 639,
+  "size": [
+   1920,
+   1080
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ },
+ {
+  "texture": "GGCBarLogo",
+  "file": "resources.assets",
+  "path_id": 947,
+  "size": [
+   1807,
+   543
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ },
+ {
+  "texture": "logoGGC_1024x768",
+  "file": "resources.assets",
+  "path_id": 658,
+  "size": [
+   1024,
+   768
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ },
+ {
+  "texture": "MenuAtlasHD",
+  "file": "resources.assets",
+  "path_id": 901,
+  "size": [
+   1024,
+   512
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ },
+ {
+  "texture": "HudAtlasSD",
+  "file": "resources.assets",
+  "path_id": 1219,
+  "size": [
+   1024,
+   512
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ },
+ {
+  "texture": "logoCMS",
+  "file": "resources.assets",
+  "path_id": 1074,
+  "size": [
+   800,
+   650
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ },
+ {
+  "texture": "logoClaeys",
+  "file": "resources.assets",
+  "path_id": 201,
+  "size": [
+   800,
+   600
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ },
+ {
+  "texture": "HintFont",
+  "file": "resources.assets",
+  "path_id": 1481,
+  "size": [
+   256,
+   256
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ },
+ {
+  "texture": "ControllerButtons",
+  "file": "resources.assets",
+  "path_id": 447,
+  "size": [
+   66,
+   63
+  ],
+  "levels": [
+   "level1"
+  ],
+  "materials": [
+   "NGUI atlas"
+  ],
+  "sr": 0
+ }
+]

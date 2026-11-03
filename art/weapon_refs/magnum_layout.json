@@ -1,0 +1,48 @@
+{
+ "family": "magnum",
+ "canvas": [
+  188,
+  121
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "MagnumWeaponPickup",
+   "active": true,
+   "order": 0,
+   "canvas_rect": [
+    6,
+    6,
+    176,
+    109
+   ],
+   "sprite_name": "Magnum357_0",
+   "sprite_file": "sharedassets5.assets",
+   "sprite_path_id": 220,
+   "texture_name": "Magnum357",
+   "texture_file": "sharedassets5.assets",
+   "texture_path_id": 7,
+   "native_size": [
+    176,
+    109
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    176,
+    109
+   ],
+   "texture_size": [
+    176,
+    109
+   ],
+   "rotation": 0,
+   "pivot": [
+    57.16168212890625,
+    47.85222625732422
+   ],
+   "ppu": 200.0,
+   "mask": "magnum_mask_0.png"
+  }
+ ]
+}

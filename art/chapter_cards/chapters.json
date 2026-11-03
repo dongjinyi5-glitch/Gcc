@@ -1,0 +1,146 @@
+[
+ {
+  "texture": "Boat",
+  "chapter_cn": "轮船",
+  "caption": "到达即死亡",
+  "level": "level3",
+  "scene": "boat",
+  "card": "art/chapter_cards/Boat.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "HarbourPart1",
+  "chapter_cn": "暴徒镇港口",
+  "caption": "战争码头",
+  "level": "level4",
+  "scene": "harbour",
+  "card": "art/chapter_cards/HarbourPart1.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "HarbourPart2",
+  "chapter_cn": "市郊",
+  "caption": "仓库暴乱",
+  "level": "level5",
+  "scene": "harbourPart2",
+  "card": "art/chapter_cards/HarbourPart2.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "Alleys",
+  "chapter_cn": "暗黑小巷",
+  "caption": "一夜肢解",
+  "level": "level6",
+  "scene": "alleyStreets",
+  "card": "art/chapter_cards/Alleys.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "Stripclub",
+  "chapter_cn": "博尼诺的脱衣舞夜总会",
+  "caption": "干净利索！",
+  "level": "level7",
+  "scene": "stripclub",
+  "card": "art/chapter_cards/Stripclub.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "Bridge",
+  "chapter_cn": "军团据点",
+  "caption": "乔尼，拿起你的枪！",
+  "level": "level8",
+  "scene": "bridge",
+  "card": "art/chapter_cards/Bridge.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "BrokenBridge",
+  "chapter_cn": "河流",
+  "caption": "遥远的桥",
+  "level": "level9",
+  "scene": "brokenBridge",
+  "card": "art/chapter_cards/BrokenBridge.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "SewersPart1",
+  "chapter_cn": "下水道",
+  "caption": "追逐白日梦",
+  "level": "level10",
+  "scene": "sewers",
+  "card": "art/chapter_cards/SewersPart1.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "SewersPart2",
+  "chapter_cn": "存储器",
+  "caption": "大智若愚",
+  "level": "level11",
+  "scene": "sewersPart2",
+  "card": "art/chapter_cards/SewersPart2.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "SecretLab",
+  "chapter_cn": "选择标签栏",
+  "caption": "月光屠杀",
+  "level": "level12",
+  "scene": "secretLab",
+  "card": "art/chapter_cards/SecretLab.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "ConstructionSite",
+  "chapter_cn": "建筑工地",
+  "caption": "有很长的路要走",
+  "level": "level13",
+  "scene": "constructionSite",
+  "card": "art/chapter_cards/ConstructionSite.png",
+  "size": [
+   800,
+   500
+  ]
+ },
+ {
+  "texture": "Rooftops",
+  "chapter_cn": "屋顶",
+  "caption": "圣诞老公公来了",
+  "level": "level14",
+  "scene": "rooftops",
+  "card": "art/chapter_cards/Rooftops.png",
+  "size": [
+   800,
+   500
+  ]
+ }
+]

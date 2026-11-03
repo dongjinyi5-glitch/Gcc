@@ -1,0 +1,535 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>场景图层改造方案 — 中国远征军战场</title><style>
+:root{--bg:#17171b;--card:#23232a;--ink:#e8e8ee;--dim:#9a9ca8;--acc:#d6a860;
+--line:#3a3a44;--red:#c05a4a;--grn:#5f9e6a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.65 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:40px 28px 80px}
+h1{font-size:30px;margin:0 0 6px}
+h2{font-size:21px;margin:0 0 2px}
+h3{font-size:17px;margin:34px 0 10px;color:var(--acc)}
+h4{font-size:13px;margin:14px 0 6px;color:var(--dim);font-weight:600;
+letter-spacing:.4px;text-transform:none}
+.sub{color:var(--dim);margin:0 0 24px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:22px 0 28px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:15px 17px}
+.card b{display:block;font-size:25px;color:var(--acc)}
+.card span{color:var(--dim);font-size:12.5px}
+.note{background:var(--card);border-left:3px solid var(--acc);border-radius:6px;
+padding:13px 17px;margin:16px 0}
+.note p{margin:5px 0}
+.note.warn{border-left-color:var(--red)}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:10px 0}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line)}
+th{color:var(--dim);font-size:12.5px;font-weight:600}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:hover td{background:#282830}
+code,.mono{font-family:Consolas,monospace;font-size:12.5px;color:#c9d1d9}
+.lv{background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:20px 22px;margin:22px 0}
+.tag{font:12px Consolas,monospace;color:var(--dim);background:#1b1b21;
+border:1px solid var(--line);border-radius:4px;padding:2px 7px;margin-left:8px}
+.fit{display:inline-block;font-size:11.5px;padding:1px 8px;border-radius:10px;
+margin-left:8px;background:#33333d;color:var(--dim)}
+.fit.s5{background:#3d3320;color:#e8c07a}
+.fit.s4{background:#333a2c;color:#a8c48a}
+.fit.s3{background:#2e343d;color:#9fb6cc}
+.fit.s2{background:#33333d;color:#a8aab4}
+.fit.s1{background:#3d2626;color:#d08a7a}
+.pair2{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}
+.box{background:#1b1b21;border:1px solid var(--line);border-radius:8px;padding:11px 14px}
+.box .k{font-size:11.5px;color:var(--dim);letter-spacing:.5px}
+.box .v{font-size:15.5px;margin-top:2px}
+.shot{display:block;background:#0d0d10;border:1px solid var(--line);
+border-radius:8px;overflow:hidden;margin:10px 0}
+.shot img{display:block;max-width:100%;width:auto;height:auto;margin:0 auto}
+.cap{font-size:12.5px;color:var(--dim);margin:6px 0 14px}
+ul{padding-left:19px;margin:8px 0}
+li{margin:3px 0}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.flow{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin:10px 0}
+.chip{background:#1b1b21;border:1px solid var(--line);border-radius:6px;
+padding:5px 10px;font-size:12.5px}
+.chip b{color:var(--acc);font-weight:600}
+.arrow{color:var(--dim);font-size:12px}
+.era{color:var(--dim);font-size:12.5px;margin:16px 0 4px;letter-spacing:.5px}
+.col{color:var(--red);font-size:11px}
+</style></head><body><div class="wrap">
+<h1>场景图层改造方案</h1>
+<p class="sub">从虚构黑帮城市 → 中国远征军战场 · 逐关映射 · 四层改造法 · 成本与约束</p>
+
+<div class="cards">
+  <div class="card"><b>13</b><span>关卡映射（12 战役关 + 菜单）</span></div>
+  <div class="card"><b>162</b><span>张地标重绘（占画面 37%）</span></div>
+  <div class="card"><b>4.1%</b><span>画面带碰撞，273 张需守轮廓</span></div>
+  <div class="card"><b>810–1620</b><span>地标重绘 credits</span></div>
+</div>
+
+<div class="note">
+<p><b>可以换，而且场景层比角色层更适合换历史。</b>273 / 1450 张纹理带碰撞，
+但它们只占 <b>4.1%</b> 的绘制面积——剩下 96% 是纯装饰，
+改轮廓不改物理。碰撞体是独立对象（Box 4876 / Polygon 566 / Edge 229 / Circle 83），
+不跟贴图绑定，所以「换画面不换物理」是成立的。</p>
+<p><b>地标层几乎全自由：</b>162 张地标（占画面 37%）
+里只有 <b>5 张</b>带碰撞。天际线、主建筑立面、桥、吊车——这些决定「这是哪儿」的图，
+基本可以随便改。</p>
+</div>
+
+<h3>1. 叙事线</h3>
+<p class="sub" style="margin-top:-6px">游戏关卡原型是固定的，严格年代顺序做不到，
+所以<b>形态优先于年代</b>，排成两幕。</p>
+<div class="era">第一幕 · 1942 入缅与撤退</div>
+<div class="flow">
+<span class="chip"><b>L3</b> 仰光港 1942.3</span><span class="arrow">→</span>
+<span class="chip"><b>L4</b> 腊戍转运站 1942.4</span><span class="arrow">→</span>
+<span class="chip"><b>L5</b> 曼德勒·伊洛瓦底江 1942.4</span><span class="arrow">→</span>
+<span class="chip"><b>L6</b> 腾冲古城 1942.5</span><span class="arrow">→</span>
+<span class="chip"><b>L7</b> 后方俱乐部 1943（插叙）</span><span class="arrow">→</span>
+<span class="chip"><b>L8</b> 同古城区 1942.3</span><span class="arrow">→</span>
+<span class="chip"><b>L9</b> 惠通桥 1942.5.5</span>
+</div>
+<div class="era">第二幕 · 1944 反攻</div>
+<div class="flow">
+<span class="chip"><b>L10</b> 松山坑道 1944.7</span><span class="arrow">→</span>
+<span class="chip"><b>L11</b> 松山地下工事 1944.8</span><span class="arrow">→</span>
+<span class="chip"><b>L12</b> 蓄水池与指挥所 1944.8</span><span class="arrow">→</span>
+<span class="chip"><b>L13</b> 雷多中印公路 1944</span><span class="arrow">→</span>
+<span class="chip"><b>L14</b> 密支那机场 1944.8</span>
+</div>
+
+<h3>2. 四层改造法</h3>
+<table><thead><tr><th>层</th><th class="num">张数</th><th class="num">绘制面积</th>
+<th class="num">占画面</th><th class="num">带碰撞</th><th>做法</th></tr></thead><tbody>
+<tr><td><b>T1 地标重绘</b></td><td class="num">162</td>
+<td class="num">156.4 Mpx</td><td class="num">37%</td>
+<td class="num">5</td><td>AI/手绘，5–10 credits/张</td></tr>
+<tr><td>T2 材质重画</td><td class="num">250</td><td class="num">95.5 Mpx</td>
+<td class="num">23%</td><td class="num">30</td>
+<td>程序化：火山石/夯土/竹篾/锈铁皮</td></tr>
+<tr><td>T3 道具替换</td><td class="num">960</td><td class="num">164.2 Mpx</td>
+<td class="num">39%</td><td class="num">218</td>
+<td>程序化 + 局部替换；带碰撞的只改表面</td></tr>
+<tr><td>T4 只调色</td><td class="num">78</td><td class="num">4.3 Mpx</td>
+<td class="num">1%</td><td class="num">20</td><td>Shader/调色板，粒子不重画</td></tr>
+</tbody></table>
+<p class="sub" style="margin-top:-2px">T1 清单 = 每关绘制面积前 14 张，去重后 162 张；
+每关的 14 张列在下方卡片里。</p>
+
+<div class="note warn">
+<p><b>成本支点是 T2/T3 的程序化。</b>T3 的 960 张若全走 AI 要 4,800–9,600 credits，
+不现实。所以 <code>restyle_scene</code>（按明度分墨/赭石、暗部才上石青）必须先做出来——
+现成的 <code>restyle_ink</code> 不能直接用，实测会把砖墙变蓝绿马赛克。</p>
+</div>
+
+<h3>3. 硬约束</h3>
+<table><thead><tr><th>约束</th><th>原因</th><th>怎么守</th></tr></thead><tbody>
+<tr><td><b>alpha 通道</b></td><td>精灵网格与碰撞按原轮廓做</td><td>重绘时 alpha 位对位保留</td></tr>
+<tr><td><b>218 张碰撞道具的剪影</b></td><td>玩家会站上去/撞上去</td><td>只改表面不改外形</td></tr>
+<tr><td><b>烘焙光照位置</b></td><td>夜景灯窗的光画在贴图里</td><td>重绘对齐原灯位，否则夜里「没有灯」</td></tr>
+<tr><td><b>sortingOrder 层序</b></td><td>52–97 层视差，跨层会穿帮</td><td>换形制不改 order</td></tr>
+<tr><td><b>精灵网格覆盖率</b></td><td>超出 tight mesh 的部分被裁掉</td><td>换形制要重做多边形覆盖率验证</td></tr>
+<tr><td><b>水面/玻璃滚动 UV</b></td><td>靠材质 UV 动画</td><td>接缝必须可平铺</td></tr>
+</tbody></table>
+<p class="sub" style="margin-top:-2px"><b>最容易翻车的是光照。</b>现在每张夜景图里都烤着暖色灯窗，
+重画成白天或换光源位置，关卡会立刻「失光」——玩家看到的是黑块，不是战场。</p>
+
+<h3>4. 逐关映射</h3>
+
+<section class='lv'><h2>L0 滇缅公路雨季 · 行军纵队<span class='tag'>1942</span><span class='fit s2'>吻合 中</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>雨夜城市剪影（动态菜单）</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>滇缅公路雨季 · 行军纵队 · 1942</div></div></div>
+<p class='cap'><b>形态吻合点：</b>雨、雾、闪电全部现成，剪影层直接换成行军纵队</p>
+<a class='shot' href='../art/scene_sheets/scene_level0.png'><img src='../art/scene_sheets/preview/scene_level0.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>只换剪影层：卡车、骡马、斗笠行军纵队、路边障碍</li>
+<li>雨/雾保留，闪电改暖白，不要霓虹蓝</li>
+<li>天际线换成怒江峡谷轮廓，去掉城市高楼</li>
+<li>招牌文字全部去掉，换路牌与里程碑</li>
+</ul>
+<div class='note warn'><p>菜单只有 2 张图，成本最低，但它是玩家第一眼</p></div>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 2 张 / 2.6 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>StartScreenBack</td><td class='num'>2000×1125</td><td class='num'>2.25 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>StartScreenFront</td><td class='num'>2000×1125</td><td class='num'>0.39 M</td><td class='num'>×1</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L3 仰光港<span class='tag'>1942.3</span><span class='fit s5'>吻合 极强</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>港口码头（栈桥/吊车/江轮）</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>仰光港 · 1942.3</div></div></div>
+<p class='cap'><b>形态吻合点：</b>栈桥、门吊、江轮、货栈，形制一字不差</p>
+<a class='shot' href='../art/scene_sheets/scene_level3_rows.png'><img src='../art/scene_sheets/preview/scene_level3_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>门吊改蒸汽/柴油吊杆，拆掉霓虹招牌</li>
+<li>江轮改伊洛瓦底江蒸汽船（明轮、烟囱、货舱口）</li>
+<li>仓库改铅皮顶、锈铁皮、油毛毡</li>
+<li>栈桥加木板与缆桩，堆汽油桶与弹药箱</li>
+<li>灯改马灯/煤油灯，色温压暖</li>
+</ul>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 167 张 / 42.1 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>Boat008a</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Boat006</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Boat003</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>Boat004</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Boat002</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>Boat012</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Boat010b</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Boat017b</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Boat005</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Boat001</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Boat007a</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Boat009a</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Boat019b</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>BoatRuim3</td><td class='num'>1024×1024</td><td class='num'>1.01 M</td><td class='num'>×1</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L4 腊戍转运站（滇缅公路终点）<span class='tag'>1942.4</span><span class='fit s4'>吻合 很强</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>港区货场（仓库/机库/大吊车）</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>腊戍转运站（滇缅公路终点） · 1942.4</div></div></div>
+<p class='cap'><b>形态吻合点：</b>成排仓库、油桶堆场、卡车队列</p>
+<a class='shot' href='../art/scene_sheets/scene_level4_rows.png'><img src='../art/scene_sheets/preview/scene_level4_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>货场改成滇缅公路物资堆场：油桶、弹药箱、轮胎堆</li>
+<li>机库内部改修理厂：千斤顶、零件架、焊接火花</li>
+<li>大吊车改门式起重/蒸汽吊</li>
+<li>加里程标、卡车队列、帆布篷</li>
+</ul>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 230 张 / 49.1 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>Harbour_025</td><td class='num'>1024×1024</td><td class='num'>1.03 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_026</td><td class='num'>1024×1024</td><td class='num'>1.03 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_Background_20</td><td class='num'>1024×1024</td><td class='num'>1.02 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_024</td><td class='num'>1024×1024</td><td class='num'>0.98 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_Background_19</td><td class='num'>1024×1024</td><td class='num'>0.96 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_027</td><td class='num'>1024×1024</td><td class='num'>0.95 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_Background_21</td><td class='num'>1024×1024</td><td class='num'>0.94 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_Background_18</td><td class='num'>1024×1024</td><td class='num'>0.89 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_Background_22</td><td class='num'>1024×1024</td><td class='num'>0.83 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_Background_16</td><td class='num'>1024×1024</td><td class='num'>0.81 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_028B</td><td class='num'>1024×1024</td><td class='num'>0.81 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_Background_17</td><td class='num'>1024×1024</td><td class='num'>0.80 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_023</td><td class='num'>1024×1024</td><td class='num'>0.77 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour_Background_12</td><td class='num'>1024×1024</td><td class='num'>0.77 M</td><td class='num'>×1</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L5 曼德勒 · 伊洛瓦底江<span class='tag'>1942.4</span><span class='fit s3'>吻合 强</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>港湾远景（江岸天际线）</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>曼德勒 · 伊洛瓦底江 · 1942.4</div></div></div>
+<p class='cap'><b>形态吻合点：</b>江岸轮廓 + 佛塔剪影</p>
+<a class='shot' href='../art/scene_sheets/scene_level5_rows.png'><img src='../art/scene_sheets/preview/scene_level5_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>远景天际线换成伊洛瓦底江岸 + 佛塔尖</li>
+<li>城市剪影降饱和，墨 + 赭石为主</li>
+<li>水面改江面：平缓、反光弱</li>
+<li>城郊视差层换稻田/竹丛</li>
+</ul>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 242 张 / 45.6 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>Harbour-Background_033</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_013</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_032</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_027</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_010</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_015</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_030</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_042</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_009</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_014</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_043</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_031</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_011</td><td class='num'>1024×1024</td><td class='num'>1.02 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Harbour-Background_012</td><td class='num'>1024×1024</td><td class='num'>1.02 M</td><td class='num'>×1</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L6 腾冲古城<span class='tag'>1942.5 沦陷 / 1944.9 攻城</span><span class='fit s4'>吻合 很强</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>老城街道（木楼/石板巷/牌坊）</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>腾冲古城 · 1942.5 沦陷 / 1944.9 攻城</div></div></div>
+<p class='cap'><b>形态吻合点：</b>火山石墙、木构楼、牌坊、石板街</p>
+<a class='shot' href='../art/scene_sheets/scene_level6_rows.png'><img src='../art/scene_sheets/preview/scene_level6_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>砖墙换火山石墙（腾冲特有），抹灰换夯土</li>
+<li>木构楼加挑檐、木板墙、瓦顶</li>
+<li>加牌坊、门楼、拴马石</li>
+<li>石板街换火山石铺面，去掉柏油与井盖</li>
+<li>店铺招牌换布幌/木牌，不用霓虹</li>
+</ul>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 258 张 / 56.8 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>StreetsBackground_25</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>OldBuildingInside06</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×3</td><td>—</td></tr>
+<tr><td class='mono'>garage01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×3</td><td>—</td></tr>
+<tr><td class='mono'>StreetsBackground_23</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>StreetsBackground_22</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>StreetsBackground_18</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>StreetsBackground_21</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_38</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>StreetsBackground_16</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>StreetsBackground_17</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>StreetsBackground_08</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>OldBuildingInside07</td><td class='num'>1024×1023</td><td class='num'>1.05 M</td><td class='num'>×3</td><td>—</td></tr>
+<tr><td class='mono'>StreetsBackground_19</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>StreetsBackground_04</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×1</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L7 蓝姆伽/雷多 军人俱乐部（后方插叙）<span class='tag'>1943</span><span class='fit s1'>吻合 弱</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>夜总会（室内娱乐场）</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>蓝姆伽/雷多 军人俱乐部（后方插叙） · 1943</div></div></div>
+<p class='cap'><b>形态吻合点：</b>室内布局不变，改成后方补给站兼酒馆</p>
+<a class='shot' href='../art/scene_sheets/scene_level7_rows.png'><img src='../art/scene_sheets/preview/scene_level7_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>保留室内空间与动线，只换材质与陈设</li>
+<li>舞台改食堂/简报台，加地图与黑板</li>
+<li>吧台改补给台：罐头、咖啡、香烟</li>
+<li>霓虹灯管换马灯与汽灯</li>
+</ul>
+<div class='note warn'><p>⚠ 这里没有对应的著名战斗场景。硬套一场战役会变成「在夜总会里打松山」。建议定位为后方插叙关，不要挂战役名。</p></div>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 198 张 / 42.2 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>stripclub_background_38</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_40</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×10</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_15</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_28</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_25</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_27</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_33</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_12</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_35</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_37</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_13</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_26</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_18</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>stripclub_background_36</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L8 同古（Toungoo）城区<span class='tag'>1942.3</span><span class='fit s4'>吻合 很强</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>城区街区（街区/高架/路障）</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>同古（Toungoo）城区 · 1942.3</div></div></div>
+<p class='cap'><b>形态吻合点：</b>火车站、街区、锡唐河铁桥、路障</p>
+<a class='shot' href='../art/scene_sheets/scene_level8_rows.png'><img src='../art/scene_sheets/preview/scene_level8_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>街区建筑换缅式木构 + 砖混混合，加火车站雨棚</li>
+<li>高架桥换钢桁铁路桥/公路桥</li>
+<li>路障换沙袋、拒马、铁丝网</li>
+<li>加铁轨、站台、信号臂</li>
+<li>招牌换英文/缅文，去掉霓虹</li>
+</ul>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 275 张 / 45.0 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>WallExtra02</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×3</td><td>—</td></tr>
+<tr><td class='mono'>WallExtra01</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×3</td><td>—</td></tr>
+<tr><td class='mono'>part2_05</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>part1_02</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>part1_01</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>part1_03B</td><td class='num'>1024×1024</td><td class='num'>1.00 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>part1_03</td><td class='num'>1024×1024</td><td class='num'>1.00 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>part2_11</td><td class='num'>1024×1024</td><td class='num'>1.00 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>part2_06</td><td class='num'>1024×1024</td><td class='num'>0.99 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>part2_09</td><td class='num'>1024×1024</td><td class='num'>0.97 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>part2_10</td><td class='num'>1024×1024</td><td class='num'>0.97 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>part2_04</td><td class='num'>1024×1024</td><td class='num'>0.97 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>part2_12</td><td class='num'>1024×1024</td><td class='num'>0.93 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>Part1Front_01</td><td class='num'>1024×1024</td><td class='num'>0.86 M</td><td class='num'>×2</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L9 惠通桥<span class='tag'>1942.5.5</span><span class='fit s5'>吻合 极强</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>河畔大桥（河谷/大桥/桥头堡）</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>惠通桥 · 1942.5.5</div></div></div>
+<p class='cap'><b>形态吻合点：</b>怒江峡谷单孔钢桁桥 + 盘山公路 + 桥头堡</p>
+<a class='shot' href='../art/scene_sheets/scene_level9_rows.png'><img src='../art/scene_sheets/preview/scene_level9_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>桥体改单孔钢桁架（惠通桥形制），保留跨度与桥面高度</li>
+<li>加桥头堡、岗亭、之字形盘山公路</li>
+<li>河谷改怒江峡谷：陡壁、浑水、雾气</li>
+<li>桥面加炸药箱与引线（叙事道具）</li>
+<li>时间点：1942 年 5 月 5 日清晨，工兵营引爆</li>
+</ul>
+<div class='note warn'><p>形制天然吻合，是整套方案里改动收益最高的一关</p></div>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 117 张 / 14.9 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>Riverside_01</td><td class='num'>3735×2408</td><td class='num'>4.50 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>Peiler02_1</td><td class='num'>1024×990</td><td class='num'>0.71 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>BeginWallBack01</td><td class='num'>937×1024</td><td class='num'>0.66 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>bridge01</td><td class='num'>1024×1024</td><td class='num'>0.63 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>FireLoop0</td><td class='num'>1024×1024</td><td class='num'>0.56 M</td><td class='num'>×99</td><td><span class='col'>● 需守轮廓</span></td></tr>
+<tr><td class='mono'>ArmyBarriere01</td><td class='num'>1024×804</td><td class='num'>0.51 M</td><td class='num'>×9</td><td>—</td></tr>
+<tr><td class='mono'>BeginWallBack02</td><td class='num'>991×700</td><td class='num'>0.49 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>bridge08</td><td class='num'>1024×996</td><td class='num'>0.45 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>BeginWallFront01</td><td class='num'>457×1024</td><td class='num'>0.43 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>bridge09</td><td class='num'>1024×928</td><td class='num'>0.41 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>BeginWallFront02</td><td class='num'>765×700</td><td class='num'>0.34 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>TruckFront2</td><td class='num'>645×611</td><td class='num'>0.30 M</td><td class='num'>×7</td><td>—</td></tr>
+<tr><td class='mono'>TruckExplosion3</td><td class='num'>1024×480</td><td class='num'>0.28 M</td><td class='num'>×8</td><td><span class='col'>● 需守轮廓</span></td></tr>
+<tr><td class='mono'>BlackCarExplosionStage2</td><td class='num'>909×442</td><td class='num'>0.28 M</td><td class='num'>×11</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L10 松山 · 坑道接近<span class='tag'>1944.7</span><span class='fit s3'>吻合 强</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>竖井与下水道</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>松山 · 坑道接近 · 1944.7</div></div></div>
+<p class='cap'><b>形态吻合点：</b>竖井 + 水平坑道，工兵掘进，形制天然吻合</p>
+<a class='shot' href='../art/scene_sheets/scene_level10_rows.png'><img src='../art/scene_sheets/preview/scene_level10_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>管道改木支撑 + 掘进土壁，加矿灯/马灯</li>
+<li>竖井加吊篮、绳索、滑车</li>
+<li>加炸药箱、风箱、铁镐、土筐</li>
+<li>土色用红壤 + 火山灰，不是水泥</li>
+</ul>
+<div class='note warn'><p>时间点：1944 年 8 月 20 日爆破前的掘进阶段</p></div>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 143 张 / 46.5 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>stripclub_background_40</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×10</td><td>—</td></tr>
+<tr><td class='mono'>Shafts05</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Shafts08</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Shafts04</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Shafts01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Shafts09</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Shafts02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Shafts03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Shafts10</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Shafts07</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>SewersOutsideFront11</td><td class='num'>1024×1024</td><td class='num'>1.03 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>ShaftsFront07</td><td class='num'>1024×1024</td><td class='num'>0.98 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Gang08</td><td class='num'>1024×915</td><td class='num'>0.93 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Gang07</td><td class='num'>1024×913</td><td class='num'>0.92 M</td><td class='num'>×1</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L11 松山 · 地下工事群<span class='tag'>1944.8</span><span class='fit s3'>吻合 强</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>地铁与水库</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>松山 · 地下工事群 · 1944.8</div></div></div>
+<p class='cap'><b>形态吻合点：</b>地下兵舍、弹药库、蓄水池</p>
+<a class='shot' href='../art/scene_sheets/scene_level11_rows.png'><img src='../art/scene_sheets/preview/scene_level11_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>站台改地下兵舍/弹药库，混凝土换原木支护</li>
+<li>加弹药箱、步枪架、野战电话</li>
+<li>蓄水池保留（松山工事确有蓄水设施）</li>
+<li>照明改汽灯/手电，去掉日光灯</li>
+</ul>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 178 张 / 59.6 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>2ndShafts01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir04</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×20</td><td>—</td></tr>
+<tr><td class='mono'>Subway03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>Subway05</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>2ndShafts07</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>2ndShafts06</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>2ndShafts02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Subway11</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×18</td><td>—</td></tr>
+<tr><td class='mono'>Subway10</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir05</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>Subway09</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L12 松山 · 蓄水池与指挥所<span class='tag'>1944.8</span><span class='fit s2'>吻合 中</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>水库深处</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>松山 · 蓄水池与指挥所 · 1944.8</div></div></div>
+<p class='cap'><b>形态吻合点：</b>终局段，深水 + 竖井</p>
+<a class='shot' href='../art/scene_sheets/scene_level12_rows.png'><img src='../art/scene_sheets/preview/scene_level12_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>水面改浑浊蓄水池，加铁梯与浮桥</li>
+<li>加指挥所：地图桌、野战电台、沙盘</li>
+<li>混凝土加裂缝与渗水</li>
+</ul>
+<div class='note warn'><p>⚠ 这一段历史依据最薄。建议做成「工事最深处」的象征场景，不强调具体战役细节。</p></div>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 114 张 / 17.6 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>WaterReservoir01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir04</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×20</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×18</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir05</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir06</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir07</td><td class='num'>1024×818</td><td class='num'>0.77 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir12</td><td class='num'>1024×779</td><td class='num'>0.76 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir11</td><td class='num'>1024×696</td><td class='num'>0.70 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir10</td><td class='num'>1024×687</td><td class='num'>0.70 M</td><td class='num'>×20</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir09</td><td class='num'>1024×687</td><td class='num'>0.70 M</td><td class='num'>×18</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoir08</td><td class='num'>1024×687</td><td class='num'>0.70 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoirLightMiddle</td><td class='num'>1024×1019</td><td class='num'>0.66 M</td><td class='num'>×15</td><td>—</td></tr>
+<tr><td class='mono'>WaterReservoirLightLeft</td><td class='num'>1024×1024</td><td class='num'>0.64 M</td><td class='num'>×5</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L13 雷多 · 中印公路工程处<span class='tag'>1944</span><span class='fit s3'>吻合 强</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>车库与电梯</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>雷多 · 中印公路工程处 · 1944</div></div></div>
+<p class='cap'><b>形态吻合点：</b>机械库、修理厂、弹药升降机</p>
+<a class='shot' href='../art/scene_sheets/scene_level13_rows.png'><img src='../art/scene_sheets/preview/scene_level13_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>车库改工程机械库：推土机、压路机、卡车</li>
+<li>电梯改物资/弹药升降机（钢丝绳 + 木笼）</li>
+<li>营房改工兵宿舍：行军床、工具墙</li>
+<li>加中印公路路牌、里程标、油桶</li>
+</ul>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 265 张 / 44.7 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>Garage03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>Garage02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>Garage01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Garage05</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Garage08a</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>RoomsFront02c</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>Rooms02a</td><td class='num'>1024×1024</td><td class='num'>1.02 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>RoofTopStairsBack02</td><td class='num'>1024×995</td><td class='num'>1.02 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Garage09a</td><td class='num'>1024×1024</td><td class='num'>1.00 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>RoofTopStairsBack04</td><td class='num'>1024×897</td><td class='num'>0.92 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Rooms03a</td><td class='num'>1024×1024</td><td class='num'>0.91 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>RoofTopStairsBack01</td><td class='num'>1024×1024</td><td class='num'>0.89 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Garage10a</td><td class='num'>1024×1024</td><td class='num'>0.85 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>Rooms01</td><td class='num'>1024×905</td><td class='num'>0.82 M</td><td class='num'>×2</td><td>—</td></tr>
+</tbody></table></section>
+<section class='lv'><h2>L14 密支那机场 · 驼峰航线<span class='tag'>1944.8</span><span class='fit s1'>吻合 弱</span></h2>
+<div class='pair2'>
+<div class='box'><div class='k'>游戏原型</div><div class='v'>齐柏林飞艇（巨型浮空器/机库）</div></div>
+<div class='box'><div class='k'>历史原型</div><div class='v'>密支那机场 · 驼峰航线 · 1944.8</div></div></div>
+<p class='cap'><b>形态吻合点：</b>飞艇 → 停机坪上的 C-46；吊舱 → 机腹/机舱；机库/塔台</p>
+<a class='shot' href='../art/scene_sheets/scene_level14_rows.png'><img src='../art/scene_sheets/preview/scene_level14_rows.jpg'></a>
+<div class='cap'>现状合成全景 — 这是要改的对象</div>
+<h4>改造要点</h4><ul>
+<li>飞艇改成停机中的 C-46/C-47 运输机（双发、高垂尾）</li>
+<li>吊舱改机腹货舱门 / 机舱内部</li>
+<li>背景加机库、塔台、探照灯、跑道灯</li>
+<li>加驼峰航线元素：货物网、油桶、降落伞包</li>
+</ul>
+<div class='note warn'><p>⚠ 1942 年缅甸战场没有飞艇。这一张要改剪影——但它没有碰撞，技术上可行，需要重做 mesh 覆盖率验证。</p></div>
+<h4>T1 地标清单 — 该关绘制面积前 14 张（共 277 张 / 24.7 Mpx）</h4>
+<table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th><th>碰撞</th></tr></thead><tbody>
+<tr><td class='mono'>Zeppelin</td><td class='num'>2048×1356</td><td class='num'>1.53 M</td><td class='num'>×3</td><td><span class='col'>● 需守轮廓</span></td></tr>
+<tr><td class='mono'>BelluccioWall01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>BelluccioWall03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>BelluccioWall02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>OldBuildingInside10</td><td class='num'>1024×1024</td><td class='num'>1.03 M</td><td class='num'>×23</td><td>—</td></tr>
+<tr><td class='mono'>RooftopsBuilding2</td><td class='num'>967×873</td><td class='num'>0.78 M</td><td class='num'>×19</td><td>—</td></tr>
+<tr><td class='mono'>BuildingWhite1</td><td class='num'>846×1024</td><td class='num'>0.78 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>ArmyBarriereA02</td><td class='num'>1024×895</td><td class='num'>0.71 M</td><td class='num'>×15</td><td><span class='col'>● 需守轮廓</span></td></tr>
+<tr><td class='mono'>buildingWall02</td><td class='num'>1024×662</td><td class='num'>0.67 M</td><td class='num'>×32</td><td><span class='col'>● 需守轮廓</span></td></tr>
+<tr><td class='mono'>FireLoop0</td><td class='num'>1024×1024</td><td class='num'>0.56 M</td><td class='num'>×99</td><td><span class='col'>● 需守轮廓</span></td></tr>
+<tr><td class='mono'>RooftopsBrickWallHalf1</td><td class='num'>1024×512</td><td class='num'>0.52 M</td><td class='num'>×2</td><td>—</td></tr>
+<tr><td class='mono'>RooftopsBrickWallHalf2</td><td class='num'>1024×512</td><td class='num'>0.52 M</td><td class='num'>×1</td><td>—</td></tr>
+<tr><td class='mono'>RooftopsBrickWallHalf</td><td class='num'>1024×512</td><td class='num'>0.52 M</td><td class='num'>×3</td><td>—</td></tr>
+<tr><td class='mono'>BuildingWhite2</td><td class='num'>793×660</td><td class='num'>0.50 M</td><td class='num'>×2</td><td>—</td></tr>
+</tbody></table></section>
+<h3>5. 下一步</h3>
+<div class="note"><p>1. 先出 <b>L3 仰光港</b> 的 14 张地标改造 brief：每张给
+「原图 / 历史参照 / 必须保留的结构 / 可改的部分」。<br>
+2. 同时把 <code>restyle_scene</code> 的规则定下来（明度分层 + 材质映射 + 纸纹），
+这是 T2/T3 的前提。<br>
+3. 一关做完验收（风格、光照、碰撞、层序四项），再复制到其余 12 关。</p></div>
+<p class="sub" style="margin-top:20px">数据源：art/scene_inventory.json（1450 行）·
+方案文字版：docs/SCENE_PLAN.md · 清单与样图：docs/SCENE_LAYERS.html</p>
+</div></body></html>

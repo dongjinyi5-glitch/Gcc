@@ -1,0 +1,87 @@
+{
+ "family": "shotgun",
+ "canvas": [
+  399,
+  110
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "ShotgunWeaponPickup",
+   "active": true,
+   "order": 0,
+   "canvas_rect": [
+    6,
+    6,
+    387,
+    97
+   ],
+   "sprite_name": "Shotgun_0",
+   "sprite_file": "sharedassets6.assets",
+   "sprite_path_id": 181,
+   "texture_name": "Shotgun",
+   "texture_file": "sharedassets6.assets",
+   "texture_path_id": 56,
+   "native_size": [
+    387,
+    97
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    387,
+    97
+   ],
+   "texture_size": [
+    387,
+    97
+   ],
+   "rotation": 0,
+   "pivot": [
+    124.47261810302734,
+    54.278568267822266
+   ],
+   "ppu": 200.0,
+   "mask": "shotgun_mask_0.png"
+  },
+  {
+   "index": 1,
+   "go_path": "ShotgunWeaponPickup/ActionPumpShotgun",
+   "active": true,
+   "order": 1,
+   "canvas_rect": [
+    254,
+    22,
+    99,
+    35
+   ],
+   "sprite_name": "ActionPumpShotgun",
+   "sprite_file": "sharedassets6.assets",
+   "sprite_path_id": 186,
+   "texture_name": "ActionPumpShotgun",
+   "texture_file": "sharedassets6.assets",
+   "texture_path_id": 61,
+   "native_size": [
+    99,
+    35
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    99,
+    35
+   ],
+   "texture_size": [
+    99,
+    35
+   ],
+   "rotation": 0,
+   "pivot": [
+    49.5,
+    17.5
+   ],
+   "ppu": 200.0,
+   "mask": "shotgun_mask_1.png"
+  }
+ ]
+}

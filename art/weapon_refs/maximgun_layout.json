@@ -1,0 +1,87 @@
+{
+ "family": "maximgun",
+ "canvas": [
+  426,
+  170
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "MaximgunWeaponPickup",
+   "active": true,
+   "order": 0,
+   "canvas_rect": [
+    6,
+    6,
+    414,
+    158
+   ],
+   "sprite_name": "MaxiGunMG08",
+   "sprite_file": "sharedassets6.assets",
+   "sprite_path_id": 218,
+   "texture_name": "MaxiGunMG08",
+   "texture_file": "sharedassets6.assets",
+   "texture_path_id": 93,
+   "native_size": [
+    414,
+    158
+   ],
+   "atlas_rect": [
+    0,
+    10,
+    414,
+    158
+   ],
+   "texture_size": [
+    415,
+    182
+   ],
+   "rotation": 0,
+   "pivot": [
+    143.64122009277344,
+    71.96015930175781
+   ],
+   "ppu": 200.0,
+   "mask": "maximgun_mask_0.png"
+  },
+  {
+   "index": 1,
+   "go_path": "MaximgunWeaponPickup/MaximGunMagazine",
+   "active": true,
+   "order": 1,
+   "canvas_rect": [
+    153,
+    46,
+    78,
+    101
+   ],
+   "sprite_name": "MaximGunMagazine",
+   "sprite_file": "sharedassets6.assets",
+   "sprite_path_id": 142,
+   "texture_name": "MaximGunMagazine",
+   "texture_file": "sharedassets6.assets",
+   "texture_path_id": 17,
+   "native_size": [
+    78,
+    101
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    78,
+    101
+   ],
+   "texture_size": [
+    78,
+    101
+   ],
+   "rotation": 0,
+   "pivot": [
+    39.0,
+    50.5
+   ],
+   "ppu": 200.0,
+   "mask": "maximgun_mask_1.png"
+  }
+ ]
+}

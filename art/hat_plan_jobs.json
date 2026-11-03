@@ -1,0 +1,167 @@
+{
+ "dry": false,
+ "jobs": [
+  {
+   "kind": "pptr",
+   "char": "Gangster4",
+   "sr": 15800,
+   "offset": 1346383012,
+   "from": [
+    0,
+    3360
+   ],
+   "to": [
+    0,
+    3633
+   ],
+   "applied": true
+  },
+  {
+   "kind": "pptr",
+   "char": "Gangster5",
+   "sr": 15801,
+   "offset": 1346383108,
+   "from": [
+    0,
+    3768
+   ],
+   "to": [
+    0,
+    3633
+   ],
+   "applied": true
+  },
+  {
+   "kind": "pptr",
+   "char": "Paulie",
+   "sr": 15806,
+   "offset": 1346383588,
+   "from": [
+    0,
+    3051
+   ],
+   "to": [
+    0,
+    3633
+   ],
+   "applied": true
+  },
+  {
+   "kind": "tex",
+   "file": "resources.assets",
+   "path_id": 587,
+   "char": "Goon1",
+   "atlas_rect": [
+    11,
+    0,
+    117,
+    62
+   ],
+   "applied": true
+  },
+  {
+   "kind": "tex",
+   "file": "resources.assets",
+   "path_id": 986,
+   "char": "Goon2",
+   "atlas_rect": [
+    1,
+    0,
+    122,
+    67
+   ],
+   "applied": true
+  },
+  {
+   "kind": "tex",
+   "file": "resources.assets",
+   "path_id": 1694,
+   "char": "Vito",
+   "atlas_rect": [
+    0,
+    0,
+    139,
+    76
+   ],
+   "applied": true
+  },
+  {
+   "kind": "tex",
+   "file": "resources.assets",
+   "path_id": 906,
+   "char": "Soldier",
+   "atlas_rect": [
+    2,
+    15,
+    139,
+    76
+   ],
+   "applied": true
+  },
+  {
+   "kind": "tex",
+   "file": "resources.assets",
+   "path_id": 1568,
+   "char": "ZombieSailor",
+   "atlas_rect": [
+    5,
+    6,
+    96,
+    68
+   ],
+   "applied": true
+  },
+  {
+   "kind": "tex",
+   "file": "resources.assets",
+   "path_id": 1504,
+   "char": "ZombieOfficer",
+   "atlas_rect": [
+    0,
+    7,
+    127,
+    83
+   ],
+   "applied": true
+  },
+  {
+   "kind": "tex",
+   "file": "resources.assets",
+   "path_id": 1921,
+   "char": "ZombieGun",
+   "atlas_rect": [
+    0,
+    4,
+    118,
+    86
+   ],
+   "applied": true
+  },
+  {
+   "kind": "tex",
+   "file": "resources.assets",
+   "path_id": 1660,
+   "char": "ZombieSoldier",
+   "atlas_rect": [
+    10,
+    1,
+    132,
+    89
+   ],
+   "applied": true
+  },
+  {
+   "kind": "tex",
+   "file": "resources.assets",
+   "path_id": 1376,
+   "char": "ZombieCharger",
+   "atlas_rect": [
+    0,
+    0,
+    106,
+    106
+   ],
+   "applied": true
+  }
+ ]
+}

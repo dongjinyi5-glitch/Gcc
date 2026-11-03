@@ -1,0 +1,1135 @@
+[
+ {
+  "char": "Vinnie",
+  "role": "远征军",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15811,
+  "sprite_file": "sharedassets15.assets",
+  "sprite_pid": 229,
+  "tex_file": "sharedassets15.assets",
+  "tex_pid": 71,
+  "atlas_rect": [
+   0,
+   0,
+   139,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   139,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "美制 M1",
+  "status": "ALREADY",
+  "shared_with": [
+   "Vinnie",
+   "Gangster1",
+   "Goon3",
+   "Salvatore",
+   "Scientist",
+   "Frankie",
+   "EvilFrankieOnFloor"
+  ]
+ },
+ {
+  "char": "Gangster1",
+  "role": "日军士兵",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15797,
+  "sprite_file": "sharedassets15.assets",
+  "sprite_pid": 229,
+  "tex_file": "sharedassets15.assets",
+  "tex_pid": 71,
+  "atlas_rect": [
+   0,
+   0,
+   139,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   139,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "MERGE",
+  "target_sprite": 3633,
+  "shared_with": [
+   "Vinnie",
+   "Gangster1",
+   "Goon3",
+   "Salvatore",
+   "Scientist",
+   "Frankie",
+   "EvilFrankieOnFloor"
+  ]
+ },
+ {
+  "char": "Gangster2",
+  "role": "日军士兵",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15798,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3633,
+  "tex_file": "resources.assets",
+  "tex_pid": 832,
+  "atlas_rect": [
+   0,
+   0,
+   138,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   138,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "ALREADY",
+  "shared_with": [
+   "Gangster2",
+   "Gangster3",
+   "Gangster6",
+   "BonninoBoss"
+  ]
+ },
+ {
+  "char": "Gangster3",
+  "role": "日军佐官",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15799,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3633,
+  "tex_file": "resources.assets",
+  "tex_pid": 832,
+  "atlas_rect": [
+   0,
+   0,
+   138,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   138,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "ALREADY",
+  "shared_with": [
+   "Gangster2",
+   "Gangster3",
+   "Gangster6",
+   "BonninoBoss"
+  ]
+ },
+ {
+  "char": "Gangster4",
+  "role": "日军佐官",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15800,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3360,
+  "tex_file": "resources.assets",
+  "tex_pid": 555,
+  "atlas_rect": [
+   0,
+   0,
+   138,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   138,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "MERGE",
+  "target_sprite": 3633
+ },
+ {
+  "char": "Gangster5",
+  "role": "日军佐官",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15801,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3768,
+  "tex_file": "resources.assets",
+  "tex_pid": 966,
+  "atlas_rect": [
+   0,
+   0,
+   138,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   138,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "MERGE",
+  "target_sprite": 3633
+ },
+ {
+  "char": "Gangster6",
+  "role": "日军佐官",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15802,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3633,
+  "tex_file": "resources.assets",
+  "tex_pid": 832,
+  "atlas_rect": [
+   0,
+   0,
+   138,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   138,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "ALREADY",
+  "shared_with": [
+   "Gangster2",
+   "Gangster3",
+   "Gangster6",
+   "BonninoBoss"
+  ]
+ },
+ {
+  "char": "Goon1",
+  "role": "日军士兵",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 16071,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3391,
+  "tex_file": "resources.assets",
+  "tex_pid": 587,
+  "atlas_rect": [
+   11,
+   0,
+   117,
+   62
+  ],
+  "rotation": 0,
+  "size": [
+   117,
+   62
+  ],
+  "rect": [
+   117.0,
+   62.0
+  ],
+  "pivot": [
+   44.857,
+   14.045
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "REPAINT"
+ },
+ {
+  "char": "Goon2",
+  "role": "日军士兵",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 16072,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3786,
+  "tex_file": "resources.assets",
+  "tex_pid": 986,
+  "atlas_rect": [
+   1,
+   0,
+   122,
+   67
+  ],
+  "rotation": 0,
+  "size": [
+   122,
+   67
+  ],
+  "rect": [
+   122.0,
+   67.0
+  ],
+  "pivot": [
+   53.978,
+   12.337
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "REPAINT"
+ },
+ {
+  "char": "Goon3",
+  "role": "日军士兵",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15311,
+  "sprite_file": "sharedassets15.assets",
+  "sprite_pid": 229,
+  "tex_file": "sharedassets15.assets",
+  "tex_pid": 71,
+  "atlas_rect": [
+   0,
+   0,
+   139,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   139,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "MERGE",
+  "target_sprite": 3633,
+  "shared_with": [
+   "Vinnie",
+   "Gangster1",
+   "Goon3",
+   "Salvatore",
+   "Scientist",
+   "Frankie",
+   "EvilFrankieOnFloor"
+  ]
+ },
+ {
+  "char": "Vito",
+  "role": "日军佐官",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15813,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 4490,
+  "tex_file": "resources.assets",
+  "tex_pid": 1694,
+  "atlas_rect": [
+   0,
+   0,
+   139,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   139,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   69.603,
+   30.884
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "REPAINT"
+ },
+ {
+  "char": "Salvatore",
+  "role": "日军佐官",
+  "faction": "人类",
+  "active": false,
+  "sr_pid": 15808,
+  "sprite_file": "sharedassets15.assets",
+  "sprite_pid": 229,
+  "tex_file": "sharedassets15.assets",
+  "tex_pid": 71,
+  "atlas_rect": [
+   0,
+   0,
+   139,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   139,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "MERGE",
+  "target_sprite": 3633,
+  "shared_with": [
+   "Vinnie",
+   "Gangster1",
+   "Goon3",
+   "Salvatore",
+   "Scientist",
+   "Frankie",
+   "EvilFrankieOnFloor"
+  ]
+ },
+ {
+  "char": "Paulie",
+  "role": "日军佐官",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15806,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3051,
+  "tex_file": "resources.assets",
+  "tex_pid": 241,
+  "atlas_rect": [
+   0,
+   0,
+   138,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   138,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "MERGE",
+  "target_sprite": 3633
+ },
+ {
+  "char": "Soldier",
+  "role": "日军士兵",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15810,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3707,
+  "tex_file": "resources.assets",
+  "tex_pid": 906,
+  "atlas_rect": [
+   2,
+   15,
+   139,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   139,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   63.726,
+   31.205
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "REPAINT"
+ },
+ {
+  "char": "Scientist",
+  "role": "日军军医",
+  "faction": "人类",
+  "active": false,
+  "sr_pid": 15754,
+  "sprite_file": "sharedassets15.assets",
+  "sprite_pid": 229,
+  "tex_file": "sharedassets15.assets",
+  "tex_pid": 71,
+  "atlas_rect": [
+   0,
+   0,
+   139,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   139,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "MERGE",
+  "target_sprite": 3633,
+  "shared_with": [
+   "Vinnie",
+   "Gangster1",
+   "Goon3",
+   "Salvatore",
+   "Scientist",
+   "Frankie",
+   "EvilFrankieOnFloor"
+  ]
+ },
+ {
+  "char": "BonninoBoss",
+  "role": "日军将官",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15792,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3633,
+  "tex_file": "resources.assets",
+  "tex_pid": 832,
+  "atlas_rect": [
+   0,
+   0,
+   138,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   138,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "ALREADY",
+  "shared_with": [
+   "Gangster2",
+   "Gangster3",
+   "Gangster6",
+   "BonninoBoss"
+  ]
+ },
+ {
+  "char": "Frankie",
+  "role": "日军将官",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15795,
+  "sprite_file": "sharedassets15.assets",
+  "sprite_pid": 229,
+  "tex_file": "sharedassets15.assets",
+  "tex_pid": 71,
+  "atlas_rect": [
+   0,
+   0,
+   139,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   139,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "MERGE",
+  "target_sprite": 3633,
+  "shared_with": [
+   "Vinnie",
+   "Gangster1",
+   "Goon3",
+   "Salvatore",
+   "Scientist",
+   "Frankie",
+   "EvilFrankieOnFloor"
+  ]
+ },
+ {
+  "char": "EvilFrankie",
+  "role": "日军将官",
+  "faction": "人类",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "EvilFrankieOnFloor",
+  "role": "日军将官",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 15794,
+  "sprite_file": "sharedassets15.assets",
+  "sprite_pid": 229,
+  "tex_file": "sharedassets15.assets",
+  "tex_pid": 71,
+  "atlas_rect": [
+   0,
+   0,
+   139,
+   76
+  ],
+  "rotation": 0,
+  "size": [
+   139,
+   76
+  ],
+  "rect": [
+   139.0,
+   76.0
+  ],
+  "pivot": [
+   65.585,
+   29.009
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "MERGE",
+  "target_sprite": 3633,
+  "shared_with": [
+   "Vinnie",
+   "Gangster1",
+   "Goon3",
+   "Salvatore",
+   "Scientist",
+   "Frankie",
+   "EvilFrankieOnFloor"
+  ]
+ },
+ {
+  "char": "ZombieRatBoss",
+  "role": "鼠怪",
+  "faction": "鼠怪",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "ZombieRegular",
+  "role": "日本平民·劳作",
+  "faction": "僵尸",
+  "active": true,
+  "sr_pid": 16490,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3187,
+  "tex_file": "resources.assets",
+  "tex_pid": 379,
+  "atlas_rect": [
+   0,
+   0,
+   130,
+   81
+  ],
+  "rotation": 0,
+  "size": [
+   131,
+   90
+  ],
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "pivot": [
+   52.926,
+   42.677
+  ],
+  "ppu": 200.0,
+  "status": "KEEP_ROLE"
+ },
+ {
+  "char": "ZombieRunner1",
+  "role": "日本平民·劳作",
+  "faction": "僵尸",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "ZombieRunner2",
+  "role": "日本平民·劳作",
+  "faction": "僵尸",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "ZombieRunner3",
+  "role": "日本平民·浅色",
+  "faction": "僵尸",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "ZombieSailor",
+  "role": "日本海军",
+  "faction": "僵尸",
+  "active": true,
+  "sr_pid": 15776,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 4364,
+  "tex_file": "resources.assets",
+  "tex_pid": 1568,
+  "atlas_rect": [
+   5,
+   6,
+   96,
+   68
+  ],
+  "rotation": 0,
+  "size": [
+   131,
+   90
+  ],
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "pivot": [
+   52.926,
+   42.677
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "REPAINT"
+ },
+ {
+  "char": "ZombiePaulie",
+  "role": "日本平民·劳作",
+  "faction": "僵尸",
+  "active": true,
+  "sr_pid": 15767,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 4127,
+  "tex_file": "resources.assets",
+  "tex_pid": 1333,
+  "atlas_rect": [
+   0,
+   0,
+   131,
+   90
+  ],
+  "rotation": 0,
+  "size": [
+   131,
+   90
+  ],
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "pivot": [
+   52.926,
+   42.677
+  ],
+  "ppu": 200.0,
+  "status": "KEEP_ROLE"
+ },
+ {
+  "char": "ZombieCop",
+  "role": "日本平民·劳作",
+  "faction": "僵尸",
+  "active": true,
+  "sr_pid": 16190,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 4716,
+  "tex_file": "resources.assets",
+  "tex_pid": 1921,
+  "atlas_rect": [
+   0,
+   4,
+   118,
+   86
+  ],
+  "rotation": 0,
+  "size": [
+   131,
+   90
+  ],
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "pivot": [
+   52.926,
+   42.677
+  ],
+  "ppu": 200.0,
+  "status": "KEEP_ROLE",
+  "shared_with": [
+   "ZombieCop",
+   "ZombieGun"
+  ]
+ },
+ {
+  "char": "ZombieOfficer",
+  "role": "日军将官",
+  "faction": "僵尸",
+  "active": true,
+  "sr_pid": 16486,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 4299,
+  "tex_file": "resources.assets",
+  "tex_pid": 1504,
+  "atlas_rect": [
+   0,
+   7,
+   127,
+   83
+  ],
+  "rotation": 0,
+  "size": [
+   131,
+   90
+  ],
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "pivot": [
+   52.926,
+   42.677
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "REPAINT"
+ },
+ {
+  "char": "ZombieGun",
+  "role": "日军佐官",
+  "faction": "僵尸",
+  "active": true,
+  "sr_pid": 16636,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 4716,
+  "tex_file": "resources.assets",
+  "tex_pid": 1921,
+  "atlas_rect": [
+   0,
+   4,
+   118,
+   86
+  ],
+  "rotation": 0,
+  "size": [
+   131,
+   90
+  ],
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "pivot": [
+   52.926,
+   42.677
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "REPAINT",
+  "shared_with": [
+   "ZombieCop",
+   "ZombieGun"
+  ]
+ },
+ {
+  "char": "ZombieSoldier",
+  "role": "日军士兵",
+  "faction": "僵尸",
+  "active": true,
+  "sr_pid": 16721,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 4456,
+  "tex_file": "resources.assets",
+  "tex_pid": 1660,
+  "atlas_rect": [
+   10,
+   1,
+   132,
+   89
+  ],
+  "rotation": 0,
+  "size": [
+   132,
+   89
+  ],
+  "rect": [
+   132.0,
+   90.0
+  ],
+  "pivot": [
+   52.214,
+   45.393
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "REPAINT"
+ },
+ {
+  "char": "ZombieSandwichBoard",
+  "role": "日本平民·劳作",
+  "faction": "僵尸",
+  "active": true,
+  "sr_pid": 15777,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3681,
+  "tex_file": "resources.assets",
+  "tex_pid": 880,
+  "atlas_rect": [
+   0,
+   0,
+   130,
+   81
+  ],
+  "rotation": 0,
+  "size": [
+   131,
+   90
+  ],
+  "rect": [
+   131.0,
+   90.0
+  ],
+  "pivot": [
+   52.926,
+   42.677
+  ],
+  "ppu": 200.0,
+  "status": "KEEP_ROLE"
+ },
+ {
+  "char": "ZombieCharger",
+  "role": "日本海军",
+  "faction": "僵尸",
+  "active": true,
+  "sr_pid": 15760,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 4170,
+  "tex_file": "resources.assets",
+  "tex_pid": 1376,
+  "atlas_rect": [
+   0,
+   0,
+   106,
+   106
+  ],
+  "rotation": 0,
+  "size": [
+   106,
+   106
+  ],
+  "rect": [
+   106.0,
+   106.0
+  ],
+  "pivot": [
+   47.025,
+   57.123
+  ],
+  "ppu": 200.0,
+  "canon": "昭五式铁帽",
+  "status": "REPAINT"
+ },
+ {
+  "char": "ZombieBurping",
+  "role": "日本平民·浅色",
+  "faction": "僵尸",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "ZombieStripper",
+  "role": "日本平民·浅色",
+  "faction": "僵尸",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "ZombieCrawler",
+  "role": "日军士兵",
+  "faction": "僵尸",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "ZombieJumper",
+  "role": "日军士兵",
+  "faction": "僵尸",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "ZombieFloater",
+  "role": "日本平民·劳作",
+  "faction": "僵尸",
+  "active": true,
+  "sr_pid": 15925,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 3881,
+  "tex_file": "resources.assets",
+  "tex_pid": 1083,
+  "atlas_rect": [
+   0,
+   0,
+   86,
+   106
+  ],
+  "rotation": 0,
+  "size": [
+   86,
+   106
+  ],
+  "rect": [
+   86.0,
+   106.0
+  ],
+  "pivot": [
+   43.0,
+   53.0
+  ],
+  "ppu": 200.0,
+  "status": "KEEP_ROLE"
+ },
+ {
+  "char": "FatCook",
+  "role": "日本平民·浅色",
+  "faction": "人类",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "FatDockworker",
+  "role": "日本平民·劳作",
+  "faction": "人类",
+  "active": true,
+  "sr_pid": 16618,
+  "sprite_file": "resources.assets",
+  "sprite_pid": 4369,
+  "tex_file": "resources.assets",
+  "tex_pid": 1573,
+  "atlas_rect": [
+   16,
+   0,
+   109,
+   56
+  ],
+  "rotation": 0,
+  "size": [
+   109,
+   56
+  ],
+  "rect": [
+   109.0,
+   56.0
+  ],
+  "pivot": [
+   51.553,
+   19.551
+  ],
+  "ppu": 200.0,
+  "status": "KEEP_ROLE"
+ },
+ {
+  "char": "ZombieRat",
+  "role": "鼠怪",
+  "faction": "鼠怪",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "ZombieRatJumper",
+  "role": "鼠怪",
+  "faction": "鼠怪",
+  "status": "NO_HAT"
+ },
+ {
+  "char": "ZombieRatSpitter",
+  "role": "鼠怪",
+  "faction": "鼠怪",
+  "status": "NO_HAT"
+ }
+]

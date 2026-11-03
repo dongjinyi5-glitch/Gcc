@@ -1,0 +1,126 @@
+{
+ "family": "tommygun",
+ "canvas": [
+  345,
+  121
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "TommygunWeaponPickup",
+   "active": true,
+   "order": 0,
+   "canvas_rect": [
+    6,
+    6,
+    333,
+    105
+   ],
+   "sprite_name": "Tommygun",
+   "sprite_file": "sharedassets4.assets",
+   "sprite_path_id": 369,
+   "texture_name": "Tommygun",
+   "texture_file": "sharedassets4.assets",
+   "texture_path_id": 133,
+   "native_size": [
+    333,
+    105
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    333,
+    105
+   ],
+   "texture_size": [
+    333,
+    105
+   ],
+   "rotation": 0,
+   "pivot": [
+    132.4530487060547,
+    46.94131851196289
+   ],
+   "ppu": 200.0,
+   "mask": "tommygun_mask_0.png"
+  },
+  {
+   "index": 1,
+   "go_path": "TommygunWeaponPickup/TommygunDrum",
+   "active": true,
+   "order": 1,
+   "canvas_rect": [
+    154,
+    31,
+    55,
+    84
+   ],
+   "sprite_name": "TommygunDrum",
+   "sprite_file": "sharedassets4.assets",
+   "sprite_path_id": 394,
+   "texture_name": "TommygunDrum",
+   "texture_file": "sharedassets4.assets",
+   "texture_path_id": 158,
+   "native_size": [
+    55,
+    84
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    55,
+    84
+   ],
+   "texture_size": [
+    55,
+    84
+   ],
+   "rotation": 0,
+   "pivot": [
+    29.74188804626465,
+    43.53390884399414
+   ],
+   "ppu": 200.0,
+   "mask": "tommygun_mask_1.png"
+  },
+  {
+   "index": 2,
+   "go_path": "TommygunWeaponPickup/TommygunTop",
+   "active": true,
+   "order": 1,
+   "canvas_rect": [
+    168,
+    7,
+    17,
+    19
+   ],
+   "sprite_name": "TommygunTop",
+   "sprite_file": "sharedassets4.assets",
+   "sprite_path_id": 383,
+   "texture_name": "TommygunTop",
+   "texture_file": "sharedassets4.assets",
+   "texture_path_id": 147,
+   "native_size": [
+    17,
+    19
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    17,
+    19
+   ],
+   "texture_size": [
+    17,
+    19
+   ],
+   "rotation": 0,
+   "pivot": [
+    8.5,
+    9.5
+   ],
+   "ppu": 200.0,
+   "mask": "tommygun_mask_2.png"
+  }
+ ]
+}

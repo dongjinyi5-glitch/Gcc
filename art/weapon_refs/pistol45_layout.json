@@ -1,0 +1,126 @@
+{
+ "family": "pistol45",
+ "canvas": [
+  142,
+  103
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "Gangster1/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Pistol",
+   "active": false,
+   "order": 30,
+   "canvas_rect": [
+    6,
+    6,
+    130,
+    91
+   ],
+   "sprite_name": "Pistol45_0",
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3113,
+   "texture_name": "Pistol45",
+   "texture_file": "resources.assets",
+   "texture_path_id": 304,
+   "native_size": [
+    130,
+    91
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    130,
+    91
+   ],
+   "texture_size": [
+    130,
+    91
+   ],
+   "rotation": 0,
+   "pivot": [
+    46.859195709228516,
+    50.13749694824219
+   ],
+   "ppu": 200.0,
+   "mask": "pistol45_mask_0.png"
+  },
+  {
+   "index": 1,
+   "go_path": "Gangster1/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Pistol/Pistol45-Slide",
+   "active": true,
+   "order": 31,
+   "canvas_rect": [
+    20,
+    7,
+    112,
+    23
+   ],
+   "sprite_name": "Pistol45-Slide",
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 4223,
+   "texture_name": "Pistol45-Slide",
+   "texture_file": "resources.assets",
+   "texture_path_id": 1428,
+   "native_size": [
+    112,
+    23
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    112,
+    23
+   ],
+   "texture_size": [
+    112,
+    23
+   ],
+   "rotation": 0,
+   "pivot": [
+    56.0,
+    3.787949562072754
+   ],
+   "ppu": 200.0,
+   "mask": "pistol45_mask_1.png"
+  },
+  {
+   "index": 2,
+   "go_path": "Gangster1/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Pistol/ammoclip",
+   "active": true,
+   "order": 29,
+   "canvas_rect": [
+    12,
+    37,
+    38,
+    54
+   ],
+   "sprite_name": "ammoclip",
+   "sprite_file": "resources.assets",
+   "sprite_path_id": 3726,
+   "texture_name": "ammoclip",
+   "texture_file": "resources.assets",
+   "texture_path_id": 924,
+   "native_size": [
+    38,
+    54
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    38,
+    54
+   ],
+   "texture_size": [
+    38,
+    54
+   ],
+   "rotation": 0,
+   "pivot": [
+    19.0,
+    27.0
+   ],
+   "ppu": 200.0,
+   "mask": "pistol45_mask_2.png"
+  }
+ ]
+}

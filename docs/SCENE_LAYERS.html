@@ -1,0 +1,391 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>场景图层清单 — Guns, Gore and Cannoli 重彩化</title><style>
+:root{--bg:#17171b;--card:#23232a;--card2:#2b2b33;--ink:#e8e8ee;--dim:#9a9ca8;
+--acc:#d6a860;--line:#3a3a44;--red:#c05a4a;--grn:#5f9e6a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.65 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:40px 28px 80px}
+h1{font-size:30px;margin:0 0 6px;letter-spacing:.5px}
+h2{font-size:22px;margin:0 0 4px}
+h3{font-size:17px;margin:34px 0 10px;color:var(--acc)}
+h4{font-size:14px;margin:0 0 8px;color:var(--dim);font-weight:600}
+.sub{color:var(--dim);margin:0 0 26px}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:24px 0 30px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:16px 18px}
+.card b{display:block;font-size:26px;color:var(--acc);letter-spacing:.5px}
+.card span{color:var(--dim);font-size:13px}
+.note{background:var(--card);border-left:3px solid var(--acc);border-radius:6px;
+padding:14px 18px;margin:18px 0}
+.note p{margin:6px 0}
+table{width:100%;border-collapse:collapse;font-size:13.5px;margin:12px 0 6px}
+th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line)}
+th{color:var(--dim);font-weight:600;font-size:12.5px;letter-spacing:.3px}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums}
+tr:hover td{background:#282830}
+code,.mono{font-family:Consolas,monospace;font-size:12.5px;color:#c9d1d9}
+.lv{background:var(--card);border:1px solid var(--line);border-radius:12px;
+padding:22px 24px;margin:26px 0}
+.tag{font:12px Consolas,monospace;color:var(--dim);background:#1b1b21;
+border:1px solid var(--line);border-radius:4px;padding:2px 7px;margin-left:8px}
+.meta{color:var(--dim);font-size:13.5px;margin:8px 0 14px}
+.meta b{color:var(--ink);font-weight:600}
+.shot{display:block;background:#0d0d10;border:1px solid var(--line);
+border-radius:8px;overflow:hidden;margin:10px 0}
+/* width:auto + max-width keeps a narrow sheet (level0 has 2 cells) at native
+   size instead of stretching it to 1240 px and blurring the art */
+.shot img{display:block;max-width:100%;width:auto;height:auto;margin:0 auto}
+.cap{font-size:12.5px;color:var(--dim);margin:6px 0 16px}
+.pair{display:grid;grid-template-columns:1fr 320px;gap:16px;align-items:start}
+.small img{width:100%;display:block}
+ol,ul{padding-left:20px}
+li{margin:3px 0}
+a{color:var(--acc);text-decoration:none}
+a:hover{text-decoration:underline}
+.pill{display:inline-block;font-size:11.5px;padding:1px 7px;border-radius:10px;
+background:#33333d;color:var(--dim);margin-left:6px}
+.warn{border-left-color:var(--red)}
+.ok{border-left-color:var(--grn)}
+</style></head><body><div class="wrap">
+<h1>场景图层清单</h1>
+<p class="sub">Guns, Gore and Cannoli · Unity 4.3.4f1 · 全部 SpriteRenderer 场景图层 ·
+按关卡分批 · 附名称与样图</p>
+
+<div class="cards">
+  <div class="card"><b>1450</b><span>张场景纹理（去重）</span></div>
+  <div class="card"><b>420 Mpx</b><span>有效绘制面积（非透明像素）</span></div>
+  <div class="card"><b>15,751</b><span>渲染实例（同一张图的复用）</span></div>
+  <div class="card"><b>13</b><span>关卡批次 + FX + UI</span></div>
+</div>
+
+<div class="note">
+<p><b>怎么读这份清单。</b>每个关卡一张<b>合成全景</b>（按 sortingOrder 把该关所有
+SpriteRenderer 叠起来，这就是关卡实际长什么样），加一张<b>逐图缩略表</b>
+（名称 / 尺寸 / 引用次数，按绘制面积排序）。全景里被裁掉的极端离群物件不会出现在
+缩略表之外，缩略表才是完整清单。</p>
+<p><b>为什么按关卡分批。</b>纹理名离开场景没有意义（<code>Part3Front_12</code> 只有
+放在 level8 才读得懂），而美术本身也是按场景画的。</p>
+<p><b>去重口径。</b>389 张纹理被多个关卡共用，会同时出现在多张缩略表里；
+工作量按去重的 1450 张算，不按各表相加的 2466 行算。</p>
+</div>
+
+<h3>1. 分层结构（sortingOrder）</h3>
+<p class="sub" style="margin-top:-6px">整数排序层，负数在最里侧（远景/视差），
+0 附近是建筑与地面，正数是前景遮挡与光照叠加。层数越多，视差越细。</p>
+<table><thead><tr><th>批次</th><th>主题</th><th class="num">纹理</th><th class="num">有效绘制</th>
+<th class="num">实例</th><th class="num">sortingOrder</th><th class="num">层数</th></tr></thead><tbody>
+<tr><td><a href='#level0'>L0</a></td><td>主菜单动态背景</td><td class='num'>2</td><td class='num'>2.6 M</td><td class='num'>2</td><td class='num'>0 … 0</td><td class='num'>1</td></tr>
+<tr><td><a href='#level3'>L3</a></td><td>港口码头</td><td class='num'>167</td><td class='num'>42.1 M</td><td class='num'>3,479</td><td class='num'>-100 … 700</td><td class='num'>55</td></tr>
+<tr><td><a href='#level4'>L4</a></td><td>港区货场</td><td class='num'>230</td><td class='num'>49.1 M</td><td class='num'>4,162</td><td class='num'>-101 … 1100</td><td class='num'>64</td></tr>
+<tr><td><a href='#level5'>L5</a></td><td>港湾远景</td><td class='num'>242</td><td class='num'>45.6 M</td><td class='num'>4,945</td><td class='num'>-101 … 1115</td><td class='num'>60</td></tr>
+<tr><td><a href='#level6'>L6</a></td><td>老城街道</td><td class='num'>258</td><td class='num'>56.8 M</td><td class='num'>4,189</td><td class='num'>-101 … 1100</td><td class='num'>58</td></tr>
+<tr><td><a href='#level7'>L7</a></td><td>夜总会</td><td class='num'>198</td><td class='num'>42.2 M</td><td class='num'>2,724</td><td class='num'>-101 … 1115</td><td class='num'>52</td></tr>
+<tr><td><a href='#level8'>L8</a></td><td>城区街区</td><td class='num'>275</td><td class='num'>45.0 M</td><td class='num'>6,886</td><td class='num'>-100 … 1617</td><td class='num'>90</td></tr>
+<tr><td><a href='#level9'>L9</a></td><td>河畔大桥</td><td class='num'>117</td><td class='num'>14.9 M</td><td class='num'>4,112</td><td class='num'>-100 … 1617</td><td class='num'>59</td></tr>
+<tr><td><a href='#level10'>L10</a></td><td>竖井与下水道</td><td class='num'>143</td><td class='num'>46.5 M</td><td class='num'>3,356</td><td class='num'>-100 … 1115</td><td class='num'>66</td></tr>
+<tr><td><a href='#level11'>L11</a></td><td>地铁与水库</td><td class='num'>178</td><td class='num'>59.6 M</td><td class='num'>4,275</td><td class='num'>-100 … 1115</td><td class='num'>65</td></tr>
+<tr><td><a href='#level12'>L12</a></td><td>水库深处</td><td class='num'>114</td><td class='num'>17.6 M</td><td class='num'>4,642</td><td class='num'>-100 … 1115</td><td class='num'>81</td></tr>
+<tr><td><a href='#level13'>L13</a></td><td>车库与电梯</td><td class='num'>265</td><td class='num'>44.7 M</td><td class='num'>6,310</td><td class='num'>-101 … 1115</td><td class='num'>64</td></tr>
+<tr><td><a href='#level14'>L14</a></td><td>齐柏林飞艇</td><td class='num'>277</td><td class='num'>24.7 M</td><td class='num'>6,679</td><td class='num'>-100 … 1116</td><td class='num'>97</td></tr>
+<tr><td>FX</td><td>粒子层</td><td class='num'>8</td><td class='num'>—</td><td class='num'>810</td><td class='num'>—</td><td class='num'>—</td></tr>
+<tr><td>UI</td><td>NGUI 图集</td><td class='num'>11</td><td class='num'>—</td><td class='num'>—</td><td class='num'>—</td><td class='num'>—</td></tr></tbody></table>
+<h3>2. 分批清单（每关：合成全景 + 逐图缩略表）</h3>
+<section class='lv' id='level0'><h2>L0 主菜单动态背景<span class='tag'>level0</span></h2>
+<div class='meta'><b>2</b> 张纹理 · <b>2.6</b> Mpx 有效绘制 · <b>2</b> 实例 · sortingOrder <b>0…0</b>（1 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level0.png'><img src='../art/scene_sheets/preview/scene_level0.jpg' alt='level0 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>StartScreenBack</td><td class='num'>2000×1125</td><td class='num'>2.25 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>StartScreenFront</td><td class='num'>2000×1125</td><td class='num'>0.39 M</td><td class='num'>×1</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level3'><h2>L3 港口码头<span class='tag'>level3</span></h2>
+<div class='meta'><b>167</b> 张纹理 · <b>42.1</b> Mpx 有效绘制 · <b>3,479</b> 实例 · sortingOrder <b>-100…700</b>（55 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level3_rows.png'><img src='../art/scene_sheets/preview/scene_level3_rows.jpg' alt='level3 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level3_top.png'><img src='../art/scene_sheets/preview/level3_top.jpg' alt='level3 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 167 张见 <a href='../art/scene_sheets/level3.png'>逐图缩略表 level3.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>Boat008a</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Boat006</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Boat003</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>Boat004</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Boat002</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>Boat012</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Boat010b</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Boat017b</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Boat005</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Boat001</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Boat007a</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Boat009a</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level4'><h2>L4 港区货场<span class='tag'>level4</span></h2>
+<div class='meta'><b>230</b> 张纹理 · <b>49.1</b> Mpx 有效绘制 · <b>4,162</b> 实例 · sortingOrder <b>-101…1100</b>（64 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level4_rows.png'><img src='../art/scene_sheets/preview/scene_level4_rows.jpg' alt='level4 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level4_top.png'><img src='../art/scene_sheets/preview/level4_top.jpg' alt='level4 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 230 张见 <a href='../art/scene_sheets/level4.png'>逐图缩略表 level4.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>Harbour_025</td><td class='num'>1024×1024</td><td class='num'>1.03 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_026</td><td class='num'>1024×1024</td><td class='num'>1.03 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_Background_20</td><td class='num'>1024×1024</td><td class='num'>1.02 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_024</td><td class='num'>1024×1024</td><td class='num'>0.98 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_Background_19</td><td class='num'>1024×1024</td><td class='num'>0.96 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_027</td><td class='num'>1024×1024</td><td class='num'>0.95 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_Background_21</td><td class='num'>1024×1024</td><td class='num'>0.94 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_Background_18</td><td class='num'>1024×1024</td><td class='num'>0.89 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_Background_22</td><td class='num'>1024×1024</td><td class='num'>0.83 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_Background_16</td><td class='num'>1024×1024</td><td class='num'>0.81 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_028B</td><td class='num'>1024×1024</td><td class='num'>0.81 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour_Background_17</td><td class='num'>1024×1024</td><td class='num'>0.80 M</td><td class='num'>×1</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level5'><h2>L5 港湾远景<span class='tag'>level5</span></h2>
+<div class='meta'><b>242</b> 张纹理 · <b>45.6</b> Mpx 有效绘制 · <b>4,945</b> 实例 · sortingOrder <b>-101…1115</b>（60 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level5_rows.png'><img src='../art/scene_sheets/preview/scene_level5_rows.jpg' alt='level5 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level5_top.png'><img src='../art/scene_sheets/preview/level5_top.jpg' alt='level5 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 242 张见 <a href='../art/scene_sheets/level5.png'>逐图缩略表 level5.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>Harbour-Background_033</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_013</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_032</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_027</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_010</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_015</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_030</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_042</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_009</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_014</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_043</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Harbour-Background_031</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level6'><h2>L6 老城街道<span class='tag'>level6</span></h2>
+<div class='meta'><b>258</b> 张纹理 · <b>56.8</b> Mpx 有效绘制 · <b>4,189</b> 实例 · sortingOrder <b>-101…1100</b>（58 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level6_rows.png'><img src='../art/scene_sheets/preview/scene_level6_rows.jpg' alt='level6 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level6_top.png'><img src='../art/scene_sheets/preview/level6_top.jpg' alt='level6 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 258 张见 <a href='../art/scene_sheets/level6.png'>逐图缩略表 level6.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>StreetsBackground_25</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>OldBuildingInside06</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×3</td></tr>
+<tr><td class='mono'>garage01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×3</td></tr>
+<tr><td class='mono'>StreetsBackground_23</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>StreetsBackground_22</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>StreetsBackground_18</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>StreetsBackground_21</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>stripclub_background_38</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>StreetsBackground_16</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>StreetsBackground_17</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>StreetsBackground_08</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>OldBuildingInside07</td><td class='num'>1024×1023</td><td class='num'>1.05 M</td><td class='num'>×3</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level7'><h2>L7 夜总会<span class='tag'>level7</span></h2>
+<div class='meta'><b>198</b> 张纹理 · <b>42.2</b> Mpx 有效绘制 · <b>2,724</b> 实例 · sortingOrder <b>-101…1115</b>（52 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level7_rows.png'><img src='../art/scene_sheets/preview/scene_level7_rows.jpg' alt='level7 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level7_top.png'><img src='../art/scene_sheets/preview/level7_top.jpg' alt='level7 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 198 张见 <a href='../art/scene_sheets/level7.png'>逐图缩略表 level7.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>stripclub_background_38</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>stripclub_background_40</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×10</td></tr>
+<tr><td class='mono'>stripclub_background_15</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>stripclub_background_28</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>stripclub_background_25</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>stripclub_background_27</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>stripclub_background_33</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>stripclub_background_12</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>stripclub_background_35</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>stripclub_background_37</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>stripclub_background_13</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>stripclub_background_26</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level8'><h2>L8 城区街区<span class='tag'>level8</span></h2>
+<div class='meta'><b>275</b> 张纹理 · <b>45.0</b> Mpx 有效绘制 · <b>6,886</b> 实例 · sortingOrder <b>-100…1617</b>（90 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level8_rows.png'><img src='../art/scene_sheets/preview/scene_level8_rows.jpg' alt='level8 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level8_top.png'><img src='../art/scene_sheets/preview/level8_top.jpg' alt='level8 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 275 张见 <a href='../art/scene_sheets/level8.png'>逐图缩略表 level8.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>WallExtra02</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×3</td></tr>
+<tr><td class='mono'>WallExtra01</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×3</td></tr>
+<tr><td class='mono'>part2_05</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>part1_02</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>part1_01</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>part1_03B</td><td class='num'>1024×1024</td><td class='num'>1.00 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>part1_03</td><td class='num'>1024×1024</td><td class='num'>1.00 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>part2_11</td><td class='num'>1024×1024</td><td class='num'>1.00 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>part2_06</td><td class='num'>1024×1024</td><td class='num'>0.99 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>part2_09</td><td class='num'>1024×1024</td><td class='num'>0.97 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>part2_10</td><td class='num'>1024×1024</td><td class='num'>0.97 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>part2_04</td><td class='num'>1024×1024</td><td class='num'>0.97 M</td><td class='num'>×2</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level9'><h2>L9 河畔大桥<span class='tag'>level9</span></h2>
+<div class='meta'><b>117</b> 张纹理 · <b>14.9</b> Mpx 有效绘制 · <b>4,112</b> 实例 · sortingOrder <b>-100…1617</b>（59 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level9_rows.png'><img src='../art/scene_sheets/preview/scene_level9_rows.jpg' alt='level9 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level9_top.png'><img src='../art/scene_sheets/preview/level9_top.jpg' alt='level9 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 117 张见 <a href='../art/scene_sheets/level9.png'>逐图缩略表 level9.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>Riverside_01</td><td class='num'>3735×2408</td><td class='num'>4.50 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>Peiler02_1</td><td class='num'>1024×990</td><td class='num'>0.71 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>BeginWallBack01</td><td class='num'>937×1024</td><td class='num'>0.66 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>bridge01</td><td class='num'>1024×1024</td><td class='num'>0.63 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>FireLoop0</td><td class='num'>1024×1024</td><td class='num'>0.56 M</td><td class='num'>×99</td></tr>
+<tr><td class='mono'>ArmyBarriere01</td><td class='num'>1024×804</td><td class='num'>0.51 M</td><td class='num'>×9</td></tr>
+<tr><td class='mono'>BeginWallBack02</td><td class='num'>991×700</td><td class='num'>0.49 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>bridge08</td><td class='num'>1024×996</td><td class='num'>0.45 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>BeginWallFront01</td><td class='num'>457×1024</td><td class='num'>0.43 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>bridge09</td><td class='num'>1024×928</td><td class='num'>0.41 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>BeginWallFront02</td><td class='num'>765×700</td><td class='num'>0.34 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>TruckFront2</td><td class='num'>645×611</td><td class='num'>0.30 M</td><td class='num'>×7</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level10'><h2>L10 竖井与下水道<span class='tag'>level10</span></h2>
+<div class='meta'><b>143</b> 张纹理 · <b>46.5</b> Mpx 有效绘制 · <b>3,356</b> 实例 · sortingOrder <b>-100…1115</b>（66 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level10_rows.png'><img src='../art/scene_sheets/preview/scene_level10_rows.jpg' alt='level10 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level10_top.png'><img src='../art/scene_sheets/preview/level10_top.jpg' alt='level10 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 143 张见 <a href='../art/scene_sheets/level10.png'>逐图缩略表 level10.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>stripclub_background_40</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×10</td></tr>
+<tr><td class='mono'>Shafts05</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Shafts08</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Shafts04</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Shafts01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Shafts09</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Shafts02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Shafts03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Shafts10</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Shafts07</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>SewersOutsideFront11</td><td class='num'>1024×1024</td><td class='num'>1.03 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>ShaftsFront07</td><td class='num'>1024×1024</td><td class='num'>0.98 M</td><td class='num'>×1</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level11'><h2>L11 地铁与水库<span class='tag'>level11</span></h2>
+<div class='meta'><b>178</b> 张纹理 · <b>59.6</b> Mpx 有效绘制 · <b>4,275</b> 实例 · sortingOrder <b>-100…1115</b>（65 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level11_rows.png'><img src='../art/scene_sheets/preview/scene_level11_rows.jpg' alt='level11 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level11_top.png'><img src='../art/scene_sheets/preview/level11_top.jpg' alt='level11 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 178 张见 <a href='../art/scene_sheets/level11.png'>逐图缩略表 level11.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>2ndShafts01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>WaterReservoir01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>WaterReservoir04</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×20</td></tr>
+<tr><td class='mono'>Subway03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>WaterReservoir02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>Subway05</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>2ndShafts07</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>2ndShafts06</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>2ndShafts02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Subway11</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>WaterReservoir03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×18</td></tr>
+<tr><td class='mono'>Subway10</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level12'><h2>L12 水库深处<span class='tag'>level12</span></h2>
+<div class='meta'><b>114</b> 张纹理 · <b>17.6</b> Mpx 有效绘制 · <b>4,642</b> 实例 · sortingOrder <b>-100…1115</b>（81 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level12_rows.png'><img src='../art/scene_sheets/preview/scene_level12_rows.jpg' alt='level12 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level12_top.png'><img src='../art/scene_sheets/preview/level12_top.jpg' alt='level12 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 114 张见 <a href='../art/scene_sheets/level12.png'>逐图缩略表 level12.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>WaterReservoir01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>WaterReservoir04</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×20</td></tr>
+<tr><td class='mono'>WaterReservoir02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>WaterReservoir03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×18</td></tr>
+<tr><td class='mono'>WaterReservoir05</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>WaterReservoir06</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>WaterReservoir07</td><td class='num'>1024×818</td><td class='num'>0.77 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>WaterReservoir12</td><td class='num'>1024×779</td><td class='num'>0.76 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>WaterReservoir11</td><td class='num'>1024×696</td><td class='num'>0.70 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>WaterReservoir10</td><td class='num'>1024×687</td><td class='num'>0.70 M</td><td class='num'>×20</td></tr>
+<tr><td class='mono'>WaterReservoir09</td><td class='num'>1024×687</td><td class='num'>0.70 M</td><td class='num'>×18</td></tr>
+<tr><td class='mono'>WaterReservoir08</td><td class='num'>1024×687</td><td class='num'>0.70 M</td><td class='num'>×2</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level13'><h2>L13 车库与电梯<span class='tag'>level13</span></h2>
+<div class='meta'><b>265</b> 张纹理 · <b>44.7</b> Mpx 有效绘制 · <b>6,310</b> 实例 · sortingOrder <b>-101…1115</b>（64 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level13_rows.png'><img src='../art/scene_sheets/preview/scene_level13_rows.jpg' alt='level13 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level13_top.png'><img src='../art/scene_sheets/preview/level13_top.jpg' alt='level13 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 265 张见 <a href='../art/scene_sheets/level13.png'>逐图缩略表 level13.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>Garage03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>Garage02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>Garage01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Garage05</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Garage08a</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>RoomsFront02c</td><td class='num'>1024×1024</td><td class='num'>1.04 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>Rooms02a</td><td class='num'>1024×1024</td><td class='num'>1.02 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>RoofTopStairsBack02</td><td class='num'>1024×995</td><td class='num'>1.02 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Garage09a</td><td class='num'>1024×1024</td><td class='num'>1.00 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>RoofTopStairsBack04</td><td class='num'>1024×897</td><td class='num'>0.92 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>Rooms03a</td><td class='num'>1024×1024</td><td class='num'>0.91 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>RoofTopStairsBack01</td><td class='num'>1024×1024</td><td class='num'>0.89 M</td><td class='num'>×1</td></tr>
+</tbody></table>
+</section>
+<section class='lv' id='level14'><h2>L14 齐柏林飞艇<span class='tag'>level14</span></h2>
+<div class='meta'><b>277</b> 张纹理 · <b>24.7</b> Mpx 有效绘制 · <b>6,679</b> 实例 · sortingOrder <b>-100…1116</b>（97 层）</div>
+<a class='shot' href='../art/scene_sheets/scene_level14_rows.png'><img src='../art/scene_sheets/preview/scene_level14_rows.jpg' alt='level14 panorama'></a>
+<div class='cap'>合成全景 — 全部可见 SpriteRenderer 按 sortingOrder 叠加，alpha 混合，含 m_Color 着色。宽图已折成数行；点击看原始尺寸。</div>
+<h4 style='margin:18px 0 6px'>主要图层 — 绘制面积前 24</h4>
+<a class='shot' href='../art/scene_sheets/level14_top.png'><img src='../art/scene_sheets/preview/level14_top.jpg' alt='level14 top 24'></a>
+<div class='cap'>格内标签为 painted（有效绘制面积）。完整 277 张见 <a href='../art/scene_sheets/level14.png'>逐图缩略表 level14.png</a>（2012px，含名称与尺寸）。</div>
+<h4>绘制面积最大的 12 张</h4><table><thead><tr><th>纹理</th><th class='num'>尺寸</th><th class='num'>painted</th><th class='num'>引用</th></tr></thead><tbody>
+<tr><td class='mono'>Zeppelin</td><td class='num'>2048×1356</td><td class='num'>1.53 M</td><td class='num'>×3</td></tr>
+<tr><td class='mono'>BelluccioWall01</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>BelluccioWall03</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>BelluccioWall02</td><td class='num'>1024×1024</td><td class='num'>1.05 M</td><td class='num'>×1</td></tr>
+<tr><td class='mono'>OldBuildingInside10</td><td class='num'>1024×1024</td><td class='num'>1.03 M</td><td class='num'>×23</td></tr>
+<tr><td class='mono'>RooftopsBuilding2</td><td class='num'>967×873</td><td class='num'>0.78 M</td><td class='num'>×19</td></tr>
+<tr><td class='mono'>BuildingWhite1</td><td class='num'>846×1024</td><td class='num'>0.78 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>ArmyBarriereA02</td><td class='num'>1024×895</td><td class='num'>0.71 M</td><td class='num'>×15</td></tr>
+<tr><td class='mono'>buildingWall02</td><td class='num'>1024×662</td><td class='num'>0.67 M</td><td class='num'>×32</td></tr>
+<tr><td class='mono'>FireLoop0</td><td class='num'>1024×1024</td><td class='num'>0.56 M</td><td class='num'>×99</td></tr>
+<tr><td class='mono'>RooftopsBrickWallHalf1</td><td class='num'>1024×512</td><td class='num'>0.52 M</td><td class='num'>×2</td></tr>
+<tr><td class='mono'>RooftopsBrickWallHalf2</td><td class='num'>1024×512</td><td class='num'>0.52 M</td><td class='num'>×1</td></tr>
+</tbody></table>
+</section>
+<h3>3. FX 粒子层</h3><p class='sub' style='margin-top:-6px'>8 张粒子材质贴图，被 810 个 ParticleSystemRenderer、12 个材质共用。建议改调色板/Shader 着色，不重画。</p>
+<a class='shot' href='../art/scene_sheets/fx.png'><img src='../art/scene_sheets/preview/fx.jpg'></a>
+<h3>4. UI 图层（NGUI）</h3><p class='sub' style='margin-top:-6px'>UI 不走 SpriteRenderer，是 Material 引用的图集页，所以不在上面的统计里。11 张，独立小批次。</p>
+<a class='shot' href='../art/scene_sheets/ui.png'><img src='../art/scene_sheets/preview/ui.jpg'></a>
+<h3>5. 技术路线验证：程序化重彩为什么不能直接用</h3>
+<div class="note warn"><p>把角色用的 <code>restyle_ink</code> 直接套到场景层上，
+默认规则是 garment（石青+石绿），砖墙会变成蓝绿马赛克。它的槽位语义是为角色设计的
+（skin / garment / hat / weapon），场景需要一套自己的规则：按明度分层决定墨与赭石，
+只在暗部上石青，并叠加纸纹。</p></div>
+<a class='shot' href='../art/scene_sheets/probe_restyle.png'><img src='../art/scene_sheets/preview/probe_restyle.jpg'></a>
+<h3>6. 交付物</h3>
+<table><tbody>
+<tr><td class="mono">art/scene_inventory.json</td><td>1450 行结构化清单：名称、文件、path_id、尺寸、fill、painted、引用次数、关卡、sortingOrder、GameObject 名</td></tr>
+<tr><td class="mono">art/scene_inventory.csv</td><td>同上的表格版，可直接在 Excel 里筛选</td></tr>
+<tr><td class="mono">art/scene_sheets/level*.png</td><td>13 张逐图缩略表</td></tr>
+<tr><td class="mono">art/scene_sheets/scene_level*.png</td><td>13 张合成全景（另附 <code>_rows</code> 折行版）</td></tr>
+<tr><td class="mono">art/scene_sheets/top_backdrops.png</td><td>面积最大的 48 张，用于定风格基调</td></tr>
+<tr><td class="mono">art/scene_sheets/fx.png · ui.png</td><td>粒子层与 UI 图集</td></tr>
+<tr><td class="mono">tools/scripts/scene_survey.py</td><td>按关卡统计对象类型</td></tr>
+<tr><td class="mono">tools/scripts/scene_textures.py</td><td>走 PPtr 建清单</td></tr>
+<tr><td class="mono">tools/scripts/scene_stats.py</td><td>算 fill / painted 有效面积</td></tr>
+<tr><td class="mono">tools/scripts/scene_sheets.py</td><td>出缩略表</td></tr>
+<tr><td class="mono">tools/scripts/scene_render.py</td><td>合成全景（Transform 链 + alpha 混合 + m_Color）</td></tr>
+</tbody></table>
+<p class="sub" style="margin-top:24px">生成于 Guns, Gore and Cannoli 美术替换项目 · 数据源 ggc_Data（场景层未打补丁，读取即原始美术）</p>
+</div></body></html>

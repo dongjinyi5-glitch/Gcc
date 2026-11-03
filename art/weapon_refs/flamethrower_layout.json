@@ -1,0 +1,126 @@
+{
+ "family": "flamethrower",
+ "canvas": [
+  489,
+  292
+ ],
+ "parts": [
+  {
+   "index": 0,
+   "go_path": "Gangster1/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/Arms/Tommygun/ArmFront/ArmLowFront/HandFront/Flamethrower",
+   "active": false,
+   "order": 30,
+   "canvas_rect": [
+    184,
+    95,
+    299,
+    109
+   ],
+   "sprite_name": "Flamethrower_0",
+   "sprite_file": "sharedassets7.assets",
+   "sprite_path_id": 298,
+   "texture_name": "Flamethrower",
+   "texture_file": "sharedassets7.assets",
+   "texture_path_id": 144,
+   "native_size": [
+    299,
+    109
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    299,
+    109
+   ],
+   "texture_size": [
+    299,
+    109
+   ],
+   "rotation": 0,
+   "pivot": [
+    51.68988800048828,
+    47.56353759765625
+   ],
+   "ppu": 200.0,
+   "mask": "flamethrower_mask_0.png"
+  },
+  {
+   "index": 1,
+   "go_path": "Gangster1/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/FuelTankFlamethrower",
+   "active": false,
+   "order": -1,
+   "canvas_rect": [
+    67,
+    6,
+    143,
+    232
+   ],
+   "sprite_name": "FuelTankFlamethrower",
+   "sprite_file": "sharedassets7.assets",
+   "sprite_path_id": 273,
+   "texture_name": "FuelTankFlamethrower",
+   "texture_file": "sharedassets7.assets",
+   "texture_path_id": 119,
+   "native_size": [
+    143,
+    232
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    143,
+    232
+   ],
+   "texture_size": [
+    143,
+    232
+   ],
+   "rotation": 0,
+   "pivot": [
+    71.5,
+    116.0
+   ],
+   "ppu": 200.0,
+   "mask": "flamethrower_mask_1.png"
+  },
+  {
+   "index": 2,
+   "go_path": "Gangster1/Offset/VinnieFull/Upper/TorsoBelly/TorsoChest/FuelTankFlamethrower/HoseFlamethrower",
+   "active": true,
+   "order": 0,
+   "canvas_rect": [
+    6,
+    174,
+    162,
+    112
+   ],
+   "sprite_name": "HoseFlamethrower",
+   "sprite_file": "sharedassets7.assets",
+   "sprite_path_id": 281,
+   "texture_name": "HoseFlamethrower",
+   "texture_file": "sharedassets7.assets",
+   "texture_path_id": 127,
+   "native_size": [
+    162,
+    112
+   ],
+   "atlas_rect": [
+    0,
+    0,
+    162,
+    112
+   ],
+   "texture_size": [
+    162,
+    112
+   ],
+   "rotation": 0,
+   "pivot": [
+    58.20930480957031,
+    94.34626007080078
+   ],
+   "ppu": 210.0,
+   "mask": "flamethrower_mask_2.png"
+  }
+ ]
+}

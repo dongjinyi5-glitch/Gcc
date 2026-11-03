@@ -1,0 +1,150 @@
+[
+ {
+  "id": "L0",
+  "level": "level0",
+  "theme": "主菜单动态背景",
+  "kind": "scene",
+  "textures": 2,
+  "px": 4500000,
+  "renderers": 2,
+  "sheet": "level0.png"
+ },
+ {
+  "id": "L3",
+  "level": "level3",
+  "theme": "港口码头",
+  "kind": "scene",
+  "textures": 167,
+  "px": 56226723,
+  "renderers": 3479,
+  "sheet": "level3.png"
+ },
+ {
+  "id": "L4",
+  "level": "level4",
+  "theme": "港区货场",
+  "kind": "scene",
+  "textures": 230,
+  "px": 101994738,
+  "renderers": 4162,
+  "sheet": "level4.png"
+ },
+ {
+  "id": "L5",
+  "level": "level5",
+  "theme": "港湾远景",
+  "kind": "scene",
+  "textures": 242,
+  "px": 77372167,
+  "renderers": 4945,
+  "sheet": "level5.png"
+ },
+ {
+  "id": "L6",
+  "level": "level6",
+  "theme": "老城街道",
+  "kind": "scene",
+  "textures": 258,
+  "px": 71960650,
+  "renderers": 4189,
+  "sheet": "level6.png"
+ },
+ {
+  "id": "L7",
+  "level": "level7",
+  "theme": "夜总会",
+  "kind": "scene",
+  "textures": 198,
+  "px": 49400659,
+  "renderers": 2724,
+  "sheet": "level7.png"
+ },
+ {
+  "id": "L8",
+  "level": "level8",
+  "theme": "城区街区",
+  "kind": "scene",
+  "textures": 275,
+  "px": 63648681,
+  "renderers": 6886,
+  "sheet": "level8.png"
+ },
+ {
+  "id": "L9",
+  "level": "level9",
+  "theme": "河畔大桥",
+  "kind": "scene",
+  "textures": 117,
+  "px": 28918545,
+  "renderers": 4112,
+  "sheet": "level9.png"
+ },
+ {
+  "id": "L10",
+  "level": "level10",
+  "theme": "竖井与下水道",
+  "kind": "scene",
+  "textures": 143,
+  "px": 58390747,
+  "renderers": 3356,
+  "sheet": "level10.png"
+ },
+ {
+  "id": "L11",
+  "level": "level11",
+  "theme": "地铁与水库",
+  "kind": "scene",
+  "textures": 178,
+  "px": 75069605,
+  "renderers": 4275,
+  "sheet": "level11.png"
+ },
+ {
+  "id": "L12",
+  "level": "level12",
+  "theme": "水库深处",
+  "kind": "scene",
+  "textures": 114,
+  "px": 24080083,
+  "renderers": 4642,
+  "sheet": "level12.png"
+ },
+ {
+  "id": "L13",
+  "level": "level13",
+  "theme": "车库与电梯",
+  "kind": "scene",
+  "textures": 265,
+  "px": 62378639,
+  "renderers": 6310,
+  "sheet": "level13.png"
+ },
+ {
+  "id": "L14",
+  "level": "level14",
+  "theme": "齐柏林飞艇",
+  "kind": "scene",
+  "textures": 277,
+  "px": 34605556,
+  "renderers": 6679,
+  "sheet": "level14.png"
+ },
+ {
+  "id": "FX",
+  "level": "-",
+  "theme": "粒子层",
+  "kind": "fx",
+  "textures": 8,
+  "sheet": "fx.png",
+  "px": 446296
+ },
+ {
+  "id": "UI",
+  "level": "level1",
+  "theme": "UI 图集",
+  "kind": "ui",
+  "textures": 11,
+  "sheet": "ui.png",
+  "px": 11202383
+ }
+]

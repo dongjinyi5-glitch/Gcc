@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>全库重彩化 — restyle_scene v2</title><style>
+:root{--bg:#15151a;--card:#1e1e24;--ink:#e8e8ee;--dim:#969aa6;--acc:#d6a860}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);
+font:15px/1.75 "Microsoft YaHei",system-ui,sans-serif}
+.wrap{max-width:1240px;margin:0 auto;padding:48px 28px 96px}
+h1{font-size:30px;margin:0 0 6px;letter-spacing:.5px}
+.sub{color:var(--dim);margin:0 0 34px;font-size:14px}
+h2{font-size:19px;margin:44px 0 14px;border-left:3px solid var(--acc);
+padding-left:12px}
+h2 .d{display:block;font-size:13px;color:var(--dim);font-weight:400;
+margin-top:4px;border:0}
+.card{background:var(--card);border-radius:10px;padding:22px 24px;margin:0 0 26px}
+table{width:100%;border-collapse:collapse;font-size:13.5px}
+th{text-align:left;color:var(--dim);font-weight:500;padding:7px 8px;
+border-bottom:1px solid #33333c}
+td{padding:7px 8px;border-bottom:1px solid #26262e;vertical-align:top}
+td.n{text-align:right;font-family:Consolas,monospace}
+td.lv{font-family:Consolas,monospace;color:var(--acc)}
+td .d{display:block;color:var(--dim);font-size:12px}
+a{color:var(--acc)}
+.shot{background:#000;border-radius:8px;overflow:hidden;margin-bottom:10px}
+.shot img{display:block;max-width:100%;width:auto;height:auto}
+p.cap{color:var(--dim);font-size:12.5px;margin:0 0 18px}
+ul{margin:8px 0 0 20px;padding:0} li{margin:4px 0}
+.k{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:0 0 26px}
+.k div{background:var(--card);border-radius:9px;padding:14px 16px}
+.k b{display:block;font-size:22px;font-family:Consolas,monospace;color:var(--acc)}
+.k span{color:var(--dim);font-size:12.5px}
+</style></head><body><div class=wrap>
+<h1>全库重彩化 · restyle_scene v2</h1>
+<p class=sub>13 关全景，同一比例、同一位置，唯一的变量是配色。
+alpha 逐位不变、L* 不动，所以几何与烘焙光照和原版逐像素对齐。</p>
+
+<div class=k>
+<div><b>2466</b><span>关卡-贴图槽位</span></div>
+<div><b>491 Mpx</b><span>绘制面积（含跨关重复）</span></div>
+<div><b>1450</b><span>唯一贴图（去重后实跑）</span></div>
+<div><b>0</b><span>credits</span></div>
+</div>
+
+<div class=card>
+<h2 style="margin-top:0">它做了什么，没做什么</h2>
+<p>七步：光源估计（L*² 加权）→ 按亮度门控去色偏 → 冷暖双斜坡（按 L* 查表，
+色度不随变暗衰减）→ 石绿/朱红掩膜（读原始 Lab 色相）→ 色块洗涤（只糊 a*/b*，
+不动 L*）→ 绝对阈值墨线 → 纸纹。</p>
+<p><b>守住了</b>：alpha 逐位相同（剪影＝碰撞与网格契约）；L* 只在墨线处下降，
+灯光晕、窗光、火光全部原位。</p>
+<p><b>没做到</b>：不产生笔触。远看成立，凑近看没有笔锋与飞白；平涂低对比贴图
+（整片铆接钢板）最差；只有四支色相，紫、青、大面积鲜艳蓝会被压到最近的支上。</p>
+<p>详细取舍与六版失败记录见 <a href="RESTYLE_SCENE.md">RESTYLE_SCENE.md</a>。</p>
+</div>
+
+<div class=card>
+<h2 style="margin-top:0">凑近看</h2>
+<div class=shot><img src='../art/scene_restyle/_preview.png' alt='_preview.png'></div><p class=cap>八张代表贴图：上原图 / 下重彩（缩略）</p><div class=shot><img src='../art/scene_restyle/_cmp_level3_ship.png' alt='_cmp_level3_ship.png'></div><p class=cap>L3 船体段 1:1 前后对比</p>
+</div>
+
+<div class=card>
+<h2 style="margin-top:0">逐关</h2>
+<table><thead><tr><th>关卡</th><th>历史原型</th><th>贴图</th>
+<th>Mpx</th><th></th></tr></thead><tbody>
+<tr><td class=lv>L0</td><td>滇缅公路雨季 · 行军纵队<span class=d>1942 · 吻合中</span></td><td class=n>2</td><td class=n>2.6</td><td><a href='#level0'>看对比</a></td></tr><tr><td class=lv>L3</td><td>仰光港<span class=d>1942.3 · 吻合极强</span></td><td class=n>167</td><td class=n>42.1</td><td><a href='#level3'>看对比</a></td></tr><tr><td class=lv>L4</td><td>腊戍转运站（滇缅公路终点）<span class=d>1942.4 · 吻合很强</span></td><td class=n>230</td><td class=n>49.1</td><td><a href='#level4'>看对比</a></td></tr><tr><td class=lv>L5</td><td>曼德勒 · 伊洛瓦底江<span class=d>1942.4 · 吻合强</span></td><td class=n>242</td><td class=n>45.6</td><td><a href='#level5'>看对比</a></td></tr><tr><td class=lv>L6</td><td>腾冲古城<span class=d>1942.5 沦陷 / 1944.9 攻城 · 吻合很强</span></td><td class=n>258</td><td class=n>56.8</td><td><a href='#level6'>看对比</a></td></tr><tr><td class=lv>L7</td><td>蓝姆伽/雷多 军人俱乐部（后方插叙）<span class=d>1943 · 吻合弱</span></td><td class=n>198</td><td class=n>42.2</td><td><a href='#level7'>看对比</a></td></tr><tr><td class=lv>L8</td><td>同古（Toungoo）城区<span class=d>1942.3 · 吻合很强</span></td><td class=n>275</td><td class=n>45.0</td><td><a href='#level8'>看对比</a></td></tr><tr><td class=lv>L9</td><td>惠通桥<span class=d>1942.5.5 · 吻合极强</span></td><td class=n>117</td><td class=n>14.9</td><td><a href='#level9'>看对比</a></td></tr><tr><td class=lv>L10</td><td>松山 · 坑道接近<span class=d>1944.7 · 吻合强</span></td><td class=n>143</td><td class=n>46.5</td><td><a href='#level10'>看对比</a></td></tr><tr><td class=lv>L11</td><td>松山 · 地下工事群<span class=d>1944.8 · 吻合强</span></td><td class=n>178</td><td class=n>59.6</td><td><a href='#level11'>看对比</a></td></tr><tr><td class=lv>L12</td><td>松山 · 蓄水池与指挥所<span class=d>1944.8 · 吻合中</span></td><td class=n>114</td><td class=n>17.6</td><td><a href='#level12'>看对比</a></td></tr><tr><td class=lv>L13</td><td>雷多 · 中印公路工程处<span class=d>1944 · 吻合强</span></td><td class=n>265</td><td class=n>44.7</td><td><a href='#level13'>看对比</a></td></tr><tr><td class=lv>L14</td><td>密支那机场 · 驼峰航线<span class=d>1944.8 · 吻合弱</span></td><td class=n>277</td><td class=n>24.7</td><td><a href='#level14'>看对比</a></td></tr>
+</tbody></table>
+</div>
+
+<section id=level0><h2>L0 · 滇缅公路雨季 · 行军纵队<span class=d>1942　原版：雨夜城市剪影（动态菜单）</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level0.jpg' alt='level0'></div></section><section id=level3><h2>L3 · 仰光港<span class=d>1942.3　原版：港口码头（栈桥/吊车/江轮）</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level3.jpg' alt='level3'></div></section><section id=level4><h2>L4 · 腊戍转运站（滇缅公路终点）<span class=d>1942.4　原版：港区货场（仓库/机库/大吊车）</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level4.jpg' alt='level4'></div></section><section id=level5><h2>L5 · 曼德勒 · 伊洛瓦底江<span class=d>1942.4　原版：港湾远景（江岸天际线）</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level5.jpg' alt='level5'></div></section><section id=level6><h2>L6 · 腾冲古城<span class=d>1942.5 沦陷 / 1944.9 攻城　原版：老城街道（木楼/石板巷/牌坊）</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level6.jpg' alt='level6'></div></section><section id=level7><h2>L7 · 蓝姆伽/雷多 军人俱乐部（后方插叙）<span class=d>1943　原版：夜总会（室内娱乐场）</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level7.jpg' alt='level7'></div></section><section id=level8><h2>L8 · 同古（Toungoo）城区<span class=d>1942.3　原版：城区街区（街区/高架/路障）</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level8.jpg' alt='level8'></div></section><section id=level9><h2>L9 · 惠通桥<span class=d>1942.5.5　原版：河畔大桥（河谷/大桥/桥头堡）</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level9.jpg' alt='level9'></div></section><section id=level10><h2>L10 · 松山 · 坑道接近<span class=d>1944.7　原版：竖井与下水道</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level10.jpg' alt='level10'></div></section><section id=level11><h2>L11 · 松山 · 地下工事群<span class=d>1944.8　原版：地铁与水库</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level11.jpg' alt='level11'></div></section><section id=level12><h2>L12 · 松山 · 蓄水池与指挥所<span class=d>1944.8　原版：水库深处</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level12.jpg' alt='level12'></div></section><section id=level13><h2>L13 · 雷多 · 中印公路工程处<span class=d>1944　原版：车库与电梯</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level13.jpg' alt='level13'></div></section><section id=level14><h2>L14 · 密支那机场 · 驼峰航线<span class=d>1944.8　原版：齐柏林飞艇（巨型浮空器/机库）</span></h2><div class=shot><img src='../art/scene_restyle/cmp/level14.jpg' alt='level14'></div></section>
+</div></body></html>

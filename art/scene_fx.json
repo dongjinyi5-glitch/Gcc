@@ -1,0 +1,174 @@
+[
+ {
+  "texture": "FireHitUnit",
+  "file": "sharedassets4.assets",
+  "path_id": 70,
+  "size": [
+   450,
+   300
+  ],
+  "levels": [
+   "level3",
+   "level4",
+   "level5",
+   "level6",
+   "level7",
+   "level8",
+   "level9",
+   "level10",
+   "level11",
+   "level12",
+   "level13",
+   "level14"
+  ],
+  "materials": [
+   "FireOnUnit"
+  ],
+  "sr": 128
+ },
+ {
+  "texture": "CFX3_T_IceSmoke",
+  "file": "sharedassets1.assets",
+  "path_id": 7,
+  "size": [
+   256,
+   256
+  ],
+  "levels": [
+   "level0",
+   "level3",
+   "level4",
+   "level6",
+   "level8",
+   "level9",
+   "level13",
+   "level14"
+  ],
+  "materials": [
+   "CFX3_IceSmoke ADD",
+   "FireSmoke"
+  ],
+  "sr": 92
+ },
+ {
+  "texture": "CFX2_T_ShinyStar",
+  "file": "sharedassets4.assets",
+  "path_id": 189,
+  "size": [
+   256,
+   256
+  ],
+  "levels": [
+   "level3",
+   "level4",
+   "level5",
+   "level6",
+   "level7",
+   "level8",
+   "level9",
+   "level10",
+   "level11",
+   "level12",
+   "level13",
+   "level14"
+  ],
+  "materials": [
+   "PickupGlitter",
+   "PickupGlitter (Instance) (Instance)"
+  ],
+  "sr": 456
+ },
+ {
+  "texture": "CFX3_T_IceSmokeBright",
+  "file": "sharedassets4.assets",
+  "path_id": 45,
+  "size": [
+   256,
+   256
+  ],
+  "levels": [
+   "level3",
+   "level10",
+   "level11",
+   "level12"
+  ],
+  "materials": [
+   "SteamSmoke"
+  ],
+  "sr": 35
+ },
+ {
+  "texture": "Smoke",
+  "file": "sharedassets11.assets",
+  "path_id": 41,
+  "size": [
+   256,
+   256
+  ],
+  "levels": [
+   "level10",
+   "level11",
+   "level12",
+   "level13",
+   "level14"
+  ],
+  "materials": [
+   "PoisonSmoke",
+   "PoisonSmokeTransparant"
+  ],
+  "sr": 88
+ },
+ {
+  "texture": "CFX2_T_RainRipple",
+  "file": "sharedassets1.assets",
+  "path_id": 6,
+  "size": [
+   128,
+   128
+  ],
+  "levels": [
+   "level0"
+  ],
+  "materials": [
+   "CFX2_RainRipple"
+  ],
+  "sr": 2
+ },
+ {
+  "texture": "CFX2_T_Sparks",
+  "file": "sharedassets1.assets",
+  "path_id": 10,
+  "size": [
+   128,
+   128
+  ],
+  "levels": [
+   "level0",
+   "level6",
+   "level10",
+   "level14"
+  ],
+  "materials": [
+   "CFX2_Sparks",
+   "CFX2_Sparks (Instance) (Instance) (Instance)"
+  ],
+  "sr": 7
+ },
+ {
+  "texture": "CFX3_T_SmokePuff",
+  "file": "sharedassets11.assets",
+  "path_id": 68,
+  "size": [
+   128,
+   128
+  ],
+  "levels": [
+   "level10",
+   "level11"
+  ],
+  "materials": [
+   "CFX3_SmokePuff ADDSOFT"
+  ],
+  "sr": 2
+ }
+]
