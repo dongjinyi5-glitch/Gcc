@@ -10,7 +10,7 @@ from pathlib import Path
 from collections import Counter
 
 GAME_DATA = Path(r"D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data")
-OUTPUT_DIR = Path(r"D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary")
+OUTPUT_DIR = Path(r"D:\AI\Guns, Gore and Cannoli from WB\extracted\primary")
 
 # Unity Class ID -> Type Name 映射（常见类型）
 CLASS_ID_MAP = {

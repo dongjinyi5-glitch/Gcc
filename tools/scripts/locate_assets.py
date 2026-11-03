@@ -12,7 +12,7 @@ import os, io, json, struct
 import UnityPy
 
 DATA = r"D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data"
-ORIG = r"D://AI//DAIGuns, Gore and Cannoli from WB//backup"
+ORIG = r"D://AI//Guns, Gore and Cannoli from WB//backup"
 
 
 def path_of(name):
@@ -21,7 +21,7 @@ def path_of(name):
 
 
 SRC = path_of("resources.assets")
-OUT = r"D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\characters"
+OUT = r"D:\AI\Guns, Gore and Cannoli from WB\extracted\characters"
 DUMP_TEX = r"D:\BaiduNetdiskDownload\意大利黑1\image\Texture2D"
 DUMP_SPR = r"D:\BaiduNetdiskDownload\意大利黑1\image\Sprite"
 

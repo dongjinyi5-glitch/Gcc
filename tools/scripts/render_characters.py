@@ -18,8 +18,8 @@ from PIL import Image
 
 DATA = r"D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data"
 SRC = os.path.join(DATA, "resources.assets")
-OUT = r"D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\characters"
-NAMES_DIR = r"D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\names"
+OUT = r"D:\AI\Guns, Gore and Cannoli from WB\extracted\characters"
+NAMES_DIR = r"D:\AI\Guns, Gore and Cannoli from WB\extracted\names"
 os.makedirs(OUT, exist_ok=True)
 
 PPU_OUT = 120.0

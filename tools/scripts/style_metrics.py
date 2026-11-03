@@ -542,7 +542,7 @@ def compare(before, after, ignore_path=None):
 
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("--")]
-    target = args[0] if args else r"D:\AI\DAIGuns, Gore and Cannoli from WB\art\vinnie_parts\original"
+    target = args[0] if args else r"D:\AI\Guns, Gore and Cannoli from WB\art\vinnie_parts\original"
     if os.path.isdir(target):
         paths = [os.path.join(target, f) for f in sorted(os.listdir(target))
                  if f.lower().endswith(".png") and not f.startswith("_")]

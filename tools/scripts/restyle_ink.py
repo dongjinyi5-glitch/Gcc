@@ -34,7 +34,7 @@ from PIL import Image, ImageFilter
 
 import factions
 
-PROJECT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+PROJECT = r"D:\AI\Guns, Gore and Cannoli from WB"
 
 # ------------------------------------------------------------------ pigments
 # name: (base sRGB, deep-tone multiplier, light-tone multiplier)

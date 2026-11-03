@@ -29,7 +29,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import theme_cbi as T
 from characters_meta import ROSTER
 
-PROJECT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+PROJECT = r"D:\AI\Guns, Gore and Cannoli from WB"
 VAL = os.path.join(PROJECT, "validation")
 ART = os.path.join(PROJECT, "art")
 LOCS = os.path.join(PROJECT, "extracted", "characters", "asset_locations.json")

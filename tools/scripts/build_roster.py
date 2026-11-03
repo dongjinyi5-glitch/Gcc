@@ -9,7 +9,7 @@ Outputs:
 import os, io, json, base64, csv
 from PIL import Image, ImageDraw, ImageFont
 
-ROOT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+ROOT = r"D:\AI\Guns, Gore and Cannoli from WB"
 CH = os.path.join(ROOT, "extracted", "characters")
 DOCS = os.path.join(ROOT, "docs")
 ART = os.path.join(ROOT, "art")

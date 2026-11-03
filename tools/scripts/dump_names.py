@@ -10,7 +10,7 @@ import UnityPy
 
 GAME = r"D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli"
 DATA = os.path.join(GAME, "ggc_Data")
-OUT = r"D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\names"
+OUT = r"D:\AI\Guns, Gore and Cannoli from WB\extracted\names"
 os.makedirs(OUT, exist_ok=True)
 
 files = []

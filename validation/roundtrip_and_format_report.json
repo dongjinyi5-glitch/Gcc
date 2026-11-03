@@ -82,24 +82,24 @@
   "texture_roundtrip": [
     {
       "name": "Default-Particle",
-      "original_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_orig_0.png",
-      "reimport_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_reimport_0.png",
+      "original_png": "D:\\AI\\Guns, Gore and Cannoli from WB\\validation\\texrt_orig_0.png",
+      "reimport_png": "D:\\AI\\Guns, Gore and Cannoli from WB\\validation\\texrt_reimport_0.png",
       "sha256_match": true,
       "original_size": "64x64",
       "format": "RGBA32"
     },
     {
       "name": "HeadScreamPain",
-      "original_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_orig_1.png",
-      "reimport_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_reimport_1.png",
+      "original_png": "D:\\AI\\Guns, Gore and Cannoli from WB\\validation\\texrt_orig_1.png",
+      "reimport_png": "D:\\AI\\Guns, Gore and Cannoli from WB\\validation\\texrt_reimport_1.png",
       "sha256_match": true,
       "original_size": "109x134",
       "format": "RGBA32"
     },
     {
       "name": "BackLegDown",
-      "original_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_orig_2.png",
-      "reimport_png": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\validation\\texrt_reimport_2.png",
+      "original_png": "D:\\AI\\Guns, Gore and Cannoli from WB\\validation\\texrt_orig_2.png",
+      "reimport_png": "D:\\AI\\Guns, Gore and Cannoli from WB\\validation\\texrt_reimport_2.png",
       "sha256_match": true,
       "original_size": "59x101",
       "format": "RGBA32"
@@ -593,52 +593,52 @@
   "extracted_samples": [
     {
       "name": "Default-Particle",
-      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\Default-Particle.png",
+      "path": "D:\\AI\\Guns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\Default-Particle.png",
       "size": "64x64"
     },
     {
       "name": "HeadScreamPain",
-      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\HeadScreamPain.png",
+      "path": "D:\\AI\\Guns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\HeadScreamPain.png",
       "size": "109x134"
     },
     {
       "name": "BackLegDown",
-      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\BackLegDown.png",
+      "path": "D:\\AI\\Guns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\BackLegDown.png",
       "size": "59x101"
     },
     {
       "name": "zombie-burns (effects)_00013",
-      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\zombie-burns__effects__00013.png",
+      "path": "D:\\AI\\Guns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\zombie-burns__effects__00013.png",
       "size": "512x512"
     },
     {
       "name": "FrontLegLow",
-      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\FrontLegLow.png",
+      "path": "D:\\AI\\Guns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\FrontLegLow.png",
       "size": "101x75"
     },
     {
       "name": "Head",
-      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\Head.png",
+      "path": "D:\\AI\\Guns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\Head.png",
       "size": "114x105"
     },
     {
       "name": "water_splash_00017",
-      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\water_splash_00017.png",
+      "path": "D:\\AI\\Guns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\water_splash_00017.png",
       "size": "1024x512"
     },
     {
       "name": "HandBackPush",
-      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\HandBackPush.png",
+      "path": "D:\\AI\\Guns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\HandBackPush.png",
       "size": "67x71"
     },
     {
       "name": "TorsoChestDead",
-      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\TorsoChestDead.png",
+      "path": "D:\\AI\\Guns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\TorsoChestDead.png",
       "size": "84x82"
     },
     {
       "name": "TorsoChest",
-      "path": "D:\\AI\\DAIGuns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\TorsoChest.png",
+      "path": "D:\\AI\\Guns, Gore and Cannoli from WB\\extracted\\primary\\sample_textures\\TorsoChest.png",
       "size": "151x131"
     }
   ]

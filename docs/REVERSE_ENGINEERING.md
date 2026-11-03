@@ -412,7 +412,7 @@ UnityPy 解析证据：
 运行时：C:\Users\Dell\.workbuddy-ai\binaries\python\versions\3.13.12\python.exe
 虚拟环境：C:\Users\Dell\.workbuddy-ai\binaries\python\envs\daiggc\
 已安装：UnityPy 1.25.4（安装中）
-脚本目录：D:\AI\DAIGuns, Gore and Cannoli from WB\tools\scripts\
+脚本目录：D:\AI\Guns, Gore and Cannoli from WB\tools\scripts\
 ```
 
 ---

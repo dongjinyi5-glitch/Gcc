@@ -21,7 +21,7 @@ import sys
 
 from PIL import Image, ImageDraw
 
-PROJECT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+PROJECT = r"D:\AI\Guns, Gore and Cannoli from WB"
 VAL = os.path.join(PROJECT, "validation")
 OUT_IMG = os.path.join(PROJECT, "art", "original-capture", "faction_triptych.png")
 

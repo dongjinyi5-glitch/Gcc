@@ -34,7 +34,7 @@ import numpy as np
 import UnityPy
 from PIL import Image
 
-PROJECT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+PROJECT = r"D:\AI\Guns, Gore and Cannoli from WB"
 DATA = r"D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data"
 
 

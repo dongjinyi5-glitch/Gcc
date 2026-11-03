@@ -24,7 +24,7 @@ import sys
 import factions
 import style_metrics as M
 
-PROJECT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+PROJECT = r"D:\AI\Guns, Gore and Cannoli from WB"
 VAL = os.path.join(PROJECT, "validation")
 
 

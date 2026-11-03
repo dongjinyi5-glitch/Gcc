@@ -31,7 +31,7 @@ DATA = r"D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data"
 # Pristine copy of every file we have ever patched.  The roster must show the
 # ORIGINAL art: Vinnie's textures were already rewritten in-place, so reading
 # ggc_Data directly would render the restyled Vinnie (baseline contamination).
-ORIG = r"D:\AI\DAIGuns, Gore and Cannoli from WB\backup"
+ORIG = r"D:\AI\Guns, Gore and Cannoli from WB\backup"
 
 
 def path_of(name):
@@ -40,7 +40,7 @@ def path_of(name):
 
 
 SRC = path_of("resources.assets")
-OUT = r"D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\characters"
+OUT = r"D:\AI\Guns, Gore and Cannoli from WB\extracted\characters"
 os.makedirs(OUT, exist_ok=True)
 
 PPU_OUT = 140.0

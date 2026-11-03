@@ -16,7 +16,7 @@ from PIL import Image, ImageDraw
 
 from ggc_assets import AssetDB, tn
 
-PROJECT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+PROJECT = r"D:\AI\Guns, Gore and Cannoli from WB"
 PPU_OUT = 150.0
 PAD = 30
 

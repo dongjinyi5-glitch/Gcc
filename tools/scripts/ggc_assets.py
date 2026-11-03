@@ -29,7 +29,29 @@ import UnityPy
 from PIL import Image
 
 DATA = r"D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data"
-PROJECT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+PROJECT = r"D:\AI\Guns, Gore and Cannoli from WB"
+BACKUP = os.path.join(PROJECT, "backup")
+
+
+def baseline_map():
+    """data-file basename -> pristine 2015 copy under backup/.
+
+    Every .assets file in the live install has already been rewritten by one of
+    our passes (character textures, L3 scene textures), so reading "the original"
+    out of the game directory silently returns our own output.  Any comparison
+    built that way reads as identical and proves nothing -- and a before/after
+    table whose "before" is the after is worse than no table.
+
+    Files that have no backup entry fall through to the live path.
+    """
+    out = {}
+    if not os.path.isdir(BACKUP):
+        return out
+    for n in os.listdir(BACKUP):
+        if n.endswith(".assets"):
+            out[n] = os.path.join(BACKUP, n)
+    return out
+
 
 # Unity class IDs we care about
 CLS_GAMEOBJECT = 4

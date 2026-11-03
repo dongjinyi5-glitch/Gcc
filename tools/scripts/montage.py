@@ -5,7 +5,7 @@ usage: python montage.py out.png Gangster1 Gangster2 ...
 import os, sys
 from PIL import Image, ImageDraw, ImageFont
 
-ROOT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+ROOT = r"D:\AI\Guns, Gore and Cannoli from WB"
 CH = os.path.join(ROOT, "extracted", "characters")
 
 def font(size):

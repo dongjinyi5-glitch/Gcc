@@ -89,7 +89,7 @@ def main():
         print()
 
     # 输出 JSON
-    out_path = Path(r"D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\version_detection.json")
+    out_path = Path(r"D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\version_detection.json")
     out_path.parent.mkdir(parents=True, exist_ok=True)
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2, ensure_ascii=False)

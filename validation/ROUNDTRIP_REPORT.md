@@ -108,13 +108,13 @@
 
 | 名称 | 尺寸 | 路径 |
 |------|------|------|
-| Default-Particle | 64x64 | D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\sample_textures\Default-Particle.png |
-| HeadScreamPain | 109x134 | D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\sample_textures\HeadScreamPain.png |
-| BackLegDown | 59x101 | D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\sample_textures\BackLegDown.png |
-| zombie-burns (effects)_00013 | 512x512 | D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\sample_textures\zombie-burns__effects__00013.png |
-| FrontLegLow | 101x75 | D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\sample_textures\FrontLegLow.png |
-| Head | 114x105 | D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\sample_textures\Head.png |
-| water_splash_00017 | 1024x512 | D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\sample_textures\water_splash_00017.png |
-| HandBackPush | 67x71 | D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\sample_textures\HandBackPush.png |
-| TorsoChestDead | 84x82 | D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\sample_textures\TorsoChestDead.png |
-| TorsoChest | 151x131 | D:\AI\DAIGuns, Gore and Cannoli from WB\extracted\primary\sample_textures\TorsoChest.png |
+| Default-Particle | 64x64 | D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\sample_textures\Default-Particle.png |
+| HeadScreamPain | 109x134 | D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\sample_textures\HeadScreamPain.png |
+| BackLegDown | 59x101 | D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\sample_textures\BackLegDown.png |
+| zombie-burns (effects)_00013 | 512x512 | D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\sample_textures\zombie-burns__effects__00013.png |
+| FrontLegLow | 101x75 | D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\sample_textures\FrontLegLow.png |
+| Head | 114x105 | D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\sample_textures\Head.png |
+| water_splash_00017 | 1024x512 | D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\sample_textures\water_splash_00017.png |
+| HandBackPush | 67x71 | D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\sample_textures\HandBackPush.png |
+| TorsoChestDead | 84x82 | D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\sample_textures\TorsoChestDead.png |
+| TorsoChest | 151x131 | D:\AI\Guns, Gore and Cannoli from WB\extracted\primary\sample_textures\TorsoChest.png |

@@ -17,7 +17,7 @@
 | 4 | 替换范围优先级 | 角色全动作集 → 场景图层 → UI/粒子 → 调色板动画（暂不动） |
 | 5 | 目标美术风格 | 中国国画风格（水墨五色、留白、笔触肌理） |
 | 6 | 工具下载授权 | 授权通过 |
-| 7 | 工作目录 | `D:\AI\DAIGuns, Gore and Cannoli from WB`（全部资料） |
+| 7 | 工作目录 | `D:\AI\Guns, Gore and Cannoli from WB`（全部资料） |
 | 8 | 规则目录 | `D:\AI\Guns, Gore and Cannoli on China`（AI Agent 规则） |
 | 9 | 目录内授权 | 永久有效；目录外每次确认 |
 
@@ -77,7 +77,7 @@ ggc_Data/
 | 原记录 | 实际确认 | 依据 |
 |--------|----------|------|
 | "Unity 5.x (2015)" | **Unity 4.3.4f1** | UnityPy 读取全部 33 个 .assets 的 `unity_version` 字段 |
-| 规则目录 `D:\AI\Guns, Gore and Cannoli on China` | 该目录属另一平台，本项目**不使用**；全部资料仅在 `D:\AI\DAIGuns, Gore and Cannoli from WB` | 用户 22:34 明确说明 |
+| 规则目录 `D:\AI\Guns, Gore and Cannoli on China` | 该目录属另一平台，本项目**不使用**；全部资料仅在 `D:\AI\Guns, Gore and Cannoli from WB` | 用户 22:34 明确说明 |
 
 ### 角色清单产出（一手解析）
 

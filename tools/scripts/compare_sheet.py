@@ -9,7 +9,7 @@ import sys
 
 from PIL import Image, ImageDraw
 
-PROJECT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+PROJECT = r"D:\AI\Guns, Gore and Cannoli from WB"
 
 
 def build(char="vinnie", zoom=2, cols=4, out=None, only=None):

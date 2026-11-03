@@ -13,7 +13,7 @@ from pathlib import Path
 from collections import Counter
 
 GAME_DATA = Path(r"D:\BaiduNetdiskDownload\意大利黑1\Guns, Gore and Cannoli\ggc_Data")
-OUTPUT_DIR = Path(r"D:\AI\DAIGuns, Gore and Cannoli from WB")
+OUTPUT_DIR = Path(r"D:\AI\Guns, Gore and Cannoli from WB")
 EXTRACT_DIR = OUTPUT_DIR / "extracted" / "primary"
 VALIDATION_DIR = OUTPUT_DIR / "validation"
 VALIDATION_DIR.mkdir(parents=True, exist_ok=True)

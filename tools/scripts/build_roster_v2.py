@@ -18,7 +18,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from characters_meta import ROSTER, DOC_UNMATCHED
 
-ROOT = r"D:\AI\DAIGuns, Gore and Cannoli from WB"
+ROOT = r"D:\AI\Guns, Gore and Cannoli from WB"
 IMG = os.path.join(ROOT, "extracted", "characters")
 DOCS = os.path.join(ROOT, "docs")
 ART = os.path.join(ROOT, "art")
