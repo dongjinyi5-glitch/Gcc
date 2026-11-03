@@ -81,6 +81,7 @@
   "area_delta": 0.0,
   "centroid_shift": 0.0
  },
+ "fidelity_declared": null,
  "checks": [
   {
    "name": "ink_w_mean",
